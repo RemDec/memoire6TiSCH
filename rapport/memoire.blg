@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: memoire.aux
+The style file: plain.bst
+Database file #1: biblio.bib
+Repeated entry---line 476 of file biblio.bib
+ : @misc{rfc6775
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--empty booktitle in telosb
+Warning--empty booktitle in multipath
+You've used 35 entries,
+            2118 wiz_defined-function locations,
+            698 strings with 10344 characters,
+and the built_in function-call counts, 11761 in all, are:
+= -- 1081
+> -- 723
+< -- 12
++ -- 287
+- -- 250
+* -- 832
+:= -- 2005
+add.period$ -- 111
+call.type$ -- 35
+change.case$ -- 230
+chr.to.int$ -- 0
+cite$ -- 37
+duplicate$ -- 378
+empty$ -- 836
+format.name$ -- 250
+if$ -- 2430
+int.to.chr$ -- 0
+int.to.str$ -- 35
+missing$ -- 15
+newline$ -- 184
+num.names$ -- 70
+pop$ -- 282
+preamble$ -- 1
+purify$ -- 195
+quote$ -- 0
+skip$ -- 304
+stack$ -- 0
+substring$ -- 432
+swap$ -- 87
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 140
+warning$ -- 2
+while$ -- 87
+width$ -- 37
+write$ -- 381
+(There was 1 error message)

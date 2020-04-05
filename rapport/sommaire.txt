@@ -1,0 +1,30 @@
+Introduction
+
+I. Présentation du standard IEEE802.15.4
+    1. L'IoT, les réseaux sans fils et leurs contraintes
+    2. L'évolution des standards - amendement 802.15.4e
+    3. Les fondamentaux de TSCH
+
+II. La pile réseau 6TiSCH
+    1. L'architecture type des WSNs
+    2. Technologies et protocoles de la pile 6TiSCH
+        2.1. Vue d'ensemble 
+        2.2. Couche physique - PHY IEEE802.15.4
+        2.3. Couche lien - IEEE802.15.4e en mode TSCH
+        2.4. Couche d'adaptation au réseau IPv6 - 6LoWPAN
+        2.5. Couche réseau et routage - RPL
+        2.6. Couche transport - UDP
+        2.7. Couche applicative - CoAP
+    3. Principes/Déploiement de la pile 
+        3.1. Synchronisation temporelle
+        3.2. Formation du réseau - joining phase
+        3.3. Ordonnancement des transmissions - scheduling
+        3.4. Routage et addressage
+        3.5. Sécurité à différents niveaux
+III. Analyse détaillée de la procédure de formation du réseau sécurisée
+IV. Améliorations proposées et implémentation
+V. Simulation et résultats
+
+Conclusion
+Glossaire
+Annexes

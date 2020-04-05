@@ -1,0 +1,51 @@
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Présentation du standard IEEE802.15.4 et TSCH}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}L'IoT, les réseaux sans fils et leurs contraintes}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}L'évolution des standards - amendement 802.15.4e et 6TiSCH}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Les principes fondamentaux de TSCH}{10}{section.1.3}%
+\contentsline {chapter}{\numberline {2}La pile réseau 6TiSCH}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}L'architecture type des WSNs}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Technologies et protocoles de la pile 6TiSCH}{17}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}La pile dans son ensemble}{17}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Couche physique - IEEE802.15.4 PHY}{18}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Couche lien - IEEE802.15.4e en mode TSCH}{19}{subsection.2.2.3}%
+\contentsline {subsubsection}{Structure de PAN et addressage}{19}{section*.11}%
+\contentsline {subsubsection}{IEs et \textit {Enhanced Beacons}}{20}{section*.13}%
+\contentsline {subsubsection}{Types de transmissions et retransmissions}{20}{section*.14}%
+\contentsline {subsubsection}{Organisation d'une transmission dans un timeslot}{21}{section*.16}%
+\contentsline {subsubsection}{Services de sécurité}{23}{section*.18}%
+\contentsline {subsubsection}{Structure de slotframe}{24}{section*.21}%
+\contentsline {subsubsection}{Table des voisins}{24}{section*.22}%
+\contentsline {subsection}{\numberline {2.2.4}Couche d'abstraction de lien - 6top}{25}{subsection.2.2.4}%
+\contentsline {subsubsection}{Composants de la couche 6top}{25}{section*.23}%
+\contentsline {subsubsection}{Le protocole 6P et les scheduling functions}{26}{section*.24}%
+\contentsline {subsection}{\numberline {2.2.5}Couche d'adaptation à IPv6 - 6LoWPAN}{27}{subsection.2.2.5}%
+\contentsline {subsubsection}{Mesh Addressing Header : forwarding}{27}{section*.26}%
+\contentsline {subsubsection}{Dispatch header : compression d'headers}{27}{section*.27}%
+\contentsline {subsubsection}{Fragmentation header : fragmentation}{28}{section*.28}%
+\contentsline {subsubsection}{L'auto-configuration des interfaces en IPv6}{28}{section*.29}%
+\contentsline {subsection}{\numberline {2.2.6}Couche réseau et routage - RPL}{29}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Couches transport et application - CoAP sur UDP}{31}{subsection.2.2.7}%
+\contentsline {subsubsection}{Transport par UDP}{31}{section*.32}%
+\contentsline {subsubsection}{CoAP}{31}{section*.33}%
+\contentsline {subsubsection}{CoJP et OSCORE}{34}{section*.35}%
+\contentsline {section}{\numberline {2.3}Principes inhérents au déploiement de la pile}{35}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Synchronisation temporelle}{35}{subsection.2.3.1}%
+\contentsline {subsubsection}{Resynchronisation entre nœuds voisins}{35}{section*.37}%
+\contentsline {subsubsection}{Synchronisation globale du réseau}{36}{section*.38}%
+\contentsline {subsection}{\numberline {2.3.2}Formation du réseau}{37}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Ordonnancement des transmissions - \textit {minimal scheduling}}{38}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Analyse détaillée de la sécurité pour la phase de join}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ressources et standards utilisés}{40}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{40}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}OSCORE}{40}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}CoJP}{45}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Analyse du déroulement de la phase de join}{47}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Procédure globale}{47}{subsection.3.2.1}%
+\contentsline {subsubsection}{Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{47}{section*.47}%
+\contentsline {subsubsection}{Étape d'intégration au réseau (échanges CoJP) et opérabilité RPL}{47}{section*.48}%
+\contentsline {subsection}{\numberline {3.2.2}Détail de la sécurité du join}{47}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{47}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{49}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{50}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Simulations et résultats}{51}{chapter.6}%

@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg195"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="OSCORE_scheme.svg">
+  <defs
+     id="defs189">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1030"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1028"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1033"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1031" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5613"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5611"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5541"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5539" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5449"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5447"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5403"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5401" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5120"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker5449-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5447-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="388.77278"
+     inkscape:cy="823.03312"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g1215"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1916"
+     inkscape:window-height="1014"
+     inkscape:window-x="0"
+     inkscape:window-y="45"
+     inkscape:window-maximized="0"
+     showguides="false" />
+  <metadata
+     id="metadata192">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5449)"
+       d="m 171.4122,89.302081 v 3.212798 h -62.74405 v 5.291667"
+       id="path5445"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 170.84524,62.276784 v 7.74851"
+       id="path5443"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       id="g1032"
+       transform="translate(-2.6458333,-6.8791658)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="22.197239"
+         x="20.243931"
+         height="20.060873"
+         width="38.755047"
+         id="rect197"
+         style="fill:#bfe1e2;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.23340239;stroke-opacity:1" />
+      <flowRoot
+         transform="scale(0.26458333)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1004"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1006"><rect
+             y="96.805397"
+             x="71.428574"
+             height="90"
+             width="158.57143"
+             id="rect1008" /></flowRegion><flowPara
+           style="font-size:16px;line-height:22px;text-align:center;text-anchor:middle"
+           id="flowPara1010">Message original</flowPara><flowPara
+           style="font-size:16px;line-height:22px;text-align:center;text-anchor:middle"
+           id="flowPara1012">CoAP/HTTP</flowPara></flowRoot>    </g>
+    <g
+       id="g1040"
+       transform="translate(8.1642862,-9.5249993)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         style="fill:#edf7f7;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.15617134;stroke-miterlimit:4;stroke-dasharray:0.15617135, 0.15617135;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1014"
+         width="33.749249"
+         height="10.31075"
+         x="70.740723"
+         y="25.635992" />
+      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,0,3.1750001)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1016"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1018"><rect
+             y="92.519684"
+             x="265.71429"
+             height="59.285713"
+             width="130"
+             id="rect1020" /></flowRegion><flowPara
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="flowPara1022">Transformation en</flowPara><flowPara
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="flowPara1024">message CoAP</flowPara></flowRoot>    </g>
+    <g
+       id="g1122"
+       transform="translate(13.229166,2.078869)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="12.761905"
+         x="120.76339"
+         height="49.413666"
+         width="69.35862"
+         id="rect1042"
+         style="fill:#bfe1e2;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1" />
+      <rect
+         y="13.045386"
+         x="121.04688"
+         height="6.2529998"
+         width="68.791664"
+         id="rect1046"
+         style="fill:#edf7f7;fill-opacity:1;fill-rule:evenodd;stroke-width:0.26458332" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1044"
+         d="m 121.952,19.239708 h 66.81738"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,1.0583333)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1048"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1050"><rect
+             y="48.222454"
+             x="457.59909"
+             height="24.748737"
+             width="261.12442"
+             id="rect1052" /></flowRegion><flowPara
+           style="font-size:13.33333397px"
+           id="flowPara1054">Message CoAP intermédiaire</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,0,1.0583333)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1056"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1058"><rect
+             y="74.662544"
+             x="462.14285"
+             height="99.285713"
+             width="254.28572"
+             id="rect1060" /></flowRegion><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1062"><flowSpan
+   style="font-weight:bold"
+   id="flowSpan1180">Outer fields</flowSpan> :</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1064"> • Dumb code (0.02 POST/2.04 Changed)</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1066"> • Token et Message ID</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1007"> • Options de classe U :</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1068">    - Uri-Host/Port, Proxy-Uri/Scheme</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1001">    - Max-Age, etc.</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1074"> <flowSpan
+   style="fill:#c231ab;fill-opacity:1"
+   id="flowSpan1017">• Options de classe I</flowSpan></flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1076" /></flowRoot>      <flowRoot
+         transform="scale(0.26458333)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1078"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1080"><rect
+             y="174.66254"
+             x="460"
+             height="147.14285"
+             width="265"
+             id="rect1082" /></flowRegion><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1084"><flowSpan
+   style="font-weight:bold;fill:#cc0000;fill-opacity:1"
+   id="flowSpan1182">Inner fields</flowSpan> :</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1086"> <flowSpan
+   style="fill:#cc0000;fill-opacity:1"
+   id="flowSpan1015">•</flowSpan> Payload et code du message original</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1088"> <flowSpan
+   style="fill:#cc0000;fill-opacity:1"
+   id="flowSpan1013">•</flowSpan> Options de classe E :</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1090">    - Uri-Path/Query</flowPara><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1092">    - Content-Format, etc.</flowPara></flowRoot>    </g>
+    <g
+       id="g1136"
+       transform="translate(-3.4017844,35.718753)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         style="fill:#bfe2c1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.23340239;stroke-opacity:1"
+         id="rect1124"
+         width="32.896416"
+         height="16.092121"
+         x="23.418934"
+         y="23.255573" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot1134"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         transform="scale(0.26458333)"><flowRegion
+           id="flowRegion1128"><rect
+             id="rect1126"
+             width="158.57143"
+             height="90"
+             x="71.428574"
+             y="96.805397" /></flowRegion><flowPara
+           id="flowPara1132"
+           style="font-size:16px;line-height:22px;text-align:center;text-anchor:middle">Contexte de</flowPara><flowPara
+           style="font-size:16px;line-height:22px;text-align:center;text-anchor:middle"
+           id="flowPara1140">sécurité</flowPara></flowRoot>    </g>
+    <g
+       id="g1156"
+       transform="translate(8.769045,29.935717)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="18.265457"
+         x="58.305305"
+         height="36.580097"
+         width="57.750732"
+         id="rect1144"
+         style="fill:#edf7f7;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.15617134;stroke-miterlimit:4;stroke-dasharray:0.15617135, 0.15617135;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="fill:#bae0a1;fill-opacity:1;fill-rule:evenodd;stroke-width:0.24749503"
+         id="rect1190"
+         width="44.979168"
+         height="11.170917"
+         x="60.098209"
+         y="35.98682" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot1154"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         transform="matrix(0.26458333,0,0,0.26458333,-12.170835,-4.2333336)"><flowRegion
+           id="flowRegion1148"
+           style="text-align:start;text-anchor:start"><rect
+             id="rect1146"
+             width="199.28571"
+             height="115"
+             x="273.57144"
+             y="90.376823"
+             style="text-align:start;text-anchor:start" /></flowRegion><flowPara
+           id="flowPara1152"
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"><flowSpan
+   style="font-size:12px"
+   id="flowSpan1178">Construction du COSE_obj où</flowSpan> :</flowPara><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1160" /><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1162"> • <flowSpan
+   style="font-style:italic"
+   id="flowSpan1184">protected</flowSpan> est vide</flowPara><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1164" /><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1166"> • <flowSpan
+   style="font-style:italic"
+   id="flowSpan1186">unprotected</flowSpan> : <flowSpan
+   style="fill:#c231ab;fill-opacity:1"
+   id="flowSpan1021">PIV</flowSpan> (=SSN), </flowPara><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1168">    <flowSpan
+   style="fill:#c231ab;fill-opacity:1"
+   id="flowSpan1023">kid</flowSpan> (=SID), kid context</flowPara><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1170" /><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1172"> • <flowSpan
+   style="font-style:italic"
+   id="flowSpan1188">ciphertext</flowSpan> : nonce AEAD,</flowPara><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1174">                       <flowSpan
+   style="fill:#cc0000;fill-opacity:1"
+   id="flowSpan1011">plaintext</flowSpan>,</flowPara><flowPara
+           style="font-size:10.66666698px;text-align:start;text-anchor:start"
+           id="flowPara1176">                       <flowSpan
+   style="fill:#c231ab;fill-opacity:1"
+   id="flowSpan1019">AAD</flowSpan></flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot1193"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         transform="matrix(0.26458333,0,0,0.26458333,-60.854165,-54.50417)"><flowRegion
+           id="flowRegion1195"><rect
+             id="rect1197"
+             width="230.32562"
+             height="31.68854"
+             x="459.28571"
+             y="386.09113" /></flowRegion><flowPara
+           id="flowPara1199"
+           style="font-size:10.66666698px">authentifié/chiffré par la clé</flowPara><flowPara
+           id="flowPara1201"
+           style="font-size:10.66666698px">corresp. dans le contexte de sécurité</flowPara></flowRoot>    </g>
+    <g
+       id="g1215"
+       transform="translate(78.052083,47.133625)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="21.092409"
+         x="70.740723"
+         height="22.2383"
+         width="41.875732"
+         id="rect1203"
+         style="fill:#edf7f7;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.15617134;stroke-miterlimit:4;stroke-dasharray:0.15617135, 0.15617135;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:export-xdpi="200"
+         inkscape:export-ydpi="200" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot1213"
+         style="font-style:normal;font-weight:normal;font-size:2.11666656px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         transform="translate(0,-2.4458205)"
+         inkscape:export-xdpi="200"
+         inkscape:export-ydpi="200"><flowRegion
+           id="flowRegion1207"
+           style="stroke-width:0.26458332"><rect
+             id="rect1205"
+             width="42.616821"
+             height="7.8059683"
+             x="70.303574"
+             y="24.479166"
+             style="stroke-width:0.07000434" /></flowRegion><flowPara
+           id="flowPara1209"
+           style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332">Création Option OSCORE</flowPara><flowPara
+           style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           id="flowPara1219">(depuis <flowSpan
+   style="font-style:italic"
+   id="flowSpan1069">unprotected</flowSpan>)</flowPara></flowRoot>      <flowRoot
+         transform="translate(0,4.962181)"
+         style="font-style:normal;font-weight:normal;font-size:2.11666656px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         id="flowRoot1051"
+         xml:space="preserve"
+         inkscape:export-xdpi="200"
+         inkscape:export-ydpi="200"><flowRegion
+           style="stroke-width:0.26458332"
+           id="flowRegion1043"><rect
+             style="stroke-width:0.07000434"
+             y="24.479166"
+             x="70.303574"
+             height="14.220436"
+             width="42.349552"
+             id="rect1041" /></flowRegion><flowPara
+           style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           id="flowPara1057">Encapsulation dans</flowPara><flowPara
+           style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           id="flowPara1059">message OSCORE</flowPara><flowPara
+           style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           id="flowPara1061">en fonction du prochain proxy/endpoint</flowPara><flowPara
+           style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           id="flowPara1063" /></flowRoot>    </g>
+    <g
+       id="g5053"
+       transform="translate(35.983338,6.879167)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="91.569939"
+         x="48.569939"
+         height="29.88467"
+         width="50.270836"
+         id="rect1279"
+         style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1" />
+      <rect
+         y="91.664429"
+         x="48.75893"
+         height="5.2916665"
+         width="49.892857"
+         id="rect1283"
+         style="fill:#fafafa;fill-opacity:1;fill-rule:evenodd;stroke-width:0.26458332" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1281"
+         d="M 49.604,96.974998 H 97.890457"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,1.0583333)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1285"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1287"><rect
+             y="346.44824"
+             x="186.42857"
+             height="20"
+             width="183.92857"
+             id="rect1289" /></flowRegion><flowPara
+           style="font-size:10.66666698px"
+           id="flowPara1291">Message OSCORE sur HTTP</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,0.52916667)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot1293"
+         xml:space="preserve"><flowRegion
+           id="flowRegion1295"><rect
+             y="368.69336"
+             x="185.61552"
+             height="106.82363"
+             width="183.59523"
+             id="rect1297" /></flowRegion><flowPara
+           style="font-weight:bold;font-size:9.33333302px;line-height:11px"
+           id="flowPara1299">Headers</flowPara><flowPara
+           style="font-size:9.33333302px;line-height:11px"
+           id="flowPara1301"> • Content-Type : application/oscore</flowPara><flowPara
+           style="font-size:9.33333302px;line-height:11px"
+           id="flowPara1303"> • OSCORE : Option OSCORE </flowPara><flowPara
+           id="flowPara5024"
+           style="font-size:9.33333302px;line-height:11px"> • Autres Options nécessaires au</flowPara><flowPara
+           id="flowPara5026"
+           style="font-size:9.33333302px;line-height:11px">    proxy traduites vers HTTP(classe U)</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot1315"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,15.875004)"><flowRegion
+           id="flowRegion1307"><rect
+             id="rect1305"
+             width="183.59523"
+             height="106.82363"
+             x="185.61552"
+             y="368.69336" /></flowRegion><flowPara
+           id="flowPara1309"
+           style="font-weight:bold;font-size:9.33333302px;line-height:11px">Body</flowPara><flowPara
+           id="flowPara1313"
+           style="font-size:9.33333302px;line-height:11px"> • <flowSpan
+   id="flowSpan5022"
+   style="font-style:italic">ciphertext</flowSpan> du COSE_obj </flowPara></flowRoot>    </g>
+    <g
+       transform="translate(104.24587,6.879167)"
+       id="g5097"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+         id="rect5055"
+         width="50.270836"
+         height="29.88467"
+         x="48.569939"
+         y="91.569939" />
+      <rect
+         style="fill:#fafafa;fill-opacity:1;fill-rule:evenodd;stroke-width:0.26458332"
+         id="rect5057"
+         width="49.892857"
+         height="5.2916665"
+         x="48.75893"
+         y="91.664429" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 49.604,96.974998 H 97.890457"
+         id="path5059"
+         inkscape:connector-curvature="0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot5067"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,1.0583333)"><flowRegion
+           id="flowRegion5063"><rect
+             id="rect5061"
+             width="183.92857"
+             height="20"
+             x="186.42857"
+             y="346.44824" /></flowRegion><flowPara
+           id="flowPara5065"
+           style="font-size:10.66666698px">Message OSCORE sur CoAP</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot5083"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,0.52916667)"><flowRegion
+           id="flowRegion5071"><rect
+             id="rect5069"
+             width="183.59523"
+             height="106.82363"
+             x="185.61552"
+             y="368.69336" /></flowRegion><flowPara
+           id="flowPara5075"
+           style="font-weight:bold;font-size:9.33333302px;line-height:11px">Options</flowPara><flowPara
+           id="flowPara5077"
+           style="font-size:9.33333302px;line-height:11px"> • OSCORE : Option OSCORE </flowPara><flowPara
+           style="font-size:9.33333302px;line-height:11px"
+           id="flowPara5081"> • Autres Outer Options nécessaires</flowPara><flowPara
+           style="font-size:9.33333302px;line-height:11px"
+           id="flowPara5103">    au proxy</flowPara><flowPara
+           style="font-size:9.33333302px;line-height:11px"
+           id="flowPara1171"> • Champs couche Message (token, ..)</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,1.0583333,15.875004)"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot5095"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5087"><rect
+             y="368.69336"
+             x="185.61552"
+             height="106.82363"
+             width="183.59523"
+             id="rect5085" /></flowRegion><flowPara
+           style="font-weight:bold;font-size:9.33333302px;line-height:11px"
+           id="flowPara5089">Payload</flowPara><flowPara
+           style="font-size:9.33333302px;line-height:11px"
+           id="flowPara5093"> • <flowSpan
+   style="font-style:italic"
+   id="flowSpan5091">ciphertext</flowSpan> du COSE_obj </flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.36500001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 56.24,21.455357 H 78.729583"
+       id="path5105"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.36500001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m 112.6369,21.360862 h 21.16667"
+       id="path5109"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1033)"
+       d="M 133.80357,38.046619 H 88.03065 V 47.874"
+       id="path5393"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1030)"
+       d="m 124.843,77.962796 h 23.8125"
+       id="path5441"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5541)"
+       d="m 171.52022,92.538811 h 10.62396 v 5.512432"
+       id="path5487"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5613)"
+       d="M 52.916666,68.55119 H 68.035714"
+       id="path5603"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#de0000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.59, 0.265;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 205.99702,104.61012 H 50.82695"
+       id="path1191"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path1195"
+       d="M 205.99702,119.95599 H 50.82695"
+       style="fill:none;stroke:#de0000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.59, 0.265;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1197"
+       style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.5;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="scale(0.26458333)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><flowRegion
+         id="flowRegion1199"
+         style="line-height:1.5;text-align:center;text-anchor:middle"><rect
+           id="rect1201"
+           width="124.24876"
+           height="50.002552"
+           x="192.43407"
+           y="400.26062"
+           style="line-height:1.5;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara1203"
+         style="font-size:16px;line-height:1.5;text-align:center;text-anchor:middle;fill:#7a1f1f;fill-opacity:1">visible par</flowPara><flowPara
+         id="flowPara1205"
+         style="font-size:16px;line-height:1.5;text-align:center;text-anchor:middle;fill:#7a1f1f;fill-opacity:1">les proxys</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1092"
+       style="font-style:normal;font-weight:normal;font-size:8px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-37.570851,-38.100018)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><flowRegion
+         id="flowRegion1094"><rect
+           id="rect1096"
+           width="186.42854"
+           height="22.14287"
+           x="474.28571"
+           y="273.23398" /></flowRegion><flowPara
+         id="flowPara1098"
+         style="font-size:10.66666698px">Algo. AEAD(key, plaintext, AAD) </flowPara></flowRoot>    <g
+       id="g1165"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1100"
+         d="m 69.169642,60.953866 h -3.685268 v 2.834823 h 3.685268"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#c231ab;stroke-width:0.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path1102"
+         d="M 65.414217,62.470987 H 60.269278 V 74.698568 H 88.733483"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#c231ab;stroke-width:0.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#c231ab;stroke-width:0.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 135.69345,40.826634 h -14.2686 v 33.755338 l -24.757441,-0.02096"
+       id="path1104"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       id="g1169"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path1106"
+         d="m 134.37054,49.425595 h -2.07888 v 5.764135 h 2.05595"
+         style="fill:none;stroke:#cc0000;stroke-width:0.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path1108"
+         d="m 132.22534,52.260415 h -3.24097 V 71.537199 H 103.1875"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#cc0000;stroke-width:0.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

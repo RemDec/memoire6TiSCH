@@ -1,0 +1,30 @@
+\BOOKMARK [0][-]{chapter.1}{Pr\351sentation du standard IEEE802.15.4 et TSCH}{}% 1
+\BOOKMARK [1][-]{section.1.1}{L'IoT, les r\351seaux sans fils et leurs contraintes}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{L'\351volution des standards - amendement 802.15.4e et 6TiSCH}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Les principes fondamentaux de TSCH}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{La pile r\351seau 6TiSCH}{}% 5
+\BOOKMARK [1][-]{section.2.1}{L'architecture type des WSNs}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Technologies et protocoles de la pile 6TiSCH}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{La pile dans son ensemble}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{Couche physique - IEEE802.15.4 PHY}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.3}{Couche lien - IEEE802.15.4e en mode TSCH}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.4}{Couche d'abstraction de lien - 6top}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.5}{Couche d'adaptation \340 IPv6 - 6LoWPAN}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.6}{Couche r\351seau et routage - RPL}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.7}{Couches transport et application - CoAP sur UDP}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Principes inh\351rents au d\351ploiement de la pile}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{Synchronisation temporelle}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{Formation du r\351seau}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.3}{Ordonnancement des transmissions - minimal scheduling}{section.2.3}% 18
+\BOOKMARK [0][-]{chapter.3}{Analyse d\351taill\351e de la s\351curit\351 pour la phase de join}{}% 19
+\BOOKMARK [1][-]{section.3.1}{Ressources et standards utilis\351s}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.1.1}{CBOR et COSE}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.2}{OSCORE}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.3}{CoJP}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{Analyse du d\351roulement de la phase de join}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{Proc\351dure globale}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.2}{D\351tail de la s\351curit\351 du join}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{Impl\351mentations de la joining phase dans les simulateurs}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{\311tude des performances de la joining phase s\351curis\351e}{}% 28
+\BOOKMARK [0][-]{chapter.5}{Am\351liorations propos\351es et impl\351mentation}{}% 29
+\BOOKMARK [0][-]{chapter.6}{Simulations et r\351sultats}{}% 30

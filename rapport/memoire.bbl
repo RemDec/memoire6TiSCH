@@ -1,0 +1,221 @@
+\begin{thebibliography}{10}
+
+\bibitem{rfc6550}
+Roger Alexander, Anders Brandt, JP~Vasseur, Jonathan Hui, Kris Pister, Pascal
+  Thubert, P~Levis, Rene Struik, Richard Kelsey, and Tim Winter.
+\newblock {RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks}.
+\newblock RFC 6550, March 2012.
+
+\bibitem{rfc7049}
+Carsten Bormann and Paul~E. Hoffman.
+\newblock {Concise Binary Object Representation (CBOR)}.
+\newblock RFC 7049, October 2013.
+
+\bibitem{rfc6775}
+Carsten Bormann, Zach Shelby, Samita Chakrabarti, and Erik Nordmark.
+\newblock {Neighbor Discovery Optimization for IPv6 over Low-Power Wireless
+  Personal Area Networks (6LoWPANs)}.
+\newblock RFC 6775, November 2012.
+
+\bibitem{ietf-6tisch-msf-10}
+Tengfei Chang, Mališa Vučinić, Xavier Vilajosana, Simon Duquennoy, and Diego
+  Dujovne.
+\newblock {6TiSCH Minimal Scheduling Function (MSF)}.
+\newblock Internet-Draft draft-ietf-6tisch-msf-10, Internet Engineering Task
+  Force, December 2019.
+\newblock Work in Progress.
+
+\bibitem{telosb}
+Dionysios Efstathiou, Stelios Ioannou, Sotiris Nikoletseas, and Dimitra
+  Patroumpa.
+\newblock Demo abstract: Emergency building evacuation guided by a wireless
+  sensor network.
+\newblock pages 203--206, 10 2011.
+
+\bibitem{IEEE802.15.4}
+IEEE.
+\newblock Ieee standard for low-rate wireless networks.
+\newblock {\em IEEE Std 802.15.4-2015 (Revision of IEEE Std 802.15.4-2011)},
+  pages 1--709, April 2016.
+
+\bibitem{ATP}
+A.~{Karalis}.
+\newblock Atp: A fast joining technique for ieee802.15. 4-tsch networks.
+\newblock In {\em 2018 IEEE 19th International Symposium on "A World of
+  Wireless, Mobile and Multimedia Networks" (WoWMoM)}, pages 588--599, June
+  2018.
+
+\bibitem{rfc5869}
+Dr.~Hugo Krawczyk and Pasi Eronen.
+\newblock {HMAC-based Extract-and-Expand Key Derivation Function (HKDF)}.
+\newblock RFC 5869, May 2010.
+
+\bibitem{rfc5116}
+David McGrew.
+\newblock {An Interface and Algorithms for Authenticated Encryption}.
+\newblock RFC 5116, January 2008.
+
+\bibitem{stack-IoT}
+M.~R. {Palattella}, N.~{Accettura}, X.~{Vilajosana}, T.~{Watteyne}, L.~A.
+  {Grieco}, G.~{Boggia}, and M.~{Dohler}.
+\newblock Standardized protocol stack for the internet of (important) things.
+\newblock {\em IEEE Communications Surveys Tutorials}, 15(3):1389--1406, Third
+  2013.
+
+\bibitem{ietf-6tisch-dtsecurity-zerotouch-join-04}
+Michael Richardson.
+\newblock {6tisch Zero-Touch Secure Join protocol}.
+\newblock Internet-Draft draft-ietf-6tisch-dtsecurity-zerotouch-join-04,
+  Internet Engineering Task Force, July 2019.
+\newblock Work in Progress.
+
+\bibitem{6top-perf}
+F.~{Righetti}, C.~{Vallati}, G.~{Anastasi}, and S.~{Das}.
+\newblock Performance evaluation the 6top protocol and analysis of its
+  interplay with routing.
+\newblock In {\em 2017 IEEE International Conference on Smart Computing
+  (SMARTCOMP)}, pages 1--6, May 2017.
+
+\bibitem{rfc8152}
+Jim Schaad.
+\newblock {CBOR Object Signing and Encryption (COSE)}.
+\newblock RFC 8152, July 2017.
+
+\bibitem{app-sec-openWSN}
+Savio Sciancalepore, Giuseppe Piro, Gennaro Boggia, and Luigi Grieco.
+\newblock Application of ieee 802.15.4 security procedures in openwsn protocol
+  stack.
+\newblock {\em IEEE Standards Education e-Magazine}, 4, 12 2014.
+
+\bibitem{link-layer-sec-impact}
+Savio Sciancalepore, Mališa Vučinić, Giuseppe Piro, Gennaro Boggia, and
+  Thomas Watteyne.
+\newblock Link-layer security in tsch networks: Effect on slot duration.
+\newblock {\em Transactions on Emerging Telecommunications Technologies}, 07
+  2016.
+
+\bibitem{rfc8613}
+Göran Selander, John Mattsson, Francesca Palombini, and Ludwig Seitz.
+\newblock {Object Security for Constrained RESTful Environments (OSCORE)}.
+\newblock RFC 8613, July 2019.
+
+\bibitem{rfc7252}
+Zach Shelby, Klaus Hartke, and Carsten Bormann.
+\newblock {The Constrained Application Protocol (CoAP)}.
+\newblock RFC 7252, June 2014.
+
+\bibitem{multipath}
+Manoj Stanley, Yi~Huang, Tian~Hong Loh, Qian Xu, Hanyang Wang, and Hai Zhou.
+\newblock A high gain steerable millimeter-wave antenna array for 5g smartphone
+  applications.
+\newblock 03 2017.
+
+\bibitem{ietf-6tisch-architecture-28}
+Pascal Thubert.
+\newblock {An Architecture for IPv6 over the TSCH mode of IEEE 802.15.4}.
+\newblock Internet-Draft draft-ietf-6tisch-architecture-28, Internet
+  Engineering Task Force, October 2019.
+\newblock Work in Progress.
+
+\bibitem{rfc8138}
+Pascal Thubert, Carsten Bormann, Laurent Toutain, and Robert Cragie.
+\newblock {IPv6 over Low-Power Wireless Personal Area Network (6LoWPAN) Routing
+  Header}.
+\newblock RFC 8138, April 2017.
+
+\bibitem{rfc8505}
+Pascal Thubert, Erik Nordmark, Samita Chakrabarti, and Charles~E. Perkins.
+\newblock {Registration Extensions for IPv6 over Low-Power Wireless Personal
+  Area Network (6LoWPAN) Neighbor Discovery}.
+\newblock RFC 8505, November 2018.
+
+\bibitem{ietf-6lo-backbone-router-13}
+Pascal Thubert, Charles~E. Perkins, and Eric Levy-Abegnoli.
+\newblock {IPv6 Backbone Router}.
+\newblock Internet-Draft draft-ietf-6lo-backbone-router-13, Internet
+  Engineering Task Force, September 2019.
+\newblock Work in Progress.
+
+\bibitem{tiloca-6tisch-robust-scheduling-02}
+Marco Tiloca, Simon Duquennoy, and Gianluca Dini.
+\newblock {Robust Scheduling against Selective Jamming in 6TiSCH Networks}.
+\newblock Internet-Draft draft-tiloca-6tisch-robust-scheduling-02, Internet
+  Engineering Task Force, June 2019.
+\newblock Work in Progress.
+
+\bibitem{join-TSCH-RPL}
+Jose Vera-Pérez, David Todolí-Ferrandis, Salvador Santonja-Climent, Javier
+  Silvestre-Blanes, and Víctor Sempere-Payá.
+\newblock A joining procedure and synchronization for tsch-rpl wireless sensor
+  networks.
+\newblock {\em Sensors}, 18:3556, 10 2018.
+
+\bibitem{6TiSCH-industrial-perf}
+X.~{Vilajosana}, T.~{Watteyne}, M.~{Vučinić}, T.~{Chang}, and K.~S.~J.
+  {Pister}.
+\newblock 6tisch: Industrial performance for ipv6 internet-of-things networks.
+\newblock {\em Proceedings of the IEEE}, 107(6):1153--1165, June 2019.
+
+\bibitem{rfc8180}
+Xavier Vilajosana, Kris Pister, and Thomas Watteyne.
+\newblock {Minimal IPv6 over the TSCH Mode of IEEE 802.15.4e (6TiSCH)
+  Configuration}.
+\newblock RFC 8180, May 2017.
+
+\bibitem{SODA}
+M.~{Vucinic}, M.~{Pejanovic-Djurisic}, and T.~{Watteyne}.
+\newblock Soda: 6tisch open data action.
+\newblock In {\em 2018 IEEE Workshop on Benchmarking Cyber-Physical Networks
+  and Systems (CPSBench)}, pages 42--46, April 2018.
+
+\bibitem{ietf-6tisch-minimal-security-15}
+Mališa Vučinić, Jonathan Simon, Kris Pister, and Michael Richardson.
+\newblock {Constrained Join Protocol (CoJP) for 6TiSCH}.
+\newblock Internet-Draft draft-ietf-6tisch-minimal-security-15, Internet
+  Engineering Task Force, December 2019.
+\newblock Work in Progress.
+
+\bibitem{broadcast-strategies}
+Mališa Vučinić, Thomas Watteyne, and Xavier Vilajosana.
+\newblock Broadcasting strategies in 6tisch networks.
+\newblock {\em Wiley Internet Technology Letters}, 1, 12 2017.
+
+\bibitem{rfc8480}
+Qin Wang, Xavier Vilajosana, and Thomas Watteyne.
+\newblock {6TiSCH Operation Sublayer (6top) Protocol (6P)}.
+\newblock RFC 8480, November 2018.
+
+\bibitem{rfc7554}
+Thomas Watteyne, Maria~Rita Palattella, and Luigi~Alfredo Grieco.
+\newblock {Using IEEE 802.15.4e Time-Slotted Channel Hopping (TSCH) in the
+  Internet of Things (IoT): Problem Statement}.
+\newblock RFC 7554, May 2015.
+
+\bibitem{openWSN}
+Thomas Watteyne, Xavier Vilajosana, Branko Kerkez, Fabien Chraim, Kevin Weekly,
+  Qin Wang, Steven Glaser, and Kristofer Pister.
+\newblock Openwsn: A standards-based low-power wireless development
+  environment.
+\newblock {\em Wiley Transactions on Emerging Telecommunications Technologies},
+  23:480–493, 08 2012.
+
+\bibitem{vulns-time-synchro-TSCH}
+Yang Wei, Yadong Wan, Jie He, and Yuanlong Cao.
+\newblock Security vulnerabilities and countermeasures for time synchronization
+  in tsch networks.
+\newblock {\em Wireless Communications and Mobile Computing}, 2018:1--14, 12
+  2018.
+
+\bibitem{wiki:6LoWPAN}
+Wikipédia.
+\newblock 6lowpan --- wikipédia{,} l'encyclopédie libre, 2020.
+\newblock Dernière lecture le 21/01/2020.
+
+\bibitem{R-TSCH}
+D.~{Zorbas}, P.~{Kotzanikolaou}, and C.~{Douligeris}.
+\newblock R-tsch: Proactive jamming attack protection for ieee 802.15.4-tsch
+  networks.
+\newblock In {\em 2018 IEEE Symposium on Computers and Communications (ISCC)},
+  pages 00766--00771, June 2018.
+
+\end{thebibliography}
