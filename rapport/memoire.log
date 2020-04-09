@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.3.30)  8 APR 2020 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.3.30)  9 APR 2020 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1059,7 +1059,7 @@ Package pdftex.def Info: figures/Joining_phase_network.png  used on input line
 1211.
 (pdftex.def)             Requested size: 352.8888pt x 280.26741pt.
 [45 <./figures/Joining_phase_network.png>] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1268--1269
+Underfull \hbox (badness 10000) in paragraph at lines 1269--1270
 
  []
 
@@ -1068,85 +1068,132 @@ Underfull \hbox (badness 10000) in paragraph at lines 1268--1269
 File: figures/joining_phase_simplified.png Graphic file (type png)
 <use figures/joining_phase_simplified.png>
 Package pdftex.def Info: figures/joining_phase_simplified.png  used on input li
-ne 1292.
+ne 1293.
 (pdftex.def)             Requested size: 483.41216pt x 417.18683pt.
  [48 <./figures/Joining_phase_simplified.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1305--1306
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1310
+Underfull \hbox (badness 10000) in paragraph at lines 1332--1333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1312
+Underfull \hbox (badness 10000) in paragraph at lines 1334--1335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1313--1314
+Underfull \hbox (badness 10000) in paragraph at lines 1336--1337
 
  []
 
-<figures/Join_Request.png, id=912, 577.07594pt x 199.4652pt>
+[49]
+<figures/Join_Request.png, id=923, 542.38635pt x 199.4652pt>
 File: figures/Join_Request.png Graphic file (type png)
 <use figures/Join_Request.png>
-Package pdftex.def Info: figures/Join_Request.png  used on input line 1320.
-(pdftex.def)             Requested size: 483.41216pt x 167.09308pt.
-[49 <./figures/Join_Request.png>]
-<figures/joining_phase.png, id=923, 555.0336pt x 772.20496pt>
+Package pdftex.def Info: figures/Join_Request.png  used on input line 1345.
+(pdftex.def)             Requested size: 483.41216pt x 177.77911pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1353--1354
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1356
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1357--1358
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1360
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1366--1367
+
+ []
+
+[50 <./figures/Join_Request.png>]
+<figures/Join_Response.png, id=934, 518.8986pt x 199.4652pt>
+File: figures/Join_Response.png Graphic file (type png)
+<use figures/Join_Response.png>
+Package pdftex.def Info: figures/Join_Response.png  used on input line 1374.
+(pdftex.def)             Requested size: 483.41216pt x 185.82942pt.
+ [51 <./figures/Join_Response.png>]
+<figures/joining_phase.png, id=940, 555.0336pt x 772.20496pt>
 File: figures/joining_phase.png Graphic file (type png)
 <use figures/joining_phase.png>
-Package pdftex.def Info: figures/joining_phase.png  used on input line 1329.
+Package pdftex.def Info: figures/joining_phase.png  used on input line 1386.
 (pdftex.def)             Requested size: 483.41216pt x 672.5552pt.
 
 
-LaTeX Warning: Float too large for page by 39.54031pt on input line 1332.
+LaTeX Warning: Float too large for page by 39.54031pt on input line 1389.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50] [51 <./figures/joining_phase.png>]
+[52] [53 <./figures/joining_phase.png>]
 Chapitre 4.
-[52
+[54
 
 ]
 Chapitre 5.
-[53
+[55
 
 ]
 Chapitre 6.
-[54
+[56
 
-] (./memoire.bbl [55] [56
+] (./memoire.bbl [57] [58
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1372.
- [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1372.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1429.
+ [59]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1429.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1372.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1429.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1429.
 
 Package rerunfilecheck Info: File `memoire.out' has not changed.
 (rerunfilecheck)             Checksum: 50731D643FCE6C7DC2E7E21F20CA4D18;2573.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1372.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1429.
  ) 
 Here is how much of TeX's memory you used:
- 10584 strings out of 482868
- 162336 string characters out of 5958262
- 454841 words of memory out of 5000000
- 25425 multiletter control sequences out of 15000+600000
+ 10598 strings out of 482868
+ 162624 string characters out of 5958262
+ 455050 words of memory out of 5000000
+ 25435 multiletter control sequences out of 15000+600000
  542646 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 50i,11n,48p,1651b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,11n,48p,1638b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.wiki\\penalty\040\\@M\040\040:6LoWPAN} has b
 een referenced but does not exist, replaced by a fixed one
 
@@ -1175,10 +1222,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on memoire.pdf (58 pages, 3637749 bytes).
+Output written on memoire.pdf (60 pages, 3760273 bytes).
 PDF statistics:
- 1086 PDF objects out of 1200 (max. 8388607)
- 909 compressed objects within 10 object streams
- 256 named destinations out of 1000 (max. 500000)
- 411 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1105 PDF objects out of 1200 (max. 8388607)
+ 924 compressed objects within 10 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 416 words of extra memory for PDF output out of 10000 (max. 10000000)
 

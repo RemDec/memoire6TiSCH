@@ -152,17 +152,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="370.81553"
-     inkscape:cy="551.66542"
+     inkscape:zoom="1.979899"
+     inkscape:cx="392.33958"
+     inkscape:cy="517.91527"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-global="false"
      inkscape:window-width="1916"
-     inkscape:window-height="1014"
-     inkscape:window-x="0"
-     inkscape:window-y="45"
+     inkscape:window-height="1041"
+     inkscape:window-x="1920"
+     inkscape:window-y="18"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
@@ -172,7 +172,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -180,20 +180,23 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       inkscape:connector-curvature="0"
-       id="path15425"
-       d="m 104.88839,166.56063 9.26042,9.6384 64.63393,5.66964 10.39434,3.59077 0.18899,-35.15178 h -84.28869 z"
-       style="fill:#b2d1bc;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       style="fill:#b2d1bc;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 104.88839,134.28125 9.26042,-9.6384 64.63393,-5.66964 10.39434,-3.59077 0.18899,35.15178 h -84.28869 z"
-       id="path15423"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
+    <g
+       id="g2439">
+      <path
+         inkscape:export-ydpi="200"
+         inkscape:export-xdpi="200"
+         style="fill:#b2d1bc;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 104.88839,166.56063 9.26042,9.6384 64.63393,5.66964 10.39434,3.59077 0.18899,-35.15178 h -84.28869 z"
+         id="path15425"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="200"
+         inkscape:export-xdpi="200"
+         inkscape:connector-curvature="0"
+         id="path15423"
+         d="m 104.88839,134.28125 9.26042,-9.6384 64.63393,-5.66964 10.39434,-3.59077 0.18899,35.15178 h -84.28869 z"
+         style="fill:#b2d1bc;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
     <path
        style="fill:none;stroke:#00ecec;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
        d="m 120.13765,150.6753 h 72.69731"
@@ -276,7 +279,7 @@
                style="font-size:2.46944427px;stroke-width:0.26458332"
                id="flowPara9240">DST  @ L2 : short address JP</flowPara><flowPara
                style="font-size:2.46944427px;stroke-width:0.26458332"
-               id="flowPara13052">         @IPv6 : Link Layer address JP</flowPara></flowRoot>        </g>
+               id="flowPara13052">         @IPv6 : addresse Link-Local JP</flowPara></flowRoot>        </g>
         <g
            inkscape:label="SEC"
            id="g9256">
@@ -359,9 +362,13 @@
    style="fill:#17731e;fill-opacity:1"
    id="flowSpan14088">Payload original</flowSpan> : array CBOR Join_Request</flowPara><flowPara
                style="font-size:8px"
-               id="flowPara9414">    = {?role, ?<flowSpan
+               id="flowPara9414">    = <flowSpan
+   style="fill:#17731e;fill-opacity:1"
+   id="flowSpan4150">{</flowSpan>?role, ?<flowSpan
    style="font-style:italic"
-   id="flowSpan12082">netwID</flowSpan>}</flowPara></flowRoot>        </g>
+   id="flowSpan12082">netwID</flowSpan><flowSpan
+   style="fill:#17731e;fill-opacity:1"
+   id="flowSpan4152">}</flowSpan></flowPara></flowRoot>        </g>
         <g
            id="g1396"
            transform="translate(20.350544,35.264534)">
@@ -558,9 +565,13 @@
    id="flowSpan14162"
    style="fill:#17731e;fill-opacity:1">Payload original</flowSpan> : array CBOR Join_Request</flowPara><flowPara
                id="flowPara14168"
-               style="font-size:8px">    = {?role, ?<flowSpan
+               style="font-size:8px">    = <flowSpan
+   style="fill:#17731e;fill-opacity:1"
+   id="flowSpan4154">{</flowSpan>?role, ?<flowSpan
    id="flowSpan14166"
-   style="font-style:italic">netwID</flowSpan>}</flowPara></flowRoot>        </g>
+   style="font-style:italic">netwID</flowSpan><flowSpan
+   style="fill:#17731e;fill-opacity:1"
+   id="flowSpan4156">}</flowSpan></flowPara></flowRoot>        </g>
         <g
            transform="translate(23.351954,37.776734)"
            id="g14184">
@@ -662,18 +673,20 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot15465"
-       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,-94.720841,13.229171)"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1;font-family:sans-serif;letter-spacing:1.05999994px;word-spacing:0px;writing-mode:tb-rl;text-orientation:upright;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-100.01251,1.0583351)"
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200"><flowRegion
-         id="flowRegion15461"><rect
+         id="flowRegion15461"
+         style="letter-spacing:1.05999994px;writing-mode:tb-rl;text-orientation:upright"><rect
            id="rect15459"
-           width="129.29953"
-           height="24.748737"
+           width="115.66247"
+           height="108.59142"
            x="340.42142"
-           y="509.35709" /></flowRegion><flowPara
+           y="509.35709"
+           style="letter-spacing:1.05999994px;writing-mode:tb-rl;text-orientation:upright" /></flowRegion><flowPara
          id="flowPara15463"
-         style="font-weight:bold;font-size:14.66666698px;text-align:center;text-anchor:middle">pledge</flowPara></flowRoot>    <flowRoot
+         style="font-weight:bold;font-size:14.66666698px;text-align:center;letter-spacing:1.05999994px;writing-mode:tb-rl;text-orientation:upright;text-anchor:middle">pledge</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.26458333,0,0,0.26458333,94.720836,13.758338)"
        style="font-style:normal;font-weight:normal;font-size:12px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot15473"

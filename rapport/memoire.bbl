@@ -32,6 +32,14 @@ Dionysios Efstathiou, Stelios Ioannou, Sotiris Nikoletseas, and Dimitra
   sensor network.
 \newblock pages 203--206, 10 2011.
 
+\bibitem{ietf-core-stateless-05}
+Klaus Hartke.
+\newblock {Extended Tokens and Stateless Clients in the Constrained Application
+  Protocol (CoAP)}.
+\newblock Internet-Draft draft-ietf-core-stateless-05, Internet Engineering
+  Task Force, March 2020.
+\newblock Work in Progress.
+
 \bibitem{IEEE802.15.4}
 IEEE.
 \newblock Ieee standard for low-rate wireless networks.

@@ -44,12 +44,12 @@
 \contentsline {subsubsection}{Hypothèses faites par CoJP (paramètres pré-établis)}{46}{section*.47}%
 \contentsline {subsubsection}{Composants du protocole CoJP et leur sécurisation}{47}{section*.48}%
 \contentsline {subsubsection}{Join Exchange CoJP et Join Proxy}{49}{section*.50}%
-\contentsline {section}{\numberline {3.2}Analyse du déroulement de la phase de join}{50}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Procédure dans sa globalité}{50}{subsection.3.2.1}%
-\contentsline {subsubsection}{Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{50}{section*.53}%
-\contentsline {subsubsection}{Étape d'intégration au réseau (échanges CoJP) et opérabilité RPL}{50}{section*.54}%
-\contentsline {subsection}{\numberline {3.2.2}La sécurité du join en détails}{50}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{50}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{52}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{53}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Simulations et résultats}{54}{chapter.6}%
+\contentsline {section}{\numberline {3.2}Analyse du déroulement de la phase de join}{52}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Procédure dans sa globalité}{52}{subsection.3.2.1}%
+\contentsline {subsubsection}{Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{52}{section*.54}%
+\contentsline {subsubsection}{Étape d'intégration au réseau (échanges CoJP) et opérabilité RPL}{52}{section*.55}%
+\contentsline {subsection}{\numberline {3.2.2}La sécurité du join en détails}{52}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{52}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{54}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{55}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Simulations et résultats}{56}{chapter.6}%

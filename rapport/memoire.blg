@@ -9,45 +9,45 @@ Repeated entry---line 476 of file biblio.bib
 I'm skipping whatever remains of this entry
 Warning--empty booktitle in telosb
 Warning--empty booktitle in multipath
-You've used 35 entries,
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            698 strings with 10344 characters,
-and the built_in function-call counts, 11761 in all, are:
-= -- 1081
-> -- 723
-< -- 12
-+ -- 287
-- -- 250
-* -- 832
-:= -- 2005
-add.period$ -- 111
-call.type$ -- 35
-change.case$ -- 230
+            702 strings with 10492 characters,
+and the built_in function-call counts, 11974 in all, are:
+= -- 1104
+> -- 730
+< -- 13
++ -- 290
+- -- 252
+* -- 843
+:= -- 2047
+add.period$ -- 115
+call.type$ -- 36
+change.case$ -- 234
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 378
-empty$ -- 836
-format.name$ -- 250
-if$ -- 2430
+cite$ -- 38
+duplicate$ -- 387
+empty$ -- 851
+format.name$ -- 252
+if$ -- 2472
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 36
 missing$ -- 15
-newline$ -- 184
-num.names$ -- 70
-pop$ -- 282
+newline$ -- 190
+num.names$ -- 72
+pop$ -- 284
 preamble$ -- 1
-purify$ -- 195
+purify$ -- 198
 quote$ -- 0
-skip$ -- 304
+skip$ -- 309
 stack$ -- 0
-substring$ -- 432
-swap$ -- 87
-text.length$ -- 12
+substring$ -- 437
+swap$ -- 88
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 140
+type$ -- 144
 warning$ -- 2
-while$ -- 87
-width$ -- 37
-write$ -- 381
+while$ -- 89
+width$ -- 38
+write$ -- 394
 (There was 1 error message)
