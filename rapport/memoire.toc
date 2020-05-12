@@ -9,30 +9,30 @@
 \contentsline {subsection}{\numberline {2.2.1}La pile dans son ensemble}{17}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Couche physique - IEEE802.15.4 PHY}{18}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Couche lien - IEEE802.15.4e en mode TSCH}{19}{subsection.2.2.3}%
-\contentsline {subsubsection}{Structure de PAN et addressage}{19}{section*.11}%
-\contentsline {subsubsection}{IEs et \textit {Enhanced Beacons}}{20}{section*.13}%
-\contentsline {subsubsection}{Types de transmissions et retransmissions}{20}{section*.14}%
-\contentsline {subsubsection}{Organisation d'une transmission dans un timeslot}{21}{section*.16}%
-\contentsline {subsubsection}{Services de sécurité}{23}{section*.18}%
-\contentsline {subsubsection}{Structure de slotframe}{24}{section*.21}%
-\contentsline {subsubsection}{Table des voisins}{24}{section*.22}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Structure de PAN et addressage}{19}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}IEs et \textit {Enhanced Beacons}}{20}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Types de transmissions et retransmissions}{20}{subsubsection.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.4}Organisation d'une transmission dans un timeslot}{21}{subsubsection.2.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.2.3.5}Services de sécurité}{23}{subsubsection.2.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.2.3.6}Structure de slotframe}{24}{subsubsection.2.2.3.6}%
+\contentsline {subsubsection}{\numberline {2.2.3.7}Table des voisins}{24}{subsubsection.2.2.3.7}%
 \contentsline {subsection}{\numberline {2.2.4}Couche d'abstraction de lien - 6top}{25}{subsection.2.2.4}%
-\contentsline {subsubsection}{Composants de la couche 6top}{25}{section*.23}%
-\contentsline {subsubsection}{Le protocole 6P et les scheduling functions}{26}{section*.24}%
+\contentsline {subsubsection}{\numberline {2.2.4.1}Composants de la couche 6top}{25}{subsubsection.2.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.2.4.2}Le protocole 6P et les scheduling functions}{26}{subsubsection.2.2.4.2}%
 \contentsline {subsection}{\numberline {2.2.5}Couche d'adaptation à IPv6 - 6LoWPAN}{27}{subsection.2.2.5}%
-\contentsline {subsubsection}{Mesh Addressing Header : forwarding}{27}{section*.26}%
-\contentsline {subsubsection}{Dispatch header : compression d'headers}{27}{section*.27}%
-\contentsline {subsubsection}{Fragmentation header : fragmentation}{28}{section*.28}%
-\contentsline {subsubsection}{L'auto-configuration des interfaces en IPv6}{28}{section*.29}%
+\contentsline {subsubsection}{\numberline {2.2.5.1}Mesh Addressing Header : forwarding}{27}{subsubsection.2.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.2.5.2}Dispatch header : compression d'headers}{27}{subsubsection.2.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.2.5.3}Fragmentation header : fragmentation}{28}{subsubsection.2.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.2.5.4}L'auto-configuration des interfaces en IPv6}{28}{subsubsection.2.2.5.4}%
 \contentsline {subsection}{\numberline {2.2.6}Couche réseau et routage - RPL}{29}{subsection.2.2.6}%
 \contentsline {subsection}{\numberline {2.2.7}Couches transport et application - CoAP sur UDP}{31}{subsection.2.2.7}%
-\contentsline {subsubsection}{Transport par UDP}{31}{section*.32}%
-\contentsline {subsubsection}{CoAP}{31}{section*.33}%
-\contentsline {subsubsection}{CoJP et OSCORE}{34}{section*.35}%
+\contentsline {subsubsection}{\numberline {2.2.7.1}Transport par UDP}{31}{subsubsection.2.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.2.7.2}CoAP}{31}{subsubsection.2.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.2.7.3}CoJP et OSCORE}{34}{subsubsection.2.2.7.3}%
 \contentsline {section}{\numberline {2.3}Principes inhérents au déploiement de la pile}{35}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Synchronisation temporelle}{35}{subsection.2.3.1}%
-\contentsline {subsubsection}{Resynchronisation entre nœuds voisins}{35}{section*.37}%
-\contentsline {subsubsection}{Synchronisation globale du réseau}{36}{section*.38}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Resynchronisation entre nœuds voisins}{35}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}Synchronisation globale du réseau}{36}{subsubsection.2.3.1.2}%
 \contentsline {subsection}{\numberline {2.3.2}Formation du réseau}{37}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Ordonnancement des transmissions - \textit {minimal scheduling}}{38}{subsection.2.3.3}%
 \contentsline {chapter}{\numberline {3}Analyse détaillée de la sécurité pour la phase de join}{39}{chapter.3}%
@@ -40,16 +40,18 @@
 \contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{40}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}OSCORE}{40}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}CoJP}{45}{subsection.3.1.3}%
-\contentsline {subsubsection}{Problématiques liées à la joining phase}{46}{section*.46}%
-\contentsline {subsubsection}{Hypothèses faites par CoJP (paramètres pré-établis)}{46}{section*.47}%
-\contentsline {subsubsection}{Composants du protocole CoJP et leur sécurisation}{47}{section*.48}%
-\contentsline {subsubsection}{Join Exchange CoJP et Join Proxy}{49}{section*.50}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Problématiques liées à la joining phase}{46}{subsubsection.3.1.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}Hypothèses faites par CoJP (paramètres pré-établis)}{46}{subsubsection.3.1.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3.3}Composants du protocole CoJP et leur sécurisation}{47}{subsubsection.3.1.3.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.4}Join Exchange CoJP et Join Proxy}{49}{subsubsection.3.1.3.4}%
 \contentsline {section}{\numberline {3.2}Analyse du déroulement de la phase de join}{52}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Procédure dans sa globalité}{52}{subsection.3.2.1}%
-\contentsline {subsubsection}{Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{52}{section*.54}%
-\contentsline {subsubsection}{Étape d'intégration au réseau (échanges CoJP) et opérabilité RPL}{52}{section*.55}%
-\contentsline {subsection}{\numberline {3.2.2}La sécurité du join en détails}{52}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{52}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{54}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{55}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Simulations et résultats}{56}{chapter.6}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{52}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Étape d'intégration au réseau (échange CoJP) et opérabilité RPL}{54}{subsubsection.3.2.1.2}%
+\contentsline {subsection}{\numberline {3.2.2}La sécurité du join en détails}{55}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Au niveau réseau/lien}{55}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Au niveau applicatif}{55}{subsubsection.3.2.2.2}%
+\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{56}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{57}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{58}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Simulations et résultats}{59}{chapter.6}%

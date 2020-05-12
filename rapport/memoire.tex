@@ -27,6 +27,8 @@
 \newcommand{\todoIL}[1]{{\color{red}[todo: #1]}}
 \newcommand{\wordlink}[2]{\hyperref[#2]{#1~\ref{#2}}}
 
+\setcounter{secnumdepth}{3}
+
 %-- Logos PDG --
 \pretitle{
 \begin{center}
@@ -1066,9 +1068,9 @@ Un réseau 6TiSCH se forme progressivement à partir du 6LBR auquel les nœuds r
 
 \vspace{0.4cm}
 
-\par Le draft MSF \cite{ietf-6tisch-msf-10} définit encore d'autre mécanismes, tels que le maintient intelligent d'un \textit{cell pool} dans lequel piocher les cells à ajouter et la gestion du timeout et des erreurs 6P. 
+\par Le draft MSF \cite{ietf-6tisch-msf-10} définit encore d'autres mécanismes, tels que le maintient intelligent d'un \textit{cell pool} dans lequel piocher les cells à ajouter ainsi que la gestion du timeout et des erreurs 6P.\\
 
-\todo{Autres SFs littérature}
+Il existe d'autres SFs proposées, assurant des propriétés et garanties différentes en fonction des besoins intrinsèques au déploiement. On peut notamment citer le draft de la SF0 \cite{ietf-6tisch-6top-sf0-05}, LLSF pour \textit{Low Latency SF} \cite{LLSF} qui améliore SF0 en agençant les timeslots en \textit{daisy chain} et ReSF pour \textit{Recurrent Low-Latency SF} \cite{ReSF} qui utilise un modèle pour optimiser le scheduling en présence de trafic récurrent.
 
 	
 \chapter{Analyse détaillée de la sécurité pour la phase de join}
@@ -1196,12 +1198,12 @@ La \wordlink{Figure}{fig:OSCORE_exchange} résume un échange Request/Response p
 
 Le protocole qui encadre la phase de join 6TiSCH est intégralement décrit par le WG 6TiSCH dans la spécification ``\texttt{Minimal Security Framework for 6TiSCH}" \cite{ietf-6tisch-minimal-security-15} qui est toujours en phase de draft. Il s'agit de CoJP (\textit{Constrained Join Protocol}) qui, comme introduit dans la \wordlink{Section}{intro_CoJP}, se repose sur CoAP, OSCORE et CBOR pour les échanges d'informations relatives au processus de join. Afin de répondre à des questions de mise en pratique des standards 6TiSCH et particulièrement de la phase de join et de sa configuration, le standard ``\texttt{Minimal IPv6 over the TSCH Mode of IEEE802.15.4e (6TiSCH) Configuration}" \cite{rfc8180} est utilisé. Dans le reste de ce chapitre, les éléments de ce standard sont considérés et employés de façon transparente quand la spécification \cite{ietf-6tisch-minimal-security-15} ne les précise pas directement, celle-ci faisant certaines abstractions vis-à-vis de la mise en pratique.\\
 
-La phase de join permet le join sécurisé d'un nouveau nœud à un réseau 6TiSCH déjà établi. Le terme de ``join sécurisé" réfère à un accès authentifié au réseau, un respect des autorisations qui s'y appliquent et la distribution des paramètres nécessaires au nœud pour intégrer le réseau (clés, identifiants, etc.). La spécification \cite{ietf-6tisch-minimal-security-15} ne gère pas les mécanismes d'autorisation, mais bien les deux autres. Dans le cadre de la joining phase, les acteurs sont les suivants (illustrés dans la \wordlink{Figure}{fig:joining_phase_network}) :
+La phase de join permet le join sécurisé d'un nouveau nœud à un réseau 6TiSCH déjà établi. Le terme de ``join sécurisé" réfère à un accès authentifié au réseau et la distribution des paramètres de configuration nécessaires au nœud pour intégrer le réseau (clés, identifiants, etc.). Dans le cadre de la joining phase, les acteurs sont les suivants (illustrés dans la \wordlink{Figure}{fig:joining_phase_network}) :
 \vspace{0.1cm}
 \begin{itemize}[label=$\bullet$]
-\item le \textit{\textbf{pledge}} : un nœud 802.15.4 qui souhaite rejoindre le réseau 6TiSCH.
-\item le \textbf{JRC} (\textit{Join Registrar/Coordinator}) : une entité centrale qui a autorité sur le réseau 6TiSCH, mais pouvant être situé à son extérieur dans un backbone.
-\item le \textbf{JP} (\textit{Join Proxy}) : le pledge n'ayant pas un accès direct au JRC, il a besoin d'un nœud intermédiaire déjà membre du réseau pour forward ses messages vers ce dernier. Un join proxy effectue se travail, agissant comme un proxy au niveau applicatif (CoAP). 
+\item le \textit{\textbf{pledge}} : un nœud 802.15.4 qui souhaite rejoindre le réseau 6TiSCH, dont l'EUI-64 est désigné ici par \textit{pledgeID}
+\item le \textbf{JRC} (\textit{Join Registrar/Coordinator}) : une entité centrale qui a autorité sur le réseau 6TiSCH, mais pouvant être située à son extérieur dans un backbone.
+\item le \textbf{JP} (\textit{Join Proxy}) : le pledge n'ayant pas un accès direct au JRC, il a besoin d'un nœud intermédiaire déjà membre du réseau pour acheminer ses messages vers ce dernier. Un join proxy effectue se travail, agissant comme un proxy au niveau applicatif (CoAP). 
 \item le \textit{\textbf{joined node}} : terme désignant un pledge qui vient de finaliser avec succès son join sécurisé.
 \item le \textbf{6LBR} (\textit{6LoWPAN Border Router}) : nœud faisant la jonction entre le réseau WSN 6TiSCH et le backbone (illustré dans la \wordlink{Section}{archWSN}), supposé comme étant la racine de l'arborescence RPL 
 \end{itemize}
@@ -1221,7 +1223,7 @@ La phase de join permet le join sécurisé d'un nouveau nœud à un réseau 6TiS
 La joining phase est critique dans la création et le maintient de la stabilité d'un réseau 6TiSCH. À noter que ce réseau reste un réseau 802.15.4 et est donc vu au niveau lien comme une structure PAN. La joining phase encadre notamment les \textbf{problématiques} suivantes :
 \vspace{0.2cm}
 \begin{enumerate}
-\item Un pledge n'a aucune connaissance du réseau, si ce n'est certains paramètres pré-établis décrits plus loin. Il doit obtenir des éléments essentiels tels que les clés courantes utilisées pour protéger le trafic au niveau lien, un identifiant dans le réseau (sous-entendu une short address), l'adresse IPv6 du JRC et un parent RPL.
+\item Un pledge n'a aucune connaissance du réseau, si ce n'est certains paramètres pré-établis. Il doit obtenir des éléments essentiels tels que les clés courantes utilisées pour protéger le trafic au niveau lien, un identifiant dans le réseau (sous-entendu une short address), l'adresse IPv6 du JRC et un parent RPL.
 \vspace{0.2cm}
 \item Les paramètres fournis à un joined node peuvent changer au cours du temps. Par exemple, en cas de rekeying du réseau suite à une détection d'attaque. Il convient de redistribuer les nouveaux paramètres de façon consistante.
 \vspace{0.2cm}
@@ -1229,7 +1231,7 @@ La joining phase est critique dans la création et le maintient de la stabilité
 \vspace{0.2cm}
 \item Le mode TSCH implique qu'un pledge n'a à priori aucune idée de quand et sur quel canal écouter à la recherche d'EB qui lui permette d'initier le processus de join. Il s'agit donc d'un scan passif qui coûte cher au pledge énergétiquement parlant.
 \vspace{0.2cm}
-\item Les microcontrolleurs constituant les nœuds de WSNs ont un espace mémoire limité, le processus de join ne devrait pas faire intervenir de nouvelles technologies ou protocoles qui ne sont pas déjà utilisés de façon générique dans 6TiSCH.
+\item Les microcontrôleurs constituant les nœuds de WSNs ont un espace mémoire limité, le processus de join ne devrait pas faire intervenir de nouvelles technologies ou protocoles qui ne sont pas déjà utilisés de façon générique dans 6TiSCH.
 \end{enumerate}
 
 \subsubsection{Hypothèses faites par CoJP (paramètres pré-établis)}
@@ -1237,11 +1239,11 @@ La joining phase est critique dans la création et le maintient de la stabilité
 La spécification \cite{ietf-6tisch-minimal-security-15} fait l'hypothèse que certains paramètres sont pré-établis, pour le pledge et le JRC. Cela peut se faire physiquement par une interface JTAG, une console, \textit{over-the-air} dans une cage de Faraday, etc. ou en utilisant par exemple un protocole d'échange de clés. Ces \textbf{paramètres pré-établis} sont les suivants (ceux qui sont optionnels sont notés entre [..]) :
 \vspace{0.2cm}
 \begin{itemize}[label=$\bullet$]
-\item identifiant du pledge (\textit{pledgeID}) : doit être unique parmi l'ensemble des nœuds sur lequel le JRC a autorité. Typiquement mis à l'EUI-64 qui est globalement unique et attribué d'office à une interface 802.15.4 (dérivé de l'adresse MAC). Peut aussi être issu d'un autre procédé de génération.
+\item identifiant du pledge (\textit{pledgeID}) : doit être unique parmi l'ensemble des nœuds sur lequel le JRC a autorité. Typiquement mis à l'EUI-64 qui est globalement unique et attribué d'office à une interface 802.15.4 (dérivé de l'adresse MAC). Peut aussi être issu d'un autre procédé de génération qui respecte l'unicité.
 \vspace{0.2cm}
 \item une clé partagée (\textit{PSK}, \textit{Pre-Shared Key}) : une clé secrète partagée entre le pledge et le JRC, ce dernier doit de ce fait stocker quelle clé est assignée à chaque \textit{pledgeID}. Ces clés doivent être cryptographiquement fortes (minimum 128 bits, générées aléatoirement).
 \vspace{0.2cm}
-\item {[} un identifiant de réseau (\textit{netwID}) ] : identifie le réseau 6TiSCH, annoncé dans les EBs émis par les nœuds qui en font déjà partie. Typiquement le PAN ID. Un pledge auquel il n'est pas spécifié va tenter de joindre un par un tous les réseaux annoncés dans les EBs qu'il capte, ce qui est coûteux.
+\item {[} un identifiant de réseau (\textit{netwID}) ] : identifie le réseau 6TiSCH, annoncé dans les EBs émis par les nœuds qui en font déjà partie. Il s'agit typiquement du PAN ID. S'il n'est pas fourni à un pledge, celui-ci tentera de rejoindre n'importe quel réseau sans distinction.
 \vspace{0.2cm}
 \item {[} les algorithmes différant de ceux par défaut ] : si non spécifiés, la spécification \cite{ietf-6tisch-minimal-security-15} définit quel algorithme  utiliser pour quelle action par défaut (actions relatives à la sécurité).
 \vspace{0.2cm}
@@ -1253,16 +1255,16 @@ La spécification \cite{ietf-6tisch-minimal-security-15} fait l'hypothèse que c
 \subsubsection{Composants du protocole CoJP et leur sécurisation}
 \label{CoJP_components}
 
-Dans la suite de cette sous-section, les mécanismes et éléments propres au protocole CoJP sont décrits. Le déroulement de la phase de join dans sa globalité et l'utilisation de CoJP durant celle-ci sont détaillés dans la \wordlink{Section}{join_phase_analysis}. CoJP définit deux échanges de messages distincts (illustrés par la \wordlink{Figure}{fig:joining_phase_simplified}) :
+Dans cette sous-section, les mécanismes et éléments propres au protocole CoJP sont décrits. Le déroulement de la phase de join dans sa globalité et l'utilisation de CoJP durant celle-ci sont détaillés dans la \wordlink{Section}{join_phase_analysis}. CoJP définit deux échanges de messages distincts (illustrés par la \wordlink{Figure}{fig:joining_phase_simplified}) :
 \vspace{0.3cm}
 \begin{enumerate}
 \item \textit{Join Exchange} : celui inclus dans la phase de join à proprement parler. C'est dans cet échange que sont transportés 
 	\begin{enumerate}
-	\item la demande de join émise par le pledge, du pledge vers le JRC (proxied par le JP qui est le seul nœud que peut atteindre le pledge)
+	\item la demande de join émise par le pledge vers le JRC (proxied par le JP qui est le seul nœud que peut atteindre le pledge)
 	\item la réponse du JRC en fonction de la demande du pledge, du JRC vers le pledge (vers le JP en fait, qui relaie en sa qualité de proxy vers le pledge)
 	\end{enumerate}
 \vspace{0.2cm}	
-\item \textit{Parameter Update Exchange} : ne fait pas partie du join en lui-même, mais est initié par le JRC vers un joined node pour mettre à jour des paramètres qui lui avaient été transmis lors du join exchange (par exemple en cas de rekeying du réseau). Aucun proxy applicatif ne doit intervenir ici car le nœud a déjà rejoint le réseau.
+\item \textit{Parameter Update Exchange} : ne fait pas partie du join en lui-même, mais est initié par le JRC vers un joined node pour mettre à jour des paramètres qui lui avaient été transmis lors du join exchange (par exemple en cas de rekeying du réseau). Le joined node répond avec une réponse vide qui permet au JRC de s'assurer de la bonne réception de l'update. Aucun proxy applicatif ne doit intervenir ici car le nœud a déjà rejoint le réseau.
 \end{enumerate} 
 \vspace{0.3cm}
 
@@ -1282,7 +1284,7 @@ Dans ces échanges, l'information est transportée comme du payload applicatif C
 \item link-layer key set : tableau d'objets \textit{Link\_Layer\_Key} où chacun décrit une clé utilisée au niveau lien et son usage (non détaillé ici)
 \item {} [ short identifier ] : objet \textit{Short\_Identifier} qui reprend l'identifiant attribué par le JRC (unique) et le temps de validité de ce dernier
 \item {} [ JRC address ] : l'adresse IPv6 GUA du JRC, de sorte que le pledge, une fois joined node, puisse s'adresser directement à ce dernier (et servir de JP)
-\item {} [ blacklist ] : tableau de short identifiers dont le JRC ne souhaite pas l'acceptance des frames par le pledge (une fois qu'il deviendra joined node)
+\item {} [ blacklist ] : tableau de short identifiers dont le JRC ne souhaite pas l'acceptance des frames par le pledge (une fois qu'il deviendra joined node), permet par exemple d'isoler des noeuds corrompus ou non désirés
 \item {} [ join rate ] : débit maximum de trafic de join en \textit{bytes/s} que le pledge, une fois joined node et endossant le rôle de JP, peut forward vers l'intérieur du réseau
 \end{itemize}
 
@@ -1297,11 +1299,12 @@ Dans ces échanges, l'information est transportée comme du payload applicatif C
 
 \vspace{0.3cm}
 
-La sécurité du contenu des échanges CoJP (niveau applicatif donc) s'appuie intégralement sur OSCORE. C'est pourquoi CoJP fait l'hypothèse qu'une PSK est connue initialement des deux côtés de l'échange : le pledge et le JRC doivent pourvoir dériver des contextes de sécurité qui se correspondent. Les détails de quelles valeurs sont utilisées pour les différents paramètres durant la dérivation sont explicités plus loin. Le canal sécurisé établi par OSCORE permet d'assurer, par les propriétés de ce dernier, la confidentialité, l'authenticité des données et une protection contre les rejeux. Il s'agit bien d'une protection au niveau applicatif, tout en permettant le proxying par le JP détaillé dans la section suivante. Au niveau lien, le pledge n'ayant aucune connaissance des clés utilisées dans le réseau, il n'y a aucune protection appliquée pour les échanges entre le pledge et le JP. En revanche, le JP étant un joined node, il a connaissance des clés et toutes les frames échangées entre le JP et le JRC (multi-hop possible, voir \wordlink{Figure}{fig:joining_phase_network}) sont sécurisées au niveau lien avec ces clés. La \wordlink{Figure}{fig:joining_phase_simplified} illustre schématiquement les échanges CoJP et à quel niveau s'applique ces chiffrements/athentifications. À noter qu'une fois un pledge devenu joined node, les échanges qu'il peut avoir par la suite avec le JRC utiliseront toujours le même contexte de sécurité OSCORE, mais ne feront plus intervenir de JP en plus d'être intégralement protégés au niveau lien.
+La sécurité du contenu des échanges CoJP (niveau applicatif donc) s'appuie intégralement sur OSCORE. C'est pourquoi CoJP fait l'hypothèse qu'une PSK est connue initialement des deux côtés de l'échange : le pledge et le JRC doivent pouvoir dériver des contextes de sécurité qui se correspondent. Les détails de quelles valeurs sont utilisées pour les différents paramètres durant la dérivation sont explicités plus loin. Le canal sécurisé établi par OSCORE permet d'assurer, par les propriétés de ce dernier, la confidentialité, l'authenticité des données et une protection contre les rejeux. Il s'agit bien d'une protection au niveau applicatif, tout en permettant le proxying par le JP détaillé dans la section suivante. Au niveau lien, le pledge n'ayant aucune connaissance des clés utilisées dans le réseau, il n'y a aucune protection appliquée pour les échanges entre le pledge et le JP. En revanche, le JP étant un joined node, il a connaissance des clés et toutes les frames échangées entre le JP et le JRC (multi-hop possible, voir \wordlink{Figure}{fig:joining_phase_network}) sont sécurisées au niveau lien avec ces clés. La \wordlink{Figure}{fig:joining_phase_simplified} illustre schématiquement les échanges CoJP et à quel niveau s'appliquent ces chiffrements/authentifications. À noter qu'une fois un pledge devenu joined node, les échanges qu'il peut avoir par la suite avec le JRC utiliseront toujours le même contexte de sécurité OSCORE, mais ne feront plus intervenir de JP en plus d'être intégralement protégés au niveau lien.
 
 \newpage
 
 \subsubsection{Join Exchange CoJP et Join Proxy}
+\label{join_exchange_CoJP}
 
 Au moment d'initier le Join Exchange CoJP, un pledge dispose d'informations qu'il a reçues du nœud qui va servir de Join Proxy (JP). Au niveau lien (TSCH), le pledge est synchronisé temporellement et a connaissance des cells qu'il peut utiliser pour les échanges durant la joining phase (information issue de l'EB reçu). Au niveau réseau, le pledge utilise son adresse Link-Local après s'être assuré qu'elle est unique. L'obtention de ces informations est décrite dans la \wordlink{Section}{global_EB}. Il s'apprête donc à envoyer sa Join Request CoJP vers le JP.\\
 
@@ -1329,13 +1332,11 @@ Au moment d'initier le Join Exchange CoJP, un pledge dispose d'informations qu'i
 
 \minit{pledge $\rightarrow$ JP (Join Request)}
 
-La Join Request émise par le pledge contient un objet Join\_Request indiquant quel réseau il souhaite rejoindre (\textit{netwID}) et le rôle qu'il souhaite y endosser : 6LBR ou nœud régulier. Le premier cas correspond au cas spécial où le pledge veut en fait être la racine d'un nouveau réseau (et donc ne passe pas par un JP), il n'est pas traité ici. Le détail de la CoJP Request est donné par la \wordlink{Figure}{fig:join_request}. Elle est protégée par OSCORE, le pledge ayant utilisé son Sender Context pour cela, et donc la Sender Key qu'il contient. L'Option OSCORE est construite avec le champ \textit{kid} prenant la valeur du SID, donc une chaîne vide puisque c'est le pledge qui envoie. Cependant, afin que le JRC puisse récupérer le contexte associé au pledge (contenant la PSK qu'il partage avec), il a besoin de savoir de quel pledge il s'agit. C'est pourquoi le champ \textit{kid context} de l'Option OSCORE prend la valeur de l'ID Context, qui est l'identifiant du pledge. Le pledge maintient en mémoire l'association entre la valeur du token créé et le contexte de sécurité.\\
+La Join Request émise par le pledge contient un objet Join\_Request indiquant quel réseau il souhaite rejoindre (\textit{netwID}) et le rôle qu'il souhaite y endosser : 6LBR ou nœud régulier. Le cas 6LBR correspond au cas spécial où le pledge veut en fait être la racine d'un nouveau réseau (et donc ne passe pas par un JP), il n'est pas traité ici. Le détail de la Join Request est donné par la \wordlink{Figure}{fig:join_request}. Elle est protégée par OSCORE, le pledge ayant utilisé son Sender Context pour cela, et donc la Sender Key qu'il contient. L'Option OSCORE est construite avec le champ \textit{kid} prenant la valeur du SID, donc une chaîne vide puisque c'est le pledge qui envoie. Cependant, afin que le JRC puisse récupérer le contexte associé au pledge (contenant la PSK qu'il partage avec), il a besoin de savoir de quel pledge il s'agit. C'est pourquoi le champ \textit{kid context} de l'Option OSCORE prend la valeur de l'ID Context, qui est l'identifiant du pledge. Le pledge maintient en mémoire l'association entre la valeur du token créé et le contexte de sécurité.\\
 
- Le JP accepte la frame contenant la Join Request bien qu'elle ne soit pas sécurisée, en mettant un flag 802.15.4 ``\texttt{secExempt}" associé au pledge. Il a alors accès aux informations que OSCORE ne chiffre pas et va effectuer son rôle de proxy en consommant les Options qui s'y rapportent. Le proxy va opérer son rôle en mode \textit{stateless}. Un proxy stateless CoAP \cite{ietf-core-stateless-05} compresse l'information dont il a besoin pour relayer la future réponse, dans le token CoAP du message même qu'il relaie (forward vers le JRC). Effectivement, la future réponse référençant la même valeur de token, le JP pourra donc en retirer ce dont il a besoin pour forward vers le pledge : adresse IPv6 du pledge et port UDP source. Cette technique permet de sauvegarder de la mémoire (état maintenu dans les messages eux-mêmes et non par le JP) et d'éviter par ce biais des attaques de déni de service.\\
+ Le JP accepte la frame contenant la Join Request bien qu'elle ne soit pas sécurisée, en mettant un flag 802.15.4 ``\texttt{secExempt}" associé au pledge. Il a alors accès aux informations que OSCORE ne chiffre pas et va effectuer son rôle de proxy en consommant les Options qui s'y rapportent. Le proxy va opérer son rôle en mode \textit{stateless}. Un proxy stateless CoAP \cite{ietf-core-stateless-05} compresse l'information dont il a besoin pour relayer la future réponse, dans le token CoAP du message même qu'il relaie (forward vers le JRC). Effectivement, la future réponse référençant la même valeur de token, le JP pourra donc en retirer ce dont il a besoin pour acheminer vers le pledge : adresse IPv6 du pledge et port UDP source. Cette technique permet de sauvegarder de la mémoire (état maintenu dans les messages eux-mêmes et non par le JP) et d'éviter par ce biais des attaques de déni de service.\\
  
- Outre le fait d'agir comme un stateless proxy en créant un nouveau token dépendant de l'état à stocker, le JP va effectuer son rôle de proxy normal. Le pledge ayant renseigné le nom d'hôte générique pour désigner le JRC \texttt{"6tisch.arpa"}, le proxy va le résoudre en l'adresse IPv6 GUA du JRC qu'il connaît, lui. Il va également mettre le message CoAP à \textit{NON} à la place de \textit{CON}.\\
-
-À noter que du point de vue du pledge, tout l'échange CoJP est un phénomène local : il n'échange qu'avec le JP qui est son relai vers l'intérieur du réseau.
+ Outre le fait d'agir comme un stateless proxy en créant un nouveau token dépendant de l'état à stocker, le JP va effectuer son rôle de proxy normal. Le pledge ayant renseigné le nom d'hôte générique pour désigner le JRC \texttt{"6tisch.arpa"}, le proxy va le résoudre en l'adresse IPv6 GUA du JRC qu'il connaît, lui. Il va également mettre le message CoAP à \textit{NON} à la place de \textit{CON} (expliqué à la \wordlink{Section}{join_secu}).\\
 
 \newpage
 
@@ -1350,20 +1351,20 @@ La Join Request émise par le pledge contient un objet Join\_Request indiquant q
 
 \minit{JP $\rightarrow$ JRC (Join Request)}
 
-La Join Request transite dans le réseau 6TiSCH, en plusieurs sauts vraisembablement, vers le 6LBR qui lui même la relaie vers le backbone où se trouve le JRC. Il est également possible que 6LBR et JRC soient co-situés et sont en fait le même hôte. Un fois atteint le JRC, ce dernier récupère (ou vraisembablement dérive sur le moment) le contexte de sécurité associé au pledge. Celui-ci contient la PSK partagée avec le pledge, et le Recipient Context est calculé considérant le RID mis à la valeur \texttt{"JRC"}. La Recipient Key obtenue permet de déchiffrer et vérifier le payload, qui est l'objet CBOR Join\_Request.\\
+La Join Request transite dans le réseau 6TiSCH, en plusieurs sauts vraisembablement, vers le 6LBR qui lui même la relaie vers le backbone où se trouve le JRC. Il est également possible que 6LBR et JRC soient co-situés et sont en fait le même hôte. Un fois atteint le JRC, ce dernier récupère le contexte de sécurité associé au pledge. Celui-ci contient la PSK partagée avec le pledge, et le Recipient Context est calculé considérant le RID mis à la valeur prédéfinie \texttt{"JRC"}. La Recipient Key obtenue permet de déchiffrer et vérifier le payload, qui est l'objet CBOR Join\_Request.\\
 
-Le JRC traite la demande d'intégration du pledge en tenant compte de quel réseau il veut rejoindre, et de si ce dernier y est autorisé (détails propres à l'implémentation). Si c'est le cas, il va alors lui attribuer un identifiant \textit{shortID} dans ce réseau (short address 802.15.4), qu'il sait unique car il gère toutes les demandes d'intégrations pour ce réseau. Il va également inclure dans sa réponse les clés au niveau lien qui y sont d'application à ce moment là, sa propre adresse IPv6 GUA, ainsi que d'autres paramètres (voir \wordlink{Section}{CoJP_components}), le tout étant placé dans les champs adéquats de l'objet CBOR Configuration. Ce dernier sera le payload de la Join Response.\\
+Le JRC traite la demande d'intégration du pledge en tenant compte de quel réseau il veut rejoindre, et de si ce dernier y est autorisé (détails propres à au déploiement). Si c'est le cas, il va alors lui attribuer un identifiant \textit{shortID} dans ce réseau, qu'il sait unique car il gère toutes les demandes d'intégration pour ce réseau. Il va également inclure dans sa réponse les clés au niveau lien qui y sont d'application à ce moment là, sa propre adresse IPv6 GUA, ainsi que d'autres paramètres (voir \wordlink{Section}{CoJP_components}), le tout étant placé dans les champs adéquats de l'objet CBOR Configuration. Ce dernier sera le payload de la Join Response.\\
 
 \minit{JRC $\rightarrow$ JP (Join Response)}
 
 Le JRC a protégé la Join Response avec le Sender Context, obtenu du contexte de sécurité dérivé à la réception de la Join Request. Il a été calculé en considérant un SID à la valeur de l'ID du JRC (\texttt{"JRC"}) puisque c'est ce dernier qui envoie. Le paquet transite jusqu'au JP, toujours en étant protégé au niveau lien car on reste dans le réseau 6TiSCH.\\
 
-Le JP reçoit la Join Response et reconstruit l'état à partir du token CoAP qu'elle contient (voir \wordlink{Figure}{fig:join_response}). De cet état, il a les informations nécessaires pour forward le message vers le pledge.\\
+Le JP reçoit la Join Response et reconstruit l'état à partir du token CoAP qu'elle contient (voir \wordlink{Figure}{fig:join_response}). De cet état, il a les informations nécessaires pour acheminer le message vers le pledge.\\
 
 
-\minit{JRC $\rightarrow$ JP (Join Response)}
+\minit{JP $\rightarrow$ JRC (Join Response)}
 
- Au niveau applicatif, le seul changement concerne le type de message qui passe de \textit{NON} à \textit{CON}. Le JP forward la Join Response dans une frame à destination du pledge. À noter que cette frame n'est alors pas sécurisée au niveau lien. De ce fait, si OSCORE n'était pas utilisé (sans être remplacé par une sécurité niveau transport), n'importe quel nœud pourrait voir en clair quelles sont les clés du réseau communiquées par le JRC. \\
+ Au niveau applicatif, le seul changement concerne le type de message qui passe de \textit{NON} à \textit{CON}. Le JP relaie la Join Response dans une frame à destination du pledge. À noter que cette frame n'est alors pas sécurisée au niveau lien. De ce fait, si OSCORE n'était pas utilisé (sans être remplacé par une sécurité niveau transport), n'importe quel nœud pourrait voir en clair quelles sont les clés du réseau communiquées par le JRC. \\
 
 \newpage
 
@@ -1381,26 +1382,95 @@ Se basant sur la valeur du token dans le message CoAP reçu (qui doit être iden
 
 \newpage
 
-	\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{joining_phase}
-	\caption{Échanges de messages entre les différentes parties impliquées durant la phase de join d'un pledge}
-	\label{fig:joining_phase}
-	\end{figure}
-
-\newpage
-
 \section{Analyse du déroulement de la phase de join}
 \label{join_phase_analysis}
 
 \subsection{Procédure dans sa globalité}
+La phase de join comprend deux étapes distinctes. La première, l'étape de scanning/advertising, correspond à la recherche d'EB par le pledge, sa synchronisation temporelle au niveau lien (TSCH) et éventuellement un échange IPv6 Neighbor Discovery entre le pledge et le JP. La seconde est l'étape d'intégration au réseau proprement dite, où le Join Exchange CoJP est effectué. Si le pledge est accepté, il reçoit alors le matériel nécessaire au niveau lien pour intégrer le réseau 6TiSCH et y communiquer. Il devra alors lancer les procédures pour se placer dans la topologie RPL et pour obtentir une adresse globale IPv6.\\
+
+On considère ici un déploiement tel que supposé dans la spécification \cite{rfc8180} : 
+\begin{itemize}[label=$\bullet$]
+\item Deux clés son utilisées au niveau lien dans le réseau 6TiSCH : \textit{K1} est utilisée pour authentifier les EBs, \textit{K2} pour authentifier et chiffrer les frames normales et ACKs.
+\item Le minimal schedule utilisé pour les communications relatives au processus de join (dit \textit{join schedule}) est composé de la seule cell (0, 0) en mode TxRxS (accueille tout le trafic broadcast de manière générale).
+\item Pledge et JRC disposent des paramètres pré-établis relatifs à CoJP sur OSCORE (voir \wordlink{Section}{join_exchange_CoJP})
+\end{itemize}
+
 \subsubsection{Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}
 \label{global_EB}
 
-\subsubsection{Étape d'intégration au réseau (échanges CoJP) et opérabilité RPL}
+Le déroulement de cette étape décrit textuellement ci-dessous est synthétisé par la \wordlink{Figure}{fig:join_part1}.\\
+
+Le pledge, une fois prêt à entamer son intégration au réseau, va chercher à capter des EBs émis par des joined nodes des potentiellement différents réseaux 6TiSCH à portée. Il n'y a pas de technique particulière énoncée dans les standards pour encadrer la façon dont le pledge doit procéder, que ce soit sur l'écoute de canal ou le nombre d'EBs dont il pourrait attendre la réception pour comparaison avant de lancer la suite du processus. La comparaison d'EBs peut se faire sur plusieurs critères. La \wordlink{Section}{EBs} introduisait brièvement le contenu d'un EB pour TSCH, le draft \cite{ietf-6tisch-enrollment-enhanced-beacon-14} y apporte une structure supplémentaire contenant divers champs, dont certains sont utiles dans la discrimination entre EBs.\\
+
+Le processus discriminatoire peut se baser sur les critères suivants ($\triangleright$ pour ceux basés sur \cite{ietf-6tisch-enrollment-enhanced-beacon-14})  :
+\begin{itemize}[label=$\bullet$]
+\item La Join Metric (de l'IE TSCH Synchronization), valeur dans [\texttt{0x00}, \texttt{0xFF}] issue d'une normalisation du rang RPL du noeud émetteur (voir \cite{rfc8180}). Une valeur plus faible indique une proximité avec la racine de l'arborescence et donc une préférence dans le fait de servir de parent.
+\vspace{0.1cm}
+\item Le PAN ID du PAN auquel l'annonceur appartient ou l'adresse lien du noeud annonceur (source de l'EB).
+\item La force du signal avec lequel l'EB a été reçu.
+\end{itemize} 
+\begin{itemize}[label=$\triangleright$]
+\item La Proxy Priority dont une valeur moins élevée dans l'intervalle [\texttt{0x00}, \texttt{0x7e}] indique une bonne capacité à supporter du trafic non chiffré et une disponibilité des ressources (places dans la cache, etc.).
+\vspace{0.1cm}
+\item La PAN Priority dont une valeur moins élevée indique la propension à recevoir de nouveaux noeuds, comparable d'un PAN à l'autre.
+\vspace{0.1cm}
+\item Le Network ID tel que défini dans \cite{ietf-6tisch-enrollment-enhanced-beacon-14}, plutôt relatif à un ensemble de PANs qu'à un seul en particulier : valeur arbitraire qui peut être calculée comme un hash du préfixe /64 du réseau.
+\end{itemize}
+\vspace{0.4cm}
+
+Une fois un EB sélectionné, le pledge doit se synchroniser temporellement avec le noeud qui l'a émis et qui servira de JP. L'EB contient l'IE \textit{TSCH Timeslot} qui donne l'ID du template de l'organisation des transmissions dans un timeslot (voir \wordlink{Section}{templatetimeslot}) duquel peut être déduit \textit{TsTxOffset}, c'est-à-dire le temps écoulé depuis le début du timeslot à l'instant du début d'émission de la frame. Possèdant le timestamp de la réception de l'EB, le pledge est alors capable de se calquer sur les timeslots utilisés par le réseau. L'IE \textit{TSCH Synchronization} donne l'ASN, l'IE \textit{Channel Hopping }identifie la séquence des fréquences utilisées et finalement l'IE \textit{TSCH Slotframe and Link }donne l'initial schedule que le JP considère pour le trafic de join (le pledge doit donc le suivre). Cette slotframe est donc installée par le pledge qui sait désormais quand se réveiller pour communiquer.\\
+
+\newpage
+
+\vspace{0.2cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{Joining_phase_part1}
+	\caption{Réception d'EB et validation de l'adresse IPv6 du pledge}
+	\label{fig:join_part1}
+	\end{figure}
+\vspace{0.2cm}
+
+Le pledge doit connaître l'adresse Link-Local du JP que ce dernier souhaite qu'il utilise pour le reste de la joining phase. À priori elle peut être dérivée par le pledge depuis la long address indiquée comme source de l'EB, mais elle peut aussi être spécifiée dans l'EB même (champ Join Proxy Interface ID de \cite{ietf-6tisch-enrollment-enhanced-beacon-14}).\\
+
+Le pledge va former et utiliser son adresse Link-Local IPv6 pour le reste de la phase de join. Il le fait à partir de son \textit{pledgeID}, qui est vraisembablement son EUI-64 et du préfixe connu \texttt{fe80::}/64. Si c'est le cas, il peut se passer de l'échange suivant qui est le Neighbor Discovery IPv6 avec le JP, car l'EUI-64 est supposé unique. Sinon, il peut y avoir un échange de messages Neighbor Solicitation/Neighbor Advertisment afin de valider l'unicité de l'adresse Link-Local employée par le pledge pour le reste du processus de join.\\
+
+Ces échanges ne sont couverts par aucune garantie en terme de sécurité, le pledge agit comme s'il pouvait avoir confiance en l'EB reçu du Join Proxy. Cependant, il est notable que dans la \wordlink{Figure}{fig:join_part1}, les messages émis par le JP sont quand même authentifiés par la clé K1. Ce sera utile au pledge pour vérifier plus tard, une fois le keying material du réseau reçu, que l'EB sur lequel il a basé sa synchronisation était conforme (développé dans la \wordlink{Section}{join_secu}). 
+
+\newpage
+
+\subsubsection{Étape d'intégration au réseau (échange CoJP) et opérabilité RPL}
 \label{global_CoJP}
 
+L'échange CoJP peut alors être initié par le pledge, schématisé par la \wordlink{Figure}{fig:join_part2}. La dérivation des contextes de sécurité OSCORE et le contenu des messages est tel que décrit par la \wordlink{Section}{join_exchange_CoJP}. Les messages échangés entre le pledge et le JP le sont toujours en utilisant le join schedule, tandis ce que entre le JP et le JRC il s'agit de cells arbitraires qui peuvent être le résultat de négociations 6top.\\
+
+Le JP accepte les frames en provenance du pledge et ce même si elles ne sont pas sécurisées. La spécification \cite{ietf-6tisch-minimal-security-15} précise que cela peut se faire en mettant un flag \texttt{"secExempt"} associé au pledge dans les tables utilisées par 802.15.4. En revanche, elle ne précise pas comment le JP détecte que le message issu du pledge est une Join Request. Les communications entre le JP et le JRC sont protégées au niveau lien par les clés \textit{K1} et \textit{K2}. Ce sont ces clés que le JRC écrit dans l'objet \textit{link\_layer\_key\_set} de l'objet Configuration renvoyé dans la Join Response.
+
+\vspace{0.2cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{Joining_phase_part2}
+	\caption{Échange CoJP menant à l'intégration au réseau du pledge}
+	\label{fig:join_part2}
+	\end{figure}
+\vspace{0.2cm}
+
+\newpage
+
+Une fois le contenu de l'objet Configuration installé par le pledge, il est considéré comme intégré au réseau (joined node) dans le sens où il peut comprendre et vérifier les frames échangées, et en envoyer lui-même. Il peut également vérifier l'intégrité de l'EB qui lui a initialement permis de lancer le processus de join (voir \wordlink{Section}{join_secu}). Une fois effectué, le désormais joined node devrait idéalement pouvoir servir de JP s'il en a les capacités. Pour cela, il doit encore se situer dans la topologie RPL et obtenir une adresse globale IPv6 à partir du préfixe attribué au réseau. De plus, comme le joined node peut désormais envisager du trafic unicast avec d'autres noeuds du réseau, il ne devrait plus utiliser le minimal schedule (sauf pour le trafic purement broadcast) mais installer des cells spécifiques à ses voisins. Les négociations de ces cells peuvent se faire par 6top et sont gérées par la Scheduling Function en activité pour le joined node. Considérant qu'il s'agit de la MSF, le noeud devra d'abord s'être positionné dans la topologie RPL car les cells installées en dépendent.\\
+
+Le joined node est maintenant capable de déchiffrer les DIOs émis en broadcast, gouvernés par le Trickle Timer RPL aux autres noeuds de la topologie (voir \wordlink{Section}{RPL}). Il peut en avoir stocké s'il en a reçu pendant que le processus de join était en cours, mais également solliciter les noeuds à portée avec un DIS. Il en tire un ensemble de noeuds parents potentiels. Une fois qu'il a sélectionné un (sur base des critères de l'OF) il émet un DAO pour construire la route vers lui. À partir de ce moment, la MSF permet l'installation des autonomous cells basées sur l'EUI-64 du joined node et du parent sélectionné, ainsi que la négociation de cells additionnelles par le biais de 6top (voir \wordlink{Section}{scheduling}).\\
+
+Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC avait effectivement donné sa GUA dans l'objet Configuration, le joined node peut en déduire le préfixe. Sinon, un échange Router Solicitation/Router Advertisment peut également être initié par le joined node. Une fois sa GUA formée, le joined node doit l'enregitrer. Ce processus fait intervenir le mécanisme de 6LoWPAN ND ainsi que du proxying au niveau du 6LBR. Ce dernier maintient une table des adresses IPv6 utilisées dans le réseau 6TiSCH pour lequel il fait porte de sortie vers le backbone, et un compteur de fraîcheur pour chaque adresse. Ce processus est complexe et fait intervenir plusieurs spécifications, un aperçu des différents échanges est donné dans la section \texttt{4.2.2.  Registration} du draft \cite{ietf-6tisch-architecture-28}.
+
 \subsection{La sécurité du join en détails}
+\label{join_secu}
+
+\subsubsection{Au niveau réseau/lien}
+
+\subsubsection{Au niveau applicatif}
+
+\newpage
 
 \section{Implémentations de la joining phase dans les simulateurs}
 
