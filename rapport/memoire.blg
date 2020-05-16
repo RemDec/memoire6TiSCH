@@ -1,54 +1,55 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: memoire.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-Repeated entry---line 509 of file biblio.bib
+Repeated entry---line 531 of file biblio.bib
  : @misc{rfc6775
  :              ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in LLSF
 Warning--empty booktitle in telosb
+Warning--empty journal in OSCOREvsNDN
 Warning--empty booktitle in multipath
-You've used 40 entries,
+You've used 42 entries,
             2118 wiz_defined-function locations,
-            722 strings with 11196 characters,
-and the built_in function-call counts, 13145 in all, are:
-= -- 1214
-> -- 812
-< -- 15
-+ -- 322
-- -- 280
-* -- 929
-:= -- 2269
-add.period$ -- 129
-call.type$ -- 40
-change.case$ -- 260
+            731 strings with 11548 characters,
+and the built_in function-call counts, 13759 in all, are:
+= -- 1270
+> -- 858
+< -- 16
++ -- 340
+- -- 296
+* -- 976
+:= -- 2385
+add.period$ -- 136
+call.type$ -- 42
+change.case$ -- 274
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 425
-empty$ -- 915
-format.name$ -- 280
-if$ -- 2696
+cite$ -- 46
+duplicate$ -- 444
+empty$ -- 947
+format.name$ -- 296
+if$ -- 2812
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 17
-newline$ -- 212
-num.names$ -- 80
-pop$ -- 306
+int.to.str$ -- 42
+missing$ -- 18
+newline$ -- 223
+num.names$ -- 84
+pop$ -- 320
 preamble$ -- 1
-purify$ -- 220
+purify$ -- 232
 quote$ -- 0
-skip$ -- 335
+skip$ -- 347
 stack$ -- 0
-substring$ -- 457
-swap$ -- 91
-text.length$ -- 15
+substring$ -- 467
+swap$ -- 92
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
-warning$ -- 3
-while$ -- 97
-width$ -- 42
-write$ -- 440
+type$ -- 168
+warning$ -- 4
+while$ -- 101
+width$ -- 44
+write$ -- 462
 (There was 1 error message)

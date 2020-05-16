@@ -603,6 +603,7 @@ Le standard IEEE802.15.4-2015 \cite{IEEE802.15.4} reprend les notions théorique
 
 
 \subsubsection{Table des voisins}
+\label{neighbors_table}
 
 Chaque nœud maintient une liste \textit{secDeviceList} des voisins avec qui il peut communiquer de manière sécurisée, sous la forme de \textit{secDeviceDescriptors}, chacun stockant les attributs suivants :
 \vspace{0.2cm}
@@ -1087,15 +1088,19 @@ COSE (\textit{CBOR Object Signing and Encryption} \cite{rfc8152}) est une spéci
 
 \subsection{OSCORE}
 
+\subsubsection{Principes fondamentaux d'OSCORE}
+
 OSCORE \cite{rfc8613} et sa place dans la pile 6TiSCH sont brièvement introduits par la \wordlink{Section}{intro_CoJP}. OSCORE décrit les mécanismes et concepts nécessaires à l'établissement d'un canal sécurisé au niveau applicatif entre deux nœuds comprenant CoAP, mais qui souhaitent protéger un maximum d'informations dans les messages échangés. Effectivement, certains champs CoAP (des Options notamment) doivent rester visibles par les proxys opérant comme intermédiaire au niveau applicatif entre les deux nœuds. D'autres, tels que le payload et le code du message doivent être protégés des proxys, qui pourraient sinon les consulter et les manipuler. En d'autres termes, OSCORE agit uniquement sur la couche logique Request/Response de CoAP, du client au serveur et vice-versa. Techniquement, la sécurité du canal entre ces deux points est assurée par COSE qui opère le chiffrement et les vérifications d'intégrité des champs à protéger, la protection contre les attaques replay et la liaison entre Request et Response.\\
 
-\par L'emploi d'OSCORE dans le cadre de la phase de join est justifié par le fait qu'un pledge utilise un proxy pour échanger avec le réseau tout du long de la phase de join. Plus précisément, afin d'obtenir les informations nécessaires à son intégration dans un réseau 6TiSCH (les clés actuellement en usage notamment), le pledge va se servir du noeud déjà intégré au réseau comme d'un proxy intermédiaire (CoAP). Ce proxy va accepter les frames émanant du pledge même si elles ne sont pas sécurisées, mais relayer le payload applicatif en l'encapsulant dans des frames sécurisées puisque lui possède déjà les clés du réseau. Il les relaie vers l'autorité du réseau qui validera le pledge et répondra avec le matériel nécessaire pour que ce dernier puisse faire partie intégrante du réseau et échanger des frames sécurisées avec les noeuds. Le noeud qui faisait office de proxy devra alors forward cette réponse vers le pledge en attente. Les informations ainsi échangées entre le pledge et l'autorité du réseau doivent rester confidentielles, et même le proxy ne devrait théoriquement pas y avoir accès. Cependant, pour effectuer son travail de proxy CoAP, il a besoin d'accéder à certaines parties applicatives du message, d'où l'emplois d'OSCORE qui permet les deux en même temps.\\
+\par L'emploi d'OSCORE dans le cadre de la phase de join est justifié par le fait qu'un pledge utilise un proxy pour échanger avec le réseau tout du long de la phase de join. Plus précisément, afin d'obtenir les informations nécessaires à son intégration dans un réseau 6TiSCH (les clés actuellement en usage notamment), le pledge va se servir du noeud déjà intégré au réseau comme d'un proxy intermédiaire (CoAP). Ce proxy va accepter les frames émanant du pledge même si elles ne sont pas sécurisées, mais relayer le payload applicatif en l'encapsulant dans des frames sécurisées puisque, lui, possède déjà les clés du réseau. Il les relaie vers l'autorité du réseau qui validera le pledge et répondra avec le matériel nécessaire pour que ce dernier puisse faire partie intégrante du réseau et échanger des frames sécurisées avec les noeuds. Le noeud qui faisait office de proxy devra alors forward cette réponse vers le pledge en attente. Les informations ainsi échangées entre le pledge et l'autorité du réseau doivent rester confidentielles, et même le proxy ne devrait théoriquement pas y avoir accès. Cependant, pour effectuer son travail de proxy CoAP, il a besoin d'accéder à certaines parties applicatives du message, d'où l'emplois d'OSCORE qui permet les deux en même temps.\\
 
-\par L'emploi de DTLS à la place d'OSCORE n'est pas une solution viable, car un proxy intermédiaire entre le pledge et l'autorité aurait alors accès à l'entièreté du contenu applicatif. Aucun chiffrement de ces échanges l'est encore moins, les frames échangées entre le pledge et le proxy n'étant pas non plus protégées au niveau de la couche lien. Une description détaillée des échanges spécifiques à la phase de join se reposant sur OSCORE est établie dans la section \wordlink{Section}{CoJP}. La suite de cette section décrit les mécanismes propres à OSCORE, sans les relier à leur utilisation dans la phase de join. Elle fait état de la façon dont un canal fortement sécurisé au niveau applicatif peut être établi entre deux hôtes, en tenant compte de la présence de proxy entre eux. OSCORE utilise de nombreux concepts, considère que certaines informations sont partagées entre hôtes, se repose sur des technologies de chiffrement etc., aussi certains aspects sont ignorés ici, tout en fournissant le bagage nécessaire à la compréhension de son emploi dans la procédure de join 6TiSCH.\\
+\par L'emploi de DTLS à la place d'OSCORE n'est pas une solution viable, car un proxy intermédiaire entre le pledge et l'autorité aurait alors accès à l'entièreté du contenu applicatif. Gündoğan \textit{et al.} \cite{OSCOREvsNDN} mettent en avant d'autres problèmes dans leur travail, tels que la baisse de performance que l'établissement de sessions DTLS occasionne. Aucun chiffrement de ces échanges l'est encore moins, les frames échangées entre le pledge et le proxy n'étant pas non plus protégées au niveau de la couche lien. Une description détaillée des échanges spécifiques à la phase de join se reposant sur OSCORE est établie dans la section \wordlink{Section}{CoJP}. La suite de cette section décrit les mécanismes propres à OSCORE, sans les relier à leur utilisation dans la phase de join. Elle fait état de la façon dont un canal fortement sécurisé au niveau applicatif peut être établi entre deux hôtes, en tenant compte de la présence de proxy entre eux. OSCORE utilise de nombreux concepts, considère que certaines informations sont partagées entre hôtes, se repose sur des technologies de chiffrement etc., aussi certains aspects sont ignorés ici, tout en fournissant le bagage nécessaire à la compréhension de son emploi dans la procédure de join 6TiSCH.\\
 
 \newpage
 
-\par OSCORE peut être utilisé pour protéger des échanges CoAP, mais également HTTP ou même une hybridation des deux (proxys cross-protocol). Afin d'établir un canal sécurisé pour des communications, le client et le serveur établissent un \textit{contexte de sécurité} partagé qui permettera de dériver le matériel nécessaire (clés de chiffrement, etc., voir plus loin) pour la sécurisation par un algorithme AEAD (\textit{Authenticated Encryption with Authenticated Data} \cite{rfc5116}). Un algorithme AEAD permet le chiffrement et l'authentification de données, tout en gardant certaines parties des données uniquement authentifiées car elles doivent rester lisibles. COSE décrit l'encadrement autour de l'utilisation de cet algorithme et en place la sortie dans un objet CBOR structuré \textit{COSE\_Encrypt0}  \cite{rfc8152}. OSCORE récupère dans les champs de cette structure les pièces pour constituer le contenu d'un paquet générique, appelé \textit{message OSCORE} et qui encapsule les champs protégés du paquets original. L'encapsulation peut se faire dans un message HTTP ou CoAP, en fonction de ce que le proxy destination suivant comprend (cross-proxy ou simple proxy CoAP). Le processus complet est le suivant (voir \wordlink{Figure}{fig:OSCORE_scheme}) :
+\subsubsection{Processus d'encapsulation OSCORE}
+
+\par OSCORE peut être utilisé pour protéger des échanges CoAP, mais également HTTP ou même une hybridation des deux (proxys cross-protocol). Afin d'établir un canal sécurisé pour des communications, le client et le serveur établissent un \textit{contexte de sécurité} partagé qui permettera de dériver le matériel nécessaire (clés de chiffrement, etc., voir plus loin) pour la sécurisation par un algorithme AEAD (\textit{Authenticated Encryption with Authenticated Data} \cite{rfc5116}). Un algorithme AEAD permet le chiffrement et l'authentification de données, assurant la confidentialité et l'authenticité de façon combinée. De plus, certaines parties des données peuvent être uniquement authentifiées car elles sont destinées à rester lisibles. COSE décrit l'encadrement autour de l'utilisation de cet algorithme et en place la sortie dans un objet CBOR structuré \textit{COSE\_Encrypt0}  \cite{rfc8152}. OSCORE récupère dans les champs de cette structure les pièces pour constituer le contenu d'un paquet générique, appelé \textit{message OSCORE} et qui encapsule les champs protégés du paquets original. L'encapsulation peut se faire dans un message HTTP ou CoAP, en fonction de ce que le proxy destination suivant comprend (cross-proxy ou simple proxy CoAP). Le processus complet est le suivant (voir \wordlink{Figure}{fig:OSCORE_scheme}) :
 
 \vspace{0.1cm}
 \begin{enumerate}
@@ -1114,7 +1119,7 @@ La procédure inverse est effectuée à la réception du paquet par l'hôte dest
 
 	\begin{figure}[!hb]
 	\centering
-	\includegraphics[width=0.85\linewidth]{OSCORE_scheme}
+	\includegraphics[width=0.75\linewidth]{OSCORE_scheme}
 	\caption{Schéma de la création d'un message OSCORE sécurisant un message original}
 	\label{fig:OSCORE_scheme}
 	\end{figure}
@@ -1123,13 +1128,13 @@ La procédure inverse est effectuée à la réception du paquet par l'hôte dest
 
 \begin{figure}[!ht]
 	
-	\begin{minipage}{0.5\textwidth}
+	\begin{minipage}{0.43\textwidth}
         \centering
 		\includegraphics[width=0.9\textwidth]{OSCORE_option}
 		\caption{Contenu de l'Option OSCORE}
 		\label{fig:OSCORE_option}
 	\end{minipage}\hfill
-	\begin{minipage}{0.5\textwidth}
+	\begin{minipage}{0.43\textwidth}
         \centering
         
 		\includegraphics[width=0.9\textwidth]{OSCORE_plaintext}
@@ -1138,10 +1143,13 @@ La procédure inverse est effectuée à la réception du paquet par l'hôte dest
 	\end{minipage}	
 \end{figure}
 
-Un contexte de sécurité regroupe tout le matériel nécessaire à la sécurisation des échanges avec un hôte distant, pour une ressource donnée. OSCORE fait l'hypothèse que les deux hôtes partagent des paramètres pré-établis qui constituent le \textit{common context} (CC) : une clé dite \textit{Master Secret} (et optionnellement un \textit{Master Salt}), un vecteur d'initialisation \textit{Common IV} et quels sont les algorithmes précis à utiliser pour le procédé de dérivation de clés/chiffrement du COSE\_obj. De ce CC, sont ``dérivés" deux contextes distincts pour chaque hôte : le \textit{sender context} (SC) qui est utilisé pour protéger les messages à envoyer et le \textit{recipient context} (RC) utilisé pour déchiffrer les messages reçus. Ces contextes sont littéralement dérivés dans le sens où une fonction de dérivation de clés HKDF (\textit{HMAC-based Extract-and-Expand Key Derivation Function}, \cite{rfc5869}) construit, à partir du CC et d'un ID donné, une nouvelle clé spécifique au contexte en question. Dans le cas du SC, une \textit{sender key} (SK) et dans le cas du RC, une \textit{recipient key} (RC). L'ID en question désigne un hôte et est appelé \textit{sender ID} (SID) en association avec le SC et \textit{recipient ID} (RID) avec le RC. Il a une valeur arbitraire et est établi par un moyen non spécifié, mais un hôte doit avoir un SID pour envoyer un message (propre à lui-même) et un  RID pour valider un message reçu (propre à l'émetteur du message).\\
+\subsubsection{Contextes de sécurité et échanges sur le canal OSCORE}
+\label{OSCORE_contexts}
+
+Un contexte de sécurité regroupe tout le matériel nécessaire à la sécurisation des échanges avec un hôte distant, pour une ressource donnée. OSCORE fait l'hypothèse que les deux hôtes partagent des paramètres pré-établis qui constituent le \textit{common context} (CC) : une clé dite \textit{Master Secret} (et optionnellement un \textit{Master Salt}), un vecteur d'initialisation \textit{Common IV} et quels sont les algorithmes précis à utiliser pour le procédé de dérivation de clés/chiffrement du COSE\_obj. De ce CC, sont ``dérivés" deux contextes distincts pour chaque hôte : le \textit{sender context} (SC) qui est utilisé pour protéger les messages à envoyer et le \textit{recipient context} (RC) utilisé pour déchiffrer les messages reçus. Ces contextes sont littéralement dérivés dans le sens où une fonction de dérivation de clés HKDF (\textit{HMAC-based Extract-and-Expand Key Derivation Function}, \cite{rfc5869}) construit, à partir du CC et d'un ID donné, une nouvelle clé spécifique au contexte en question. Dans le cas du SC, une \textit{sender key} (SK) et dans le cas du RC, une \textit{recipient key} (RC). L'ID en question est un nom (chaîne de caractères) qui désigne un hôte et est appelé \textit{sender ID} (SID) en association avec le SC et \textit{recipient ID} (RID) avec le RC. Il a une valeur arbitraire et est établi par un moyen non spécifié, mais un hôte doit avoir un SID pour envoyer un message (propre à lui-même) et un  RID pour valider un message reçu (propre à l'émetteur du message).\\
 
 \par La \wordlink{Figure}{fig:OSCORE_plaintext} schématise l'utilisation des contextes dans un échange : il faut noter que pour un envoi de message le SC utilisé par l'émetteur contient le même matériel que le RC utilisé par le récepteur. Effectivement, ils doivent utiliser une clé identique pour la protection et la vérification de la ressource. Le terme ``récupération de contexte" désigne le fait que soit le contexte existe (déjà dérivé) et est récupérable depuis les éléments en substance, soit il est dérivé à la volée depuis le CC en utilisant les éléments en substance. Un élément non repris dans la \wordlink{Figure}{fig:OSCORE_plaintext} est le \textit{context ID} : inclus optionnellement dans l'option OSCORE, il permet de distinguer les contextes de sécurité et préciser lequel utiliser (à partir que quel CC dériver). Il permet l'utilisation d'un même SID interprétable dans des contextes distincts et est employé durant la procédure de join 6TiSCH. 
-\vspace{0.4cm}
+\vspace{0.1cm}
 
 	\begin{figure}[!ht]
 	\centering
@@ -1220,7 +1228,7 @@ La phase de join permet le join sécurisé d'un nouveau nœud à un réseau 6TiS
 
 \subsubsection{Problématiques liées à la joining phase}
 
-La joining phase est critique dans la création et le maintient de la stabilité d'un réseau 6TiSCH. À noter que ce réseau reste un réseau 802.15.4 et est donc vu au niveau lien comme une structure PAN. La joining phase encadre notamment les \textbf{problématiques} suivantes :
+La joining phase est critique dans la création et le maintient de la stabilité d'un réseau 6TiSCH. À noter que ce réseau reste un réseau 802.15.4 et est donc vu au niveau lien comme une structure PAN. La joining phase encadre notamment les problématiques suivantes :
 \vspace{0.2cm}
 \begin{enumerate}
 \item Un pledge n'a aucune connaissance du réseau, si ce n'est certains paramètres pré-établis. Il doit obtenir des éléments essentiels tels que les clés courantes utilisées pour protéger le trafic au niveau lien, un identifiant dans le réseau (sous-entendu une short address), l'adresse IPv6 du JRC et un parent RPL.
@@ -1235,13 +1243,14 @@ La joining phase est critique dans la création et le maintient de la stabilité
 \end{enumerate}
 
 \subsubsection{Hypothèses faites par CoJP (paramètres pré-établis)}
+\label{preshared_join}
 
 La spécification \cite{ietf-6tisch-minimal-security-15} fait l'hypothèse que certains paramètres sont pré-établis, pour le pledge et le JRC. Cela peut se faire physiquement par une interface JTAG, une console, \textit{over-the-air} dans une cage de Faraday, etc. ou en utilisant par exemple un protocole d'échange de clés. Ces \textbf{paramètres pré-établis} sont les suivants (ceux qui sont optionnels sont notés entre [..]) :
 \vspace{0.2cm}
 \begin{itemize}[label=$\bullet$]
 \item identifiant du pledge (\textit{pledgeID}) : doit être unique parmi l'ensemble des nœuds sur lequel le JRC a autorité. Typiquement mis à l'EUI-64 qui est globalement unique et attribué d'office à une interface 802.15.4 (dérivé de l'adresse MAC). Peut aussi être issu d'un autre procédé de génération qui respecte l'unicité.
 \vspace{0.2cm}
-\item une clé partagée (\textit{PSK}, \textit{Pre-Shared Key}) : une clé secrète partagée entre le pledge et le JRC, ce dernier doit de ce fait stocker quelle clé est assignée à chaque \textit{pledgeID}. Ces clés doivent être cryptographiquement fortes (minimum 128 bits, générées aléatoirement).
+\item une clé partagée (\textit{PSK}, \textit{Pre-Shared Key}) : une clé secrète partagée entre le pledge et le JRC, ce dernier doit de ce fait stocker quelle clé est assignée à chaque \textit{pledgeID}. Ces clés doivent être cryptographiquement fortes (minimum 128 bits, générées aléatoirement). Un travail portant sur l'échange préliminaire sécurisé des clés utilisables par OSCORE est en cours de standardisation, désigné par LAKE (\textit{Lightweight Authenticated Key Exchange protocol}, \cite{ietf-lake-reqs-03}).
 \vspace{0.2cm}
 \item {[} un identifiant de réseau (\textit{netwID}) ] : identifie le réseau 6TiSCH, annoncé dans les EBs émis par les nœuds qui en font déjà partie. Il s'agit typiquement du PAN ID. S'il n'est pas fourni à un pledge, celui-ci tentera de rejoindre n'importe quel réseau sans distinction.
 \vspace{0.2cm}
@@ -1284,8 +1293,8 @@ Dans ces échanges, l'information est transportée comme du payload applicatif C
 \item link-layer key set : tableau d'objets \textit{Link\_Layer\_Key} où chacun décrit une clé utilisée au niveau lien et son usage (non détaillé ici)
 \item {} [ short identifier ] : objet \textit{Short\_Identifier} qui reprend l'identifiant attribué par le JRC (unique) et le temps de validité de ce dernier
 \item {} [ JRC address ] : l'adresse IPv6 GUA du JRC, de sorte que le pledge, une fois joined node, puisse s'adresser directement à ce dernier (et servir de JP)
-\item {} [ blacklist ] : tableau de short identifiers dont le JRC ne souhaite pas l'acceptance des frames par le pledge (une fois qu'il deviendra joined node), permet par exemple d'isoler des noeuds corrompus ou non désirés
-\item {} [ join rate ] : débit maximum de trafic de join en \textit{bytes/s} que le pledge, une fois joined node et endossant le rôle de JP, peut forward vers l'intérieur du réseau
+\item {} [ blacklist ] : tableau de short identifiers dont le JRC ne souhaite pas l'acceptance des frames par le pledge (une fois qu'il deviendra joined node), permet par exemple d'isoler des noeuds corrompus ou non désirés par l'autorité que constitue le JRC
+\item {} [ join rate ] : débit maximum de trafic de join en \textit{bytes/s} que le pledge, une fois joined node et endossant le rôle de JP, peut forward vers l'intérieur du réseau (drop des paquets excédants)
 \end{itemize}
 
 \newpage
@@ -1306,26 +1315,25 @@ La sécurité du contenu des échanges CoJP (niveau applicatif donc) s'appuie in
 \subsubsection{Join Exchange CoJP et Join Proxy}
 \label{join_exchange_CoJP}
 
-Au moment d'initier le Join Exchange CoJP, un pledge dispose d'informations qu'il a reçues du nœud qui va servir de Join Proxy (JP). Au niveau lien (TSCH), le pledge est synchronisé temporellement et a connaissance des cells qu'il peut utiliser pour les échanges durant la joining phase (information issue de l'EB reçu). Au niveau réseau, le pledge utilise son adresse Link-Local après s'être assuré qu'elle est unique. L'obtention de ces informations est décrite dans la \wordlink{Section}{global_EB}. Il s'apprête donc à envoyer sa Join Request CoJP vers le JP.\\
+Au moment d'initier le Join Exchange CoJP, un pledge dispose d'informations qu'il a reçues du nœud qui va servir de Join Proxy (JP). Au niveau lien (TSCH), le pledge est synchronisé temporellement et a connaissance des cells qu'il peut utiliser pour les échanges durant la joining phase (information issue de l'EB reçu). Au niveau réseau, le pledge utilise son adresse Link-Local après s'être assuré qu'elle est unique. L'obtention de ces informations est décrite dans la \wordlink{Section}{global_EB}. Il s'apprête donc à envoyer sa Join Request (CoJP) vers le JP.\\
 
 
- Le pledge et le JRC protègent le contenu applicatif en dérivant le contexte de sécurité OSCORE des paramètres pré-établis, qui sont :
+ Le pledge et le JRC protègent le contenu applicatif échangé avec le matériel issu du contexte de sécurité, dérivé comme décrit par la \wordlink{Section}{OSCORE_contexts} et à partir des paramètres pré-établis donnés à la \wordlink{Section}{preshared_join}. Il en résulte un contexte de sécurité OSCORE où sont connus :
  \vspace{0.1cm}
 \begin{itemize}[label=$\bullet$]
 \item \textit{Master Secret} = PSK
 
 \item \textit{Master Salt} = \texttt{""} (chaîne vide)
 
-\item \textit{ID Context} = identifiant du pledge (\textit{pledgeID}, vraisembablement son EUI-64)
+\item \textit{ID Context} = identifiant unique du pledge que le JRC doit considérer pour décider de si le pledge est autorisé dans le réseau (\textit{pledgeID}, vraisembablement son EUI-64), transmis dans le champs \textit{kid context} 
 
-\item L'ID du pledge est la chaîne vide \texttt{""} et il sera utilisé comme Sender ID dans l'envoi de message par le pledge (et donc dans la dérivation du Sender Context pour le pledge).
+\item Le nom identifiant un pledge de façon générique dans la communication OSCORE est la chaîne vide \texttt{""}, il sera utilisé comme Sender ID dans l'envoi de message par le pledge (et donc dans la dérivation du Sender Context pour le pledge).
 
-\item L'ID du JRC est la chaîne \texttt{"JRC"} et il sera utilisé comme Recipient ID par le pledge, et donc dans la dérivation du Recipient Context utilisé par la suite quand une réponse sera reçue.
+\item Le nom identifiant le JRC dans la communication OSCORE est la chaîne \texttt{"JRC"} et il sera utilisé comme Recipient ID \textbf{par le pledge}, et donc dans la dérivation du Recipient Context utilisé par la suite quand une réponse sera reçue.
 
-\item L'Algorithme AEAD est soit convenu par des moyens non décrits, soit supposé à l'identifiant par défaut \texttt{AES-CCM-16-64-128} (voir algorithmes supportés par COSE, \cite{rfc8152}).
+\item L'Algorithme AEAD est supposé être \texttt{AES-CCM-16-64-128}, sauf si un autre algorithme a été pré-établi (voir algorithmes supportés par COSE, \cite{rfc8152})
 
-\item La fonction de dérivation de clés (HKDF) est soit convenue par des moyens non décrits, soit supposée à celle par défaut \texttt{HKDF SHA-256} (voir algorithmes de dérivations définis pour COSE, \cite{rfc5869} et \cite{rfc5869}).
-
+\item La fonction de dérivation de clés (HKDF) est supposée être \texttt{HKDF SHA-256}, sauf si une autre fonction a été pré-établie (voir algorithmes de dérivation définis pour COSE, \cite{rfc5869} et \cite{rfc5869}).
 \end{itemize}
 
 \vspace{0.1cm}
@@ -1334,7 +1342,7 @@ Au moment d'initier le Join Exchange CoJP, un pledge dispose d'informations qu'i
 
 La Join Request émise par le pledge contient un objet Join\_Request indiquant quel réseau il souhaite rejoindre (\textit{netwID}) et le rôle qu'il souhaite y endosser : 6LBR ou nœud régulier. Le cas 6LBR correspond au cas spécial où le pledge veut en fait être la racine d'un nouveau réseau (et donc ne passe pas par un JP), il n'est pas traité ici. Le détail de la Join Request est donné par la \wordlink{Figure}{fig:join_request}. Elle est protégée par OSCORE, le pledge ayant utilisé son Sender Context pour cela, et donc la Sender Key qu'il contient. L'Option OSCORE est construite avec le champ \textit{kid} prenant la valeur du SID, donc une chaîne vide puisque c'est le pledge qui envoie. Cependant, afin que le JRC puisse récupérer le contexte associé au pledge (contenant la PSK qu'il partage avec), il a besoin de savoir de quel pledge il s'agit. C'est pourquoi le champ \textit{kid context} de l'Option OSCORE prend la valeur de l'ID Context, qui est l'identifiant du pledge. Le pledge maintient en mémoire l'association entre la valeur du token créé et le contexte de sécurité.\\
 
- Le JP accepte la frame contenant la Join Request bien qu'elle ne soit pas sécurisée, en mettant un flag 802.15.4 ``\texttt{secExempt}" associé au pledge. Il a alors accès aux informations que OSCORE ne chiffre pas et va effectuer son rôle de proxy en consommant les Options qui s'y rapportent. Le proxy va opérer son rôle en mode \textit{stateless}. Un proxy stateless CoAP \cite{ietf-core-stateless-05} compresse l'information dont il a besoin pour relayer la future réponse, dans le token CoAP du message même qu'il relaie (forward vers le JRC). Effectivement, la future réponse référençant la même valeur de token, le JP pourra donc en retirer ce dont il a besoin pour acheminer vers le pledge : adresse IPv6 du pledge et port UDP source. Cette technique permet de sauvegarder de la mémoire (état maintenu dans les messages eux-mêmes et non par le JP) et d'éviter par ce biais des attaques de déni de service.\\
+ Le JP accepte la frame contenant la Join Request bien qu'elle ne soit pas sécurisée, en mettant un flag 802.15.4 ``\texttt{secExempt}" associé au pledge dans la table des voisins (\wordlink{Section}{neighbors_table}). Il a alors accès aux informations que OSCORE ne chiffre pas et va effectuer son rôle de proxy en consommant les Options qui s'y rapportent. Le proxy va opérer son rôle en mode \textit{stateless}. Un proxy stateless CoAP \cite{ietf-core-stateless-05} compresse l'information dont il a besoin pour relayer la future réponse, dans le token CoAP du message même qu'il relaie. Effectivement, la future réponse référençant la même valeur de token, le JP pourra donc en retirer ce dont il a besoin pour acheminer vers le pledge : adresse IPv6 du pledge et port UDP source. Cette technique utilise des tokens de taille étendue (spécification \cite{ietf-core-stateless-05}) et permet de sauvegarder de la mémoire (état maintenu dans les messages eux-mêmes et non par le JP) et d'éviter par ce biais des attaques de déni de service.\\
  
  Outre le fait d'agir comme un stateless proxy en créant un nouveau token dépendant de l'état à stocker, le JP va effectuer son rôle de proxy normal. Le pledge ayant renseigné le nom d'hôte générique pour désigner le JRC \texttt{"6tisch.arpa"}, le proxy va le résoudre en l'adresse IPv6 GUA du JRC qu'il connaît, lui. Il va également mettre le message CoAP à \textit{NON} à la place de \textit{CON} (expliqué à la \wordlink{Section}{join_secu}).\\
 
@@ -1351,7 +1359,7 @@ La Join Request émise par le pledge contient un objet Join\_Request indiquant q
 
 \minit{JP $\rightarrow$ JRC (Join Request)}
 
-La Join Request transite dans le réseau 6TiSCH, en plusieurs sauts vraisembablement, vers le 6LBR qui lui même la relaie vers le backbone où se trouve le JRC. Il est également possible que 6LBR et JRC soient co-situés et sont en fait le même hôte. Un fois atteint le JRC, ce dernier récupère le contexte de sécurité associé au pledge. Celui-ci contient la PSK partagée avec le pledge, et le Recipient Context est calculé considérant le RID mis à la valeur prédéfinie \texttt{"JRC"}. La Recipient Key obtenue permet de déchiffrer et vérifier le payload, qui est l'objet CBOR Join\_Request.\\
+La Join Request transite dans le réseau 6TiSCH, en plusieurs sauts vraisembablement, vers le 6LBR qui lui-même la relaie vers le backbone où se trouve le JRC. Il est également possible que les fonctions de 6LBR et JRC soient co-situés et sont en fait le même hôte. Un fois la Join Request parvenue au JRC, ce dernier récupère le contexte de sécurité associé au pledge. Celui-ci contient la PSK partagée avec le pledge et le Master Salt entre autres (voir début de \wordlink{Section}{join_exchange_CoJP}). Le Recipient Context est calculé considérant le RID prenant la valeur du nom désignant le JRC \texttt{"JRC"} (puisque c'est le JRC qui reçoit). La Recipient Key obtenue permet de déchiffrer et vérifier le payload, qui est l'objet CBOR Join\_Request.\\
 
 Le JRC traite la demande d'intégration du pledge en tenant compte de quel réseau il veut rejoindre, et de si ce dernier y est autorisé (détails propres à au déploiement). Si c'est le cas, il va alors lui attribuer un identifiant \textit{shortID} dans ce réseau, qu'il sait unique car il gère toutes les demandes d'intégration pour ce réseau. Il va également inclure dans sa réponse les clés au niveau lien qui y sont d'application à ce moment là, sa propre adresse IPv6 GUA, ainsi que d'autres paramètres (voir \wordlink{Section}{CoJP_components}), le tout étant placé dans les champs adéquats de l'objet CBOR Configuration. Ce dernier sera le payload de la Join Response.\\
 
@@ -1469,10 +1477,6 @@ Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC
 \subsubsection{Au niveau réseau/lien}
 
 \subsubsection{Au niveau applicatif}
-
-\newpage
-
-\section{Implémentations de la joining phase dans les simulateurs}
 
 \newpage
 

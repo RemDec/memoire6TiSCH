@@ -59,6 +59,12 @@ Dionysios Efstathiou, Stelios Ioannou, Sotiris Nikoletseas, and Dimitra
   sensor network.
 \newblock pages 203--206, 10 2011.
 
+\bibitem{OSCOREvsNDN}
+Cenk Gündoğan, Christian Amsüss, Thomas Schmidt, and Matthias Wählisch.
+\newblock Iot content object security with oscore and ndn: A first experimental
+  comparison.
+\newblock 01 2020.
+
 \bibitem{ietf-core-stateless-05}
 Klaus Hartke.
 \newblock {Extended Tokens and Stateless Clients in the Constrained Application
@@ -202,6 +208,13 @@ M.~{Vucinic}, M.~{Pejanovic-Djurisic}, and T.~{Watteyne}.
 \newblock Soda: 6tisch open data action.
 \newblock In {\em 2018 IEEE Workshop on Benchmarking Cyber-Physical Networks
   and Systems (CPSBench)}, pages 42--46, April 2018.
+
+\bibitem{ietf-lake-reqs-03}
+Mališa Vučinić, Göran Selander, John Mattsson, and Dan Garcia-Carillo.
+\newblock {Requirements for a Lightweight AKE for OSCORE}.
+\newblock Internet-Draft draft-ietf-lake-reqs-03, Internet Engineering Task
+  Force, April 2020.
+\newblock Work in Progress.
 
 \bibitem{ietf-6tisch-minimal-security-15}
 Mališa Vučinić, Jonathan Simon, Kris Pister, and Michael Richardson.

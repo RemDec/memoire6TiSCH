@@ -39,6 +39,9 @@
 \contentsline {section}{\numberline {3.1}Ressources et standards utilisés}{40}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{40}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}OSCORE}{40}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Principes fondamentaux d'OSCORE}{40}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}Processus d'encapsulation OSCORE}{41}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}Contextes de sécurité et échanges sur le canal OSCORE}{42}{subsubsection.3.1.2.3}%
 \contentsline {subsection}{\numberline {3.1.3}CoJP}{45}{subsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.3.1}Problématiques liées à la joining phase}{46}{subsubsection.3.1.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.3.2}Hypothèses faites par CoJP (paramètres pré-établis)}{46}{subsubsection.3.1.3.2}%
@@ -51,7 +54,6 @@
 \contentsline {subsection}{\numberline {3.2.2}La sécurité du join en détails}{55}{subsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.2.1}Au niveau réseau/lien}{55}{subsubsection.3.2.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2.2}Au niveau applicatif}{55}{subsubsection.3.2.2.2}%
-\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{56}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{57}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{58}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Simulations et résultats}{59}{chapter.6}%
+\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{56}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{57}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Simulations et résultats}{58}{chapter.6}%

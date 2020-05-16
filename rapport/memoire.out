@@ -24,7 +24,6 @@
 \BOOKMARK [1][-]{section.3.2}{Analyse du d\351roulement de la phase de join}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.2.1}{Proc\351dure dans sa globalit\351}{section.3.2}% 25
 \BOOKMARK [2][-]{subsection.3.2.2}{La s\351curit\351 du join en d\351tails}{section.3.2}% 26
-\BOOKMARK [1][-]{section.3.3}{Impl\351mentations de la joining phase dans les simulateurs}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{\311tude des performances de la joining phase s\351curis\351e}{}% 28
-\BOOKMARK [0][-]{chapter.5}{Am\351liorations propos\351es et impl\351mentation}{}% 29
-\BOOKMARK [0][-]{chapter.6}{Simulations et r\351sultats}{}% 30
+\BOOKMARK [0][-]{chapter.4}{\311tude des performances de la joining phase s\351curis\351e}{}% 27
+\BOOKMARK [0][-]{chapter.5}{Am\351liorations propos\351es et impl\351mentation}{}% 28
+\BOOKMARK [0][-]{chapter.6}{Simulations et r\351sultats}{}% 29

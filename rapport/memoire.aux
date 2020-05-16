@@ -1,6 +1,6 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@nameuse{bbl@beforestart}
+\bbl@cs{beforestart}
 \catcode `:\active 
 \catcode `;\active 
 \catcode `!\active 
@@ -142,6 +142,7 @@
 \citation{IEEE802.15.4}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3.6}Structure de slotframe}{24}{subsubsection.2.2.3.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3.7}Table des voisins}{24}{subsubsection.2.2.3.7}\protected@file@percent }
+\newlabel{neighbors_table}{{2.2.3.7}{24}{Table des voisins}{subsubsection.2.2.3.7}{}}
 \citation{rfc8480}
 \citation{rfc7554}
 \citation{ietf-6tisch-architecture-28}
@@ -242,11 +243,14 @@
 \citation{rfc7049}
 \citation{rfc8152}
 \citation{rfc8613}
+\citation{OSCOREvsNDN}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Ressources et standards utilisés}{40}{section.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{40}{subsection.3.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}OSCORE}{40}{subsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.1}Principes fondamentaux d'OSCORE}{40}{subsubsection.3.1.2.1}\protected@file@percent }
 \citation{rfc5116}
 \citation{rfc8152}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.2}Processus d'encapsulation OSCORE}{41}{subsubsection.3.1.2.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Schéma de la création d'un message OSCORE sécurisant un message original\relax }}{41}{figure.caption.21}\protected@file@percent }
 \newlabel{fig:OSCORE_scheme}{{3.1}{41}{Schéma de la création d'un message OSCORE sécurisant un message original\relax }{figure.caption.21}{}}
 \citation{rfc5869}
@@ -254,6 +258,8 @@
 \newlabel{fig:OSCORE_option}{{3.2}{42}{Contenu de l'Option OSCORE\relax }{figure.caption.22}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit  {plaintext} inclus dans le COSE\_obj\relax }}{42}{figure.caption.22}\protected@file@percent }
 \newlabel{fig:OSCORE_plaintext}{{3.3}{42}{\textit {plaintext} inclus dans le COSE\_obj\relax }{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.3}Contextes de sécurité et échanges sur le canal OSCORE}{42}{subsubsection.3.1.2.3}\protected@file@percent }
+\newlabel{OSCORE_contexts}{{3.1.2.3}{42}{Contextes de sécurité et échanges sur le canal OSCORE}{subsubsection.3.1.2.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Schéma fonctionnel d'un échange OSCORE et des contextes utilisés pour sécuriser le ``canal"\relax }}{42}{figure.caption.23}\protected@file@percent }
 \newlabel{fig:OSCORE_contexts}{{3.4}{42}{Schéma fonctionnel d'un échange OSCORE et des contextes utilisés pour sécuriser le ``canal"\relax }{figure.caption.23}{}}
 \citation{rfc8152}
@@ -272,9 +278,11 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Place dans le réseau des différents acteurs de la phase de join\relax }}{45}{figure.caption.27}\protected@file@percent }
 \newlabel{fig:joining_phase_network}{{3.8}{45}{Place dans le réseau des différents acteurs de la phase de join\relax }{figure.caption.27}{}}
 \citation{ietf-6tisch-minimal-security-15}
+\citation{ietf-lake-reqs-03}
 \citation{ietf-6tisch-minimal-security-15}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.1}Problématiques liées à la joining phase}{46}{subsubsection.3.1.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.2}Hypothèses faites par CoJP (paramètres pré-établis)}{46}{subsubsection.3.1.3.2}\protected@file@percent }
+\newlabel{preshared_join}{{3.1.3.2}{46}{Hypothèses faites par CoJP (paramètres pré-établis)}{subsubsection.3.1.3.2}{}}
 \citation{ietf-6tisch-minimal-security-15}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.3}Composants du protocole CoJP et leur sécurisation}{47}{subsubsection.3.1.3.3}\protected@file@percent }
 \newlabel{CoJP_components}{{3.1.3.3}{47}{Composants du protocole CoJP et leur sécurisation}{subsubsection.3.1.3.3}{}}
@@ -283,6 +291,7 @@
 \citation{rfc8152}
 \citation{rfc5869}
 \citation{rfc5869}
+\citation{ietf-core-stateless-05}
 \citation{ietf-core-stateless-05}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.4}Join Exchange CoJP et Join Proxy}{49}{subsubsection.3.1.3.4}\protected@file@percent }
 \newlabel{join_exchange_CoJP}{{3.1.3.4}{49}{Join Exchange CoJP et Join Proxy}{subsubsection.3.1.3.4}{}}
@@ -313,14 +322,13 @@
 \newlabel{join_secu}{{3.2.2}{55}{La sécurité du join en détails}{subsection.3.2.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.1}Au niveau réseau/lien}{55}{subsubsection.3.2.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2.2}Au niveau applicatif}{55}{subsubsection.3.2.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Implémentations de la joining phase dans les simulateurs}{56}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{57}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Étude des performances de la joining phase sécurisée}{56}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{58}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Améliorations proposées et implémentation}{57}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Simulations et résultats}{59}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Simulations et résultats}{58}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibstyle{plain}
@@ -334,34 +342,36 @@
 \bibcite{ietf-6tisch-6top-sf0-05}{7}
 \bibcite{ietf-6tisch-enrollment-enhanced-beacon-14}{8}
 \bibcite{telosb}{9}
-\bibcite{ietf-core-stateless-05}{10}
-\bibcite{IEEE802.15.4}{11}
-\bibcite{ATP}{12}
-\bibcite{rfc5869}{13}
-\bibcite{rfc5116}{14}
-\bibcite{stack-IoT}{15}
-\bibcite{ietf-6tisch-dtsecurity-zerotouch-join-04}{16}
-\bibcite{6top-perf}{17}
-\bibcite{rfc8152}{18}
-\bibcite{app-sec-openWSN}{19}
-\bibcite{link-layer-sec-impact}{20}
-\bibcite{rfc8613}{21}
-\bibcite{rfc7252}{22}
-\bibcite{multipath}{23}
-\bibcite{ietf-6tisch-architecture-28}{24}
-\bibcite{rfc8138}{25}
-\bibcite{rfc8505}{26}
-\bibcite{ietf-6lo-backbone-router-13}{27}
-\bibcite{tiloca-6tisch-robust-scheduling-02}{28}
-\bibcite{join-TSCH-RPL}{29}
-\bibcite{6TiSCH-industrial-perf}{30}
-\bibcite{rfc8180}{31}
-\bibcite{SODA}{32}
-\bibcite{ietf-6tisch-minimal-security-15}{33}
-\bibcite{broadcast-strategies}{34}
-\bibcite{rfc8480}{35}
-\bibcite{rfc7554}{36}
-\bibcite{openWSN}{37}
-\bibcite{vulns-time-synchro-TSCH}{38}
-\bibcite{wiki:6LoWPAN}{39}
-\bibcite{R-TSCH}{40}
+\bibcite{OSCOREvsNDN}{10}
+\bibcite{ietf-core-stateless-05}{11}
+\bibcite{IEEE802.15.4}{12}
+\bibcite{ATP}{13}
+\bibcite{rfc5869}{14}
+\bibcite{rfc5116}{15}
+\bibcite{stack-IoT}{16}
+\bibcite{ietf-6tisch-dtsecurity-zerotouch-join-04}{17}
+\bibcite{6top-perf}{18}
+\bibcite{rfc8152}{19}
+\bibcite{app-sec-openWSN}{20}
+\bibcite{link-layer-sec-impact}{21}
+\bibcite{rfc8613}{22}
+\bibcite{rfc7252}{23}
+\bibcite{multipath}{24}
+\bibcite{ietf-6tisch-architecture-28}{25}
+\bibcite{rfc8138}{26}
+\bibcite{rfc8505}{27}
+\bibcite{ietf-6lo-backbone-router-13}{28}
+\bibcite{tiloca-6tisch-robust-scheduling-02}{29}
+\bibcite{join-TSCH-RPL}{30}
+\bibcite{6TiSCH-industrial-perf}{31}
+\bibcite{rfc8180}{32}
+\bibcite{SODA}{33}
+\bibcite{ietf-lake-reqs-03}{34}
+\bibcite{ietf-6tisch-minimal-security-15}{35}
+\bibcite{broadcast-strategies}{36}
+\bibcite{rfc8480}{37}
+\bibcite{rfc7554}{38}
+\bibcite{openWSN}{39}
+\bibcite{vulns-time-synchro-TSCH}{40}
+\bibcite{wiki:6LoWPAN}{41}
+\bibcite{R-TSCH}{42}
