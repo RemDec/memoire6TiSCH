@@ -23,7 +23,17 @@
 \BOOKMARK [2][-]{subsection.3.1.3}{CoJP}{section.3.1}% 23
 \BOOKMARK [1][-]{section.3.2}{Analyse du d\351roulement de la phase de join}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.2.1}{Proc\351dure dans sa globalit\351}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.2}{La s\351curit\351 du join en d\351tails}{section.3.2}% 26
-\BOOKMARK [0][-]{chapter.4}{\311tude des performances de la joining phase s\351curis\351e}{}% 27
-\BOOKMARK [0][-]{chapter.5}{Am\351liorations propos\351es et impl\351mentation}{}% 28
-\BOOKMARK [0][-]{chapter.6}{Simulations et r\351sultats}{}% 29
+\BOOKMARK [0][-]{chapter.4}{Am\351lioration des performances de la joining phase avec la m\351thode NPEB}{}% 26
+\BOOKMARK [1][-]{section.4.1}{Les faiblesses de la joining phase}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.1.1}{La minimal cell}{section.4.1}% 28
+\BOOKMARK [2][-]{subsection.4.1.2}{\311coute active du pledge}{section.4.1}% 29
+\BOOKMARK [1][-]{section.4.2}{Pr\351sentation de la m\351thode de Neighbors Propositions EB}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Intuition de la m\351thode NPEB}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Proc\351dures d\351cisionnelles et param\351trage}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{Optimisations}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{Inconv\351nients de la m\351thode NPEB}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.3.1}{Non conformit\351 avec le standard MSF}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.2}{Overhead des messages et tables des voisins}{section.4.3}% 36
+\BOOKMARK [0][-]{chapter.5}{\311valuation de la joining phase s\351curis\351e et de la m\351thode NPEB en simulateur}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Impact de la s\351curit\351 sur la formation du r\351seau}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Am\351lioration des performances par la m\351thode NPEB}{chapter.5}% 39

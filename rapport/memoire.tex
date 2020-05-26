@@ -1471,29 +1471,54 @@ Le joined node est maintenant capable de déchiffrer les DIOs émis en broadcast
 
 Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC avait effectivement donné sa GUA dans l'objet Configuration, le joined node peut en déduire le préfixe. Sinon, un échange Router Solicitation/Router Advertisment peut également être initié par le joined node. Une fois sa GUA formée, le joined node doit l'enregitrer. Ce processus fait intervenir le mécanisme de 6LoWPAN ND ainsi que du proxying au niveau du 6LBR. Ce dernier maintient une table des adresses IPv6 utilisées dans le réseau 6TiSCH pour lequel il fait porte de sortie vers le backbone, et un compteur de fraîcheur pour chaque adresse. Ce processus est complexe et fait intervenir plusieurs spécifications, un aperçu des différents échanges est donné dans la section \texttt{4.2.2.  Registration} du draft \cite{ietf-6tisch-architecture-28}.
 
-\subsection{La sécurité du join en détails}
-\label{join_secu}
+\newpage
 
-\subsubsection{Au niveau réseau/lien}
+\chapter{Amélioration des performances de la joining phase avec la méthode NPEB}
+\newpage
 
-\subsubsection{Au niveau applicatif}
+\section{Les faiblesses de la joining phase}
+
+\subsection{La \textit{minimal cell}}
+
+Comme illustré par les figures détaillant la joining phase dans la \wordlink{Section}{join_phase_analysis}, tous les échanges entre le pledge et le JP se font en utilisant le \textit{joining schedule} décrit dans l'EB initialement reçu. La spécification \cite{rfc8180} préconise l'utilisation d'une seule cell ((0,0)) comme joining schedule et par défaut pour tout trafic de type broadcast, dite \textit{minimal cell}. Cette cell est également encore utilisée par le pledge une fois devenu joined node, principalement jusqu'à capter un DIO qui lui permettra de rejoindre la topologie RPL. Il peut à partir de là sélectionner un prefered parent dans la topologie et, seulement alors, la Scheduling Function installe des nouvelles cells pour communiquer avec (on suppose l'utilisation de MSF \cite{ietf-6tisch-msf-10}). Le noeud utilise donc ces nouvelles cells pour le trafic unicast. Une fois son rang obtenu dans la topologie, le noeud est autorisé à émettre à son tour des EBs \cite{rfc8180}, ce qu'il fera dans la minimal cell.\\
+
+La minimal cell est donc utilisée à de nombreuses fins et par des noeuds qui ne sont même pas encore intégrés au réseau. Cela peut entrainer un phénomène important de congestion dans les réseaux denses \cite{broadcast-strategies}, menant à un rallongement du temps de join et une perte d'énergie. Ni le standard IEEE802.15.4e \cite{IEEE802.15.4}, ni la spécification \cite{rfc8180} ne proposent une stratégie formelle pour l'émission des EBs qui permettrait de pallier ce problème. La \wordlink{Section}{joinphase} introduisait les différentes solutions qui ont été proposées dans la littérature. L'approche du broadcast Bayesien étudiée par Vučinić \textit{et al.} \cite{broadcast-strategies} est celle qui est communément retenue et implémentée dans les simulateurs \cite{simulating-6TiSCH}.\\
+
+De plus, l'usage de la minimal cell pose des questions de l'ordre de la sécurité : elle est de par sa nature très sensible aux attaques de type \textit{selective jamming}. Il est prouvé dans \cite{tiloca-6tisch-robust-scheduling-02} que n'importe quelle cell peut être ciblée par un attaquant en utilisant des propriétés inhérentes à TSCH. La minimal cell est de plus facilement distinguable des cells ``régulière" car c'est la seule dans laquelle des EBs sont émis et ces derniers ne sont pas chiffrés. Le technique proposée dans \cite{tiloca-6tisch-robust-scheduling-02} pour lutter contre le selective jamming n'est pas applicable pour la minimal cell. Pour un attaquant qui souhaite neutraliser complètement le réseau, la minimal cell fait donc une cible de premier choix étant donné sa facilité d'accès et le tout le trafic important qui y transite.
+
+\subsection{Écoute active du pledge}
+
+Avant d'avoir entendu son premier EB, un pledge n'a aucune connaissance du réseau. Il doit donc écouter ``à l'aveugle" jusqu'à, par chance, en capter un émis par un membre du réseau qu'il souhaite rejoindre. Étant donné que la minimal cell sera traduite à chaque cycle de slotframe en un channel différent (voir \wordlink{Section}{tschfond}), il n'y a pas possibilité d'établir une stratégie spécifique. Le pledge écoute donc à chaque slot à une fréquence aléatoire ou continue à écouter sur la même.\\
+
+La spécification \cite{rfc8180} n'impose pas le comportement que le pledge doit adopter pour sélectionner le noeud auquel il va se synchroniser temporellement en utilisant un EB reçu. Cependant, il y est proposé la procédure suivante : après avoir reçu le premier EB, un pledge écoute encore activement \texttt{MAX\_EB\_DELAY} secondes ou jusqu'à recevoir un EB de \texttt{NUM\_NEIGHBORS\_TO\_WAIT} voisins distincts. Alors, il se synchronise avec le voisin dont l'EB reçu indiquait la meilleure valeur pour le champ \textit{Join Metric} (présenté à la \wordlink{Section}{global_EB}). La spécification \cite{rfc8180} propose \texttt{NUM\_NEIGHBORS\_TO\_WAIT} à 180 secondes et \texttt{NUM\_NEIGHBORS\_TO\_WAIT} à 2.\\
+
+Que ce soit durant la première phase (avant la réception d'un premier EB) ou durant la seconde (en attente d'un potentiel meilleur voisin), le pledge est actif et maintient sa radio allumée pour recevoir des EBs. Cela est extrêmement couteux en terme d'énergie pour le pledge, comme illustré dans la \wordlink{Section}{WSNs} qui estimait la durée de vie d'un noeud présentant un tel duty cycle de 100\% à environ 160 heures. Il s'agit donc d'une phase délicate que l'on souhaite la plus courte possible, tout en garantissant la synchronisation avec le meilleur voisin disponible.
 
 \newpage
 
-\chapter{Étude des performances de la joining phase sécurisée}
+\section{Présentation de la méthode de \textit{Neighbors Propositions EB}}
+
+\subsection{Intuition de la méthode NPEB}
+
+\subsection{Procédures décisionnelles et paramétrage}
+
+\subsection{Optimisations}
+
+\section{Inconvénients de la méthode NPEB}
+
+\subsection{Non conformité avec le standard MSF}
+
+\subsection{Overhead des messages et tables des voisins}
+
+
+\chapter{Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}
 \newpage
 
+\section{Impact de la sécurité sur la formation du réseau}
 
-\chapter{Améliorations proposées et implémentation}
-\newpage
+\section{Amélioration des performances par la méthode NPEB}
 
-
-\chapter{Simulations et résultats}
-\newpage
-
-
-
-\section*{Conclusion}
+\chapter*{Conclusion et recommandations}
 
 
 
