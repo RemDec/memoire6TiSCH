@@ -780,6 +780,8 @@ ETX = \frac{numTx}{numTxAcked} \geq 1
 
 \newpage
 
+\todo{DAGRank(rank)}
+
 \par RPL utilise ICMPv6 pour transporter l'information utile à la construction et au maintient de la topologie, à travers plusieurs types de messages de signalement : 
 \vspace{0.2cm}
 \begin{itemize}
@@ -1477,6 +1479,7 @@ Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC
 \newpage
 
 \section{Les faiblesses de la joining phase}
+\label{prob_joining_phase}
 
 \subsection{La \textit{minimal cell}}
 
@@ -1498,7 +1501,29 @@ Que ce soit durant la première phase (avant la réception d'un premier EB) ou d
 
 \section{Présentation de la méthode de \textit{Neighbors Propositions EB}}
 
+Afin de donner une réponse aux problèmes inhérents à la joining phase telle que définie par les standards 6TiSCH qui ont été décrits par la \wordlink{Section}{prob_joining_phase}, la méthode NPEB (\textit{Neighbors Propositions EB}) a été élaborée et évaluée dans ce travail. Le reste de ce chapitre en décrit les principes fondamentaux, les inconvénients et les pistes d'amélioration. Dans le chapitre suivant, la \wordlink{Section}{eval_NPEB} fait état des gains de performance de la joining phase NPEB en comparaison avec la joining phase standard, par le biais d'expérimentations en simulateur.
+
 \subsection{Intuition de la méthode NPEB}
+
+La méthode NPEB a été élaborée en considérant un objectif double :
+\begin{itemize}[label=$\bullet$]
+\item accélerer et optimiser en terme d'énergie (du point de vue du pledge) le processus de join
+\item permettre au pledge de sélectionner le meilleur (défini plus loin) voisin possible avec lequel initier le processus de join
+\end{itemize}
+
+Un voisin est considéré ``meilleur" si d'une part sa place dans la topologie RPL est avantageuse (proche du noeud Root) et d'autre part l'intensité du signal reçu est suffisante.  Le premier concept se repose sur le champ \textit{Join Metric} annoncé dans un EB par le noeud qui l'émet, et qui selon la spécification \cite{rfc8180} doit être calculé sur une métrique de routage du noeud (et normalisé dans l'intervalle [0, 255]). Par défaut, RPL est considéré et la spécification préconise de mettre la valeur de la Join Metric à \textit{DAGRank(rank) - 1} (voir \wordlink{Section}{RPL}). Le second principe est directement lié à la disposition physique du réseau et la proximité des noeuds. Un noeud captant une frame (un EB en l'occurence) capture le signal avec une certaine intensité, mesurée comme étant le RSSI (\textit{Received Signal Strength Indication}, unité \textit{dBm}). Un RSSI plus élevé indique une meilleur réception et mène donc vraisembablement à un meilleur PDR si des frames sont échangées (une table de conversion établie empiriquement est présentée dans \cite{simulating-6TiSCH}). Ces deux mesures numériques facilement accessible pour un pledge lui servent de base comparative pour déterminer un meilleur voisin.\\
+
+Le principe de la méthode NPEB se repose sur une augmentation des EBs standards avec de nouvelles informations relatives aux voisins du noeud qui émet l'EB. Ces EB augmentés sont désignés par NPEB pour \textit{Neighbors Propositions Enhanced Beacon}. L'idée est qu'un pledge capturant un tel NPEB obtienne des informations sur d'autres noeuds qui sont également vraisembablement dans son voisinnage. Ces informations permettent au pledge de comparer ces potentiels voisins pour déterminer quel serait le meilleur candidat avec lequel lancer le processus de join. L'extensibilité des EBs standards est rendue possible en pratique grâce au mécanisme d'Header IE standardisé dans 802.15.4e (présenté à la \wordlink{Section}{EBs}).\\
+
+En plus d'augmenter les EBs standards, la méthode NPEB considère que la minimal cell n'est plus la seule envisageable pour émettre des (NP)EBs. Chaque noeud membre du réseau peu utiliser en plus des cells arbitraires de la slotframe de base dans laquelle est installée la minimal cell (on considère ici la slotframe 0 décrite dans \cite{rfc8180}). L'augmentation du nombre de cells d'annonce dans un même slotframe permet d'une part d'augmenter les chances qu'un pledge en écoute active capte un NPEB, et d'autre part d'émettre de façon déterministe là où les annonces dans la minimal cell sont probabilistes si le broadcast Bayesien est employé. Cependant, un pledge n'a a priori pas connaissance de quelle(s) cell(s) arbitraire est(sont) choisie(s) par ses voisins, ce qui l'obligerait à rester en écoute active. Pour palier cela, dans les informations associées à chaque voisin annoncé dans un NPEB, on retrouve les coordonnées des cells additionnelles que ce dernier utilise pour émettre ses NPEBs.\\
+
+À la réception d'un premier NPEB, un pledge obtient donc une liste de voisins potentiels et pour chacun de ces voisins une cell à laquelle il garantit qu'il émettra lui-même un NPEB. Ces voisins sont dans le même réseau que le noeud qui a émis le NPEB, si le pledge est intéressé à le rejoindre il peut se baser sur le contenu EB standard du NPEB pour temporairement se synchroniser temporellement (au niveau TSCH). Il peut alors soit continuer le processus de join avec le noeud dont il vient de recevoir le NPEB ou continuer une écoute active, soit décider qu'un des voisins annoncés dans le NPEB est intéressant pour lui (potentiellement meilleur). Si c'est le cas, il sait quand ce voisin va émettre un NPEB (cell annoncée) et peut alors passer en sommeil jusqu'à ce moment au lieu de rester en écoute active. À son réveil, il captera potentiellement le NPEB si le voisin était à portée raisonnable, et pourra alors recommencer le même processus de façon itérative.
+
+\newpage
+
+Bien que l'utilisation de cells d'annonce arbitraires en plus de la minimal cell est dans le principe avantageux pour le pledge qui obtient des informations sans faire d'écoute active, cela a un coût pour les noeuds du réseau. Premièrement, utiliser davantage de cells implique un coût énergétique pour la transmission du NPEB. Deuxièmement, comme un noeud ``promet" qu'il va émettre un NPEB dans cette cell, il doit prioritiser ce trafic pour éviter que le pledge n'attendent et se réveille pour rien, même s'il était à portée. Finalement, si les cells arbitraires ne sont pas choisies intelligemment, il y a un risque de collision. Ces faits motivent l'adoption de la notion supplémentaire de cycle. Un cycle correspond à une itération de slotframe (voir \wordlink{Section}{tschfond}). Ainsi, à chaque cell arbitraire est associé un nombre de cycles \textit{nbr\_cycles} dénotant que la cell n'est effective  que tous les \textit{nbr\_cycles}. Le cycle courant \textit{curr\_cycle} est un compteur diminué à chaque nouvelle itération de slotframe qui, arrivé à la valeur 0, indique que la cell est effective pour l'itération courante. Après cette itération, \textit{curr\_cycle} est réinitialisé, on a donc que $0 \leq \text{\textit{curr\_cycle}} \leq \text{\textit{nbr\_cycles}}$. L'information (\textit{curr\_cycle}, \textit{nbr\_cycles}) est donnée pour chaque cell dans le NPEB. Le pledge est alors capable de déterminer quand il devra se réveiller pour entendre le NPEB (possiblement plusieurs cycles plus tard) avec des calculs simples.
+
+\subsection{Méthodes de remplissage de la NPtable}
 
 \subsection{Procédures décisionnelles et paramétrage}
 
@@ -1517,6 +1542,7 @@ Que ce soit durant la première phase (avant la réception d'un premier EB) ou d
 \section{Impact de la sécurité sur la formation du réseau}
 
 \section{Amélioration des performances par la méthode NPEB}
+\label{eval_NPEB}
 
 \chapter*{Conclusion et recommandations}
 

@@ -96,6 +96,14 @@ David McGrew.
 \newblock {An Interface and Algorithms for Authenticated Encryption}.
 \newblock RFC 5116, January 2008.
 
+\bibitem{simulating-6TiSCH}
+Esteban Municio, Glenn Daneels, Mališa Vučinić, Steven Latré, Jeroen
+  Famaey, Yasuyuki Tanaka, Keoma Brun, Kazushi Muraoka, Xavier Vilajosana, and
+  Thomas Watteyne.
+\newblock Simulating 6tisch networks.
+\newblock {\em Transactions on Emerging Telecommunications Technologies}, 09
+  2018.
+
 \bibitem{stack-IoT}
 M.~R. {Palattella}, N.~{Accettura}, X.~{Vilajosana}, T.~{Watteyne}, L.~A.
   {Grieco}, G.~{Boggia}, and M.~{Dohler}.
