@@ -1521,11 +1521,85 @@ En plus d'augmenter les EBs standards, la méthode NPEB considère que la minima
 
 \newpage
 
-Bien que l'utilisation de cells d'annonce arbitraires en plus de la minimal cell est dans le principe avantageux pour le pledge qui obtient des informations sans faire d'écoute active, cela a un coût pour les noeuds du réseau. Premièrement, utiliser davantage de cells implique un coût énergétique pour la transmission du NPEB. Deuxièmement, comme un noeud ``promet" qu'il va émettre un NPEB dans cette cell, il doit prioritiser ce trafic pour éviter que le pledge n'attendent et se réveille pour rien, même s'il était à portée. Finalement, si les cells arbitraires ne sont pas choisies intelligemment, il y a un risque de collision. Ces faits motivent l'adoption de la notion supplémentaire de cycle. Un cycle correspond à une itération de slotframe (voir \wordlink{Section}{tschfond}). Ainsi, à chaque cell arbitraire est associé un nombre de cycles \textit{nbr\_cycles} dénotant que la cell n'est effective  que tous les \textit{nbr\_cycles}. Le cycle courant \textit{curr\_cycle} est un compteur diminué à chaque nouvelle itération de slotframe qui, arrivé à la valeur 0, indique que la cell est effective pour l'itération courante. Après cette itération, \textit{curr\_cycle} est réinitialisé, on a donc que $0 \leq \text{\textit{curr\_cycle}} \leq \text{\textit{nbr\_cycles}}$. L'information (\textit{curr\_cycle}, \textit{nbr\_cycles}) est donnée pour chaque cell dans le NPEB. Le pledge est alors capable de déterminer quand il devra se réveiller pour entendre le NPEB (possiblement plusieurs cycles plus tard) avec des calculs simples.
+Bien que l'utilisation de cells d'annonce arbitraires en plus de la minimal cell est dans le principe avantageux pour le pledge qui obtient des informations sans faire d'écoute active, cela a un coût pour les noeuds du réseau. Premièrement, utiliser davantage de cells implique un coût énergétique pour la transmission du NPEB. Deuxièmement, comme un noeud ``promet" qu'il va émettre un NPEB dans cette cell, il doit prioritiser ce trafic pour éviter que le pledge n'attendent et se réveille pour rien, même s'il était à portée. Finalement, si les cells arbitraires ne sont pas choisies intelligemment, il y a un risque de collision. Ces faits motivent l'adoption de la notion supplémentaire de cycle. Un cycle correspond à une itération de slotframe (voir \wordlink{Section}{tschfond}). Ainsi, à chaque cell arbitraire est associé un nombre de cycles \textit{nbr\_cycles} dénotant que la cell n'est effective  que tous les \textit{nbr\_cycles}. Le cycle courant \textit{curr\_cycle} est un compteur diminué à chaque nouvelle itération de slotframe qui, arrivé à la valeur 0, indique que la cell est effective (installée) pour l'itération courante. Après cette itération, la cell est et retirée et \textit{curr\_cycle} est réinitialisé, on a donc que $0 \leq \text{\textit{curr\_cycle}} \leq \text{\textit{nbr\_cycles}}$. L'information (\textit{curr\_cycle}, \textit{nbr\_cycles}) est donnée pour chaque cell dans le NPEB. Le pledge est alors capable de déterminer quand il devra se réveiller pour entendre le NPEB (possiblement plusieurs cycles plus tard) avec des calculs simples.\\
+
+Tout du long du processus itératif, le pledge maintient les informations récoltées à propos des voisins dans une table appelée \textit{NPtable}. Elle est indexée par un identifiant unique à chaque voisin qui peut être en pratique l'adresse MAC (ou la short address 802.15.4 si on ne considère qu'un seul réseau ou un mécanisme pour les différencier). À chaque NPEB reçu, les voisins qui y sont proposés voient leur entrée mise à jour dans la NPtable (ou y sont ajoutés si absents). Pour un voisin proposé, les informations reçues sont son identifiant unique, sa Join Metric et le \textit{schedule NPEB} constitué des coordonnées d'une cell (timeslot et channel offset), du cycle courant \textit{curr\_cycle} et du nombre  de cycles \textit{nbr\_cycles}. Le noeud qui émet le NPEB injecte également son propre schedule NPEB, les autres informations citées précédemment étant accessibles dans les champs de l'EB standard. En plus de ces champs, on retrouve dans la NPtable la dernière mesure de l'intensité du signal (\textit{RSSI}) reçu de chaque voisin. Il renseigne également le statut d'écoute avec chaque voisin : une valeur numérique indique qu'un NPEB a été entendu de ce voisin, une valeur nulle le fait qu'une tentative d'écoute a échoué (voisin vraisembablement trop loin) et pas de valeur le fait qu'aucune tentative d'écoute n'a encore été faite.
+\vspace{0.5cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+    \textbf{\underline{Noeud voisin}} & \textbf{Join Metric} & \textbf{Cell émission NPEB} & \textbf{Cycle courant} & \textbf{\# de cycles} & \textbf{RSSI}\\
+    \hline
+    \texttt{80-97-DF-48-00-01} & 0 & (1, 0) & 0 & 2 & \texttt{None}\\
+    \hline
+    \texttt{57-5F-CC-B1-00-02} & 14 & (1, 2) & 5 & 5 & \texttt{0}\\
+    \hline
+    \texttt{18-14-DA-48-00-03} & 7 & (2, 11) & 3 & 7 & \texttt{-83 (dBm)}\\
+    \hline
+\end{tabular}
+\caption{Exemple de NPtable avec différents statuts d'écoute possibles (\texttt{None}/\texttt{0}/\textit{valeur RSSI})}
+\label{NPtable}
+\end{table}
+\vspace{0.5cm}
+
+La \wordlink{Table}{NPtable} est un exemple de NPtable reprenant les différentes situations d'écoute possibles. La première entrée indique que ce voisin est le Root de la topologie car sa Join Metric mise à 0 (voir \cite{rfc8180}). Le cycle courant \textit{curr\_cycle} vaut 0, ce qui signifie que la cell (1,0) a été installée dans la slotframe courante par ce noeud et qu'il compte y émettre un NPEB. Le RSSI mis à \texttt{None} indique qu'aucune écoute n'a encore été tentée à une cell annoncée de la sorte par ce noeud. En revanche, la valeur \texttt{0} pour le second noeud indique qu'une écoute a été tentée à la cell (1,2) au cycle précédent et a échoué. Finalement, la valeur du RSSI pour le troisième noeud indique qu'un NPEB de sa part a été capturé et est vraisembablement à l'origine des deux autres entrées de la NPtable (voisins proposés dans ce NPEB).\\
+
+La NPtable est utilisée par le pledge pour gouverner son processus de join et celui-ci la remplit au fur et à mesure. Le moment et le voisin avec lequel il décide de lancer la suite de la joining phase (Join Exchange CoJP) dépend d'une procédure décisionnelle détaillée par la \wordlink{Section}{decisional}. Une fois qu'il a rejoint le réseau, il ne supprime pas la NPtable car celle-ci contient déjà des informations sur les noeuds environnants. La NPtable est maintenue et utilisée pour sélectionner les voisins à annoncer une fois que le noeud sera autorisé à émettre lui-même des NPEB (à l'obtention de son rang RPL). Cependant, les voisins annoncés de la sorte seront ceux qui lui ont été proposés par NPEBlors de la joining phase. Pour remplir davantage la NPtable de façon dynamique, il est possible d'inclure des Header IEs dans les frames échangées, ce qui est détaillé à la \wordlink{Section}{feed_NPtable}.
+
+\newpage
+
+La suite de cette Section illustre avec un exemple le déroulement du processus itératif et de l'évolution des différentes composants de la méthode NPEB présentées précédemment. Il met en scène un pledge qui tente de rejoindre le réseau en n'ayant aucune connaissance préalable de celui-ci. Les noeuds du réseau sont supposés avoir déjà alimenté leur NPtable par les mécanismes décrits dans la \wordlink{Section}{feed_NPtable}.
+
+ \vspace{0.2cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{NPEB_step1}
+	\caption{[Cycle t] État initial du réseau où les NPtables des noeuds sont déjà alimentées}
+	\label{fig:NPEB_step1}
+	\end{figure}
+\vspace{0.2cm}
+
+La \wordlink{Figure}{fig:NPEB_step1} illustre l'état initial du réseau considéré au cycle t, c'est-à-dire correspondant à la valeur d'ASN $lenSF * t$ où $lenSF$ est la taille de la slotframe. Les noeuds du réseau ont déjà des informations sur certains de leur voisin, maintenues dans leur NPtable. La notation pour le schedule NPEB correspond à \textit{cell} @ \textit{curr\_cycle}/\textit{nbr\_cycles}. Durant ce cycle t, le pledge écoute activement sur le channel 1 (stratégie arbitraire), mais aucun NPEB n'est émis (\textit{curr\_cycle} n'est à 0 pour aucun noeud).
+
+ \vspace{0.6cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{NPEB_step2}
+	\caption{[Cycle t+1] Une itération de slotframe écoulée, deux NPEBs programmés pour ce nouveau cycle}
+	\label{fig:NPEB_step2}
+	\end{figure}
+\vspace{0.2cm}
+
+\newpage
+
+La \wordlink{Figure}{fig:NPEB_step2} représente ce qu'il se passe durant le cycle suivant le cycle t. Les compteurs \textit{curr\_cycle} pour chaque voisin stocké dans les NPtables ont été décrémentés, ainsi que ceux propre à chaque noeud. Les compteurs de la cell (1,0) du noeud \textit{root} et la cell (4,0) du noeud N2 sont tombés à 0, chacun a alors installé la cell correspondante dans sa slotframe. Au timeslot 1, le noeud root émet donc un NPEB à un channel offset de 0, qui correspond au channel 6 pour l'ASN courant (valeur pour l'exemple). Les voisins sélectionnés depuis sa NPtable pour être annoncés le sont par un processus décisionnel décrit dans la \wordlink{Section}{decisional}. Le pledge écoute toujours activement sur le channel 1 et n'entend donc pas cet NPEB. En revanche, le NPEB émis par N2 au timeslot 4 est entendu car le channel résultant est le channel 1 qu'il écoute. Il remplit sa propre NPtable en conséquence et utilise une procédure de décision décrite dans la \wordlink{Section}{decisional} pour décider quelle action opérer. Ici, il s'avère que N1 semble un voisin intéressant et a priori meilleur que N2 en se basant sur la Join Metric. Donc, le noeud va passer en sommeil et se réveiller un cycle plus tard pour entendre le NPEB émis par N1 dans la cell (2,0).
+
+ \vspace{0.2cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{NPEB_step3}
+	\caption{État initial du réseau où les NPtables des noeuds sont déjà alimentées}
+	\label{fig:NPEB_step3}
+	\end{figure}
+\vspace{0.2cm}
+
+ \vspace{0.2cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{NPEB_step4}
+	\caption{État initial du réseau où les NPtables des noeuds sont déjà alimentées}
+	\label{fig:NPEB_step4}
+	\end{figure}
+\vspace{0.2cm}
+
 
 \subsection{Méthodes de remplissage de la NPtable}
+\label{feed_NPtable}
 
 \subsection{Procédures décisionnelles et paramétrage}
+\label{decisional}
 
 \subsection{Optimisations}
 

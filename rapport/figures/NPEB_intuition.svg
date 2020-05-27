@@ -1455,9 +1455,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7672917"
-     inkscape:cx="-37.691583"
-     inkscape:cy="611.95909"
+     inkscape:zoom="1.0851143"
+     inkscape:cx="405.28969"
+     inkscape:cy="964.61711"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2870,8 +2870,8 @@
            xml:space="preserve"><tspan
              sodipodi:role="line"
              x="153.18359"
-             y="147.40399"><tspan>NPEB N2</tspan><tspan
-               dx="1.7955818" /></tspan><tspan
+             y="147.40399"><tspan>NPEB root</tspan><tspan
+               dx="1.1065645" /></tspan><tspan
              sodipodi:role="line"
              x="153.18359"
              y="150.22621"><tspan>@ chann 6</tspan></tspan></text>
@@ -4692,8 +4692,8 @@
            transform="translate(0,0.52916663)"><tspan
              sodipodi:role="line"
              x="153.18359"
-             y="147.40399"><tspan>NPEB N2</tspan><tspan
-               dx="1.7955818" /></tspan><tspan
+             y="147.40399"><tspan>NPEB root</tspan><tspan
+               dx="1.1065645" /></tspan><tspan
              sodipodi:role="line"
              x="153.18359"
              y="150.22621"><tspan>@ chann 6</tspan></tspan></text>
