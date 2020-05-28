@@ -1502,6 +1502,7 @@ Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC
 \label{prob_joining_phase}
 
 \subsection{La \textit{minimal cell}}
+\label{min_cell}
 
 Comme illustré par les figures détaillant la joining phase dans la \wordlink{Section}{join_phase_analysis}, tous les échanges entre le pledge et le JP se font en utilisant le \textit{joining schedule} décrit dans l'EB initialement reçu. La spécification \cite{rfc8180} préconise l'utilisation d'une seule cell ((0,0)) comme joining schedule et par défaut pour tout trafic de type broadcast, dite \textit{minimal cell}. Cette cell est également encore utilisée par le pledge une fois devenu joined node, principalement jusqu'à capter un DIO qui lui permettra de rejoindre la topologie RPL. Il peut à partir de là sélectionner un prefered parent dans la topologie et, seulement alors, la Scheduling Function installe des nouvelles cells pour communiquer avec (on suppose l'utilisation de MSF \cite{ietf-6tisch-msf-10}). Le noeud utilise donc ces nouvelles cells pour le trafic unicast. Une fois son rang obtenu dans la topologie, le noeud est autorisé à émettre à son tour des EBs \cite{rfc8180}, ce qu'il fera dans la minimal cell.\\
 
@@ -1797,13 +1798,43 @@ Si en revanche un voisin intéressant est retourné par selectNeighborToListen(.
 
 \subsection{Discussion des optimisations possibles}
 
+Cette Section fait l'état de plusieurs optimisations apportables à la méthode NPEB telle que présentée dans les Sections précédentes. L'intuition qui les justifie est donnée pour chacune. Lors des expérimentations, les optimisations considérées dans l'implémentation seront mentionnées avec les résultats.
+
 \subsubsection{Placement des cells d'annonce}
+
+Les noeuds du réseau peuvent a priori choisir n'importe quelle cell arbitrairement, excepté celles du timeslot 0 puisque la minimal cell y est installée. Cependant, il est intéressant de pouvoir les disposer de sorte qu'un pledge puisse enchainer les itérations du processus d'écoute avec le moins de temps mort passé en sommeil entre deux NPEBs. Si la minimal cell est utilisée pour émettre des NPEBs, il est donc avantageux que les timeslots suivants soient considérés en priorité pour y installer des cells d'annonce de NPEB. Ainsi, le pledge recevant un NPEB en tout début d'itération de slotframe se voit proposer des voisins dont les cells d'annonce s'enchainent directement les timeslots suivants.\\
+
+Les noeuds du réseau peuvent tirer parti de leur NPtable pour sélectionner leur(s) cell(s) d'annonce intelligemment. Effectivement, le schedule NPEB associé à chaque voisin renseigne les coordonnées des cells qui sont donc déjà utilisées. Un noeud sélectionne donc le premier timeslot de la slotframe qu'aucun voisin connu n'exploite déjà. Il sélectionne le channel offset de façon aléatoire. La \wordlink{Figure}{fig:NPEB_cells} illustre l'enchainement des cells d'annonce au début de la slotframe. Le fait que certaines cells soient installées par plusieurs noeuds n'est pas génant comme ils ne sont à priori pas voisins l'un pour l'autre (sinon un timeslot différent aurait été choisi).\\
+
+Cependant, un pledge qui rate le début de la slotframe devra attendre sa prochaine itération. Pour éviter cela et avoir une répartition minimum, un noeud qui installe une deuxième cell d'annonce le fait suivant le même processus mais en considérant un timeslot minimum qui est la moitié de la slotframe. S'il vient à installer une troisième cell, il considérera un timeslot minimum au tier de la slotframe, etc.
+
+ \vspace{0.2cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{NPEB_cell}
+	\caption{Illustration de la sélection de cell tirée du simulateur 6TiSCH \cite{simulating-6TiSCH}}
+	\label{fig:NPEB_cells}
+	\end{figure}
+
+\newpage
 
 \subsubsection{Nombre de cycles}
 
+Une fois les coordonnées d'une cell d'annonce décidées, un noeud doit évaluer le nombre de cycles \textit{nbr\_cycles} qui séparera chaque annonce. Intuitivement, un noeud qui a une mauvaise place dans la topologie devrait émettre moins de (NP)EBs que ses parents. Une façon de refléter cela dans le nombre de cycles est de le choisir proportionnelement à la valeur de la Join Metric du noeud. Plus la Join Metric est élevée (le neoud a une moins bonne place dans la topologie), plus \textit{nbr\_cycles} le sera également. 
+
 \subsubsection{Cycles décalés entre voisins}
 
-\subsubsection{Cell Rx après une annonce NPEB}
+Le fait que les annonces ne soient pas opérées à chaque itération de slotframe peut éventuellement mener à une situation de ``famine". L'exemple le plus flagrant est si l'on considère deux noeuds voisins dans la topologie qui ont la même Join Metric. Par la Section précédente, ils calculent pour une cell d'annonce un même \textit{nbr\_cycle}. Si \textit{curr\_cycle} est également identique, ils sont alignés et émettent toujours dans des itérations de slotframes simultanées. Un pledge dans le voisinnage peut alors écouter activement des cycles durant sans entendre ni l'un ni l'autre.\\
+
+Une façon simple et non coûteuse de contrer cela est de considérer le \textit{curr\_cycle} connu des voisins quand une nouvelle cell d'annonce est créée. Si possible, le \textit{curr\_cycle} initial sera mis à une valeur non utilisée par les voisins qui annoncent au même \textit{nbr\_cycles}. Éventuellement, les multiples peuvent aussi être pris en compte pour être complet. Il en résulte un décalage de cycles entre les annonces et un étalement sur le temps évitant les temps d'écoute active trop longs pour les pledges.
+
+\subsubsection{Cell \textit{RxS} après une annonce NPEB}
+
+La méthode NPEB permet à un pledge de trouver efficacement un bon voisin, mais une fois celui-ci choisi il reste au pledge à effectuer la suite de son processus de join (Join Exchange CoJP). Cela se fait indépendamment de la méthode NPEB, en utilisant la minimal cell. Les performances globales du join sont donc encore impactées par l'usage de celle-ci, tel que décrit dans la \wordlink{Section}{min_cell}.\\
+
+Pour éviter la congestion dans la minimal cell, il est envisageables que les noeuds du réseaux installent d'autres cells destinées à la réception de la Join Request CoJP émise par un noeud qui souhaite continuer son processus de join. Une manière d'intégrer cela à la méthode NPEB est de prévoir un nouveau champ \textit{nbr\_rx\_cycles\_after} dans le schedule NPEB de chaque noeud. \textit{nbr\_rx\_cycles\_after} indique le nombre de cycles suivants l'annonce d'un NPEB de la part du noeud où celui-ci installe une cell \textit{RxS}, aux mêmes coordonnées (donc \textit{nbr\_rx\_cycles\_after} $<$ \textit{nbr\_cycles}). Pour un pledge qui vient d'entendre un NPEB et de valider le voisin pour continuer son processus de join, cela lui permet d'envoyer sa Join Request vers le noeud au cycle suivant, évitant de le faire dans la minimal cell. Le noeud se mettra en écoute à ce moment et pourra traiter la Join Request CoJP comme si elle était reçue de façon standard dans la minimal cell. La suite du processus de join se déroule normalement, la Join Response CoJP sera relayée vers le pledge dans la minimal cell.\\
+
+Le principal inconvénient de procéder de la sorte est la perte d'énergie liée à l'installation régulière d'une cell \textit{RxS}, où le noeud peut écouter dans le vent si aucun pledge ne lance son processus de join avec lui. Idéalement, \textit{nbr\_rx\_cycles\_after} est donc mis à 1. Ce qui signifie que le noeud installe la cell \textit{RxS} quand \textit{curr\_cycle} = \textit{nbr\_cycles} mais pas pour les cycles suivants. Cette technique est intuitivement plus avantageuse durant la phase de bootstrapping du réseau où la minimal cell est fortement utilisée, tous les noeuds essayant de rejoindre presque simultanément.
 
 \section{Inconvénients de la méthode NPEB}
 
