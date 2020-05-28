@@ -1723,20 +1723,25 @@ Tout comme mentionné pour la \wordlink{Procédure}{proc_announce}, cette procé
 
 \subsubsection{Processus itératif d'écoute de NPEBs}
 
-La \wordlink{Procédure}{proc_iter} est la formalisation du processus itératif illustré dans la \wordlink{Section}{intuition_NPEB}. Elle est appelée à la réception d'un NPEB par un pledge qui n'a pas encore décidé avec quel voisin il lancera son processus de join complet. Un pledge dans cette situation maintient une référence \textit{bestNP} qui indique quel est selon ses connaissances le meilleur candidat courant. Également, il maintient un timer courant décrémenté au fur et à mesure des périodes actives. Il sert à trancher si le pledge n'a lancé la suite de son processus de join avec aucun voisin après un temps donné (assimilable à \texttt{MAX\_EB\_DELAY} de la spécification \cite{rfc8180}). La situation de départ est que le pledge a sa \textit{NPtable} vide, \textit{bestNP} à \texttt{None} et le timer \textit{remainingListenDelay} initialisé à 180 secondes. Il lance alors un écoute active sur un channel au hasard, jusqu'à ce qu'un NPEB soit capté et la \wordlink{Procédure}{proc_iter} appelée (\textit{remainingListenDelay} s'écoulera à partir de ce moment lors des prochaines phases d'écoute active).
+La \wordlink{Procédure}{proc_iter} est la formalisation du processus itératif illustré dans la \wordlink{Section}{intuition_NPEB}. Elle est appelée à la réception d'un NPEB par un pledge qui n'a pas encore décidé avec quel voisin il lancera son processus de join complet. Un pledge dans cette situation maintient une référence \textit{bestNP} qui indique quel est selon ses connaissances le meilleur candidat courant. Également, il maintient un timer courant décrémenté au fur et à mesure des périodes actives. Il sert à trancher si le pledge n'a lancé la suite de son processus de join avec aucun voisin après un temps donné (assimilable à \texttt{MAX\_EB\_DELAY} de la spécification \cite{rfc8180}). La situation de départ est que le pledge a sa \textit{NPtable} vide, \textit{bestNP} à \texttt{None} et le timer \textit{remainingListenDelay} initialisé à 180 secondes. Il lance alors un écoute active sur un channel au hasard, jusqu'à ce qu'un NPEB soit capté et la \wordlink{Procédure}{proc_iter} appelée (\textit{remainingListenDelay} s'écoulera à partir de ce moment lors des prochaines phases d'écoute active).\\
 
-\vspace{0.3cm}
+Une fois le NPEB reçu, il est parsé premièrement comme un EB standard et deuxièmement la partie Neighbors Propositions est traitée. La fonction feedTable(.) met à jour et rempli la NPtable du pledge avec les informations sur les voisins proposés. De plus, le voisin \textit{neighbor} qui a émis le NPEB est considéré de la même façon (le pledge a en plus une valeur pour le RSSI associé). La fonction isBetterNeighbor(\textit{n1}, \textit{n2}) est appelée sur deux voisins dont un NPEB a été reçu et retourne vrai si \textit{n1} a une meilleure Join Metric et un meilleur RSSI que \textit{n2}.\\
+
+La fonction shouldUndergoSynchroWith(\textit{node}) permet de trancher quand arrêter le processus itératif et est donné par la \wordlink{Procédure}{proc_stop}. Elle utilise tous les éléments connus du pledge pour décider si un candidat devrait être celui avec lequel lancer la suite du processus de join. Le candidat est ici \textit{bestNP}, le meilleur voisin dont un NPEB a été capté par le pledge jusqu'ici, en prenant en compte le NPEB \textit{NPEB} qui vient d'être reçu. La fonction carryOnJoiningWith(.) correspond au lancement de la suite du processus de join (Join Exchange CoJP) non détaillée ici car indépendante de l'utilisation de la méthode NPEB. À noter que les échanges subséquents auront alors bien lieu dans la minimal cell tel que décrit par la spécification \cite{rfc8180}.
+
+\newpage
+
 \begin{algorithm}[!h]
 \caption{receiveNPEB : traitement de l'évènement réception d'un NPEB en écoute active}
 \begin{algorithmic}[1]
 \Require \textit{NPtable} du pledge, \textit{NPEB}, \textit{bestNP}=\texttt{None}, \textit{remainingListenDelay}=\texttt{180}
 \Ensure Le pledge a pris une décision à partir de sa connaissance du réseau
 \State feedTable(\textit{NPtable}, \textit{NPEB})
-\State \textit{neighbor} $\leftarrow$ \textit{NPEB}[self]
+\State \textit{neighbor} $\leftarrow$ \textit{NPEB}[\texttt{self}]
 \If{\textit{bestNP} est \texttt{None} \textbf{ou} isBetterNeighbor(\textit{neighbor}, \textit{bestNP})}
 \State \textit{bestNP} $\leftarrow$ \textit{neighbor}
 \EndIf
-\If{shouldUndergoSynchroWith(\textit{bestNP})}
+\If{shouldUndergoSynchroWith(\textit{NPtable}, \textit{bestNP})}
 \State carryOnJoiningWith(\textit{bestNP})
 \Else
 \State \textit{mostInterestingNP} $\leftarrow$ selectNeighborToListen(\textit{NPtable})
@@ -1755,7 +1760,40 @@ La \wordlink{Procédure}{proc_iter} est la formalisation du processus itératif 
 \label{proc_iter}
 \end{algorithm}
 
+\vspace{0.2cm}
+
+\begin{algorithm}[!h]
+\caption{shouldUndergoSynchroWith : décision d'arrêt pour le processus itératif validant le voisin candidat pour la suite du processus de join}
+\begin{algorithmic}[1]
+\Require \textit{NPtable} courante du pledge, \textit{neighbor} voisin candidat, \texttt{MIN\_PDR\_UNDERGO\_SYNCHRO}=\texttt{0.6}, \texttt{MAX\_JM\_UNDERGO\_SYNCHRO}=\texttt{0}
+\Ensure \texttt{Vrai} ssi le processus itératif doit être stoppé
+\State \textit{pdr} $\leftarrow$ rssiToPdr(\textit{NPtable}[\textit{neighbor}][\texttt{RSSI}])
+\If{pdr $<$ \texttt{MIN\_PDR\_UNDERGO\_SYNCHRO}}
+\State\Return \texttt{Faux}
+\EndIf
+\If{\textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}] $\leq$ \texttt{MAX\_JM\_UNDERGO\_SYNCHRO}}
+\State\Return \texttt{Vrai}
+\EndIf
+\If{plus de 2 voisins dans \textit{NPtable}}
+\If{il ne reste plus de voisin à écouter dans \textit{NPtable} (ont tous RSSI $\neq$ \texttt{None})}
+\State\Return \texttt{Vrai}
+\EndIf
+\EndIf
+\State\Return \texttt{Faux}
+\end{algorithmic}
+\label{proc_stop}
+\end{algorithm}
+\vspace{0.4cm}
+
+La fonction selectNeighborToListen(.) est la \wordlink{Procédure}{proc_listen} détaillée précédemment. Si elle ne retourne aucun voisin, alors le pledge retourne en écoute active pour les \textit{remainingListenDelay} secondes restantes et décrémentera de fait ce timer. S'il arrive à expiration, le processus de join sera lancé avec \textit{bestNP}. Si un NPEB est reçu en écoute active durant cet intervalle de temps, la procédure receiveNPEB est à nouveau appelée (nouvelle itération). 
+
+\newpage
+
+Si en revanche un voisin intéressant est retourné par selectNeighborToListen(.), le pledge récupère le schedule NPEB associé à ce voisin depuis la NPtable. Il sait alors dans combien de cycles (\textit{curr\_cycle}) il va installer une cell d'annonce de NPEB. La fonction computeNPEBAnnouncementASN(.) opère des calculs simples pour calculer l'ASN à laquelle cette annonce aura lieu. Il va ensuite passer en sommeil jusqu'à ce moment, où il se réveille pour recevoir le NPEB. S'il est capté, la procédure receiveNPEB est à nouveau appelée pour une nouvelle itération du processus d'écoute. Sinon, le pledge repasse en écoute active comme détaillé précédemment dans le cas \textit{mostInterestingNP} = \texttt{None}.
+
 \subsubsection{Propositions de voisins dans les frames ACK/Data}
+
+\todo{Implem}
 
 \subsection{Discussion des optimisations possibles}
 

@@ -65,15 +65,15 @@
 \contentsline {subsubsection}{\numberline {4.2.3.1}Sélection des voisins à annoncer}{63}{subsubsection.4.2.3.1}%
 \contentsline {subsubsection}{\numberline {4.2.3.2}Sélection d'un candidat voisin parmi ceux proposés au pledge}{64}{subsubsection.4.2.3.2}%
 \contentsline {subsubsection}{\numberline {4.2.3.3}Processus itératif d'écoute de NPEBs}{65}{subsubsection.4.2.3.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.4}Propositions de voisins dans les frames ACK/Data}{65}{subsubsection.4.2.3.4}%
-\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{65}{subsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{65}{subsubsection.4.2.4.1}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{65}{subsubsection.4.2.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{65}{subsubsection.4.2.4.3}%
-\contentsline {subsubsection}{\numberline {4.2.4.4}Cell Rx après une annonce NPEB}{65}{subsubsection.4.2.4.4}%
-\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{65}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{65}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{65}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{67}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{68}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{68}{section.5.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}Propositions de voisins dans les frames ACK/Data}{67}{subsubsection.4.2.3.4}%
+\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{67}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{67}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{67}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{67}{subsubsection.4.2.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}Cell Rx après une annonce NPEB}{67}{subsubsection.4.2.4.4}%
+\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{67}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{67}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{67}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{68}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{69}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{69}{section.5.2}%
