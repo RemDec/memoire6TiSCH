@@ -21,6 +21,25 @@
 \usepackage{amsmath}
 \usepackage{enumitem}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\floatname{algorithm}{Procédure}
+\renewcommand{\algorithmicreturn}{\textbf{retourne}}
+\renewcommand{\algorithmicprocedure}{\textbf{procédure}}
+\renewcommand{\algorithmicrequire}{\textbf{Entrée:}}
+\renewcommand{\algorithmicensure}{\textbf{Sortie:}}
+%\renewcommand{\algorithmiccomment}[1]{\{#1\}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicthen}{\textbf{alors}}
+\renewcommand{\algorithmicelse}{\textbf{sinon}}
+\renewcommand{\algorithmicfor}{\textbf{pour}}
+\renewcommand{\algorithmicforall}{\textbf{pour tout}}
+\renewcommand{\algorithmicdo}{\textbf{faire}}
+\renewcommand{\algorithmicwhile}{\textbf{tant que}}
+\newcommand{\algorithmicelsif}{\algorithmicelse\ \algorithmicif}
+\newcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\newcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
 
 \newcommand{\minit}[1]{\noindent{\small\textbf{ \underline{#1}}}~\\}
 \newcommand{\todo}[1]{\par{\color{red} /---| A faire : #1 |---\textbackslash\\}}
@@ -1501,6 +1520,7 @@ Que ce soit durant la première phase (avant la réception d'un premier EB) ou d
 \newpage
 
 \section{Présentation de la méthode de \textit{Neighbors Propositions EB}}
+\label{intuition_NPEB}
 
 Afin de donner une réponse aux problèmes inhérents à la joining phase telle que définie par les standards 6TiSCH qui ont été décrits par la \wordlink{Section}{prob_joining_phase}, la méthode NPEB (\textit{Neighbors Propositions EB}) a été élaborée et évaluée dans ce travail. Le reste de ce chapitre en décrit les principes fondamentaux, les inconvénients et les pistes d'amélioration. Dans le chapitre suivant, la \wordlink{Section}{eval_NPEB} fait état des gains de performance de la joining phase NPEB en comparaison avec la joining phase standard, par le biais d'expérimentations en simulateur.
 
@@ -1625,9 +1645,37 @@ Le principe est identique aux voisins proposés avec la méthode Data-based, mai
 \subsection{Procédures décisionnelles et paramétrage}
 \label{decisional}
 
+Cette Section décrit les différentes procédures pour les prises de décisions impliquées dans la méthode NPEB, à différents niveaux. Ces procédures sont adaptables en fonction du comportement escompté, les définitions qui en sont données ici sont basiques et destinées à servir de \textit{baseline} effective dans un contexte général. Si des modifications sont apportées, elles devraient l'être en tenant compte du fait que ces procédures tournent sur des équipements restreints où des calculs complexes devraient être évités.
+
 \subsubsection{Sélection des voisins à annoncer}
 
-\subsubsection{Élection d'un candidat voisin parmi ceux proposés}
+Cette procédure intervient lorsqu'un noeud du réseau \textit{node} souhaite proposer des voisins dans sa prochaine frame qui peut être un NPEB, du transport de payload des couches plus hautes ou un ACK (voir \wordlink{Section}{feed_NPtable}). \textit{Node} a alors un certain nombre de voisins dans sa NPtable qu'il peut proposer, quelque soit le statut d'écoute : s'il est \texttt{None} ou mis à \texttt{0}, rien n'a été reçu de ce voisin mais cela n'exclu pas qu'il envoie des NPEBs tel que annoncé selon le schedule NPEB associé. \textit{Node} souhaite sélectionner parmi ces voisins quels sont les plus avantageux à annoncer, du point de vue d'un noeud qui recevrait ces propositions.\\
+
+La \wordlink{Procédure}{proc_announce} est une façon basique de déterminer les \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED} meilleurs voisins à annoncer, basée sur la Join Metric. Elle associe un score à chaque voisin, diminué par la Join Metric qui se situe dans [0, 255] où une faible valeur indique une bonne place dans la topologie RPL (seul le noeud Root du DODAG atteint la valeur 0). Afin de diriger un comportement convergent vers les noeuds plus hauts de la topologie (illustré par l'exemple de la \wordlink{Section}{intuition_NPEB}), le prefered parent de \textit{node} est favorisé et son score est augmenté. De même si le voisin considérer est Root du DODAG.\\
+
+Cette procédure est très simple et a du sens, mais elle peut être affinée en tenant compte de, par exemple, les valeurs \textit{curr\_cycle} de chaque voisin. L'intuition est de donner une préférence aux voisins qui vont bientôt émettre un NPEB (valeur de \textit{curr\_cycle} faible, voire 0 si dans le cycle courant). Considérant \textit{max\_cycle} la valeur la plus élevée parmi les \textit{curr\_cycle} des voisins, une façon simple de procéder serait d'insérer après la ligne 4 une augmentation du score en dépendant ($score \leftarrow score +  maxcycle - $\textit{NPtable}$[neighbor][\text{\textit{curr\_cycle}}]$). 
+
+\begin{algorithm}
+\caption{selectNeighborsToAnnounce : sélection des meilleurs voisins à annoncer par le noeud \textit{node}}
+\begin{algorithmic}[1]
+\Require \textit{NPtable} de node, \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED}
+\Ensure Une liste de maximum \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED} voisins connus de \textit{node}
+\State $scoredNeighbors \leftarrow [\ ]$
+\For{\textit{neighbor} $\in$ \textit{NPtable}}
+\State $score \leftarrow 255$
+\State $score \leftarrow score - $ \textit{NPtable}$[neighbor][joinMetric]$
+\If{\textit{neighbor} est Root de la topologie \textbf{ou} prefered parent de \textit{node}}
+\State $score \leftarrow score * 2$
+\EndIf
+\State ajouter le couple (\textit{neighbor}, \textit{score}) à \textit{scoredNeighbors}
+\EndFor
+\State trier \textit{scoredNeighbors} par ordre décroissant sur le \textit{score}
+\State\Return les $1^{\text{ère}}$ composantes des \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED} premiers éléments de \textit{scoredNeighbors}
+\end{algorithmic}
+\label{proc_announce}
+\end{algorithm}
+
+\subsubsection{Sélection d'un candidat voisin parmi ceux proposés au pledge}
 
 \subsubsection{Décision de continuité du processus itératif NPEB}
 

@@ -342,6 +342,7 @@
 \citation{simulating-6TiSCH}
 \citation{rfc8180}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Présentation de la méthode de \textit  {Neighbors Propositions EB}}{58}{section.4.2}\protected@file@percent }
+\newlabel{intuition_NPEB}{{4.2}{58}{Présentation de la méthode de \textit {Neighbors Propositions EB}}{section.4.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Intuition de la méthode NPEB}{58}{subsection.4.2.1}\protected@file@percent }
 \citation{rfc8180}
 \@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Exemple de NPtable avec différents statuts d'écoute possibles (\texttt  {None}/\texttt  {0}/\textit  {valeur RSSI})\relax }}{59}{table.caption.33}\protected@file@percent }
@@ -366,23 +367,25 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Procédures décisionnelles et paramétrage}{63}{subsection.4.2.3}\protected@file@percent }
 \newlabel{decisional}{{4.2.3}{63}{Procédures décisionnelles et paramétrage}{subsection.4.2.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.1}Sélection des voisins à annoncer}{63}{subsubsection.4.2.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.2}Élection d'un candidat voisin parmi ceux proposés}{63}{subsubsection.4.2.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.3}Décision de continuité du processus itératif NPEB}{63}{subsubsection.4.2.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.4}Propositions de voisins dans les frames ACK/Data}{63}{subsubsection.4.2.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{63}{subsection.4.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{63}{subsubsection.4.2.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{63}{subsubsection.4.2.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{63}{subsubsection.4.2.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.4}Cell Rx après une annonce NPEB}{63}{subsubsection.4.2.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{63}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{63}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{63}{subsection.4.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{64}{chapter.5}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces selectNeighborsToAnnounce : sélection des meilleurs voisins à annoncer par le noeud \textit  {node}\relax }}{64}{algorithm.1}\protected@file@percent }
+\newlabel{proc_announce}{{1}{64}{selectNeighborsToAnnounce : sélection des meilleurs voisins à annoncer par le noeud \textit {node}\relax }{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.2}Sélection d'un candidat voisin parmi ceux proposés au pledge}{64}{subsubsection.4.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.3}Décision de continuité du processus itératif NPEB}{64}{subsubsection.4.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.4}Propositions de voisins dans les frames ACK/Data}{64}{subsubsection.4.2.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{64}{subsection.4.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{64}{subsubsection.4.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{64}{subsubsection.4.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{64}{subsubsection.4.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.4}Cell Rx après une annonce NPEB}{64}{subsubsection.4.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{64}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{64}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{64}{subsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{65}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{65}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{65}{section.5.2}\protected@file@percent }
-\newlabel{eval_NPEB}{{5.2}{65}{Amélioration des performances par la méthode NPEB}{section.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{66}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{66}{section.5.2}\protected@file@percent }
+\newlabel{eval_NPEB}{{5.2}{66}{Amélioration des performances par la méthode NPEB}{section.5.2}{}}
 \bibstyle{plain}
 \bibdata{biblio}
 \bibcite{rfc6550}{1}
