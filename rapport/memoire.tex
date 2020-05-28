@@ -1653,9 +1653,12 @@ Cette procédure intervient lorsqu'un noeud du réseau \textit{node} souhaite pr
 
 La \wordlink{Procédure}{proc_announce} est une façon basique de déterminer les \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED} meilleurs voisins à annoncer, basée sur la Join Metric. Elle associe un score à chaque voisin, diminué par la Join Metric qui se situe dans [0, 255] où une faible valeur indique une bonne place dans la topologie RPL (seul le noeud Root du DODAG atteint la valeur 0). Afin de diriger un comportement convergent vers les noeuds plus hauts de la topologie (illustré par l'exemple de la \wordlink{Section}{intuition_NPEB}), le prefered parent de \textit{node} est favorisé et son score est augmenté. De même si le voisin considérer est Root du DODAG.\\
 
-Cette procédure est très simple et a du sens, mais elle peut être affinée en tenant compte de, par exemple, les valeurs \textit{curr\_cycle} de chaque voisin. L'intuition est de donner une préférence aux voisins qui vont bientôt émettre un NPEB (valeur de \textit{curr\_cycle} faible, voire 0 si dans le cycle courant). Considérant \textit{max\_cycle} la valeur la plus élevée parmi les \textit{curr\_cycle} des voisins, une façon simple de procéder serait d'insérer après la ligne 4 une augmentation du score en dépendant ($score \leftarrow score +  maxcycle - $\textit{NPtable}$[neighbor][\text{\textit{curr\_cycle}}]$). 
+\newpage
 
-\begin{algorithm}
+Cette procédure est très simple et a du sens, mais elle peut être affinée en tenant compte de, par exemple, les valeurs \textit{curr\_cycle} de chaque voisin. L'intuition est de donner une préférence aux voisins qui vont bientôt émettre un NPEB (valeur de \textit{curr\_cycle} faible, voire 0 si dans le cycle courant). Considérant \textit{max\_cycle} la valeur la plus élevée parmi les \textit{curr\_cycle} des voisins, une façon simple de procéder serait d'insérer après la ligne 4 une augmentation du score en dépendant ($score \leftarrow score +  maxcycle - $\textit{NPtable}$[neighbor][\text{\textit{curr\_cycle}}]$).
+
+\vspace{0.3cm}
+\begin{algorithm}[!h]
 \caption{selectNeighborsToAnnounce : sélection des meilleurs voisins à annoncer par le noeud \textit{node}}
 \begin{algorithmic}[1]
 \Require \textit{NPtable} de node, \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED}
@@ -1663,7 +1666,7 @@ Cette procédure est très simple et a du sens, mais elle peut être affinée en
 \State $scoredNeighbors \leftarrow [\ ]$
 \For{\textit{neighbor} $\in$ \textit{NPtable}}
 \State $score \leftarrow 255$
-\State $score \leftarrow score - $ \textit{NPtable}$[neighbor][joinMetric]$
+\State $score \leftarrow score\ - $ \textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}]
 \If{\textit{neighbor} est Root de la topologie \textbf{ou} prefered parent de \textit{node}}
 \State $score \leftarrow score * 2$
 \EndIf
@@ -1674,10 +1677,83 @@ Cette procédure est très simple et a du sens, mais elle peut être affinée en
 \end{algorithmic}
 \label{proc_announce}
 \end{algorithm}
+\vspace{0.2cm}
+
+La procédure pourrait également tenir compte de la valeur des RSSI des voisins pour lesquels elle est connue. Bien qu'elle n'ait pas de sens du point de vue du noeud qui reçoit les propositions, elle indique quels noeuds sont proches de \textit{node}. Dans le cas d'une annonce NPEB, \textit{node} peut proposer préférentiellement un voisin avec lequel il a un très bon RSSI, vraisembalement proche. Un pledge qui capte le NPEB et considère l'écoute de ce voisin sera surement également capable d'entendre le NPEB dudit voisin, bien que cela ne soit pas garanti pour autant.
+
+\vspace{0.2cm}
 
 \subsubsection{Sélection d'un candidat voisin parmi ceux proposés au pledge}
 
-\subsubsection{Décision de continuité du processus itératif NPEB}
+Comme décrit dans la \wordlink{Section}{intuition_NPEB}, un pledge qui souhaite continuer le processus itératif pour entendre davantage de NPEBs doit sélectionner un voisin suivant à écouter. Ce voison est choisi parmi les propositions apprises jusqu'ici, stockées dans la NPtable du pledge. La sélection n'est pas faite au hasard mais en se basant sur une procédure  définie qui permet de dégager le voisin le plus intéressant pour le pledge selon plusieurs critères.\\
+
+La \wordlink{Procédure}{proc_listen} est une procédure basique pour sélectionner le meilleur voisin à écouter en se basant sur la Join Metric. Elle fonctionne sur le même principe que la \wordlink{Procédure}{proc_announce}. Cependant, dans ce cas-ci, les voisins qui ont déjà été entendus ou pour lesquels l'écoute du NPEB à la cell indiquée a été infructueuse sont écartés. Un seul voisin est retourné par la procédure.\\
+
+Tout comme mentionné pour la \wordlink{Procédure}{proc_announce}, cette procédure pourrait être modifiée pour prendre en compte le cycle courant \textit{curr\_cycle} associé à chaque cell de voisin proposé. Sélectionner un voisin qui programme d'émettre un NPEB dans les cycles à venir, ou même qui a installé une cell pour le faire dans l'itération de slotframe courante (\textit{curr\_cycle} = 0), peut permettre d'accélerer le processus car le pledge dormira moins longtemps. En revanche, l'information du RSSI n'est ici pas exploitable puisqu'on ne s'intéresse qu'au voisins proposés encore non entendus (RSSI = \texttt{None}).
+
+\newpage
+
+\begin{algorithm}[!h]
+\caption{selectNeighborToListen : sélection du meilleur voisin à écouter parmi ceux proposés}
+\begin{algorithmic}[1]
+\Require \textit{NPtable} courante du pledge contenant des propositions de voisins (non vide)
+\Ensure Un voisin considéré comme le meilleur à écouter ensuite pour capter son NPEB
+\State $scoredNeighbors \leftarrow [\ ]$
+\For{\textit{neighbor} $\in$ \textit{NPtable}}
+\If{\textit{NPtable}[\textit{neighbor}][\texttt{RSSI}] $\neq $ \texttt{None} }
+\State passer le reste de cette itération de boucle
+\Else
+\State $score \leftarrow 255$
+\State $score \leftarrow score\ - $ \textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}]
+\If{\textit{neighbor} est Root de la topologie \textbf{ou} prefered parent de \textit{node}}
+\State $score \leftarrow score * 2$
+\EndIf
+\State ajouter le couple (\textit{neighbor}, \textit{score}) à \textit{scoredNeighbors}
+\EndIf
+\EndFor
+\If{\textit{scoredNeighbor} est vide}
+\State\Return \texttt{None}
+\EndIf
+\State trier \textit{scoredNeighbors} par ordre décroissant sur le \textit{score}
+\State\Return la $1^{\text{ère}}$ composante du premier élément de \textit{scoredNeighbors}
+\end{algorithmic}
+\label{proc_listen}
+\end{algorithm}
+
+
+\subsubsection{Processus itératif d'écoute de NPEBs}
+
+La \wordlink{Procédure}{proc_iter} est la formalisation du processus itératif illustré dans la \wordlink{Section}{intuition_NPEB}. Elle est appelée à la réception d'un NPEB par un pledge qui n'a pas encore décidé avec quel voisin il lancera son processus de join complet. Un pledge dans cette situation maintient une référence \textit{bestNP} qui indique quel est selon ses connaissances le meilleur candidat courant. Également, il maintient un timer courant décrémenté au fur et à mesure des périodes actives. Il sert à trancher si le pledge n'a lancé la suite de son processus de join avec aucun voisin après un temps donné (assimilable à \texttt{MAX\_EB\_DELAY} de la spécification \cite{rfc8180}). La situation de départ est que le pledge a sa \textit{NPtable} vide, \textit{bestNP} à \texttt{None} et le timer \textit{remainingListenDelay} initialisé à 180 secondes. Il lance alors un écoute active sur un channel au hasard, jusqu'à ce qu'un NPEB soit capté et la \wordlink{Procédure}{proc_iter} appelée (\textit{remainingListenDelay} s'écoulera à partir de ce moment lors des prochaines phases d'écoute active).
+
+\vspace{0.3cm}
+\begin{algorithm}[!h]
+\caption{receiveNPEB : traitement de l'évènement réception d'un NPEB en écoute active}
+\begin{algorithmic}[1]
+\Require \textit{NPtable} du pledge, \textit{NPEB}, \textit{bestNP}=\texttt{None}, \textit{remainingListenDelay}=\texttt{180}
+\Ensure Le pledge a pris une décision à partir de sa connaissance du réseau
+\State feedTable(\textit{NPtable}, \textit{NPEB})
+\State \textit{neighbor} $\leftarrow$ \textit{NPEB}[self]
+\If{\textit{bestNP} est \texttt{None} \textbf{ou} isBetterNeighbor(\textit{neighbor}, \textit{bestNP})}
+\State \textit{bestNP} $\leftarrow$ \textit{neighbor}
+\EndIf
+\If{shouldUndergoSynchroWith(\textit{bestNP})}
+\State carryOnJoiningWith(\textit{bestNP})
+\Else
+\State \textit{mostInterestingNP} $\leftarrow$ selectNeighborToListen(\textit{NPtable})
+\If{\textit{mostInterestingNP} est \texttt{None}}
+\State [lancer écoute active pour \textit{remainingListenDelay} secondes
+\State avec fonction de callback carryOnJoiningWith(\textit{bestNP})]
+\Else
+\State \textit{scheduleIntNeigh} $\leftarrow$ \textit{NPtable}[\textit{mostInterestingNP}][\texttt{scheduleNPEB}]
+\State \textit{targetASN} $\leftarrow$ computeNPEBAnnouncementASN(\textit{scheduleIntNeigh})
+\State [passer en sommeil jusque réveil à \textit{targetASN} pour écouter NPEB de \textit{mostInterestingNP}
+\State suivi d'une écoute active de \textit{remainingListenDelay} secondes si rien reçu
+\State avec fonction de callback carryOnJoiningWith(\textit{bestNP})]
+\EndIf
+\EndIf
+\end{algorithmic}
+\label{proc_iter}
+\end{algorithm}
 
 \subsubsection{Propositions de voisins dans les frames ACK/Data}
 

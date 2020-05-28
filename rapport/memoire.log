@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  28 MAY 2020 15:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  28 MAY 2020 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1372,23 +1372,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 1654--1655
 
  []
 
+[63]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1659.
-[63] [64]
+put line 1662.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1689
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1690--1691
+
+ []
+
+[64]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[65] [66]
 Chapitre 5.
-[65
+[67
 
-] [66] (./memoire.bbl [67
+] [68] (./memoire.bbl [69
 
-] [68
+] [70
 
-] [69])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1716.
- [70]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1716.
+] [71])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1792.
+ [72]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1792.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1716.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1716.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1792.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1792.
 
 Package rerunfilecheck Info: File `memoire.out' has not changed.
 (rerunfilecheck)             Checksum: 006F9B112BEB968487688D3776B1C5A3;3556.
@@ -1396,13 +1411,13 @@ Package rerunfilecheck Info: File `memoire.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1716.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1792.
  ) 
 Here is how much of TeX's memory you used:
- 11342 strings out of 482412
- 174150 string characters out of 5948338
- 472738 words of memory out of 5000000
- 26498 multiletter control sequences out of 15000+600000
+ 11355 strings out of 482412
+ 174313 string characters out of 5948338
+ 471959 words of memory out of 5000000
+ 26507 multiletter control sequences out of 15000+600000
  543005 words of font info for 61 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  50i,11n,48p,1653b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1434,10 +1449,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on memoire.pdf (71 pages, 4431888 bytes).
+Output written on memoire.pdf (73 pages, 4438431 bytes).
 PDF statistics:
- 1367 PDF objects out of 1440 (max. 8388607)
- 1163 compressed objects within 12 object streams
- 310 named destinations out of 1000 (max. 500000)
+ 1395 PDF objects out of 1440 (max. 8388607)
+ 1189 compressed objects within 12 object streams
+ 314 named destinations out of 1000 (max. 500000)
  521 words of extra memory for PDF output out of 10000 (max. 10000000)
 
