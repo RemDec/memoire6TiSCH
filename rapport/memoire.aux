@@ -135,6 +135,7 @@
 \citation{link-layer-sec-impact}
 \citation{link-layer-sec-impact}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3.5}Services de sécurité}{23}{subsubsection.2.2.3.5}\protected@file@percent }
+\newlabel{IEEE802.15.4-sec}{{2.2.3.5}{23}{Services de sécurité}{subsubsection.2.2.3.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Structure d'une frame 802.15.4e selon le standard \cite  {IEEE802.15.4}\relax }}{23}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:IEEE802.15.4_frame}{{2.7}{23}{Structure d'une frame 802.15.4e selon le standard \cite {IEEE802.15.4}\relax }{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces CCM* permet de chiffrer/authentifer des frames à partir d'une clé \cite  {link-layer-sec-impact}\relax }}{23}{figure.caption.15}\protected@file@percent }
@@ -349,24 +350,39 @@
 \newlabel{fig:NPEB_step1}{{4.1}{60}{[Cycle t] État initial du réseau où les NPtables des noeuds sont déjà alimentées\relax }{figure.caption.34}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces [Cycle t+1] Une itération de slotframe écoulée, deux NPEBs programmés pour ce nouveau cycle\relax }}{60}{figure.caption.35}\protected@file@percent }
 \newlabel{fig:NPEB_step2}{{4.2}{60}{[Cycle t+1] Une itération de slotframe écoulée, deux NPEBs programmés pour ce nouveau cycle\relax }{figure.caption.35}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces État initial du réseau où les NPtables des noeuds sont déjà alimentées\relax }}{61}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:NPEB_step3}{{4.3}{61}{État initial du réseau où les NPtables des noeuds sont déjà alimentées\relax }{figure.caption.36}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces État initial du réseau où les NPtables des noeuds sont déjà alimentées\relax }}{61}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:NPEB_step4}{{4.4}{61}{État initial du réseau où les NPtables des noeuds sont déjà alimentées\relax }{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces [Cycle t+2] sommeil du pledge jusqu'à la cell d'annonce indiquée par N1\relax }}{61}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:NPEB_step3}{{4.3}{61}{[Cycle t+2] sommeil du pledge jusqu'à la cell d'annonce indiquée par N1\relax }{figure.caption.36}{}}
+\citation{IEEE802.15.4}
+\citation{rfc8180}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces [Cycle t+4] sommeil du pledge jusqu'à la cell d'annonce indiquée par root et lancement de la suite du processus de join avec celui-ci\relax }}{62}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:NPEB_step4}{{4.4}{62}{[Cycle t+4] sommeil du pledge jusqu'à la cell d'annonce indiquée par root et lancement de la suite du processus de join avec celui-ci\relax }{figure.caption.37}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Méthodes de remplissage de la NPtable}{62}{subsection.4.2.2}\protected@file@percent }
 \newlabel{feed_NPtable}{{4.2.2}{62}{Méthodes de remplissage de la NPtable}{subsection.4.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Procédures décisionnelles et paramétrage}{62}{subsection.4.2.3}\protected@file@percent }
-\newlabel{decisional}{{4.2.3}{62}{Procédures décisionnelles et paramétrage}{subsection.4.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Optimisations}{62}{subsection.4.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{62}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{62}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{62}{subsection.4.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{63}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.1}NPEB-based}{62}{subsubsection.4.2.2.1}\protected@file@percent }
+\citation{openbenchmark}
+\citation{IEEE802.15.4}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.2}Data-based}{63}{subsubsection.4.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.3}ACK-based}{63}{subsubsection.4.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Procédures décisionnelles et paramétrage}{63}{subsection.4.2.3}\protected@file@percent }
+\newlabel{decisional}{{4.2.3}{63}{Procédures décisionnelles et paramétrage}{subsection.4.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.1}Sélection des voisins à annoncer}{63}{subsubsection.4.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.2}Élection d'un candidat voisin parmi ceux proposés}{63}{subsubsection.4.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.3}Décision de continuité du processus itératif NPEB}{63}{subsubsection.4.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.4}Propositions de voisins dans les frames ACK/Data}{63}{subsubsection.4.2.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{63}{subsection.4.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{63}{subsubsection.4.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{63}{subsubsection.4.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{63}{subsubsection.4.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.4}Cell Rx après une annonce NPEB}{63}{subsubsection.4.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{63}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{63}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{63}{subsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{64}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{64}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{64}{section.5.2}\protected@file@percent }
-\newlabel{eval_NPEB}{{5.2}{64}{Amélioration des performances par la méthode NPEB}{section.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{65}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{65}{section.5.2}\protected@file@percent }
+\newlabel{eval_NPEB}{{5.2}{65}{Amélioration des performances par la méthode NPEB}{section.5.2}{}}
 \bibstyle{plain}
 \bibdata{biblio}
 \bibcite{rfc6550}{1}
@@ -403,12 +419,13 @@
 \bibcite{6TiSCH-industrial-perf}{32}
 \bibcite{rfc8180}{33}
 \bibcite{SODA}{34}
-\bibcite{ietf-lake-reqs-03}{35}
-\bibcite{ietf-6tisch-minimal-security-15}{36}
-\bibcite{broadcast-strategies}{37}
-\bibcite{rfc8480}{38}
-\bibcite{rfc7554}{39}
-\bibcite{openWSN}{40}
-\bibcite{vulns-time-synchro-TSCH}{41}
-\bibcite{wiki:6LoWPAN}{42}
-\bibcite{R-TSCH}{43}
+\bibcite{openbenchmark}{35}
+\bibcite{ietf-lake-reqs-03}{36}
+\bibcite{ietf-6tisch-minimal-security-15}{37}
+\bibcite{broadcast-strategies}{38}
+\bibcite{rfc8480}{39}
+\bibcite{rfc7554}{40}
+\bibcite{openWSN}{41}
+\bibcite{vulns-time-synchro-TSCH}{42}
+\bibcite{wiki:6LoWPAN}{43}
+\bibcite{R-TSCH}{44}

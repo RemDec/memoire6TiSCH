@@ -19,7 +19,56 @@
    inkscape:export-ydpi="200">
   <defs
      id="defs4210">
+    <rect
+       id="rect5698"
+       height="9.1602564"
+       width="33.581543"
+       y="266.32706"
+       x="30.279712" />
     <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5444"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#1fb80c;stroke-width:1pt;stroke-opacity:1;fill:#1fb80c;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5442" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5198"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5196" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker4976"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#1fb80c;stroke-width:1pt;stroke-opacity:1;fill:#1fb80c;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path4974" />
+    </marker>
+    <marker
+       inkscape:collect="always"
        inkscape:stockid="TriangleOutM"
        orient="auto"
        refY="0.0"
@@ -137,6 +186,7 @@
          id="path5552" />
     </marker>
     <marker
+       inkscape:collect="always"
        inkscape:stockid="Arrow1Mend"
        orient="auto"
        refY="0.0"
@@ -147,7 +197,7 @@
       <path
          id="path5354"
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         style="fill-rule:evenodd;stroke:#1fb80c;stroke-width:1pt;stroke-opacity:1;fill:#1fb80c;fill-opacity:1"
          transform="scale(0.4) rotate(180) translate(10,0)" />
     </marker>
     <marker
@@ -1456,8 +1506,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0851143"
-     inkscape:cx="405.28969"
-     inkscape:cy="964.61711"
+     inkscape:cx="126.44054"
+     inkscape:cy="1035.1832"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1485,6 +1535,13 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <path
+       inkscape:export-ydpi="200"
+       inkscape:export-xdpi="200"
+       inkscape:connector-curvature="0"
+       id="path5194"
+       d="m 84.957342,268.89469 -4.475353,1.06606 -28.829431,7.58121"
+       style="font-variation-settings:normal;opacity:0.98;vector-effect:none;fill:none;fill-opacity:1;stroke:#1fb80c;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5444);stop-color:#000000;stop-opacity:1" />
     <g
        inkscape:export-ydpi="200"
        inkscape:export-xdpi="200"
@@ -4824,5 +4881,35 @@
        width="52.988945"
        id="rect4950"
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#58de0f;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1" />
+    <path
+       inkscape:export-ydpi="200"
+       inkscape:export-xdpi="200"
+       inkscape:connector-curvature="0"
+       id="path4972"
+       d="m 52.646108,279.92242 29.442727,-7.5878 3.335925,-2.08466"
+       style="fill:none;stroke:#1fb80c;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5356)" />
+    <text
+       inkscape:export-ydpi="200"
+       inkscape:export-xdpi="200"
+       transform="translate(-0.52916667,3.1750001)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect5698);shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#0c6a00;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       id="text5696"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         x="30.279297"
+         y="268.4704"><tspan
+           style="font-style:italic;fill:#0c6a00;fill-opacity:1">CoJP Join Exchange</tspan><tspan
+           dx="1.7363262"
+           style="font-style:italic;fill:#0c6a00;fill-opacity:1" /></tspan><tspan
+         sodipodi:role="line"
+         x="30.279297"
+         y="271.29263"><tspan
+           style="font-style:italic;fill:#0c6a00;fill-opacity:1">initié prochaine</tspan><tspan
+           dx="1.7363262"
+           style="font-style:italic;fill:#0c6a00;fill-opacity:1" /></tspan><tspan
+         sodipodi:role="line"
+         x="30.279297"
+         y="274.11487"><tspan
+           style="font-style:italic;fill:#0c6a00;fill-opacity:1">minimal cell</tspan></tspan></text>
   </g>
 </svg>

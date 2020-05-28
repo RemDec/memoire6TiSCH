@@ -562,6 +562,7 @@ L'amendement IEEE802.15.4e a amené le concept d'IE (\textit{Information Element
 	\end{figure}
 
 \subsubsection{Services de sécurité}
+\label{IEEE802.15.4-sec}
 
 Des mécanismes de sécurisation des communications à la couche 2 ont été prévus dans le standard pour assurer la confidentialité, l'authentification et l'intégrité des transmissions. L'algorithme considéré est AES, généralement avec une clé de 128 bits, car il est un bon compromis entre la taille du code, les performances en temps et la solidité apportée, en plus de bénéficier d'un port hardware \cite{link-layer-sec-impact}. Il s'agit donc d'un chiffrement symétrique pour lequel les nœuds doivent posséder la même clé afin de se comprendre, ce qui implique une notion de distribution du matériel de \textit{keying} non décrite dans le standard \cite{IEEE802.15.4}.\\
 
@@ -1576,32 +1577,71 @@ La \wordlink{Figure}{fig:NPEB_step1} illustre l'état initial du réseau consid�
 
 La \wordlink{Figure}{fig:NPEB_step2} représente ce qu'il se passe durant le cycle suivant le cycle t. Les compteurs \textit{curr\_cycle} pour chaque voisin stocké dans les NPtables ont été décrémentés, ainsi que ceux propre à chaque noeud. Les compteurs de la cell (1,0) du noeud \textit{root} et la cell (4,0) du noeud N2 sont tombés à 0, chacun a alors installé la cell correspondante dans sa slotframe. Au timeslot 1, le noeud root émet donc un NPEB à un channel offset de 0, qui correspond au channel 6 pour l'ASN courant (valeur pour l'exemple). Les voisins sélectionnés depuis sa NPtable pour être annoncés le sont par un processus décisionnel décrit dans la \wordlink{Section}{decisional}. Le pledge écoute toujours activement sur le channel 1 et n'entend donc pas cet NPEB. En revanche, le NPEB émis par N2 au timeslot 4 est entendu car le channel résultant est le channel 1 qu'il écoute. Il remplit sa propre NPtable en conséquence et utilise une procédure de décision décrite dans la \wordlink{Section}{decisional} pour décider quelle action opérer. Ici, il s'avère que N1 semble un voisin intéressant et a priori meilleur que N2 en se basant sur la Join Metric. Donc, le noeud va passer en sommeil et se réveiller un cycle plus tard pour entendre le NPEB émis par N1 dans la cell (2,0).
 
- \vspace{0.2cm}
+ \vspace{1cm}
 	\begin{figure}[!h]
 	\centering
 	\includegraphics[width=\linewidth]{NPEB_step3}
-	\caption{État initial du réseau où les NPtables des noeuds sont déjà alimentées}
+	\caption{[Cycle t+2] sommeil du pledge jusqu'à la cell d'annonce indiquée par N1}
 	\label{fig:NPEB_step3}
 	\end{figure}
-\vspace{0.2cm}
+\vspace{0.4cm}
 
- \vspace{0.2cm}
+La \wordlink{Figure}{fig:NPEB_step3} illustre le pledge se réveillant au timeslot 2 du cycle suivant, pour écouter sur ce qu'il calcule comme étant le channel 4. Comme prévu, il entend un NPEB émis par N1 qui est à portée. Ici, la procédure de sélection des voisins à annoncer n'a pas retenu le noeud N2 sur base de sa Join Metric moins bonne que celle des candidats root et N3. Le pledge complète sa NPtable avec l'information sur ces nouvelles propositions de voisin et obtient une indication du RSSI avec le noeud N1 grâce à la frame qu'il vient de capturer. Obtenant les coordonnées d'une cell d'annonce de root, il décide de se rendormir les deux cycles suivants pour l'écouter. Effectivement, si root est à une portée raisonnable, il sera d'office le meilleur voisin (en terme de Join Metric) et lancer le processus de join avec ce dernier sera très avantageux (pas de noeud intermédiaire, accès le plus direct vers le JRC). De plus, une fois le processus de join terminé (devenu joined node) et root sélectionné comme prefered parent dans la topologie, cela permettra d'établir une route la plus courte possible vers le Root du DODAG. Ce sera également avantageux si le joined node vient à servir de noeud intermédiaire, par exemple en servant de Join Proxy quand il commence à émettre des (NP)EBs.
+
+\newpage
+
+ \vspace{0.4cm}
 	\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{NPEB_step4}
-	\caption{État initial du réseau où les NPtables des noeuds sont déjà alimentées}
+	\includegraphics[width=\linewidth]{NPEB_step4}
+	\caption{[Cycle t+4] sommeil du pledge jusqu'à la cell d'annonce indiquée par root et lancement de la suite du processus de join avec celui-ci}
 	\label{fig:NPEB_step4}
 	\end{figure}
-\vspace{0.2cm}
+\vspace{0.4cm}
 
+La \wordlink{Figure}{fig:NPEB_step4} correspond à la dernière itération, quand le pledge se réveille deux cycles plus tard et capte le NPEB émis par root. Il a la confirmation que root est à portée et ne trouve pas d'autre voisin plus intéressant à écouter dans sa NPtable. Il va donc lancer la suite de la joining phase avec root. Il est synchronisé temporellement avec le réseau et suppose son adresse IPv6 link-local valide, il s'agit donc d'émettre sa Join Request CoJP comme décrit à la \wordlink{Section}{global_CoJP}. Une fois qu'il aura obtenu le matériel de sécurité du réseau (clés 802.15.4 déployées) et un rang dans la topologie RPL, il sera à même d'émettre des NPEBs dans un cell qu'il sélectionne. Ces NPEBs pourront se base sur l'information déjà présente dans la NPtable, et les cells d'annonces également pour éviter les conflits avec des voisins connus.\\
+
+Cet exemple illustre la façon dont la méthode NPEB tente d'atteindre le double objectif établi en début de cette Section. Le fait qu'une fois un premier NPEB entendu, un pledge ne soit plus obligé de continuer une écoute active pour obtenir des informations sur d'autres voisins constitue un gain en énergie pour lui. La rapidité du processus itératif dépend des procédures de décisions décrites dans la \wordlink{Section}{decisional}, mais supprime en partie la composante aléatoire de la recherche active d'EB. La méthode vise également à lancer la suite de la procédure de join avec le meilleur voisin possible, comme illustré ici  où le pledge part d'une capture de NPEB du noeud N2 mais finit par s'adresser au Root du DODAG pour son intégration au réseau.
 
 \subsection{Méthodes de remplissage de la NPtable}
 \label{feed_NPtable}
 
+\subsubsection{NPEB-based}
+
+Cette méthode est la mécanique de base sur laquelle se repose le processus itératif d'écoute des NPEBs. Une sélection des voisins à proposer est effectuée (voir \wordlink{Section}{decisional}, idem pour les deux méthodes suivantes de cette section) à chaque envoi de NPEB. En pratique, l'information est encodée dans un Header IE 802.15.4 tel que brièvement décrit dans la \wordlink{Section}{EBs} et standardisé dans \cite{IEEE802.15.4}. Cet IE est rajouté à la fin du Header MAC et est transmis en clair, comme décrit dans la \wordlink{Section}{IEEE802.15.4-sec}.\\
+
+La spécification \cite{rfc8180} stipule qu'un joined node devrait ignorer tout EB reçu mais peut toujours écouter à la recherche d'EBs émis par un autre réseau. Ici, comme les NPEBs émis par un noeud du même réseau peuvent transporter de l'information utile pour mettre à jour la NPtable, ils ne sont pas ignorés mais a priori cette réception est le fruit du hasard. Afin d'adapter dynamiquement la NPtable d'un joined node, les méthodes Data-based et ACK-based présentées dans la suite de cette Section sont utilisées.
+
+\subsubsection{Data-based}
+
+Lors d'un échange de données quelconque, une frame est échangée entre deux voisins. De la même façon que pour les NPEB, des propositions de voisins peuvent être passées à travers un IE 802.15.4. Cependant, on peut envisager ici l'utilisation d'un Payload IE qui serait donc chiffré au niveau lien afin de divulger le moins possible les schedules NPEB des noeuds du réseau, même si cela restera de toute façon le cas avec les NPEBs. Il faut alors tenir compte de l'overhead du chiffrement, et de façon générale veiller à ne pas entrainer de fragmentation si le payload de la frame est conséquent.\\
+
+Les voisins qui échangent des frames augmentées avec des propositions de voisins le font pour mettre à jour leur NPtable et la remplir avec de nouveaux noeuds. Le schéma qui est intuitivement le plus intéressant est du trafic downstream, venant d'un noeud plus haut dans la topologie. Les voisins qu'un tel noeud propose seront meilleurs en terme de Join Metric que pour du trafic upstream, et donc plus avantageux à annoncer dans les NPEBs destinés aux pledge.
+
+\subsubsection{ACK-based}
+
+Le principe est identique aux voisins proposés avec la méthode Data-based, mais en ne considérant que les ACKs 802.15.4 qui supportent également les IEs. Cependant, utiliser des ACK pour communiquer des propositions de voisins est plus avantageux. Premièrement, comme expliqué pour la méthode Data-based, les voisins proposés devraient préférentiellement venir d'un noeud plus haut dans la topologie. Pour les ACKs, c'est donc le cas avec du trafic upstream (l'ACK est renvoyé par le parent). C'est ce type de trafic qui est majoritaire dans l'IIoT \cite{openbenchmark}. Secondement, les ACKs ne transportent pas de payload des couches supérieures et sont donc extensibles avec plus d'information, tout en restant chiffrables \cite{IEEE802.15.4}.
+
 \subsection{Procédures décisionnelles et paramétrage}
 \label{decisional}
 
-\subsection{Optimisations}
+\subsubsection{Sélection des voisins à annoncer}
+
+\subsubsection{Élection d'un candidat voisin parmi ceux proposés}
+
+\subsubsection{Décision de continuité du processus itératif NPEB}
+
+\subsubsection{Propositions de voisins dans les frames ACK/Data}
+
+\subsection{Discussion des optimisations possibles}
+
+\subsubsection{Placement des cells d'annonce}
+
+\subsubsection{Nombre de cycles}
+
+\subsubsection{Cycles décalés entre voisins}
+
+\subsubsection{Cell Rx après une annonce NPEB}
 
 \section{Inconvénients de la méthode NPEB}
 

@@ -31,7 +31,7 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Intuition de la m\351thode NPEB}{section.4.2}% 31
 \BOOKMARK [2][-]{subsection.4.2.2}{M\351thodes de remplissage de la NPtable}{section.4.2}% 32
 \BOOKMARK [2][-]{subsection.4.2.3}{Proc\351dures d\351cisionnelles et param\351trage}{section.4.2}% 33
-\BOOKMARK [2][-]{subsection.4.2.4}{Optimisations}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.4}{Discussion des optimisations possibles}{section.4.2}% 34
 \BOOKMARK [1][-]{section.4.3}{Inconv\351nients de la m\351thode NPEB}{chapter.4}% 35
 \BOOKMARK [2][-]{subsection.4.3.1}{Non conformit\351 avec le standard MSF}{section.4.3}% 36
 \BOOKMARK [2][-]{subsection.4.3.2}{Overhead des messages et tables des voisins}{section.4.3}% 37

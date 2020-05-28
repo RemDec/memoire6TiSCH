@@ -217,6 +217,13 @@ M.~{Vucinic}, M.~{Pejanovic-Djurisic}, and T.~{Watteyne}.
 \newblock In {\em 2018 IEEE Workshop on Benchmarking Cyber-Physical Networks
   and Systems (CPSBench)}, pages 42--46, April 2018.
 
+\bibitem{openbenchmark}
+Mališa Vučinić, Tengfei Chang, Bozidar Skrbic, Enis Kocan,
+  M.~Pejanovic-Djurisic, and Thomas Watteyne.
+\newblock Key performance indicators of the reference 6tisch implementation in
+  internet-of-things scenarios.
+\newblock {\em IEEE Access}, PP:1--1, 04 2020.
+
 \bibitem{ietf-lake-reqs-03}
 Mališa Vučinić, Göran Selander, John Mattsson, and Dan Garcia-Carillo.
 \newblock {Requirements for a Lightweight AKE for OSCORE}.
