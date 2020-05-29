@@ -90,6 +90,13 @@ Faculté des Sciences, Université de Mons}
 
 \thispagestyle{empty}   
 
+\begin{center}
+\textbf{\large RÉSUMÉ}
+\end{center}
+\vspace{2cm}
+
+Les réseaux de capteurs sont devenus monnaie courante dans l'industrie, avec plus de X heures de déploiement. Originellement, ces réseaux fonctionnaient sur des standard propriétaires tels que ISA et ZigBee. Depuis plusieurs années, le WG 6TiSCH 
+
 \newpage
 
 \tableofcontents
@@ -102,6 +109,8 @@ Faculté des Sciences, Université de Mons}
 
 \section*{Introduction}
 \newpage
+
+
 
 \section*{Terminologie}
 \newpage
@@ -1851,8 +1860,25 @@ En pratique, cela n'est que modérément génant car les cells d'annonce peuvent
 Sont évalués ici l'overhead induit par les propositions de voisin dans des IEs 802.15.4 et le montant d'informations à stocker en mémoire pour maintenir la NPtable. On suppose ici que les noeuds sont identifiés de façon unique par leur adresse MAC.
 
 \subsubsection{Proposition de voisin}
+\label{size_prop}
 
-Émettant un NPEB, un noeud renseigne ceux qui le reçoivent sur lui même. Son adresse MAC et sa Join Metric sont des champs de l'EB standard. La réception de la frame en elle-même permet de dériver la valeur de RSSI associable à ce noeud par le receveur. Le seul champ additionnel à propos de lui-même ajouté par le NPEN est le schedule NPEB du noeud. Il contient une ou des cells d'annonces que le noeud souhaite propager dans le réseau. À chaque cell sont associées les valeurs de \textit{curr\_cycle} et \textit{nbr\_cycles}. Pour la négociation de cells, la spécification \cite{rfc8480} encode une cell sur 4 bytes.
+Émettant un NPEB, un noeud renseigne ceux qui le reçoivent sur lui même. Son adresse MAC et sa Join Metric sont des champs de l'EB standard. La réception de la frame en elle-même permet de dériver la valeur de RSSI associable à ce noeud par le receveur. Le seul champ additionnel à propos de lui-même ajouté par le NPEN est le schedule NPEB du noeud. Il contient une ou des cells d'annonces que le noeud souhaite propager dans le réseau. À chaque cell sont associées les valeurs de \textit{curr\_cycle} et \textit{nbr\_cycles}. Pour la négociation de cells, la spécification \cite{rfc8480} encode une cell sur 4 bytes, ce que l'on considére également ici. On peut raisonnablement considérer un maximum de 15 cycles entre deux annonces de NPEB, et donc considérer 1 byte pour l'information relative aux cycles (4 bits pour \textit{curr\_cycle} et \textit{nbr\_cycles}). La valeur \texttt{0x00} est une valeur spéciale utilisée pour renseigner le fait que la cell n'est plus à considérer pour les annonces (le noeud n'émettra plus de NPEB dans celle-ci). Au total, un schedule NPEB renseignant une cell d'annonce est donc encodable sur 5 bytes.\\
+
+Un NPEB contient une liste de propositions de voisins, chacun identifié par son adresse MAC, donc 6 bytes. À chaque voisin est associé la valeur de sa Join Metric (1 byte) et son schedule NPEB (idem que décrit précédemment). Pour faciliter le parsing, il est nécessaire de donner pour chaque scedule NPEB le nombre de cells qu'il renseigne (raisonnablement 4 bits suffisent). De même, le nombre de voisins proposés $n$ doit être indiqué (raisonnablement 4 bits suffisent). Au total, proposer $n$ voisins est encodable sur
+ \[ 4+n (6*8 + 1*8 + 4 + \text{nbrcells}_{i}*5*8) 
+ %= 4+n(48+8+4+\text{nbrcells}_{i}*40) 
+ = 4 + n(60+\text{nbrcells}_{i}*40)\ \text{bits} \]
+ 
+À titre d'exemple, un NPEB proposant deux voisins qui renseignent chacun une cell introduit un overhead brut (sans compter les champs descriptifs de l'IE 802.15.4 \textit{Type-Length}) de $[5*8] + [4+2*(60+40)] = 244$ bits $\approx 30$ bytes.
+\todo{espace dispo EB}
+
+\newpage
+
+\subsubsection{Stockage de la NPtable}
+
+Les noeuds du réseau ont un espace mémoire limité, aussi la NPtable doit être maintenue de sorte à ne pas stocker d'information futile. Une estimation de la place que les données brutes occupent peut être obtenue de la même façon qu'à la \wordlink{Section}{size_prop}. La structure utilisée pour les stocker est dépendante de l'implémentation et n'est pas détaillée ici.\\
+
+La maintenance de la NPtable doit se faire de façon intelligente en considérant les informations qu'elle fournit. Un procédé de nettoyage de la NPtable doit être lancé régulièrement pour décider de quelles sont les propositions de voisins qui doivent être préservées. Intuitivement, les voisins dont l'écoute à la cell annoncée à échoué (\textit{RSSI} = \texttt{0}) sont ceux à écarter en priorité. La \wordlink{Procédure}{proc_announce} (selectNeighborsToAnnounce()) peut être réutilisée pour décider de quels sont les meilleurs voisins à maintenir dans la NPtable. Les détails de la procédure ne sont pas présentés ici.
 
 \chapter{Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}
 \newpage
