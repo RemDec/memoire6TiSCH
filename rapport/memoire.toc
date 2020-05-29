@@ -34,7 +34,7 @@
 \contentsline {subsubsection}{\numberline {2.3.1.1}Resynchronisation entre nœuds voisins}{35}{subsubsection.2.3.1.1}%
 \contentsline {subsubsection}{\numberline {2.3.1.2}Synchronisation globale du réseau}{36}{subsubsection.2.3.1.2}%
 \contentsline {subsection}{\numberline {2.3.2}Formation du réseau}{37}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Ordonnancement des transmissions - \textit {minimal scheduling}}{38}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Ordonnancement des transmissions - \textit {minimal scheduling} avec MSF}{38}{subsection.2.3.3}%
 \contentsline {chapter}{\numberline {3}Analyse détaillée de la sécurité pour la phase de join}{39}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Ressources et standards utilisés}{40}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{40}{subsection.3.1.1}%
@@ -71,9 +71,11 @@
 \contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{68}{subsubsection.4.2.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{68}{subsubsection.4.2.4.3}%
 \contentsline {subsubsection}{\numberline {4.2.4.4}Cell \textit {RxS} après une annonce NPEB}{68}{subsubsection.4.2.4.4}%
-\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{68}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{68}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et tables des voisins}{68}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{69}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Impact de la sécurité sur la formation du réseau}{70}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Amélioration des performances par la méthode NPEB}{70}{section.5.2}%
+\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{69}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{69}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et NPtable}{69}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Proposition de voisin}{69}{subsubsection.4.3.2.1}%
+\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{70}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Méthodologie}{71}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Impact de la sécurité sur la formation du réseau}{71}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Amélioration des performances par la méthode NPEB}{71}{section.5.3}%

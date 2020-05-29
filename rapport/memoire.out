@@ -15,7 +15,7 @@
 \BOOKMARK [1][-]{section.2.3}{Principes inh\351rents au d\351ploiement de la pile}{chapter.2}% 15
 \BOOKMARK [2][-]{subsection.2.3.1}{Synchronisation temporelle}{section.2.3}% 16
 \BOOKMARK [2][-]{subsection.2.3.2}{Formation du r\351seau}{section.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.3.3}{Ordonnancement des transmissions - minimal scheduling}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.3}{Ordonnancement des transmissions - minimal scheduling avec MSF}{section.2.3}% 18
 \BOOKMARK [0][-]{chapter.3}{Analyse d\351taill\351e de la s\351curit\351 pour la phase de join}{}% 19
 \BOOKMARK [1][-]{section.3.1}{Ressources et standards utilis\351s}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.1.1}{CBOR et COSE}{section.3.1}% 21
@@ -34,7 +34,8 @@
 \BOOKMARK [2][-]{subsection.4.2.4}{Discussion des optimisations possibles}{section.4.2}% 34
 \BOOKMARK [1][-]{section.4.3}{Inconv\351nients de la m\351thode NPEB}{chapter.4}% 35
 \BOOKMARK [2][-]{subsection.4.3.1}{Non conformit\351 avec le standard MSF}{section.4.3}% 36
-\BOOKMARK [2][-]{subsection.4.3.2}{Overhead des messages et tables des voisins}{section.4.3}% 37
+\BOOKMARK [2][-]{subsection.4.3.2}{Overhead des messages et NPtable}{section.4.3}% 37
 \BOOKMARK [0][-]{chapter.5}{\311valuation de la joining phase s\351curis\351e et de la m\351thode NPEB en simulateur}{}% 38
-\BOOKMARK [1][-]{section.5.1}{Impact de la s\351curit\351 sur la formation du r\351seau}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Am\351lioration des performances par la m\351thode NPEB}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.1}{M\351thodologie}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.2}{Impact de la s\351curit\351 sur la formation du r\351seau}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.3}{Am\351lioration des performances par la m\351thode NPEB}{chapter.5}% 41

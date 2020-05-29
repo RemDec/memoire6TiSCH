@@ -1062,7 +1062,7 @@ Un réseau 6TiSCH se forme progressivement à partir du 6LBR auquel les nœuds r
 
 \newpage
 
-	\subsection{Ordonnancement des transmissions - \textit{minimal scheduling}}
+	\subsection{Ordonnancement des transmissions - \textit{minimal scheduling} avec MSF}
 	\label{scheduling}
 
     Le WG 6TiSCH a défini une SF basique mais polyvalente, en adéquation avec la configuration minimum qui a été décrite dans la spécification \cite{ietf-6tisch-minimal-security-15}. La MSF (\textit{Minimum Scheduling Function}) fait l'objet d'un draft \cite{ietf-6tisch-msf-10} décrivant son comportement et ses interactions avec la couche 6top. Elle gère d'une part l'établissement d'un schedule minimal utilisable pour la phase de join et d'autre part l'adaptation dynamique de cells négociées entre un nœud et son parent RPL. La MSF est prévue pour un trafic régulier vers la racine. Elle utilise la minimal cell décrite dans \cite{ietf-6tisch-minimal-security-15} pour les émission broadcast d'EBs et de DIOs, distinguant trois slotframes :
@@ -1076,9 +1076,9 @@ Un réseau 6TiSCH se forme progressivement à partir du 6LBR auquel les nœuds r
 
 \vspace{0.4cm}
 
-\par MSF ne considère des communications bidirectionnelles qu'avec un nœud \textit{preferred parent}, qui n'est autre que le parent RPL une fois la topologie rejointe (ou le nœud servant d'intermédiaire lors du join). Afin de minimiser les transactions 6P, surtout si elles doivent passer par la minimal cell, MSF prévoit l'installation d'\textit{autonomous cells} dont les coordonnées sont obtenues à partir d'un hash de l'EUI-64 (extension de l'adresse MAC). Ainsi, chaque nœud est censé maintenir une cell \textit{AutoRxCell} dans la slotframe 1 dont les coordonnées (\textit{slotOffset}, \textit{channelOffset}) sont calculées à partir de l'EUI-64 de sa propre adresse (donc fixes). Pour envoyer une frame vers un voisin, il peut de façon similaire installer une cell \textit{AutoTxCell} à partir de l'EUI-64 de ce voisin, ce dernier ayant alors déjà installé aux même coordonnées son \textit{AutoRxCell}.\\
+\par MSF ne considère des communications bidirectionnelles qu'avec un nœud \textit{preferred parent}, qui n'est autre que le parent RPL une fois la topologie rejointe (ou le nœud servant d'intermédiaire lors du join). Afin de minimiser les transactions 6P, surtout si elles doivent passer par la minimal cell, MSF prévoit l'installation d'\textit{autonomous cells} dont les coordonnées sont obtenues à partir d'un hash de l'EUI-64 (extension de l'adresse MAC). Ainsi, chaque nœud est censé maintenir une cell \textit{AutoRxCell} dans la slotframe 1 dont les coordonnées (\textit{slotOffset}, \textit{channelOffset}) sont calculées à partir de l'EUI-64 de sa propre adresse (donc fixes). Le calcul tient compte du fait que la minimal cell est installée d'office et ne retourne donc jamais un \textit{slotOffset} égal à 0. Pour envoyer une frame vers un voisin, il peut de façon similaire installer une cell \textit{AutoTxCell} à partir de l'EUI-64 de ce voisin, ce dernier ayant alors déjà installé aux même coordonnées son \textit{AutoRxCell}.\\
 
-\par La MSF gère la façon dont les communications pour le processus de join s'organisent en terme de cells, principalement en utilisant les cells autonomes pour le 6LoWPAN ND et l'échange CoJP, ainsi que la minimal cell pour recevoir les DIOs par la suite. Une fois la topologie intégrée (rang RPL acquis), le nœud pourra négocier ses premières cells avec son parent (slotframe 2) et annoncer des EBs et DIOs (slotframe 0). À terme de la phase de join, le nœud sera synchronisé et authentifié dans le réseau, participera à la topologie activement (selon ses capacité de routage) et possédera des cells Tx négociées vers/depuis son parent.\\
+\par La MSF gère la façon dont les communications pour le processus de join s'organisent en terme de cells, principalement en installant temporairement des cells autonomes pour le 6LoWPAN ND et l'échange CoJP, ainsi que la minimal cell pour recevoir les DIOs par la suite. Une fois la topologie intégrée (rang RPL acquis), le nœud pourra négocier ses premières cells avec son parent (slotframe 2) et annoncer des EBs et DIOs (slotframe 0). À terme de la phase de join, le nœud sera synchronisé et authentifié dans le réseau, participera à la topologie activement (selon ses capacité de routage) et possédera des cells Tx négociées vers/depuis son parent.\\
 
 \par La négociation de cells dans la slotframe 2 a lieu en réaction à trois événements :
 \begin{itemize}
@@ -1504,7 +1504,7 @@ Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC
 \subsection{La \textit{minimal cell}}
 \label{min_cell}
 
-Comme illustré par les figures détaillant la joining phase dans la \wordlink{Section}{join_phase_analysis}, tous les échanges entre le pledge et le JP se font en utilisant le \textit{joining schedule} décrit dans l'EB initialement reçu. La spécification \cite{rfc8180} préconise l'utilisation d'une seule cell ((0,0)) comme joining schedule et par défaut pour tout trafic de type broadcast, dite \textit{minimal cell}. Cette cell est également encore utilisée par le pledge une fois devenu joined node, principalement jusqu'à capter un DIO qui lui permettra de rejoindre la topologie RPL. Il peut à partir de là sélectionner un prefered parent dans la topologie et, seulement alors, la Scheduling Function installe des nouvelles cells pour communiquer avec (on suppose l'utilisation de MSF \cite{ietf-6tisch-msf-10}). Le noeud utilise donc ces nouvelles cells pour le trafic unicast. Une fois son rang obtenu dans la topologie, le noeud est autorisé à émettre à son tour des EBs \cite{rfc8180}, ce qu'il fera dans la minimal cell.\\
+Comme illustré par les figures détaillant la joining phase dans la \wordlink{Section}{join_phase_analysis}, tous les échanges entre le pledge et le JP se font en utilisant le \textit{joining schedule} décrit dans l'EB initialement reçu. La spécification \cite{rfc8180} préconise l'utilisation d'une seule cell ((0,0)) comme joining schedule et par défaut pour tout trafic de type broadcast, dite \textit{minimal cell}. Cette cell est également encore utilisée par le pledge une fois devenu joined node, principalement jusqu'à capter un DIO qui lui permettra de rejoindre la topologie RPL. Cependant, ce comportement est dépendant de la Scheduling Function active dans le réseau : par exemple, MSF installe des autonomous cells temporaires dédiées au trafic de join avant même que le pledge ne rejoigne la topologie (voir \wordlink{Section}{scheduling} et \cite{ietf-6tisch-msf-10}). Qu'importe la Scheduling Function active, la spécification \cite{rfc8180} stipule que ce n'est qu'une fois que son rang est obtenu dans la topologie qu'un noeud est autorisé à émettre à son tour des EBs. Ces EBs seront émis dans la minimal cell.\\
 
 La minimal cell est donc utilisée à de nombreuses fins et par des noeuds qui ne sont même pas encore intégrés au réseau. Cela peut entrainer un phénomène important de congestion dans les réseaux denses \cite{broadcast-strategies}, menant à un rallongement du temps de join et une perte d'énergie. Ni le standard IEEE802.15.4e \cite{IEEE802.15.4}, ni la spécification \cite{rfc8180} ne proposent une stratégie formelle pour l'émission des EBs qui permettrait de pallier ce problème. La \wordlink{Section}{joinphase} introduisait les différentes solutions qui ont été proposées dans la littérature. L'approche du broadcast Bayesien étudiée par Vučinić \textit{et al.} \cite{broadcast-strategies} est celle qui est communément retenue et implémentée dans les simulateurs \cite{simulating-6TiSCH}.\\
 
@@ -1607,7 +1607,7 @@ La \wordlink{Figure}{fig:NPEB_step2} représente ce qu'il se passe durant le cyc
 	\end{figure}
 \vspace{0.4cm}
 
-La \wordlink{Figure}{fig:NPEB_step3} illustre le pledge se réveillant au timeslot 2 du cycle suivant, pour écouter sur ce qu'il calcule comme étant le channel 4. Comme prévu, il entend un NPEB émis par N1 qui est à portée. Ici, la procédure de sélection des voisins à annoncer n'a pas retenu le noeud N2 sur base de sa Join Metric moins bonne que celle des candidats root et N3. Le pledge complète sa NPtable avec l'information sur ces nouvelles propositions de voisin et obtient une indication du RSSI avec le noeud N1 grâce à la frame qu'il vient de capturer. Obtenant les coordonnées d'une cell d'annonce de root, il décide de se rendormir les deux cycles suivants pour l'écouter. Effectivement, si root est à une portée raisonnable, il sera d'office le meilleur voisin (en terme de Join Metric) et lancer le processus de join avec ce dernier sera très avantageux (pas de noeud intermédiaire, accès le plus direct vers le JRC). De plus, une fois le processus de join terminé (devenu joined node) et root sélectionné comme prefered parent dans la topologie, cela permettra d'établir une route la plus courte possible vers le Root du DODAG. Ce sera également avantageux si le joined node vient à servir de noeud intermédiaire, par exemple en servant de Join Proxy quand il commence à émettre des (NP)EBs.
+La \wordlink{Figure}{fig:NPEB_step3} illustre le pledge se réveillant au timeslot 2 du cycle suivant, pour écouter sur ce qu'il calcule comme étant le channel 4. Comme prévu, il entend un NPEB émis par N1 qui est à portée. Ici, la procédure de sélection des voisins à annoncer n'a pas retenu le noeud N2 sur base de sa Join Metric moins bonne que celle des candidats root et N3. Le pledge complète sa NPtable avec l'information sur ces nouvelles propositions de voisin et obtient une indication du RSSI avec le noeud N1 grâce à la frame qu'il vient de capturer. Obtenant les coordonnées d'une cell d'annonce de root, il décide de se rendormir les deux cycles suivants pour l'écouter. Effectivement, si root est à une portée raisonnable, il sera d'office le meilleur voisin (en terme de Join Metric) et lancer le processus de join avec ce dernier sera très avantageux (pas de noeud intermédiaire, accès le plus direct vers le JRC). De plus, une fois le processus de join terminé (devenu joined node) et root sélectionné comme preferred parent dans la topologie, cela permettra d'établir une route la plus courte possible vers le Root du DODAG. Ce sera également avantageux si le joined node vient à servir de noeud intermédiaire, par exemple en servant de Join Proxy quand il commence à émettre des (NP)EBs.
 
 \newpage
 
@@ -1652,7 +1652,7 @@ Cette Section décrit les différentes procédures pour les prises de décisions
 
 Cette procédure intervient lorsqu'un noeud du réseau \textit{node} souhaite proposer des voisins dans sa prochaine frame qui peut être un NPEB, du transport de payload des couches plus hautes ou un ACK (voir \wordlink{Section}{feed_NPtable}). \textit{Node} a alors un certain nombre de voisins dans sa NPtable qu'il peut proposer, quelque soit le statut d'écoute : s'il est \texttt{None} ou mis à \texttt{0}, rien n'a été reçu de ce voisin mais cela n'exclu pas qu'il envoie des NPEBs tel que annoncé selon le schedule NPEB associé. \textit{Node} souhaite sélectionner parmi ces voisins quels sont les plus avantageux à annoncer, du point de vue d'un noeud qui recevrait ces propositions.\\
 
-La \wordlink{Procédure}{proc_announce} est une façon basique de déterminer les \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED} meilleurs voisins à annoncer, basée sur la Join Metric. Elle associe un score à chaque voisin, diminué par la Join Metric qui se situe dans [0, 255] où une faible valeur indique une bonne place dans la topologie RPL (seul le noeud Root du DODAG atteint la valeur 0). Afin de diriger un comportement convergent vers les noeuds plus hauts de la topologie (illustré par l'exemple de la \wordlink{Section}{intuition_NPEB}), le prefered parent de \textit{node} est favorisé et son score est augmenté. De même si le voisin considérer est Root du DODAG.\\
+La \wordlink{Procédure}{proc_announce} est une façon basique de déterminer les \texttt{NBR\_MAX\_NEIGH\_ANNOUNCED} meilleurs voisins à annoncer, basée sur la Join Metric. Elle associe un score à chaque voisin, diminué par la Join Metric qui se situe dans [0, 255] où une faible valeur indique une bonne place dans la topologie RPL (seul le noeud Root du DODAG atteint la valeur 0). Afin de diriger un comportement convergent vers les noeuds plus hauts de la topologie (illustré par l'exemple de la \wordlink{Section}{intuition_NPEB}), le preferred parent de \textit{node} est favorisé et son score est augmenté. De même si le voisin considérer est Root du DODAG.\\
 
 \newpage
 
@@ -1668,7 +1668,7 @@ Cette procédure est très simple et a du sens, mais elle peut être affinée en
 \For{\textit{neighbor} $\in$ \textit{NPtable}}
 \State $score \leftarrow 255$
 \State $score \leftarrow score\ - $ \textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}]
-\If{\textit{neighbor} est Root de la topologie \textbf{ou} prefered parent de \textit{node}}
+\If{\textit{neighbor} est Root de la topologie \textbf{ou} preferred parent de \textit{node}}
 \State $score \leftarrow score * 2$
 \EndIf
 \State ajouter le couple (\textit{neighbor}, \textit{score}) à \textit{scoredNeighbors}
@@ -1706,7 +1706,7 @@ Tout comme mentionné pour la \wordlink{Procédure}{proc_announce}, cette procé
 \Else
 \State $score \leftarrow 255$
 \State $score \leftarrow score\ - $ \textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}]
-\If{\textit{neighbor} est Root de la topologie \textbf{ou} prefered parent de \textit{node}}
+\If{\textit{neighbor} est Root de la topologie \textbf{ou} preferred parent de \textit{node}}
 \State $score \leftarrow score * 2$
 \EndIf
 \State ajouter le couple (\textit{neighbor}, \textit{score}) à \textit{scoredNeighbors}
@@ -1830,21 +1830,34 @@ Une façon simple et non coûteuse de contrer cela est de considérer le \textit
 
 \subsubsection{Cell \textit{RxS} après une annonce NPEB}
 
-La méthode NPEB permet à un pledge de trouver efficacement un bon voisin, mais une fois celui-ci choisi il reste au pledge à effectuer la suite de son processus de join (Join Exchange CoJP). Cela se fait indépendamment de la méthode NPEB, en utilisant la minimal cell. Les performances globales du join sont donc encore impactées par l'usage de celle-ci, tel que décrit dans la \wordlink{Section}{min_cell}.\\
+La méthode NPEB permet à un pledge de trouver efficacement un bon voisin, mais une fois celui-ci choisi il reste au pledge à effectuer la suite de son processus de join (Join Exchange CoJP). Cela se fait indépendamment de la méthode NPEB, en utilisant la minimal cell si la Scheduling Function en activité ne prévoit aucun mécanisme dédié. Ce n'est pas le cas de MSF qui installe des autonomous cells temporaires dédiées au trafic de join (voir \wordlink{Section}{scheduling}), le raisonnement suivant n'est donc pas pertinent si MSF est utilisée. Les performances globales du join sont donc encore impactées par l'usage de celle-ci, tel que décrit dans la \wordlink{Section}{min_cell}.\\
 
 Pour éviter la congestion dans la minimal cell, il est envisageables que les noeuds du réseaux installent d'autres cells destinées à la réception de la Join Request CoJP émise par un noeud qui souhaite continuer son processus de join. Une manière d'intégrer cela à la méthode NPEB est de prévoir un nouveau champ \textit{nbr\_rx\_cycles\_after} dans le schedule NPEB de chaque noeud. \textit{nbr\_rx\_cycles\_after} indique le nombre de cycles suivants l'annonce d'un NPEB de la part du noeud où celui-ci installe une cell \textit{RxS}, aux mêmes coordonnées (donc \textit{nbr\_rx\_cycles\_after} $<$ \textit{nbr\_cycles}). Pour un pledge qui vient d'entendre un NPEB et de valider le voisin pour continuer son processus de join, cela lui permet d'envoyer sa Join Request vers le noeud au cycle suivant, évitant de le faire dans la minimal cell. Le noeud se mettra en écoute à ce moment et pourra traiter la Join Request CoJP comme si elle était reçue de façon standard dans la minimal cell. La suite du processus de join se déroule normalement, la Join Response CoJP sera relayée vers le pledge dans la minimal cell.\\
 
 Le principal inconvénient de procéder de la sorte est la perte d'énergie liée à l'installation régulière d'une cell \textit{RxS}, où le noeud peut écouter dans le vent si aucun pledge ne lance son processus de join avec lui. Idéalement, \textit{nbr\_rx\_cycles\_after} est donc mis à 1. Ce qui signifie que le noeud installe la cell \textit{RxS} quand \textit{curr\_cycle} = \textit{nbr\_cycles} mais pas pour les cycles suivants. Cette technique est intuitivement plus avantageuse durant la phase de bootstrapping du réseau où la minimal cell est fortement utilisée, tous les noeuds essayant de rejoindre presque simultanément.
 
+\newpage
+
 \section{Inconvénients de la méthode NPEB}
 
 \subsection{Non conformité avec le standard MSF}
 
-\subsection{Overhead des messages et tables des voisins}
+La méthode NPEB ne respecte pas strictement la spécification de MSF \cite{ietf-6tisch-msf-10}. Celle-ci fait l'hytpothèse que la minimal cell est la seule utilisée pour l'émission d'EBs et de DIOs. Les autonomous cells que MSF installe sur base d'un hash de l'EUI-64 des noeuds communiquants tiennent comptent de cette contrainte et ne peuvent être installées au timeslot 0. En revanche, tous les autres timeslots sont valides, ce qui peut donc interférer avec les timeslots choisis pour les cells d'annonce de NPEB.\\
 
+En pratique, cela n'est que modérément génant car les cells d'annonce peuvent être déplacées, l'impact sera alors que la modification du schedule NPEB devra se répandre parmi les voisins qui proposent le noeud en question. Cela peut mener à une situation où un pledge planifie l'écoute d'une annonce NPEB qui n'arrivera jamais car la cell a été déplacée. Pour éviter cette situation, on peut tirer part du fait que les coordonnées des autonomous cells que MSF installe sont fixées et connues à l'avance (dérivées de l'EUI-64 du noeud cible). Les timeslots réservés de la sorte à l'installation d'autonomous cell sont d'avance exclus de ceux considérés pour programmer les cells d'annonce. De plus, les negotiated cells ne sont installées par MSF qu'aux timeslots libres donc non pris par une cell d'annonce NPEB. Ces dernières sont négociées entre voisins, donc les annonces NPEB de chacune des parties sont prises en compte.
+
+\subsection{Overhead des messages et NPtable}
+
+Sont évalués ici l'overhead induit par les propositions de voisin dans des IEs 802.15.4 et le montant d'informations à stocker en mémoire pour maintenir la NPtable. On suppose ici que les noeuds sont identifiés de façon unique par leur adresse MAC.
+
+\subsubsection{Proposition de voisin}
+
+Émettant un NPEB, un noeud renseigne ceux qui le reçoivent sur lui même. Son adresse MAC et sa Join Metric sont des champs de l'EB standard. La réception de la frame en elle-même permet de dériver la valeur de RSSI associable à ce noeud par le receveur. Le seul champ additionnel à propos de lui-même ajouté par le NPEN est le schedule NPEB du noeud. Il contient une ou des cells d'annonces que le noeud souhaite propager dans le réseau. À chaque cell sont associées les valeurs de \textit{curr\_cycle} et \textit{nbr\_cycles}. Pour la négociation de cells, la spécification \cite{rfc8480} encode une cell sur 4 bytes.
 
 \chapter{Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}
 \newpage
+
+\section{Méthodologie}
 
 \section{Impact de la sécurité sur la formation du réseau}
 
