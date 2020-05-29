@@ -95,7 +95,6 @@ Faculté des Sciences, Université de Mons}
 \end{center}
 \vspace{2cm}
 
-Les réseaux de capteurs sont devenus monnaie courante dans l'industrie, avec plus de X heures de déploiement. Originellement, ces réseaux fonctionnaient sur des standard propriétaires tels que ISA et ZigBee. Depuis plusieurs années, le WG 6TiSCH 
 
 \newpage
 
@@ -108,16 +107,18 @@ Les réseaux de capteurs sont devenus monnaie courante dans l'industrie, avec pl
   footskip=8pt,}
 
 \section*{Introduction}
-\newpage
 
 
+Les réseaux de capteurs sont devenus monnaie courante dans l'industrie, on estime en 2020 que plusieurs dizaines de milliers de réseaux ont été déployés, comptabilisant plus de 18 milliards d'heures de fonctionnement. Originellement, ces réseaux fonctionnaient sur des standards propriétaires tels que WirelessHART et ISA100.1a \cite{stack-IoT}. Bien que capables de performances acceptables en pratique grâce à l'emplois du principe TSCH (\textit{Time Slotted Channel Hopping}) \cite{decentralized}, ces piles réseaux n'offrent pas un connectivité IP et ne s'inscrivent donc pas dans la tendance générale de l'IoT, dont l'interconnectivité avec Internet est une ligne directrice \cite{stack-IoT}. Le groupe de travail 6TiSCH est créé à l'IETF en 2013 avec pour double objectif de standardiser l'adoption de TSCH dans les réseaux de capteurs 802.15.4 et d'élaborer un pile réseau supportant les communications IP pour ces réseaux restreints. L'ensemble de spécifications produites constitue ce que l'on appelle la pile 6TiSCH.\\
 
-\section*{Terminologie}
-\newpage
+Ce travail caractérise ces réseaux sans-fil restreints, leur architecture typique et les contraintes qui justifient l'élaboration d'une pile réseau adaptée. L'intégralité des différentes couches qui composent la pile 6TiSCH sont passées en revue, ainsi que la façon dont elles interagissent entre elles pour constituer une pile déployable et efficace dans un réseau sans-fil restreint. Une attention particulière est portée à la \textit{joining phase 6TiSCH}, qui dénote la façon dont un nouveau noeud rejoint un réseau 6TiSCH déjà actif. Plus particulièrement, la sécurisation de cette procédure, qui est une phase critique, est analysée en détail. Des expérimentations sont menées en simulateur pour illustrer l'impact de la sécurité sur la joining phase, et une méthode est proposée pour améliorer les performances de la joining phase.\\
+
+Ce document est divisée en deux parties principales. La première partie constitue un état de l'art de la pile 6TiSCH dans sa globalité et des caractéristiques des réseaux dans lesquels elle est destinée à être déployée. Le \wordlink{Chapitre}{chap_intro} introduit les réseaux sans-fil restreints, l'évolution des standards et groupes de travail y contribuant et la technologie TSCH qui est le fondement de la pile 6TiSCH. Le \wordlink{Chapitre}{chap_6TiSCH} précise l'architecture typique des réseaux considérés et établit une analyse couche par couche de la pile 6TiSCH et des principes qui lui sont propres. Finalement, le \wordlink{Chapitre}{joining_analysis} se concentre sur la joining phase qui fait intervenir les différentes couches présentées précédemment, en mettant l'accent sur les mécanismes de sécurité qui la protègent. La seconde partie fait l'état d'un travail expérimental sur la joining phase. Le \wordlink{Chapitre}{chap_NPEB} présente la méthode NPEB, qui est une proposition de nouveau schéma pour l'amélioration des performances de la joining phase. Le \wordlink{Chapter}{chap_exp} concentre les expérimentations effectuées sur la joining phase en simulateur : des métriques pertinentes sont sélectionnées pour d'une part illustrer l'impact de la sécurité sur celle-ci et d'autre part démontrer les gains de performance apportés par la méthode NPEB.
 
 
 
 \chapter{Présentation du standard IEEE802.15.4 et TSCH}
+\label{chap_intro}
 \newpage
 
 \section{L'IoT, les réseaux sans fils et leurs contraintes}
@@ -125,7 +126,7 @@ Les réseaux de capteurs sont devenus monnaie courante dans l'industrie, avec pl
 
 L'Internet de Objets (\textit{Internet of Things }- IoT) couvre de nombreux domaines d'applications tels que les \textit{smart}-\textit{homes}/\textit{buildings}/\textit{cities}, les soins de santé et les transports entre autres. Les équipements que l'on regroupe généralement derrière cette dénomination sont de nature variée : capteurs et actionneurs, périphériques de communication/multimédias, domotique, etc. mais s'accordent sur un point : ils sont connectés et tendent à l'être avec le réseau Internet. Également, comme ce sont généralement des équipements embarqués, ils sont restreints en ressources telles que l'énergie (alimentation par batterie), la puissance d'émission radio, la capacité mémoire et les performances CPU. Ces limitations ont conduit à la conception et la standardisation de nombreux protocoles qui y sont adaptés afin de rendre possible et efficace la communication en réseau de ces objets.\\
 
-\par Cela est particulièrement vrai pour l'IIoT (\textit{Industrial IoT}) qui regroupe des secteurs tels que l'industrie agricole, l'automatisation des usines, la gestion des stocks, etc. Effectivement, l'optimisation apportée par ces protocoles adaptés est un facteur clé pour augmenter la rentabilité du déploiement de tels réseaux. Ils permettent également de déployer de façon plus efficace des réseaux de capteurs sans fils, dits WSNs (\textit{Wireless Sensors Networks}), qui sont à priori peu adaptés aux contraintes des systèmes embarqués, notamment au niveau de la consommation énergétique imputée aux transmissions radios qui sont coûteuses. Les protocoles de communication qui orchestrent les WSNs sont donc conçus dans une optique de compromis entre la minimisation de la consommation énergétique des nœuds qui les composent et la fiabilité désirée de ces communications (délais, bande passante et déterminisme). La pile réseau 6TiSCH étudiée dans ce document est un ensemble de protocoles et principes qui apportent une réponse concrète à ces besoins.\\
+\par Cela est particulièrement vrai pour l'IIoT (\textit{Industrial IoT}) qui regroupe des secteurs tels que l'industrie agricole, l'automatisation des usines, la gestion des stocks, etc. Effectivement, l'optimisation apportée par ces protocoles adaptés est un facteur clé pour augmenter la rentabilité du déploiement de tels réseaux. Ils permettent également de déployer de façon plus efficace des réseaux de capteurs sans fils, dits WSNs (\textit{Wireless Sensors Networks}), qui sont a priori peu adaptés aux contraintes des systèmes embarqués, notamment au niveau de la consommation énergétique imputée aux transmissions radios qui sont coûteuses. Les protocoles de communication qui orchestrent les WSNs sont donc conçus dans une optique de compromis entre la minimisation de la consommation énergétique des nœuds qui les composent et la fiabilité désirée de ces communications (délais, bande passante et déterminisme). La pile réseau 6TiSCH étudiée dans ce document est un ensemble de protocoles et principes qui apportent une réponse concrète à ces besoins.\\
 
 \par Les WSNs étant des systèmes de communication restreints, ils font partie de ce qu'on appelle les LLNs (\textit{Low-power and Lossy Networks}). L'implémentation d'une pile réseau pour les LLNs doit tenir compte de leurs caractéristiques qui sont principalement les suivantes :\\
 
@@ -363,6 +364,7 @@ La consommation d'énergie dans un réseau TSCH peut varier en fonction de plusi
 \newpage
 
 \chapter{La pile réseau 6TiSCH}
+\label{chap_6TiSCH}
 \newpage
 \section{L'architecture type des WSNs}
 \label{archWSN}
@@ -1505,6 +1507,7 @@ Le préfixe IPv6 du réseau peut être obtenu de différentes façons. Si le JRC
 \newpage
 
 \chapter{Amélioration des performances de la joining phase avec la méthode NPEB}
+\label{chap_NPEB}
 \newpage
 
 \section{Les faiblesses de la joining phase}
@@ -1869,8 +1872,7 @@ Un NPEB contient une liste de propositions de voisins, chacun identifié par son
  %= 4+n(48+8+4+\text{nbrcells}_{i}*40) 
  = 4 + n(60+\text{nbrcells}_{i}*40)\ \text{bits} \]
  
-À titre d'exemple, un NPEB proposant deux voisins qui renseignent chacun une cell introduit un overhead brut (sans compter les champs descriptifs de l'IE 802.15.4 \textit{Type-Length}) de $[5*8] + [4+2*(60+40)] = 244$ bits $\approx 30$ bytes.
-\todo{espace dispo EB}
+À titre d'exemple, un NPEB proposant deux voisins qui renseignent chacun une cell introduit un overhead brut (sans compter les champs descriptifs de l'IE 802.15.4 \textit{Type-Length}) de $[5*8] + [4+2*(60+40)] = 244$ bits $\approx 30$ bytes. La taille d'un EB n'est pas fixée et peut varier, par exemple si l'extension d'EB \cite{ietf-6tisch-enrollment-enhanced-beacon-14} est utilisée. \cite{ATP} indique que la taille mininmum d'un EB est de 40 bytes. La taille maximum d'une frame 802.15.4 étant de 127 bytes (voir \wordlink{Section}{802.15.4PHY}), cela laisse une marge raisonnablement suffisante pour annoncer plus de deux voisins.
 
 \newpage
 
@@ -1881,14 +1883,25 @@ Les noeuds du réseau ont un espace mémoire limité, aussi la NPtable doit êtr
 La maintenance de la NPtable doit se faire de façon intelligente en considérant les informations qu'elle fournit. Un procédé de nettoyage de la NPtable doit être lancé régulièrement pour décider de quelles sont les propositions de voisins qui doivent être préservées. Intuitivement, les voisins dont l'écoute à la cell annoncée à échoué (\textit{RSSI} = \texttt{0}) sont ceux à écarter en priorité. La \wordlink{Procédure}{proc_announce} (selectNeighborsToAnnounce()) peut être réutilisée pour décider de quels sont les meilleurs voisins à maintenir dans la NPtable. Les détails de la procédure ne sont pas présentés ici.
 
 \chapter{Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}
+\label{chap_exp}
 \newpage
 
 \section{Méthodologie}
 
 \section{Impact de la sécurité sur la formation du réseau}
 
+\subsection{Sélection des métriques}
+
+\subsection{Discussion des résultats}
+
 \section{Amélioration des performances par la méthode NPEB}
 \label{eval_NPEB}
+
+
+\subsection{Sélection des métriques}
+
+\subsection{Discussion des résultats}
+
 
 \chapter*{Conclusion et recommandations}
 
