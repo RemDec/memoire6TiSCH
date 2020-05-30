@@ -144,8 +144,18 @@ Année Académique 2019-2020}
 \newpage
 
 \begin{center}
-\textbf{\Large Remerciements}
+\textbf{\LARGE Remerciements}\\
 \end{center}
+~\\
+~\\
+~\\
+\Large
+\par Au terme de la rédaction de ce travail de fin d'études, je souhaite exprimer toute ma gratitude au personnel encadrant et à mes proches qui m'ont soutenu, contribuant de près ou de loin à ce mémoire.\\
+
+Ma plus profonde reconnaissance à mon professeur et encadrant principal M$^{\text{r}}$ Bruno Quoitin, dont le suivi actif et les relectures attentives ont permis de mener ce travail a bien. Mes remerciements à David Hauweele dont l'implication volontaire a permis de concrétiser l'obtention de résultats.\\
+
+Enfin, mes remerciements aux rapporteurs et au jury pour l'attention portée à l'évaluation de ce travail.
+\normalsize
 
 \newpage
 ~
@@ -1884,9 +1894,6 @@ La fonction selectNeighborToListen(.) est la \wordlink{Procédure}{proc_listen} 
 
 Si en revanche un voisin intéressant est retourné par selectNeighborToListen(.), le pledge récupère le schedule NPEB associé à ce voisin depuis la NPtable. Il sait alors dans combien de cycles (\textit{curr\_cycle}) il va installer une cell d'annonce de NPEB. La fonction computeNPEBAnnouncementASN(.) opère des calculs simples pour calculer l'ASN à laquelle cette annonce aura lieu. Il va ensuite passer en sommeil jusqu'à ce moment, où il se réveille pour recevoir le NPEB. S'il est capté, la procédure receiveNPEB est à nouveau appelée pour une nouvelle itération du processus d'écoute. Sinon, le pledge repasse en écoute active comme détaillé précédemment dans le cas \textit{mostInterestingNP} = \texttt{None}.
 
-\subsubsection{Propositions de voisins dans les frames ACK/Data}
-
-\todo{Implem}
 
 \subsection{Discussion des optimisations possibles}
 
@@ -1900,11 +1907,11 @@ Les noeuds du réseau peuvent tirer parti de leur NPtable pour sélectionner leu
 
 Cependant, un pledge qui rate le début de la slotframe devra attendre sa prochaine itération. Pour éviter cela et avoir une répartition minimum, un noeud qui installe une deuxième cell d'annonce le fait suivant le même processus mais en considérant un timeslot minimum qui est la moitié de la slotframe. S'il vient à installer une troisième cell, il considérera un timeslot minimum au tier de la slotframe, etc.
 
- \vspace{0.2cm}
+ \vspace{1cm}
 	\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{NPEB_cell}
-	\caption{Illustration de la sélection de cell tirée du simulateur 6TiSCH \cite{simulating-6TiSCH}}
+	\includegraphics[width=0.95\linewidth]{NPEB_cell}
+	\caption{Illustration de la sélection de cell tirée du simulateur 6TiSCH \cite{simulating-6TiSCH} modifié pour supporter la méthode NPEB}
 	\label{fig:NPEB_cells}
 	\end{figure}
 
@@ -1912,7 +1919,9 @@ Cependant, un pledge qui rate le début de la slotframe devra attendre sa procha
 
 \subsubsection{Nombre de cycles}
 
-Une fois les coordonnées d'une cell d'annonce décidées, un noeud doit évaluer le nombre de cycles \textit{nbr\_cycles} qui séparera chaque annonce. Intuitivement, un noeud qui a une mauvaise place dans la topologie devrait émettre moins de (NP)EBs que ses parents. Une façon de refléter cela dans le nombre de cycles est de le choisir proportionnelement à la valeur de la Join Metric du noeud. Plus la Join Metric est élevée (le neoud a une moins bonne place dans la topologie), plus \textit{nbr\_cycles} le sera également. 
+Une fois les coordonnées d'une cell d'annonce décidées, un noeud doit évaluer le nombre de cycles \textit{nbr\_cycles} qui séparera chaque annonce. Intuitivement, un noeud qui a une mauvaise place dans la topologie devrait émettre moins de (NP)EBs que ses parents. Une façon de refléter cela dans le nombre de cycles est de le choisir proportionnelement à la valeur de la Join Metric du noeud. Plus la Join Metric est élevée (le neoud a une moins bonne place dans la topologie), plus \textit{nbr\_cycles} le sera également.\\
+
+Une stratégie faisant intervenir le nombre de voisins connus peut également être envisagée, à la manière du broadcast Bayesien \cite{broadcast-strategies}. Ici, il est envisageable d'augmenter \textit{nbr\_cycles} pour espacer les émissions de NPEB au plus le noeud a de voisins connus.
 
 \subsubsection{Cycles décalés entre voisins}
 
@@ -1966,7 +1975,13 @@ La maintenance de la NPtable doit se faire de façon intelligente en considéran
 \label{chap_exp}
 \newpage
 
+\section{Choix du simulateur}
+
+Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH est établie dans \cite{simulating-6TiSCH}. Le simulateur 6TiSCH, présenté dans ce même article, a été sélectionner pour mener la phase expérimentative de ce travail. Il a été écrit par les membres du WG 6TiSCH et cible spécifiquement la pile étudiée, ce qui simplifie d'une part son utilisation et d'autre part son extensibilité. Il s'agit d'un simulateur dit \textit{discrete event-driven}, c'est-à-dire qu'il n'émule pas la pile 6TiSCH au niveau binaire, mais plutôt du point de vue comportemental. Cependant, il parvient à simuler de façon fidèle le déploiment de la pile en situation réelle \cite{simulating-6TiSCH}. En addition au simulateur 6TiSCH, un framework de traitement de ses sorties développé au Service Réseaux et Télécommunications est utilisé. Il permet de manipuler les lancements du simulateur et les données journalisées, par le biais d'une surcouche écrite en Python.
+
 \section{Méthodologie}
+
+Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non la joining phase. La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}. D'autres métriques pertinentes pour observer les effets de la méthode sur la formation du réseau sont sélectionnées. Similairement, l'impact de la joining phase sécurisée est évalué quand la méthode NPEB est considérée. Chaque résultat obtenu est discuté et justifié.
 
 \section{Impact de la sécurité sur la formation du réseau}
 
