@@ -192,6 +192,12 @@ Marco Tiloca, Simon Duquennoy, and Gianluca Dini.
   Engineering Task Force, June 2019.
 \newblock Work in Progress.
 
+\bibitem{decentralized}
+Andrew Tinka, Thomas Watteyne, Kristofer Pister, and Alexandre Bayen.
+\newblock A decentralized scheduling algorithm for time synchronized channel
+  hopping.
+\newblock {\em ICST Trans. Mobile Communications Applications}, 11:e5, 09 2011.
+
 \bibitem{join-TSCH-RPL}
 Jose Vera-Pérez, David Todolí-Ferrandis, Salvador Santonja-Climent, Javier
   Silvestre-Blanes, and Víctor Sempere-Payá.

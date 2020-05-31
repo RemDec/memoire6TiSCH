@@ -3,7 +3,7 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: memoire.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-Repeated entry---line 542 of file biblio.bib
+Repeated entry---line 552 of file biblio.bib
  : @misc{rfc6775
  :              ,
 I'm skipping whatever remains of this entry
@@ -11,45 +11,45 @@ Warning--empty journal in LLSF
 Warning--empty booktitle in telosb
 Warning--empty journal in OSCOREvsNDN
 Warning--empty booktitle in multipath
-You've used 44 entries,
+You've used 45 entries,
             2118 wiz_defined-function locations,
-            743 strings with 12057 characters,
-and the built_in function-call counts, 14657 in all, are:
-= -- 1345
-> -- 944
+            748 strings with 12269 characters,
+and the built_in function-call counts, 14993 in all, are:
+= -- 1375
+> -- 967
 < -- 16
-+ -- 374
-- -- 328
-* -- 1060
-:= -- 2552
-add.period$ -- 142
-call.type$ -- 44
-change.case$ -- 296
++ -- 384
+- -- 336
+* -- 1088
+:= -- 2613
+add.period$ -- 145
+call.type$ -- 45
+change.case$ -- 303
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 465
-empty$ -- 986
-format.name$ -- 328
-if$ -- 2979
+cite$ -- 49
+duplicate$ -- 476
+empty$ -- 1007
+format.name$ -- 336
+if$ -- 3044
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 20
-newline$ -- 233
-num.names$ -- 88
-pop$ -- 340
+int.to.str$ -- 45
+missing$ -- 21
+newline$ -- 238
+num.names$ -- 90
+pop$ -- 345
 preamble$ -- 1
-purify$ -- 252
+purify$ -- 258
 quote$ -- 0
-skip$ -- 361
+skip$ -- 368
 stack$ -- 0
-substring$ -- 486
-swap$ -- 94
+substring$ -- 498
+swap$ -- 95
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 176
+type$ -- 180
 warning$ -- 4
-while$ -- 106
-width$ -- 46
-write$ -- 483
+while$ -- 109
+width$ -- 47
+write$ -- 494
 (There was 1 error message)

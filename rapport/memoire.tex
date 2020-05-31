@@ -1830,7 +1830,7 @@ La \wordlink{Procédure}{proc_iter} est la formalisation du processus itératif 
 
 Une fois le NPEB reçu, il est parsé premièrement comme un EB standard et deuxièmement la partie Neighbors Propositions est traitée. La fonction feedTable(.) met à jour et rempli la NPtable du pledge avec les informations sur les voisins proposés. De plus, le voisin \textit{neighbor} qui a émis le NPEB est considéré de la même façon (le pledge a en plus une valeur pour le RSSI associé). La fonction isBetterNeighbor(\textit{n1}, \textit{n2}) est appelée sur deux voisins dont un NPEB a été reçu et retourne vrai si \textit{n1} a une meilleure Join Metric et un meilleur RSSI que \textit{n2}.\\
 
-La fonction shouldUndergoSynchroWith(\textit{node}) permet de trancher quand arrêter le processus itératif et est donné par la \wordlink{Procédure}{proc_stop}. Elle utilise tous les éléments connus du pledge pour décider si un candidat devrait être celui avec lequel lancer la suite du processus de join. Le candidat est ici \textit{bestNP}, le meilleur voisin dont un NPEB a été capté par le pledge jusqu'ici, en prenant en compte le NPEB \textit{NPEB} qui vient d'être reçu. La fonction carryOnJoiningWith(.) correspond au lancement de la suite du processus de join (Join Exchange CoJP) non détaillée ici car indépendante de l'utilisation de la méthode NPEB. À noter que les échanges subséquents auront alors bien lieu dans la minimal cell tel que décrit par la spécification \cite{rfc8180}.
+La fonction shouldUndergoSynchroWith(\textit{node}) permet de trancher quand arrêter le processus itératif et est donnée par la \wordlink{Procédure}{proc_stop} (détaillée plus loin). Elle utilise tous les éléments connus du pledge pour décider si un candidat devrait être celui avec lequel lancer la suite du processus de join. Le candidat est ici \textit{bestNP}, le meilleur voisin dont un NPEB a été capté par le pledge jusqu'ici, en prenant en compte le NPEB \textit{NPEB} qui vient d'être reçu. La fonction carryOnJoiningWith(.) correspond au lancement de la suite du processus de join (Join Exchange CoJP) non détaillée ici car indépendante de l'utilisation de la méthode NPEB. À noter que les échanges subséquents auront alors lieu dans la minimal cell tel que décrit par la spécification \cite{rfc8180}, ou gérés par la Scheduling Function (MSF utilise par exemple les autonomous cells, voir \wordlink{Section}{scheduling}).\\
 
 \newpage
 
@@ -1865,6 +1865,17 @@ La fonction shouldUndergoSynchroWith(\textit{node}) permet de trancher quand arr
 
 \vspace{0.2cm}
 
+
+La fonction selectNeighborToListen(.) est la \wordlink{Procédure}{proc_listen} détaillée précédemment. Si elle ne retourne aucun voisin (ligne 10), alors le pledge retourne en écoute active pour les \textit{remainingListenDelay} secondes restantes et décrémentera de fait ce timer. S'il arrive à expiration, le processus de join sera lancé avec \textit{bestNP}. Si un NPEB est reçu en écoute active durant cet intervalle de temps, la procédure receiveNPEB est à nouveau appelée (nouvelle itération).\\
+
+Si en revanche un voisin intéressant est retourné par selectNeighborToListen(.) (ligne 13), le pledge récupère le schedule NPEB associé à ce voisin depuis la NPtable. Il sait alors dans combien de cycles (\textit{curr\_cycle}) il va installer une cell d'annonce de NPEB. La fonction computeNPEBAnnouncementASN(.) opère des calculs simples pour calculer l'ASN à laquelle cette annonce aura lieu. Il va ensuite passer en sommeil jusqu'à ce moment, où il se réveille pour recevoir le NPEB. S'il est capté, la procédure receiveNPEB est à nouveau appelée pour une nouvelle itération du processus d'écoute. Sinon, le pledge repasse en écoute active comme détaillé précédemment dans le cas \textit{mostInterestingNP} = \texttt{None}.\\
+
+
+La fonction shouldUndergoSynchroWith(.) est détaillée par la \wordlink{Procédure}{proc_stop}.
+Elle permet de décider si un voisin dont un NPEB a été reçu est un voisin qui présente des caractéristiques suffisantes que pour être utilisé dans la suite du processus de join. Elle retourne donc un booléen qui, s'il est \texttt{Vrai}, mettra fin au processus itératif d'écoute de voisin. La décision s'opère sur plusieurs critères, sous forme de seuils paramétrables. Dans un premier lieu, le RSSI doit être suffisamment élevé (ligne 2) que pour avoir des échanges fiables. Pour se faire, une conversion en terme de PDR est faite, basée sur une table établie empiriquement présentée dans \cite{simulating-6TiSCH}. Ensuite, si le noeud est le Root de la topologie (ligne 6), on sait que le PDR est correct par la proposition précédente et donc qu'il faut aller vers ce noeud. Si ce n'est pas le cas, la Join Metric annoncée doit être assez bonne que pour garantir une bonne place dans la topologie (ligne 9). À noter que le seuil \texttt{MAX\_JM\_UNDERGO\_SYNCHRO} à 0 revient à imposer qu'il soit Root et donc validé par la déclaration précédente, le paramétrage doit se faire en fonction de l'Objective Function utilisée par RPL. Finalement, si le voisin a passé les précédentes conditions, et que tous les voisins proposés ont déjà été écoutés (ligne 13), alors il est choisi pour continuer le processus de join. 
+
+\newpage
+
 \begin{algorithm}[!h]
 \caption{shouldUndergoSynchroWith : décision d'arrêt pour le processus itératif validant le voisin candidat pour la suite du processus de join}
 \begin{algorithmic}[1]
@@ -1874,8 +1885,12 @@ La fonction shouldUndergoSynchroWith(\textit{node}) permet de trancher quand arr
 \If{pdr $<$ \texttt{MIN\_PDR\_UNDERGO\_SYNCHRO}}
 \State\Return \texttt{Faux}
 \EndIf
-\If{\textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}] $\leq$ \texttt{MAX\_JM\_UNDERGO\_SYNCHRO}}
+\State \textit{neighJM} $\leftarrow$ \textit{NPtable}[\textit{neighbor}][\texttt{joinMetric}]
+\If{\textit{neighJM} == 0}
 \State\Return \texttt{Vrai}
+\EndIf
+\If{\textit{neighJM} $>$ \texttt{MAX\_JM\_UNDERGO\_SYNCHRO}}
+\State\Return \texttt{Faux}
 \EndIf
 \If{plus de 2 voisins dans \textit{NPtable}}
 \If{il ne reste plus de voisin à écouter dans \textit{NPtable} (ont tous RSSI $\neq$ \texttt{None})}
@@ -1887,13 +1902,6 @@ La fonction shouldUndergoSynchroWith(\textit{node}) permet de trancher quand arr
 \label{proc_stop}
 \end{algorithm}
 \vspace{0.4cm}
-
-La fonction selectNeighborToListen(.) est la \wordlink{Procédure}{proc_listen} détaillée précédemment. Si elle ne retourne aucun voisin, alors le pledge retourne en écoute active pour les \textit{remainingListenDelay} secondes restantes et décrémentera de fait ce timer. S'il arrive à expiration, le processus de join sera lancé avec \textit{bestNP}. Si un NPEB est reçu en écoute active durant cet intervalle de temps, la procédure receiveNPEB est à nouveau appelée (nouvelle itération). 
-
-\newpage
-
-Si en revanche un voisin intéressant est retourné par selectNeighborToListen(.), le pledge récupère le schedule NPEB associé à ce voisin depuis la NPtable. Il sait alors dans combien de cycles (\textit{curr\_cycle}) il va installer une cell d'annonce de NPEB. La fonction computeNPEBAnnouncementASN(.) opère des calculs simples pour calculer l'ASN à laquelle cette annonce aura lieu. Il va ensuite passer en sommeil jusqu'à ce moment, où il se réveille pour recevoir le NPEB. S'il est capté, la procédure receiveNPEB est à nouveau appelée pour une nouvelle itération du processus d'écoute. Sinon, le pledge repasse en écoute active comme détaillé précédemment dans le cas \textit{mostInterestingNP} = \texttt{None}.
-
 
 \subsection{Discussion des optimisations possibles}
 
@@ -1907,6 +1915,8 @@ Les noeuds du réseau peuvent tirer parti de leur NPtable pour sélectionner leu
 
 Cependant, un pledge qui rate le début de la slotframe devra attendre sa prochaine itération. Pour éviter cela et avoir une répartition minimum, un noeud qui installe une deuxième cell d'annonce le fait suivant le même processus mais en considérant un timeslot minimum qui est la moitié de la slotframe. S'il vient à installer une troisième cell, il considérera un timeslot minimum au tier de la slotframe, etc.
 
+\newpage
+
  \vspace{1cm}
 	\begin{figure}[!h]
 	\centering
@@ -1915,23 +1925,25 @@ Cependant, un pledge qui rate le début de la slotframe devra attendre sa procha
 	\label{fig:NPEB_cells}
 	\end{figure}
 
-\newpage
+\vspace{0.6cm}
 
 \subsubsection{Nombre de cycles}
 
 Une fois les coordonnées d'une cell d'annonce décidées, un noeud doit évaluer le nombre de cycles \textit{nbr\_cycles} qui séparera chaque annonce. Intuitivement, un noeud qui a une mauvaise place dans la topologie devrait émettre moins de (NP)EBs que ses parents. Une façon de refléter cela dans le nombre de cycles est de le choisir proportionnelement à la valeur de la Join Metric du noeud. Plus la Join Metric est élevée (le neoud a une moins bonne place dans la topologie), plus \textit{nbr\_cycles} le sera également.\\
 
 Une stratégie faisant intervenir le nombre de voisins connus peut également être envisagée, à la manière du broadcast Bayesien \cite{broadcast-strategies}. Ici, il est envisageable d'augmenter \textit{nbr\_cycles} pour espacer les émissions de NPEB au plus le noeud a de voisins connus.
-
+~\\
 \subsubsection{Cycles décalés entre voisins}
 
 Le fait que les annonces ne soient pas opérées à chaque itération de slotframe peut éventuellement mener à une situation de ``famine". L'exemple le plus flagrant est si l'on considère deux noeuds voisins dans la topologie qui ont la même Join Metric. Par la Section précédente, ils calculent pour une cell d'annonce un même \textit{nbr\_cycle}. Si \textit{curr\_cycle} est également identique, ils sont alignés et émettent toujours dans des itérations de slotframes simultanées. Un pledge dans le voisinnage peut alors écouter activement des cycles durant sans entendre ni l'un ni l'autre.\\
 
 Une façon simple et non coûteuse de contrer cela est de considérer le \textit{curr\_cycle} connu des voisins quand une nouvelle cell d'annonce est créée. Si possible, le \textit{curr\_cycle} initial sera mis à une valeur non utilisée par les voisins qui annoncent au même \textit{nbr\_cycles}. Éventuellement, les multiples peuvent aussi être pris en compte pour être complet. Il en résulte un décalage de cycles entre les annonces et un étalement sur le temps évitant les temps d'écoute active trop longs pour les pledges.
-
+~\\
 \subsubsection{Cell \textit{RxS} après une annonce NPEB}
 
 La méthode NPEB permet à un pledge de trouver efficacement un bon voisin, mais une fois celui-ci choisi il reste au pledge à effectuer la suite de son processus de join (Join Exchange CoJP). Cela se fait indépendamment de la méthode NPEB, en utilisant la minimal cell si la Scheduling Function en activité ne prévoit aucun mécanisme dédié. Ce n'est pas le cas de MSF qui installe des autonomous cells temporaires dédiées au trafic de join (voir \wordlink{Section}{scheduling}), le raisonnement suivant n'est donc pas pertinent si MSF est utilisée. Les performances globales du join sont donc encore impactées par l'usage de celle-ci, tel que décrit dans la \wordlink{Section}{min_cell}.\\
+
+\newpage
 
 Pour éviter la congestion dans la minimal cell, il est envisageables que les noeuds du réseaux installent d'autres cells destinées à la réception de la Join Request CoJP émise par un noeud qui souhaite continuer son processus de join. Une manière d'intégrer cela à la méthode NPEB est de prévoir un nouveau champ \textit{nbr\_rx\_cycles\_after} dans le schedule NPEB de chaque noeud. \textit{nbr\_rx\_cycles\_after} indique le nombre de cycles suivants l'annonce d'un NPEB de la part du noeud où celui-ci installe une cell \textit{RxS}, aux mêmes coordonnées (donc \textit{nbr\_rx\_cycles\_after} $<$ \textit{nbr\_cycles}). Pour un pledge qui vient d'entendre un NPEB et de valider le voisin pour continuer son processus de join, cela lui permet d'envoyer sa Join Request vers le noeud au cycle suivant, évitant de le faire dans la minimal cell. Le noeud se mettra en écoute à ce moment et pourra traiter la Join Request CoJP comme si elle était reçue de façon standard dans la minimal cell. La suite du processus de join se déroule normalement, la Join Response CoJP sera relayée vers le pledge dans la minimal cell.\\
 
@@ -1971,17 +1983,28 @@ Les noeuds du réseau ont un espace mémoire limité, aussi la NPtable doit êtr
 
 La maintenance de la NPtable doit se faire de façon intelligente en considérant les informations qu'elle fournit. Un procédé de nettoyage de la NPtable doit être lancé régulièrement pour décider de quelles sont les propositions de voisins qui doivent être préservées. Intuitivement, les voisins dont l'écoute à la cell annoncée à échoué (\textit{RSSI} = \texttt{0}) sont ceux à écarter en priorité. La \wordlink{Procédure}{proc_announce} (selectNeighborsToAnnounce()) peut être réutilisée pour décider de quels sont les meilleurs voisins à maintenir dans la NPtable. Les détails de la procédure ne sont pas présentés ici.
 
+
+\section{Implémentation de la méthode NPEB}
+
+Comme détaillé dans le Chapitre suivant à la \wordlink{Section}{choice_sim}, la méthode NPEB est implémentée comme une extension du simulateur 6TiSCH écrit par le WG 6TiSCH \cite{simulating-6TiSCH}. Le code existant est modifié afin de pouvoir supporter la méthode NPEB, et des structures telles que la NPtable sont ajoutées aux informations qu'un noeud maintient. Le simulateur modifié est accessible sur GitHub\footnote{\url{https://github.com/RemDec/6tisch-simulator-NPEB}}. Comme l'intégration est faite dans le code même, les changements sont limités à la partie de l'implémentation représentant la couche 2 d'un noeud (802.15.4 en mode TSCH), qui est intégralement reprise dans le fichier \texttt{SimEngine/Mote/tsch.py}. D'autres changements mineurs sont effectués pour journaliser les nouveaux évènements et définir le nouveau type d'EB.\\
+
+
+
+
 \chapter{Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}
 \label{chap_exp}
 \newpage
 
 \section{Choix du simulateur}
+\label{choice_sim}
 
 Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH est établie dans \cite{simulating-6TiSCH}. Le simulateur 6TiSCH, présenté dans ce même article, a été sélectionner pour mener la phase expérimentative de ce travail. Il a été écrit par les membres du WG 6TiSCH et cible spécifiquement la pile étudiée, ce qui simplifie d'une part son utilisation et d'autre part son extensibilité. Il s'agit d'un simulateur dit \textit{discrete event-driven}, c'est-à-dire qu'il n'émule pas la pile 6TiSCH au niveau binaire, mais plutôt du point de vue comportemental. Cependant, il parvient à simuler de façon fidèle le déploiment de la pile en situation réelle \cite{simulating-6TiSCH}. En addition au simulateur 6TiSCH, un framework de traitement de ses sorties développé au Service Réseaux et Télécommunications est utilisé. Il permet de manipuler les lancements du simulateur et les données journalisées, par le biais d'une surcouche écrite en Python.
 
 \section{Méthodologie}
 
-Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non la joining phase. La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}. D'autres métriques pertinentes pour observer les effets de la méthode sur la formation du réseau sont sélectionnées. Similairement, l'impact de la joining phase sécurisée est évalué quand la méthode NPEB est considérée. Chaque résultat obtenu est discuté et justifié.
+Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non la joining phase. La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}. D'autres métriques pertinentes pour observer les effets de la méthode sur la formation du réseau sont sélectionnées. Similairement, l'impact de la joining phase sécurisée est évalué quand la méthode NPEB est considérée. Chaque résultat obtenu est discuté et justifié.\\
+
+Les variations étudiées ici se concentrent sur l'emplois ou non de la joining phase, croisé avec l'utilisation de la méthode NPEB ou non. Aussi, afin d'avoir une base commune d'interprétation pour toutes les expériences, on ne considère pas un réseau dont les caractéristiques varient. Les runs consécutives du simulateurs se font sur des seeds différents, mais il est possible d'imposer des contraintes sur la configuration du réseau. Ainsi, on considère des réseaux de 30 noeuds, similairement à ce qui est fait dans le cadre de tests réels sur des testbeds déployés \cite{openbenchmark}. La disposition de la topologie est aléatoire mais suit les contraintes suivantes : chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. À noter que le simulateur tente de respecter ces contraintes au mieux, mais ne le garantit pas systématiquement \cite{simulating-6TiSCH}. Un nombre raisonnable 
 
 \section{Impact de la sécurité sur la formation du réseau}
 
