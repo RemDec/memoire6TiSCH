@@ -45,6 +45,7 @@
 \newcommand{\todo}[1]{\par{\color{red} /---| A faire : #1 |---\textbackslash\\}}
 \newcommand{\todoIL}[1]{{\color{red}[todo: #1]}}
 \newcommand{\wordlink}[2]{\hyperref[#2]{#1~\ref{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 
 \setcounter{secnumdepth}{3}
 
@@ -892,6 +893,17 @@ Utiliser le mesh-under permet d'avoir un délai de transmission plus court, au d
 	\label{fig:OF}
 	\end{figure}
 
+\vspace{0.3cm}
+
+Afin de se comparer aux autres noeuds dans la topologie, un noeud $N$ utilise l'équation suivante :
+\[
+DAG_{Rank(N)} = \floor{\frac{Rank(N)}{MinHopRankIncrease}}
+\]
+
+\noindent Où $Rank(N)$ est le rang que le noeud $N$ a calculé pour lui-même et $MinHopRankIncrease$ est la valeur de l'écart minimum entre deux rangs, représentant la différence minimum entre le rang d'un noeud et les rangs de ses possibles parents (spécifique à l'implémentation).
+
+\newpage
+
 \par Un exemple de métrique communément utilisée par une OF additive est l'ETX (\textit{Expected Transmission Count}). Elle représente le nombre moyen de (re)transmissions requises pour transmettre avec succès un paquet à un voisin (l'ETX d'un chemin multihop est l'addition des ETX de chaque saut). Sa valeur peut être estimée sur $numTx$ transmissions en considérant le nombre d'ACK reçus en retour : 
 \begin{equation}
 ETX = \frac{numTx}{numTxAcked} \geq 1
@@ -899,9 +911,6 @@ ETX = \frac{numTx}{numTxAcked} \geq 1
 
 \noindent Ces valeurs peuvent être obtenues en pratique depuis l'abstract neighbor table maintenue par la couche intermédiaire 6top \cite{ietf-6tisch-architecture-28}.
 
-\newpage
-
-\todo{DAGRank(rank)}
 
 \par RPL utilise ICMPv6 pour transporter l'information utile à la construction et au maintient de la topologie, à travers plusieurs types de messages de signalement : 
 \vspace{0.2cm}
@@ -1904,6 +1913,7 @@ Elle permet de décider si un voisin dont un NPEB a été reçu est un voisin qu
 \vspace{0.4cm}
 
 \subsection{Discussion des optimisations possibles}
+\label{optis_NPEB}
 
 Cette Section fait l'état de plusieurs optimisations apportables à la méthode NPEB telle que présentée dans les Sections précédentes. L'intuition qui les justifie est donnée pour chacune. Lors des expérimentations, les optimisations considérées dans l'implémentation seront mentionnées avec les résultats.
 
@@ -1988,7 +1998,7 @@ La maintenance de la NPtable doit se faire de façon intelligente en considéran
 
 Comme détaillé dans le Chapitre suivant à la \wordlink{Section}{choice_sim}, la méthode NPEB est implémentée comme une extension du simulateur 6TiSCH écrit par le WG 6TiSCH \cite{simulating-6TiSCH}. Le code existant est modifié afin de pouvoir supporter la méthode NPEB, et des structures telles que la NPtable sont ajoutées aux informations qu'un noeud maintient. Le simulateur modifié est accessible sur GitHub\footnote{\url{https://github.com/RemDec/6tisch-simulator-NPEB}}. Comme l'intégration est faite dans le code même, les changements sont limités à la partie de l'implémentation représentant la couche 2 d'un noeud (802.15.4 en mode TSCH), qui est intégralement reprise dans le fichier \texttt{SimEngine/Mote/tsch.py}. D'autres changements mineurs sont effectués pour journaliser les nouveaux évènements et définir le nouveau type d'EB.\\
 
-
+L'implémentation faite implémente les procédures décrites dans la \wordlink{Section}{decisional}. Les méthodes de remplissage de la NPtable considérées sont les méthodes NPEB-based et ACK-based présentées dans la \wordlink{Section}{feed_NPtable}. La méthode Data-based est écartée car les expérimentations se concentrent sur la joining phase ou le trafic applicatif n'est pas important. Finalement, les optimisations proposées dans la \wordlink{Section}{optis_NPEB} sont toutes implémentées à l'exception de la cell RxS après une annonce NPEB, celle-ci n'étant pas pertinente quand la Scheduling Function est MSF.
 
 
 \chapter{Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}
@@ -2004,7 +2014,9 @@ Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH
 
 Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non la joining phase. La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}. D'autres métriques pertinentes pour observer les effets de la méthode sur la formation du réseau sont sélectionnées. Similairement, l'impact de la joining phase sécurisée est évalué quand la méthode NPEB est considérée. Chaque résultat obtenu est discuté et justifié.\\
 
-Les variations étudiées ici se concentrent sur l'emplois ou non de la joining phase, croisé avec l'utilisation de la méthode NPEB ou non. Aussi, afin d'avoir une base commune d'interprétation pour toutes les expériences, on ne considère pas un réseau dont les caractéristiques varient. Les runs consécutives du simulateurs se font sur des seeds différents, mais il est possible d'imposer des contraintes sur la configuration du réseau. Ainsi, on considère des réseaux de 30 noeuds, similairement à ce qui est fait dans le cadre de tests réels sur des testbeds déployés \cite{openbenchmark}. La disposition de la topologie est aléatoire mais suit les contraintes suivantes : chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. À noter que le simulateur tente de respecter ces contraintes au mieux, mais ne le garantit pas systématiquement \cite{simulating-6TiSCH}. Un nombre raisonnable 
+Les variations étudiées ici se concentrent sur l'emplois ou non de la joining phase, croisé avec l'utilisation de la méthode NPEB ou non. Aussi, afin d'avoir une base commune d'interprétation pour toutes les expériences, on ne considère pas un réseau dont les caractéristiques varient. Les runs consécutives du simulateurs se font sur des seeds différents, mais il est possible d'imposer des contraintes sur la configuration du réseau. Ainsi, on considère des réseaux de 30 noeuds, similairement à ce qui est fait dans le cadre de tests réels sur des testbeds déployés \cite{openbenchmark}. La disposition de la topologie est aléatoire mais suit les contraintes suivantes : chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. À noter que le simulateur tente de respecter ces contraintes au mieux, mais ne le garantit pas systématiquement \cite{simulating-6TiSCH}. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. \todoIL{nbr runs}
+
+\newpage
 
 \section{Impact de la sécurité sur la formation du réseau}
 

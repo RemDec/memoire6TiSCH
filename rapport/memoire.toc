@@ -1,87 +1,87 @@
 \babel@toc {french}{}
-\contentsline {chapter}{\numberline {1}Présentation du standard IEEE802.15.4 et TSCH}{8}{chapter.1}%
-\contentsline {section}{\numberline {1.1}L'IoT, les réseaux sans fils et leurs contraintes}{9}{section.1.1}%
-\contentsline {section}{\numberline {1.2}L'évolution des standards - amendement 802.15.4e et 6TiSCH}{11}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Les principes fondamentaux de TSCH}{14}{section.1.3}%
-\contentsline {chapter}{\numberline {2}La pile réseau 6TiSCH}{18}{chapter.2}%
-\contentsline {section}{\numberline {2.1}L'architecture type des WSNs}{19}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Technologies et protocoles de la pile 6TiSCH}{21}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}La pile dans son ensemble}{21}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Couche physique - IEEE802.15.4 PHY}{22}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Couche lien - IEEE802.15.4e en mode TSCH}{23}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Structure de PAN et addressage}{23}{subsubsection.2.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.2.3.2}IEs et \textit {Enhanced Beacons}}{24}{subsubsection.2.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.2.3.3}Types de transmissions et retransmissions}{24}{subsubsection.2.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.4}Organisation d'une transmission dans un timeslot}{25}{subsubsection.2.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.2.3.5}Services de sécurité}{27}{subsubsection.2.2.3.5}%
-\contentsline {subsubsection}{\numberline {2.2.3.6}Structure de slotframe}{28}{subsubsection.2.2.3.6}%
-\contentsline {subsubsection}{\numberline {2.2.3.7}Table des voisins}{28}{subsubsection.2.2.3.7}%
-\contentsline {subsection}{\numberline {2.2.4}Couche d'abstraction de lien - 6top}{29}{subsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.4.1}Composants de la couche 6top}{29}{subsubsection.2.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.2.4.2}Le protocole 6P et les scheduling functions}{30}{subsubsection.2.2.4.2}%
-\contentsline {subsection}{\numberline {2.2.5}Couche d'adaptation à IPv6 - 6LoWPAN}{31}{subsection.2.2.5}%
-\contentsline {subsubsection}{\numberline {2.2.5.1}Mesh Addressing Header : forwarding}{31}{subsubsection.2.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.2.5.2}Dispatch header : compression d'headers}{31}{subsubsection.2.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.2.5.3}Fragmentation header : fragmentation}{32}{subsubsection.2.2.5.3}%
-\contentsline {subsubsection}{\numberline {2.2.5.4}L'auto-configuration des interfaces en IPv6}{32}{subsubsection.2.2.5.4}%
-\contentsline {subsection}{\numberline {2.2.6}Couche réseau et routage - RPL}{33}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}Couches transport et application - CoAP sur UDP}{35}{subsection.2.2.7}%
-\contentsline {subsubsection}{\numberline {2.2.7.1}Transport par UDP}{35}{subsubsection.2.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.2.7.2}CoAP}{35}{subsubsection.2.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.2.7.3}CoJP et OSCORE}{38}{subsubsection.2.2.7.3}%
-\contentsline {section}{\numberline {2.3}Principes inhérents au déploiement de la pile}{39}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Synchronisation temporelle}{39}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}Resynchronisation entre nœuds voisins}{39}{subsubsection.2.3.1.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.2}Synchronisation globale du réseau}{40}{subsubsection.2.3.1.2}%
-\contentsline {subsection}{\numberline {2.3.2}Formation du réseau}{41}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Ordonnancement des transmissions - \textit {minimal scheduling} avec MSF}{42}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {3}Analyse détaillée de la sécurité pour la phase de join}{43}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Ressources et standards utilisés}{44}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{44}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}OSCORE}{44}{subsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Principes fondamentaux d'OSCORE}{44}{subsubsection.3.1.2.1}%
-\contentsline {subsubsection}{\numberline {3.1.2.2}Processus d'encapsulation OSCORE}{45}{subsubsection.3.1.2.2}%
-\contentsline {subsubsection}{\numberline {3.1.2.3}Contextes de sécurité et échanges sur le canal OSCORE}{46}{subsubsection.3.1.2.3}%
-\contentsline {subsection}{\numberline {3.1.3}CoJP}{49}{subsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.3.1}Problématiques liées à la joining phase}{50}{subsubsection.3.1.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.3.2}Hypothèses faites par CoJP (paramètres pré-établis)}{50}{subsubsection.3.1.3.2}%
-\contentsline {subsubsection}{\numberline {3.1.3.3}Composants du protocole CoJP et leur sécurisation}{51}{subsubsection.3.1.3.3}%
-\contentsline {subsubsection}{\numberline {3.1.3.4}Join Exchange CoJP et Join Proxy}{53}{subsubsection.3.1.3.4}%
-\contentsline {section}{\numberline {3.2}Analyse du déroulement de la phase de join}{56}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Procédure dans sa globalité}{56}{subsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{56}{subsubsection.3.2.1.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Étape d'intégration au réseau (échange CoJP) et opérabilité RPL}{58}{subsubsection.3.2.1.2}%
-\contentsline {chapter}{\numberline {4}Amélioration des performances de la joining phase avec la méthode NPEB}{60}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Les faiblesses de la joining phase}{61}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}La \textit {minimal cell}}{61}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Écoute active du pledge}{61}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Présentation de la méthode de \textit {Neighbors Propositions EB}}{62}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Intuition de la méthode NPEB}{62}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Méthodes de remplissage de la NPtable}{66}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}NPEB-based}{66}{subsubsection.4.2.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Data-based}{67}{subsubsection.4.2.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.3}ACK-based}{67}{subsubsection.4.2.2.3}%
-\contentsline {subsection}{\numberline {4.2.3}Procédures décisionnelles et paramétrage}{67}{subsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}Sélection des voisins à annoncer}{67}{subsubsection.4.2.3.1}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}Sélection d'un candidat voisin parmi ceux proposés au pledge}{68}{subsubsection.4.2.3.2}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}Processus itératif d'écoute de NPEBs}{69}{subsubsection.4.2.3.3}%
-\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{71}{subsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{71}{subsubsection.4.2.4.1}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{72}{subsubsection.4.2.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{72}{subsubsection.4.2.4.3}%
-\contentsline {subsubsection}{\numberline {4.2.4.4}Cell \textit {RxS} après une annonce NPEB}{72}{subsubsection.4.2.4.4}%
-\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{74}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{74}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et NPtable}{74}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}Proposition de voisin}{74}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}Stockage de la NPtable}{75}{subsubsection.4.3.2.2}%
-\contentsline {section}{\numberline {4.4}Implémentation de la méthode NPEB}{75}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{76}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Choix du simulateur}{77}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Méthodologie}{77}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Impact de la sécurité sur la formation du réseau}{77}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Sélection des métriques}{77}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Discussion des résultats}{77}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Amélioration des performances par la méthode NPEB}{77}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Sélection des métriques}{77}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Discussion des résultats}{77}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {1}Présentation du standard IEEE802.15.4 et TSCH}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}L'IoT, les réseaux sans fils et leurs contraintes}{10}{section.1.1}%
+\contentsline {section}{\numberline {1.2}L'évolution des standards - amendement 802.15.4e et 6TiSCH}{12}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Les principes fondamentaux de TSCH}{15}{section.1.3}%
+\contentsline {chapter}{\numberline {2}La pile réseau 6TiSCH}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}L'architecture type des WSNs}{20}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Technologies et protocoles de la pile 6TiSCH}{22}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}La pile dans son ensemble}{22}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Couche physique - IEEE802.15.4 PHY}{23}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Couche lien - IEEE802.15.4e en mode TSCH}{24}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Structure de PAN et addressage}{24}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}IEs et \textit {Enhanced Beacons}}{25}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Types de transmissions et retransmissions}{25}{subsubsection.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.4}Organisation d'une transmission dans un timeslot}{26}{subsubsection.2.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.2.3.5}Services de sécurité}{28}{subsubsection.2.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.2.3.6}Structure de slotframe}{29}{subsubsection.2.2.3.6}%
+\contentsline {subsubsection}{\numberline {2.2.3.7}Table des voisins}{29}{subsubsection.2.2.3.7}%
+\contentsline {subsection}{\numberline {2.2.4}Couche d'abstraction de lien - 6top}{30}{subsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.4.1}Composants de la couche 6top}{30}{subsubsection.2.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.2.4.2}Le protocole 6P et les scheduling functions}{31}{subsubsection.2.2.4.2}%
+\contentsline {subsection}{\numberline {2.2.5}Couche d'adaptation à IPv6 - 6LoWPAN}{32}{subsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.5.1}Mesh Addressing Header : forwarding}{32}{subsubsection.2.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.2.5.2}Dispatch header : compression d'headers}{32}{subsubsection.2.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.2.5.3}Fragmentation header : fragmentation}{33}{subsubsection.2.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.2.5.4}L'auto-configuration des interfaces en IPv6}{33}{subsubsection.2.2.5.4}%
+\contentsline {subsection}{\numberline {2.2.6}Couche réseau et routage - RPL}{34}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Couches transport et application - CoAP sur UDP}{36}{subsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.7.1}Transport par UDP}{36}{subsubsection.2.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.2.7.2}CoAP}{36}{subsubsection.2.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.2.7.3}CoJP et OSCORE}{39}{subsubsection.2.2.7.3}%
+\contentsline {section}{\numberline {2.3}Principes inhérents au déploiement de la pile}{40}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Synchronisation temporelle}{40}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Resynchronisation entre nœuds voisins}{40}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}Synchronisation globale du réseau}{41}{subsubsection.2.3.1.2}%
+\contentsline {subsection}{\numberline {2.3.2}Formation du réseau}{42}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Ordonnancement des transmissions - \textit {minimal scheduling} avec MSF}{43}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Analyse détaillée de la sécurité pour la phase de join}{44}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ressources et standards utilisés}{45}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}CBOR et COSE}{45}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}OSCORE}{45}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Principes fondamentaux d'OSCORE}{45}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}Processus d'encapsulation OSCORE}{46}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}Contextes de sécurité et échanges sur le canal OSCORE}{47}{subsubsection.3.1.2.3}%
+\contentsline {subsection}{\numberline {3.1.3}CoJP}{50}{subsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Problématiques liées à la joining phase}{51}{subsubsection.3.1.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}Hypothèses faites par CoJP (paramètres pré-établis)}{51}{subsubsection.3.1.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3.3}Composants du protocole CoJP et leur sécurisation}{52}{subsubsection.3.1.3.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.4}Join Exchange CoJP et Join Proxy}{54}{subsubsection.3.1.3.4}%
+\contentsline {section}{\numberline {3.2}Analyse du déroulement de la phase de join}{57}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Procédure dans sa globalité}{57}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Étape de scanning/advertising (EBs) et obtention d'adresse IPv6}{57}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Étape d'intégration au réseau (échange CoJP) et opérabilité RPL}{59}{subsubsection.3.2.1.2}%
+\contentsline {chapter}{\numberline {4}Amélioration des performances de la joining phase avec la méthode NPEB}{61}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Les faiblesses de la joining phase}{62}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}La \textit {minimal cell}}{62}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Écoute active du pledge}{62}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Présentation de la méthode de \textit {Neighbors Propositions EB}}{63}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Intuition de la méthode NPEB}{63}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Méthodes de remplissage de la NPtable}{67}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}NPEB-based}{67}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Data-based}{68}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}ACK-based}{68}{subsubsection.4.2.2.3}%
+\contentsline {subsection}{\numberline {4.2.3}Procédures décisionnelles et paramétrage}{68}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}Sélection des voisins à annoncer}{68}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}Sélection d'un candidat voisin parmi ceux proposés au pledge}{69}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}Processus itératif d'écoute de NPEBs}{70}{subsubsection.4.2.3.3}%
+\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{72}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{72}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{73}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{73}{subsubsection.4.2.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}Cell \textit {RxS} après une annonce NPEB}{73}{subsubsection.4.2.4.4}%
+\contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{75}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{75}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Overhead des messages et NPtable}{75}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Proposition de voisin}{75}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}Stockage de la NPtable}{76}{subsubsection.4.3.2.2}%
+\contentsline {section}{\numberline {4.4}Implémentation de la méthode NPEB}{76}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Évaluation de la joining phase sécurisée et de la méthode NPEB en simulateur}{77}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Choix du simulateur}{78}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Méthodologie}{78}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Impact de la sécurité sur la formation du réseau}{79}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Sélection des métriques}{79}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Discussion des résultats}{79}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Amélioration des performances par la méthode NPEB}{79}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Sélection des métriques}{79}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Discussion des résultats}{79}{subsection.5.4.2}%

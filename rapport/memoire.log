@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  31 MAY 2020 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  31 MAY 2020 18:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,22 +441,22 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -514,23 +514,23 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 105.
-LaTeX Info: Redefining \dots on input line 105.
+LaTeX Info: Redefining \degres on input line 106.
+LaTeX Info: Redefining \dots on input line 106.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 105.
+(french.ldf)             reported on input line 106.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 105.
-LaTeX Info: Redefining \up on input line 105.
+(french.ldf)             reported on input line 106.
+LaTeX Info: Redefining \up on input line 106.
 
 
 Package french.ldf Warning: OT1 encoding should not be used for French.
 (french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french.ldf)                of your document; reported on input line 105.
+(french.ldf)                of your document; reported on input line 106.
 
 \AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring ON on input line 105.
+Package hyperref Info: Link coloring ON on input line 106.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -542,9 +542,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count305
 )
-LaTeX Info: Redefining \ref on input line 105.
-LaTeX Info: Redefining \pageref on input line 105.
-LaTeX Info: Redefining \nameref on input line 105.
+LaTeX Info: Redefining \ref on input line 106.
+LaTeX Info: Redefining \pageref on input line 106.
+LaTeX Info: Redefining \nameref on input line 106.
 
 (./memoire.out) (./memoire.out)
 \@outlinefile=\write3
@@ -555,37 +555,37 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
  []
 
-<figures/UMons_logo.png, id=136, 193.72375pt x 54.2025pt>
+<figures/UMons_logo.png, id=192, 193.72375pt x 54.2025pt>
 File: figures/UMons_logo.png Graphic file (type png)
 <use figures/UMons_logo.png>
-Package pdftex.def Info: figures/UMons_logo.png  used on input line 138.
+Package pdftex.def Info: figures/UMons_logo.png  used on input line 139.
 (pdftex.def)             Requested size: 102.37141pt x 28.64282pt.
-<figures/sciences_logo.png, id=137, 174.6525pt x 81.30376pt>
+<figures/sciences_logo.png, id=193, 174.6525pt x 81.30376pt>
 File: figures/sciences_logo.png Graphic file (type png)
 <use figures/sciences_logo.png>
-Package pdftex.def Info: figures/sciences_logo.png  used on input line 138.
+Package pdftex.def Info: figures/sciences_logo.png  used on input line 139.
 (pdftex.def)             Requested size: 89.57791pt x 41.70006pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 138--138
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 139--139
  [] 
  []
 
@@ -596,54 +596,54 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 138--138
 identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \newpage
+l.145 \newpage
                [1]
-Underfull \hbox (badness 10000) in paragraph at lines 149--153
+Underfull \hbox (badness 10000) in paragraph at lines 150--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--153
+Underfull \hbox (badness 10000) in paragraph at lines 150--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--153
+Underfull \hbox (badness 10000) in paragraph at lines 150--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
-[4] [5] (./memoire.toc)
+[4] [5] (./memoire.toc [6
+
+])
 \tf@toc=\write4
 \openout4 = `memoire.toc'.
 
- [6
-
-]
+ [7]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -677,124 +677,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-
-LaTeX Warning: Citation `stack-IoT' on page 7 undefined on input line 202.
-
-
-LaTeX Warning: Citation `decentralized' on page 7 undefined on input line 202.
-
-
-LaTeX Warning: Citation `stack-IoT' on page 7 undefined on input line 202.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
-
-LaTeX Warning: Hyper reference `chap_exp' on page 7 undefined on input line 206
-.
-
-
-LaTeX Warning: Reference `chap_exp' on page 7 undefined on input line 206.
-
-[7
-
-]
-Chapitre 1.
 [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Chapitre 1.
+[9
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 
-LaTeX Warning: Citation `stack-IoT' on page 9 undefined on input line 239.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
-[9]
-<figures/multipath.jpg, id=209, 853.1875pt x 834.11626pt>
+[10]
+<figures/multipath.jpg, id=324, 853.1875pt x 834.11626pt>
 File: figures/multipath.jpg Graphic file (type jpg)
 <use figures/multipath.jpg>
-Package pdftex.def Info: figures/multipath.jpg  used on input line 247.
+Package pdftex.def Info: figures/multipath.jpg  used on input line 248.
 (pdftex.def)             Requested size: 207.86368pt x 203.20842pt.
 
+Underfull \hbox (badness 8000) in paragraph at lines 249--249
+[]\OT1/cmr/m/sc/10 Figure \OT1/cmr/m/n/10 1.1 { |Ph^^Senom^^Rene de mul-ti-path
 
-LaTeX Warning: Citation `multipath' on page 10 undefined on input line 248.
+ []
 
-
-LaTeX Warning: Citation `multipath' on page 10 undefined on input line 248.
-
-<figures/TelosB.png, id=210, 853.1875pt x 834.11626pt>
+<figures/TelosB.png, id=327, 853.1875pt x 834.11626pt>
 File: figures/TelosB.png Graphic file (type png)
 <use figures/TelosB.png>
-Package pdftex.def Info: figures/TelosB.png  used on input line 253.
+Package pdftex.def Info: figures/TelosB.png  used on input line 254.
 (pdftex.def)             Requested size: 207.86368pt x 203.20842pt.
 
-LaTeX Warning: Citation `telosb' on page 10 undefined on input line 254.
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
+ []
 
-LaTeX Warning: Citation `telosb' on page 10 undefined on input line 254.
-
-
-LaTeX Warning: Citation `SODA' on page 10 undefined on input line 260.
-
-
-LaTeX Warning: Citation `stack-IoT' on page 10 undefined on input line 260.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+[11 <./figures/multipath.jpg> <./figures/TelosB.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-LaTeX Warning: Citation `6TiSCH-industrial-perf' on page 10 undefined on input 
-line 267.
-
-[10 <./figures/multipath.jpg> <./figures/TelosB.png>]
-
-LaTeX Warning: Citation `6top-perf' on page 11 undefined on input line 274.
-
-
-LaTeX Warning: Citation `stack-IoT' on page 11 undefined on input line 274.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
@@ -804,944 +755,475 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
  []
 
 
-LaTeX Warning: Citation `link-layer-sec-impact' on page 11 undefined on input l
-ine 290.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--319
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 [12]
-
-LaTeX Warning: Citation `SODA' on page 13 undefined on input line 335.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 13 undefined on i
-nput line 335.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 13 undefined on i
-nput line 335.
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 14 undefined on i
-nput line 345.
-
-
-LaTeX Warning: Citation `rfc7554' on page 14 undefined on input line 354.
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
 
-<figures/TSCH_basics_matrix.png, id=271, 186.4566pt x 186.81795pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--320
+
+ []
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
+
+ []
+
+<figures/TSCH_basics_matrix.png, id=410, 186.4566pt x 186.81795pt>
 File: figures/TSCH_basics_matrix.png Graphic file (type png)
 <use figures/TSCH_basics_matrix.png>
-Package pdftex.def Info: figures/TSCH_basics_matrix.png  used on input line 390
+Package pdftex.def Info: figures/TSCH_basics_matrix.png  used on input line 391
 .
 (pdftex.def)             Requested size: 164.35835pt x 164.67679pt.
-<figures/TSCH_basics_graph.png, id=273, 169.47314pt x 110.21175pt>
+<figures/TSCH_basics_graph.png, id=412, 169.47314pt x 110.21175pt>
 File: figures/TSCH_basics_graph.png Graphic file (type png)
 <use figures/TSCH_basics_graph.png>
-Package pdftex.def Info: figures/TSCH_basics_graph.png  used on input line 396.
+Package pdftex.def Info: figures/TSCH_basics_graph.png  used on input line 397.
 
 (pdftex.def)             Requested size: 217.53398pt x 141.4691pt.
-<figures/TSCH_basics_schedule.png, id=278, 578.16pt x 229.45724pt>
+<figures/TSCH_basics_schedule.png, id=417, 578.16pt x 229.45724pt>
 File: figures/TSCH_basics_schedule.png Graphic file (type png)
 <use figures/TSCH_basics_schedule.png>
 Package pdftex.def Info: figures/TSCH_basics_schedule.png  used on input line 4
-06.
+07.
 (pdftex.def)             Requested size: 531.75632pt x 211.05069pt.
-[15 <./figures/TSCH_basics_matrix.png> <./figures/TSCH_basics_graph.png> <./fig
+[16 <./figures/TSCH_basics_matrix.png> <./figures/TSCH_basics_graph.png> <./fig
 ures/TSCH_basics_schedule.png>]
-
-LaTeX Warning: Citation `rfc7554' on page 16 undefined on input line 413.
-
-
-LaTeX Warning: Citation `stack-IoT' on page 16 undefined on input line 420.
-
-
-LaTeX Warning: Citation `rfc7554' on page 16 undefined on input line 420.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
-[16]
-
-LaTeX Warning: Citation `R-TSCH' on page 17 undefined on input line 447.
-
-
-LaTeX Warning: Citation `tiloca-6tisch-robust-scheduling-02' on page 17 undefin
-ed on input line 447.
-
-
-LaTeX Warning: Citation `link-layer-sec-impact' on page 17 undefined on input l
-ine 447.
-
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 17 undefined 
-on input line 447.
-
-
-LaTeX Warning: Citation `ietf-6tisch-dtsecurity-zerotouch-join-04' on page 17 u
-ndefined on input line 447.
-
-[17]
+[17] [18]
 Chapitre 2.
-[18
+[19
 
 ]
-<figures/6TiSCH_arch.png, id=333, 293.05486pt x 243.5499pt>
+<figures/6TiSCH_arch.png, id=484, 293.05486pt x 243.5499pt>
 File: figures/6TiSCH_arch.png Graphic file (type png)
 <use figures/6TiSCH_arch.png>
-Package pdftex.def Info: figures/6TiSCH_arch.png  used on input line 464.
+Package pdftex.def Info: figures/6TiSCH_arch.png  used on input line 465.
 (pdftex.def)             Requested size: 435.06798pt x 361.60025pt.
 
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 19 undefined on i
-nput line 465.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 19 undefined on i
-nput line 465.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 19 undefined on i
-nput line 471.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 19 undefined on i
-nput line 471.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
 
  []
 
-
-LaTeX Warning: Citation `rfc6775' on page 19 undefined on input line 473.
-
-
-LaTeX Warning: Citation `rfc8505' on page 19 undefined on input line 473.
-
-
-LaTeX Warning: Citation `ietf-6lo-backbone-router-13' on page 19 undefined on i
-nput line 473.
-
-[19 <./figures/6TiSCH_arch.png>]
-
-LaTeX Warning: Citation `rfc7554' on page 20 undefined on input line 477.
-
-
-LaTeX Warning: Citation `rfc6550' on page 20 undefined on input line 477.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+[20 <./figures/6TiSCH_arch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
  []
 
-[20]
-<figures/6TiSCH_stack.png, id=355, 372.9132pt x 313.6518pt>
+[21]
+<figures/6TiSCH_stack.png, id=519, 372.9132pt x 313.6518pt>
 File: figures/6TiSCH_stack.png Graphic file (type png)
 <use figures/6TiSCH_stack.png>
-Package pdftex.def Info: figures/6TiSCH_stack.png  used on input line 495.
+Package pdftex.def Info: figures/6TiSCH_stack.png  used on input line 496.
 (pdftex.def)             Requested size: 265.87816pt x 223.62758pt.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 21 undefined on i
-nput line 496.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 21 undefined on i
-nput line 496.
-
-[21 <./figures/6TiSCH_stack.png>]
-
-LaTeX Warning: Citation `stack-IoT' on page 22 undefined on input line 525.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
+ [22 <./figures/6TiSCH_stack.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--528
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
 
  []
 
 
-LaTeX Warning: Citation `stack-IoT' on page 22 undefined on input line 529.
-
-
-LaTeX Warning: Citation `stack-IoT' on page 22 undefined on input line 529.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
-
-LaTeX Warning: Citation `stack-IoT' on page 22 undefined on input line 531.
-
-
-LaTeX Warning: Citation `app-sec-openWSN' on page 22 undefined on input line 53
-1.
-
-<figures/IEEE802_15_4-PHY.png, id=381, 401.0985pt x 47.6982pt>
+<figures/IEEE802_15_4-PHY.png, id=552, 401.0985pt x 47.6982pt>
 File: figures/IEEE802_15_4-PHY.png Graphic file (type png)
 <use figures/IEEE802_15_4-PHY.png>
-Package pdftex.def Info: figures/IEEE802_15_4-PHY.png  used on input line 555.
+Package pdftex.def Info: figures/IEEE802_15_4-PHY.png  used on input line 556.
 (pdftex.def)             Requested size: 435.06798pt x 51.73814pt.
-[22 <./figures/IEEE802_15_4-PHY.png>]
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 23 undefined on input line 565.
-
-
-LaTeX Warning: Citation `rfc7554' on page 23 undefined on input line 565.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 23 undefined on input line 569.
-
-<figures/PANs.png, id=395, 235.6002pt x 65.5248pt>
+[23 <./figures/IEEE802_15_4-PHY.png>]
+<figures/PANs.png, id=570, 235.6002pt x 65.5248pt>
 File: figures/PANs.png Graphic file (type png)
 <use figures/PANs.png>
-Package pdftex.def Info: figures/PANs.png  used on input line 583.
+Package pdftex.def Info: figures/PANs.png  used on input line 584.
 (pdftex.def)             Requested size: 435.06798pt x 121.00299pt.
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 23 undefined on input line 590.
-
-[23 <./figures/PANs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
+ [24 <./figures/PANs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
 
  []
 
 
-LaTeX Warning: Citation `IEEE802.15.4' on page 24 undefined on input line 599.
-
-
-LaTeX Warning: Citation `rfc8180' on page 24 undefined on input line 609.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 615--616
+Underfull \hbox (badness 10000) in paragraph at lines 616--617
 
  []
 
-
-LaTeX Warning: Citation `rfc7554' on page 24 undefined on input line 624.
-
-[24]
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 25 undefined on input line 630.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 25 undefined on input line 632.
-
-<figures/CSMA-CA.png, id=421, 870.25125pt x 341.02406pt>
+<figures/CSMA-CA.png, id=605, 870.25125pt x 341.02406pt>
 File: figures/CSMA-CA.png Graphic file (type png)
 <use figures/CSMA-CA.png>
-Package pdftex.def Info: figures/CSMA-CA.png  used on input line 636.
+Package pdftex.def Info: figures/CSMA-CA.png  used on input line 637.
 (pdftex.def)             Requested size: 435.06798pt x 170.49078pt.
 
-LaTeX Warning: Citation `rfc7554' on page 25 undefined on input line 645.
-
-
-LaTeX Warning: Citation `ATP' on page 25 undefined on input line 645.
-
-
-LaTeX Warning: Citation `vulns-time-synchro-TSCH' on page 25 undefined on input
- line 645.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
 
-[25 <./figures/CSMA-CA.png>]
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 26 undefined on input line 649.
-
-
-Overfull \hbox (1.70078pt too wide) in paragraph at lines 649--652
+[26 <./figures/CSMA-CA.png>]
+Overfull \hbox (1.70078pt too wide) in paragraph at lines 650--653
 []\OT1/cmr/m/n/10 La d^^Semarche adopt^^See est la s^^Sequentiation d'un ti-mes
 -lot en p^^Seriodes de temps discr^^Retes, de lon-gueur d^^Setermin^^See
  []
 
-
-LaTeX Warning: Citation `ATP' on page 26 undefined on input line 673.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 26 undefined on input line 673.
-
-<figures/timeslot.png, id=432, 561.17654pt x 204.5241pt>
+<figures/timeslot.png, id=624, 561.17654pt x 204.5241pt>
 File: figures/timeslot.png Graphic file (type png)
 <use figures/timeslot.png>
-Package pdftex.def Info: figures/timeslot.png  used on input line 679.
+Package pdftex.def Info: figures/timeslot.png  used on input line 680.
 (pdftex.def)             Requested size: 483.41216pt x 176.18686pt.
 
-LaTeX Warning: Citation `link-layer-sec-impact' on page 26 undefined on input l
-ine 687.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 26 undefined on input line 687.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 687--688
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
-[26 <./figures/timeslot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 689--690
+[27 <./figures/timeslot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
 
  []
 
-<figures/IEEE802_15_4-MAC.png, id=449, 500.1084pt x 174.53204pt>
+<figures/IEEE802_15_4-MAC.png, id=643, 500.1084pt x 174.53204pt>
 File: figures/IEEE802_15_4-MAC.png Graphic file (type png)
 <use figures/IEEE802_15_4-MAC.png>
-Package pdftex.def Info: figures/IEEE802_15_4-MAC.png  used on input line 697.
+Package pdftex.def Info: figures/IEEE802_15_4-MAC.png  used on input line 698.
 (pdftex.def)             Requested size: 483.41216pt x 168.7073pt.
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 27 undefined on input line 698.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 27 undefined on input line 698.
-
-<figures/CCM.png, id=450, 776.9025pt x 262.9825pt>
+<figures/CCM.png, id=646, 776.9025pt x 262.9825pt>
 File: figures/CCM.png Graphic file (type png)
 <use figures/CCM.png>
-Package pdftex.def Info: figures/CCM.png  used on input line 705.
+Package pdftex.def Info: figures/CCM.png  used on input line 706.
 (pdftex.def)             Requested size: 338.38702pt x 114.54492pt.
-
-LaTeX Warning: Citation `link-layer-sec-impact' on page 27 undefined on input l
-ine 706.
-
-
-LaTeX Warning: Citation `link-layer-sec-impact' on page 27 undefined on input l
-ine 706.
-
-[27 <./figures/IEEE802_15_4-MAC.png> <./figures/CCM.png>]
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 28 undefined on input line 715.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 715--716
+[28 <./figures/IEEE802_15_4-MAC.png> <./figures/CCM.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
-
-[28]
-
-LaTeX Warning: Citation `rfc8480' on page 29 undefined on input line 750.
-
-
-LaTeX Warning: Citation `rfc7554' on page 29 undefined on input line 750.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 29 undefined on i
-nput line 762.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 29 undefined on i
-nput line 762.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 762--763
-
- []
-
-
-LaTeX Warning: Citation `rfc8480' on page 29 undefined on input line 769.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 29 undefined on i
-nput line 776.
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 782--783
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 783--784
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 785--786
 
  []
 
-
-LaTeX Warning: Citation `rfc8480' on page 30 undefined on input line 786.
-
-<figures/6P_2-steps.png, id=486, 366.77025pt x 305.7021pt>
+<figures/6P_2-steps.png, id=693, 366.77025pt x 305.7021pt>
 File: figures/6P_2-steps.png Graphic file (type png)
 <use figures/6P_2-steps.png>
-Package pdftex.def Info: figures/6P_2-steps.png  used on input line 792.
+Package pdftex.def Info: figures/6P_2-steps.png  used on input line 793.
 (pdftex.def)             Requested size: 239.29033pt x 199.44568pt.
-<figures/6P_3-steps.png, id=487, 366.77025pt x 305.7021pt>
+<figures/6P_3-steps.png, id=694, 366.77025pt x 305.7021pt>
 File: figures/6P_3-steps.png Graphic file (type png)
 <use figures/6P_3-steps.png>
-Package pdftex.def Info: figures/6P_3-steps.png  used on input line 799.
+Package pdftex.def Info: figures/6P_3-steps.png  used on input line 800.
 (pdftex.def)             Requested size: 239.29033pt x 199.44568pt.
-[30 <./figures/6P_2-steps.png> <./figures/6P_3-steps.png>]
-
-LaTeX Warning: Citation `rfc7554' on page 31 undefined on input line 810.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 810--811
+[31 <./figures/6P_2-steps.png> <./figures/6P_3-steps.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 811--812
 
  []
 
-
-LaTeX Warning: Citation `wiki:6LoWPAN' on page 31 undefined on input line 836.
-
-
-LaTeX Warning: Citation `rfc8138' on page 31 undefined on input line 840.
-
-[31]
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 32 undefined on i
-nput line 860.
-
-
-LaTeX Warning: Citation `wiki:6LoWPAN' on page 32 undefined on input line 860.
-
-
-LaTeX Warning: Citation `wiki:6LoWPAN' on page 32 undefined on input line 864.
-
-
-LaTeX Warning: Citation `rfc6775' on page 32 undefined on input line 864.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 864--865
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 865--866
 
  []
 
-<figures/6LoWPAN-ND.png, id=509, 574.5465pt x 241.3818pt>
+<figures/6LoWPAN-ND.png, id=724, 574.5465pt x 241.3818pt>
 File: figures/6LoWPAN-ND.png Graphic file (type png)
 <use figures/6LoWPAN-ND.png>
-Package pdftex.def Info: figures/6LoWPAN-ND.png  used on input line 872.
+Package pdftex.def Info: figures/6LoWPAN-ND.png  used on input line 873.
 (pdftex.def)             Requested size: 483.41216pt x 203.09818pt.
-[32 <./figures/6LoWPAN-ND.png>]
-
-LaTeX Warning: Citation `rfc6550' on page 33 undefined on input line 883.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 883--884
+[33 <./figures/6LoWPAN-ND.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 884--885
 
  []
 
-<figures/OF_sel_parent.png, id=522, 243.5499pt x 92.5056pt>
+<figures/OF_sel_parent.png, id=739, 243.5499pt x 92.5056pt>
 File: figures/OF_sel_parent.png Graphic file (type png)
 <use figures/OF_sel_parent.png>
-Package pdftex.def Info: figures/OF_sel_parent.png  used on input line 890.
+Package pdftex.def Info: figures/OF_sel_parent.png  used on input line 891.
 (pdftex.def)             Requested size: 410.90327pt x 156.08163pt.
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 33 undefined on i
-nput line 900.
-
-[33 <./figures/OF_sel_parent.png>]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 9
-04.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 904.
- [34]
-
-LaTeX Warning: Citation `stack-IoT' on page 35 undefined on input line 936.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+[34 <./figures/OF_sel_parent.png>] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 945--946
 
  []
 
 
-LaTeX Warning: Citation `rfc7252' on page 35 undefined on input line 942.
-
-
-LaTeX Warning: Citation `stack-IoT' on page 35 undefined on input line 942.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 958--959
+Underfull \hbox (badness 10000) in paragraph at lines 967--968
 
  []
 
-[35]
-<figures/CoAP_messaging_CON.png, id=554, 183.92715pt x 242.1045pt>
+[36]
+<figures/CoAP_messaging_CON.png, id=778, 183.92715pt x 242.1045pt>
 File: figures/CoAP_messaging_CON.png Graphic file (type png)
 <use figures/CoAP_messaging_CON.png>
-Package pdftex.def Info: figures/CoAP_messaging_CON.png  used on input line 987
+Package pdftex.def Info: figures/CoAP_messaging_CON.png  used on input line 996
 .
 (pdftex.def)             Requested size: 188.53044pt x 248.1698pt.
-<figures/CoAP_pkt.png, id=555, 344.0052pt x 141.6492pt>
+<figures/CoAP_pkt.png, id=779, 344.0052pt x 141.6492pt>
 File: figures/CoAP_pkt.png Graphic file (type png)
 <use figures/CoAP_pkt.png>
-Package pdftex.def Info: figures/CoAP_pkt.png  used on input line 994.
+Package pdftex.def Info: figures/CoAP_pkt.png  used on input line 1003.
 (pdftex.def)             Requested size: 242.43141pt x 99.82594pt.
-
-
-LaTeX Warning: Citation `rfc7252' on page 36 undefined on input line 995.
-
-
-LaTeX Warning: Citation `rfc7252' on page 36 undefined on input line 995.
-
-<figures/CoAP_messaging_NON.png, id=556, 178.14555pt x 138.39705pt>
+<figures/CoAP_messaging_NON.png, id=782, 178.14555pt x 138.39705pt>
 File: figures/CoAP_messaging_NON.png Graphic file (type png)
 <use figures/CoAP_messaging_NON.png>
-Package pdftex.def Info: figures/CoAP_messaging_NON.png  used on input line 998
-.
+Package pdftex.def Info: figures/CoAP_messaging_NON.png  used on input line 100
+7.
 (pdftex.def)             Requested size: 168.27367pt x 130.73097pt.
-[36 <./figures/CoAP_messaging_CON.png> <./figures/CoAP_pkt.png> <./figures/CoAP
-_messaging_NON.png>]
-
-LaTeX Warning: Citation `rfc7252' on page 37 undefined on input line 1010.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
+ [37 <./figures/CoAP_messaging_CON.png> <./figures/CoAP_pkt.png> <./figures/CoA
+P_messaging_NON.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1020--1021
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1030
 
  []
 
-
-LaTeX Warning: Citation `rfc7252' on page 37 undefined on input line 1022.
-
-[37]
-
-LaTeX Warning: Citation `rfc7252' on page 38 undefined on input line 1032.
-
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 38 undefined 
-on input line 1054.
-
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 38 undefined 
-on input line 1054.
-
-
-LaTeX Warning: Citation `rfc7049' on page 38 undefined on input line 1054.
-
-
-LaTeX Warning: Citation `rfc8613' on page 38 undefined on input line 1054.
-
-<figures/CoJP_stack.png, id=578, 268.48305pt x 133.6995pt>
+[38]
+<figures/CoJP_stack.png, id=810, 268.48305pt x 133.6995pt>
 File: figures/CoJP_stack.png Graphic file (type png)
 <use figures/CoJP_stack.png>
-Package pdftex.def Info: figures/CoJP_stack.png  used on input line 1071.
+Package pdftex.def Info: figures/CoJP_stack.png  used on input line 1080.
 (pdftex.def)             Requested size: 217.53398pt x 108.3327pt.
-[38 <./figures/CoJP_stack.png>]
-
-LaTeX Warning: Citation `openWSN' on page 39 undefined on input line 1082.
-
-
-LaTeX Warning: Citation `openWSN' on page 39 undefined on input line 1097.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 39 undefined on input line 1097.
-
-
-[39]
-
-LaTeX Warning: Citation `stack-IoT' on page 40 undefined on input line 1127.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
+ [39 <./figures/CoJP_stack.png>] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
 
  []
 
 
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 40 undefined 
-on input line 1129.
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 40 undefined on i
-nput line 1129.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1129--1130
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1139
 
  []
-
-
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 40 undefined on i
-nput line 1131.
-
-[40]
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 41 undefined 
-on input line 1143.
-
-
-LaTeX Warning: Citation `6TiSCH-industrial-perf' on page 41 undefined on input 
-line 1148.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1157--1158
-
- []
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 41 undefined on input line 1159.
-
-
-
-LaTeX Warning: Citation `rfc8180' on page 41 undefined on input line 1159.
-
-
-LaTeX Warning: Citation `join-TSCH-RPL' on page 41 undefined on input line 1159
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1159--1160
-
- []
-
-
-LaTeX Warning: Citation `join-TSCH-RPL' on page 41 undefined on input line 1161
-.
-
-
-LaTeX Warning: Citation `broadcast-strategies' on page 41 undefined on input li
-ne 1161.
-
-
-LaTeX Warning: Citation `ATP' on page 41 undefined on input line 1161.
 
 [41]
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 42 undefined 
-on input line 1169.
-
-
-LaTeX Warning: Citation `ietf-6tisch-msf-10' on page 42 undefined on input line
- 1169.
-
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 42 undefined 
-on input line 1169.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1180--1181
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1182--1183
+Underfull \hbox (badness 10000) in paragraph at lines 1168--1169
 
  []
-
-
-LaTeX Warning: Citation `ietf-6tisch-msf-10' on page 42 undefined on input line
- 1195.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
-
- []
-
-
-LaTeX Warning: Citation `ietf-6tisch-6top-sf0-05' on page 42 undefined on input
- line 1197.
-
-
-LaTeX Warning: Citation `LLSF' on page 42 undefined on input line 1197.
-
-
-LaTeX Warning: Citation `ReSF' on page 42 undefined on input line 1197.
 
 [42]
+Underfull \hbox (badness 10000) in paragraph at lines 1189--1190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1205
+
+ []
+
+[43]
 Chapitre 3.
-[43
+[44
 
 ]
-
-LaTeX Warning: Citation `rfc7049' on page 44 undefined on input line 1208.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+Underfull \hbox (badness 10000) in paragraph at lines 1217--1218
 
  []
 
 
-LaTeX Warning: Citation `rfc8152' on page 44 undefined on input line 1210.
-
-
-LaTeX Warning: Citation `rfc8613' on page 44 undefined on input line 1216.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1217
+Underfull \hbox (badness 10000) in paragraph at lines 1225--1226
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1218--1219
+Underfull \hbox (badness 10000) in paragraph at lines 1227--1228
 
  []
 
 
-LaTeX Warning: Citation `OSCOREvsNDN' on page 44 undefined on input line 1220.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1220--1221
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1230
 
  []
 
-[44]
-
-LaTeX Warning: Citation `rfc5116' on page 45 undefined on input line 1226.
-
-
-LaTeX Warning: Citation `rfc8152' on page 45 undefined on input line 1226.
-
-<figures/OSCORE_scheme.png, id=646, 536.2434pt x 323.7696pt>
+[45]
+<figures/OSCORE_scheme.png, id=917, 536.2434pt x 323.7696pt>
 File: figures/OSCORE_scheme.png Graphic file (type png)
 <use figures/OSCORE_scheme.png>
-Package pdftex.def Info: figures/OSCORE_scheme.png  used on input line 1245.
+Package pdftex.def Info: figures/OSCORE_scheme.png  used on input line 1254.
 (pdftex.def)             Requested size: 362.55911pt x 218.9105pt.
-[45 <./figures/OSCORE_scheme.png>]
-<figures/OSCORE_option.png, id=658, 224.39835pt x 67.57245pt>
+ [46 <./figures/OSCORE_scheme.png>]
+<figures/OSCORE_option.png, id=930, 224.39835pt x 67.57245pt>
 File: figures/OSCORE_option.png Graphic file (type png)
 <use figures/OSCORE_option.png>
-Package pdftex.def Info: figures/OSCORE_option.png  used on input line 1256.
+Package pdftex.def Info: figures/OSCORE_option.png  used on input line 1265.
 (pdftex.def)             Requested size: 187.07603pt x 56.33461pt.
-<figures/OSCORE_plaintext.png, id=659, 222.95296pt x 48.4209pt>
+<figures/OSCORE_plaintext.png, id=931, 222.95296pt x 48.4209pt>
 File: figures/OSCORE_plaintext.png Graphic file (type png)
 <use figures/OSCORE_plaintext.png>
-Package pdftex.def Info: figures/OSCORE_plaintext.png  used on input line 1263.
+Package pdftex.def Info: figures/OSCORE_plaintext.png  used on input line 1272.
 
 (pdftex.def)             Requested size: 187.07603pt x 40.63113pt.
 
-
-LaTeX Warning: Citation `rfc5869' on page 46 undefined on input line 1272.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1272--1273
+Underfull \hbox (badness 10000) in paragraph at lines 1281--1282
 
  []
 
-<figures/OSCORE_contexts.png, id=664, 547.44525pt x 288.3573pt>
+<figures/OSCORE_contexts.png, id=937, 547.44525pt x 288.3573pt>
 File: figures/OSCORE_contexts.png Graphic file (type png)
 <use figures/OSCORE_contexts.png>
-Package pdftex.def Info: figures/OSCORE_contexts.png  used on input line 1279.
+Package pdftex.def Info: figures/OSCORE_contexts.png  used on input line 1288.
 (pdftex.def)             Requested size: 435.06798pt x 229.16374pt.
-[46 <./figures/OSCORE_option.png> <./figures/OSCORE_plaintext.png> <./figures/O
+[47 <./figures/OSCORE_option.png> <./figures/OSCORE_plaintext.png> <./figures/O
 SCORE_contexts.png>]
-
-LaTeX Warning: Citation `rfc8152' on page 47 undefined on input line 1287.
-
-<figures/OSCORE_AAD.png, id=678, 504.08325pt x 98.64854pt>
+<figures/OSCORE_AAD.png, id=953, 504.08325pt x 98.64854pt>
 File: figures/OSCORE_AAD.png Graphic file (type png)
 <use figures/OSCORE_AAD.png>
-Package pdftex.def Info: figures/OSCORE_AAD.png  used on input line 1292.
+Package pdftex.def Info: figures/OSCORE_AAD.png  used on input line 1301.
 (pdftex.def)             Requested size: 459.24007pt x 89.87567pt.
-<figures/OSCORE_nonce.png, id=683, 296.307pt x 115.99335pt>
+<figures/OSCORE_nonce.png, id=958, 296.307pt x 115.99335pt>
 File: figures/OSCORE_nonce.png Graphic file (type png)
 <use figures/OSCORE_nonce.png>
-Package pdftex.def Info: figures/OSCORE_nonce.png  used on input line 1306.
+Package pdftex.def Info: figures/OSCORE_nonce.png  used on input line 1315.
 (pdftex.def)             Requested size: 362.55911pt x 141.93996pt.
-
-LaTeX Warning: Citation `rfc8613' on page 47 undefined on input line 1313.
-
-[47 <./figures/OSCORE_AAD.png> <./figures/OSCORE_nonce.png>]
-<figures/OSCORE_exchange.png, id=695, 578.52135pt x 708.60735pt>
+ [48 <./figures/OSCORE_AAD.png> <./figures/OSCORE_nonce.png>]
+<figures/OSCORE_exchange.png, id=972, 578.52135pt x 708.60735pt>
 File: figures/OSCORE_exchange.png Graphic file (type png)
 <use figures/OSCORE_exchange.png>
-Package pdftex.def Info: figures/OSCORE_exchange.png  used on input line 1320.
+Package pdftex.def Info: figures/OSCORE_exchange.png  used on input line 1329.
 (pdftex.def)             Requested size: 483.41216pt x 592.12294pt.
- [48 <./figures/OSCORE_exchange.png>]
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 49 undefined 
-on input line 1330.
-
-
-LaTeX Warning: Citation `rfc8180' on page 49 undefined on input line 1330.
-
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 49 undefined 
-on input line 1330.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
+ [49 <./figures/OSCORE_exchange.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1339--1340
 
  []
 
-<figures/Joining_phase_network.png, id=709, 452.04884pt x 354.123pt>
+<figures/Joining_phase_network.png, id=987, 452.04884pt x 354.123pt>
 File: figures/Joining_phase_network.png Graphic file (type png)
 <use figures/Joining_phase_network.png>
 Package pdftex.def Info: figures/Joining_phase_network.png  used on input line 
-1344.
+1353.
 (pdftex.def)             Requested size: 352.8888pt x 276.45256pt.
-[49 <./figures/Joining_phase_network.png>]
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 50 undefined 
-on input line 1371.
-
-
-LaTeX Warning: Citation `ietf-lake-reqs-03' on page 50 undefined on input line 
-1376.
-
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 50 undefined 
-on input line 1380.
-
-[50]
-
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 51 undefined 
-on input line 1403.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1404
+[50 <./figures/Joining_phase_network.png>] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 1412--1413
 
  []
 
-[51]
-<figures/joining_phase_simplified.png, id=743, 485.29305pt x 418.80466pt>
+[52]
+<figures/joining_phase_simplified.png, id=1027, 485.29305pt x 418.80466pt>
 File: figures/joining_phase_simplified.png Graphic file (type png)
 <use figures/joining_phase_simplified.png>
 Package pdftex.def Info: figures/joining_phase_simplified.png  used on input li
-ne 1427.
+ne 1436.
 (pdftex.def)             Requested size: 483.41216pt x 417.18683pt.
- [52 <./figures/Joining_phase_simplified.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1441--1442
+ [53 <./figures/Joining_phase_simplified.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1450--1451
 
  []
 
 
-LaTeX Warning: Citation `rfc8152' on page 53 undefined on input line 1457.
-
-
-LaTeX Warning: Citation `rfc5869' on page 53 undefined on input line 1459.
-
-
-LaTeX Warning: Citation `rfc5869' on page 53 undefined on input line 1459.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1464--1465
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
+Underfull \hbox (badness 10000) in paragraph at lines 1475--1476
 
  []
 
 
-LaTeX Warning: Citation `ietf-core-stateless-05' on page 53 undefined on input 
-line 1468.
-
-
-LaTeX Warning: Citation `ietf-core-stateless-05' on page 53 undefined on input 
-line 1468.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1468--1469
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1478
 
  []
 
 
-LaTeX Warning: Hyper reference `join_secu' on page 53 undefined on input line 1
-470.
+LaTeX Warning: Hyper reference `join_secu' on page 54 undefined on input line 1
+479.
 
 
-LaTeX Warning: Reference `join_secu' on page 53 undefined on input line 1470.
+LaTeX Warning: Reference `join_secu' on page 54 undefined on input line 1479.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1470--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1479--1480
 
  []
 
-[53]
-<figures/Join_Request.png, id=772, 542.38635pt x 199.4652pt>
+[54]
+<figures/Join_Request.png, id=1063, 542.38635pt x 199.4652pt>
 File: figures/Join_Request.png Graphic file (type png)
 <use figures/Join_Request.png>
-Package pdftex.def Info: figures/Join_Request.png  used on input line 1477.
+Package pdftex.def Info: figures/Join_Request.png  used on input line 1486.
 (pdftex.def)             Requested size: 483.41216pt x 177.77911pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1483--1484
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1486
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1489--1490
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1491--1492
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1493--1494
+Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
 
  []
 
@@ -1755,569 +1237,360 @@ Underfull \hbox (badness 10000) in paragraph at lines 1498--1499
 
  []
 
-[54 <./figures/Join_Request.png>]
-<figures/Join_Response.png, id=786, 518.8986pt x 199.4652pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1500--1501
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1502--1503
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1505--1506
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1507--1508
+
+ []
+
+[55 <./figures/Join_Request.png>]
+<figures/Join_Response.png, id=1076, 518.8986pt x 199.4652pt>
 File: figures/Join_Response.png Graphic file (type png)
 <use figures/Join_Response.png>
-Package pdftex.def Info: figures/Join_Response.png  used on input line 1506.
+Package pdftex.def Info: figures/Join_Response.png  used on input line 1515.
 (pdftex.def)             Requested size: 483.41216pt x 185.82942pt.
- [55 <./figures/Join_Response.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1521
+ [56 <./figures/Join_Response.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1529--1530
 
  []
 
 
-LaTeX Warning: Citation `rfc8180' on page 56 undefined on input line 1522.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1532--1533
+Underfull \hbox (badness 10000) in paragraph at lines 1541--1542
 
  []
 
 
-LaTeX Warning: Citation `ietf-6tisch-enrollment-enhanced-beacon-14' on page 56 
-undefined on input line 1534.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1534--1535
+Underfull \hbox (badness 10000) in paragraph at lines 1543--1544
 
  []
 
 
-LaTeX Warning: Citation `ietf-6tisch-enrollment-enhanced-beacon-14' on page 56 
-undefined on input line 1536.
-
-
-LaTeX Warning: Citation `rfc8180' on page 56 undefined on input line 1538.
-
-
-LaTeX Warning: Citation `ietf-6tisch-enrollment-enhanced-beacon-14' on page 56 
-undefined on input line 1548.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1552--1553
+Underfull \hbox (badness 10000) in paragraph at lines 1561--1562
 
  []
 
-[56]
-<figures/Joining_phase_part1.png, id=805, 497.9403pt x 319.79475pt>
+[57]
+<figures/Joining_phase_part1.png, id=1101, 497.9403pt x 319.79475pt>
 File: figures/Joining_phase_part1.png Graphic file (type png)
 <use figures/Joining_phase_part1.png>
 Package pdftex.def Info: figures/Joining_phase_part1.png  used on input line 15
-59.
+68.
 (pdftex.def)             Requested size: 483.41216pt x 310.46402pt.
 
-
-LaTeX Warning: Citation `ietf-6tisch-enrollment-enhanced-beacon-14' on page 57 
-undefined on input line 1565.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1565--1566
+Underfull \hbox (badness 10000) in paragraph at lines 1574--1575
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1567--1568
-
- []
-
-
-LaTeX Warning: Hyper reference `join_secu' on page 57 undefined on input line 1
-569.
-
-
-LaTeX Warning: Reference `join_secu' on page 57 undefined on input line 1569.
-
-[57 <./figures/Joining_phase_part1.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1576--1577
 
  []
 
 
-LaTeX Warning: Citation `ietf-6tisch-minimal-security-15' on page 58 undefined 
-on input line 1578.
+LaTeX Warning: Hyper reference `join_secu' on page 58 undefined on input line 1
+578.
 
-<figures/Joining_phase_part2.png, id=817, 552.1428pt x 533.3526pt>
+
+LaTeX Warning: Reference `join_secu' on page 58 undefined on input line 1578.
+
+[58 <./figures/Joining_phase_part1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1585--1586
+
+ []
+
+<figures/Joining_phase_part2.png, id=1116, 552.1428pt x 533.3526pt>
 File: figures/Joining_phase_part2.png Graphic file (type png)
 <use figures/Joining_phase_part2.png>
 Package pdftex.def Info: figures/Joining_phase_part2.png  used on input line 15
-83.
+92.
 (pdftex.def)             Requested size: 483.41216pt x 466.96721pt.
-[58 <./figures/Joining_phase_part2.png>]
+[59 <./figures/Joining_phase_part2.png>]
 
-LaTeX Warning: Hyper reference `join_secu' on page 59 undefined on input line 1
-591.
-
-
-LaTeX Warning: Reference `join_secu' on page 59 undefined on input line 1591.
+LaTeX Warning: Hyper reference `join_secu' on page 60 undefined on input line 1
+600.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1591--1592
-
- []
+LaTeX Warning: Reference `join_secu' on page 60 undefined on input line 1600.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1593--1594
+Underfull \hbox (badness 10000) in paragraph at lines 1600--1601
 
  []
 
 
-LaTeX Warning: Citation `ietf-6tisch-architecture-28' on page 59 undefined on i
-nput line 1595.
+Underfull \hbox (badness 10000) in paragraph at lines 1602--1603
 
-[59]
+ []
+
+[60]
 Chapitre 4.
-[60
+[61
 
 ]
-
-LaTeX Warning: Citation `rfc8180' on page 61 undefined on input line 1609.
-
-
-LaTeX Warning: Citation `ietf-6tisch-msf-10' on page 61 undefined on input line
- 1609.
-
-
-LaTeX Warning: Citation `rfc8180' on page 61 undefined on input line 1609.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1609--1610
+Underfull \hbox (badness 10000) in paragraph at lines 1618--1619
 
  []
 
 
-LaTeX Warning: Citation `broadcast-strategies' on page 61 undefined on input li
-ne 1611.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 61 undefined on input line 1611.
-
-
-
-LaTeX Warning: Citation `rfc8180' on page 61 undefined on input line 1611.
-
-
-LaTeX Warning: Citation `broadcast-strategies' on page 61 undefined on input li
-ne 1611.
-
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 61 undefined on input line 
-1611.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1611--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1620--1621
 
  []
 
 
-LaTeX Warning: Citation `tiloca-6tisch-robust-scheduling-02' on page 61 undefin
-ed on input line 1613.
-
-
-LaTeX Warning: Citation `tiloca-6tisch-robust-scheduling-02' on page 61 undefin
-ed on input line 1613.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1617--1618
+Underfull \hbox (badness 10000) in paragraph at lines 1626--1627
 
  []
 
 
-LaTeX Warning: Citation `rfc8180' on page 61 undefined on input line 1619.
-
-
-LaTeX Warning: Citation `rfc8180' on page 61 undefined on input line 1619.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1619--1620
-
- []
-
-[61]
-
-LaTeX Warning: Hyper reference `eval_NPEB' on page 62 undefined on input line 1
-628.
-
-
-LaTeX Warning: Reference `eval_NPEB' on page 62 undefined on input line 1628.
-
-
-LaTeX Warning: Citation `rfc8180' on page 62 undefined on input line 1638.
-
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 62 undefined on input line 
-1638.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1638--1639
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1640--1641
-
- []
-
-
-LaTeX Warning: Citation `rfc8180' on page 62 undefined on input line 1642.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1642--1643
+Underfull \hbox (badness 10000) in paragraph at lines 1628--1629
 
  []
 
 [62]
-Underfull \hbox (badness 10000) in paragraph at lines 1648--1649
+Underfull \hbox (badness 10000) in paragraph at lines 1647--1648
 
  []
 
 
-Overfull \hbox (14.6866pt too wide) in paragraph at lines 1655--1666
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1650
+
  []
 
 
-LaTeX Warning: Citation `rfc8180' on page 63 undefined on input line 1671.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1671--1672
+Underfull \hbox (badness 10000) in paragraph at lines 1651--1652
 
  []
 
 [63]
-<figures/NPEB_step1.png, id=880, 405.79605pt x 203.0787pt>
-File: figures/NPEB_step1.png Graphic file (type png)
-<use figures/NPEB_step1.png>
-Package pdftex.def Info: figures/NPEB_step1.png  used on input line 1682.
-(pdftex.def)             Requested size: 410.90327pt x 205.64084pt.
-<figures/NPEB_step2.png, id=883, 491.436pt x 210.66705pt>
-File: figures/NPEB_step2.png Graphic file (type png)
-<use figures/NPEB_step2.png>
-Package pdftex.def Info: figures/NPEB_step2.png  used on input line 1693.
-(pdftex.def)             Requested size: 483.41216pt x 207.23662pt.
- [64 <./figures/NPEB_step1.png> <./figures/NPEB_step2.png>]
-<figures/NPEB_step3.png, id=898, 491.436pt x 203.0787pt>
-File: figures/NPEB_step3.png Graphic file (type png)
-<use figures/NPEB_step3.png>
-Package pdftex.def Info: figures/NPEB_step3.png  used on input line 1706.
-(pdftex.def)             Requested size: 483.41216pt x 199.77185pt.
- [65 <./figures/NPEB_step3.png>]
-<figures/NPEB_step4.png, id=907, 492.8814pt x 203.0787pt>
-File: figures/NPEB_step4.png Graphic file (type png)
-<use figures/NPEB_step4.png>
-Package pdftex.def Info: figures/NPEB_step4.png  used on input line 1719.
-(pdftex.def)             Requested size: 483.41216pt x 199.1769pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1725--1726
+Underfull \hbox (badness 10000) in paragraph at lines 1657--1658
 
  []
 
 
-LaTeX Warning: Citation `IEEE802.15.4' on page 66 undefined on input line 1734.
+Overfull \hbox (14.6866pt too wide) in paragraph at lines 1664--1675
+ [][] 
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1680--1681
+
+ []
+
+[64]
+<figures/NPEB_step1.png, id=1199, 405.79605pt x 203.0787pt>
+File: figures/NPEB_step1.png Graphic file (type png)
+<use figures/NPEB_step1.png>
+Package pdftex.def Info: figures/NPEB_step1.png  used on input line 1691.
+(pdftex.def)             Requested size: 410.90327pt x 205.64084pt.
+<figures/NPEB_step2.png, id=1202, 491.436pt x 210.66705pt>
+File: figures/NPEB_step2.png Graphic file (type png)
+<use figures/NPEB_step2.png>
+Package pdftex.def Info: figures/NPEB_step2.png  used on input line 1702.
+(pdftex.def)             Requested size: 483.41216pt x 207.23662pt.
+ [65 <./figures/NPEB_step1.png> <./figures/NPEB_step2.png>]
+<figures/NPEB_step3.png, id=1217, 491.436pt x 203.0787pt>
+File: figures/NPEB_step3.png Graphic file (type png)
+<use figures/NPEB_step3.png>
+Package pdftex.def Info: figures/NPEB_step3.png  used on input line 1715.
+(pdftex.def)             Requested size: 483.41216pt x 199.77185pt.
+ [66 <./figures/NPEB_step3.png>]
+<figures/NPEB_step4.png, id=1228, 492.8814pt x 203.0787pt>
+File: figures/NPEB_step4.png Graphic file (type png)
+<use figures/NPEB_step4.png>
+Package pdftex.def Info: figures/NPEB_step4.png  used on input line 1728.
+(pdftex.def)             Requested size: 483.41216pt x 199.1769pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1734--1735
 
  []
 
 
-LaTeX Warning: Citation `rfc8180' on page 66 undefined on input line 1736.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1740--1741
-
- []
-
-[66 <./figures/NPEB_step4.png>]
-
-LaTeX Warning: Citation `openbenchmark' on page 67 undefined on input line 1746
-.
-
-
-LaTeX Warning: Citation `IEEE802.15.4' on page 67 undefined on input line 1746.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
+Underfull \hbox (badness 10000) in paragraph at lines 1743--1744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1757--1758
+Underfull \hbox (badness 10000) in paragraph at lines 1749--1750
 
  []
 
-[67]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1765.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1791--1792
+[67 <./figures/NPEB_step4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1764--1765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1793--1794
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1767
 
  []
 
 [68]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 1774.
 
-LaTeX Warning: Hyper reference `proc_iter' on page 69 undefined on input line 1
-829.
-
-
-LaTeX Warning: Reference `proc_iter' on page 69 undefined on input line 1829.
-
-
-LaTeX Warning: Citation `rfc8180' on page 69 undefined on input line 1829.
-
-
-LaTeX Warning: Hyper reference `proc_iter' on page 69 undefined on input line 1
-829.
-
-
-LaTeX Warning: Reference `proc_iter' on page 69 undefined on input line 1829.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1829--1830
+Underfull \hbox (badness 10000) in paragraph at lines 1800--1801
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1831--1832
-
- []
-
-
-LaTeX Warning: Hyper reference `proc_stop' on page 69 undefined on input line 1
-833.
-
-
-LaTeX Warning: Reference `proc_stop' on page 69 undefined on input line 1833.
-
-
-LaTeX Warning: Citation `rfc8180' on page 69 undefined on input line 1833.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1833--1834
+Underfull \hbox (badness 10000) in paragraph at lines 1802--1803
 
  []
 
 [69]
-Underfull \hbox (badness 10000) in paragraph at lines 1869--1870
+Underfull \hbox (badness 10000) in paragraph at lines 1838--1839
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1871--1872
+Underfull \hbox (badness 10000) in paragraph at lines 1840--1841
 
  []
 
 
-LaTeX Warning: Hyper reference `proc_stop' on page 70 undefined on input line 1
-874.
+Underfull \hbox (badness 10000) in paragraph at lines 1842--1843
 
-
-LaTeX Warning: Reference `proc_stop' on page 70 undefined on input line 1874.
-
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 70 undefined on input line 
-1875.
+ []
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 1882--1883
+Underfull \hbox (badness 10000) in paragraph at lines 1878--1879
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1880--1881
+
+ []
+
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 1891--1892
 []\OT1/cmr/m/it/10 NPtable \OT1/cmr/m/n/10 cou-rante du pledge, \OT1/cmr/m/it/1
 0 neigh-bor \OT1/cmr/m/n/10 voi-sin can-di-dat, \OT1/cmtt/m/n/10 MIN[]PDR[]UNDE
 RGO[]SYNCHRO\OT1/cmr/m/n/10 =\OT1/cmtt/m/n/10 0.6\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1912--1913
+Underfull \hbox (badness 10000) in paragraph at lines 1922--1923
 
  []
 
 
-LaTeX Warning: Hyper reference `fig:NPEB_cells' on page 71 undefined on input l
-ine 1914.
-
-
-LaTeX Warning: Reference `fig:NPEB_cells' on page 71 undefined on input line 19
-14.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1914--1915
+Underfull \hbox (badness 10000) in paragraph at lines 1924--1925
 
  []
 
-[71]
-<figures/NPEB_cell.png, id=980, 741.77126pt x 202.7575pt>
+[72]
+<figures/NPEB_cell.png, id=1318, 741.77126pt x 202.7575pt>
 File: figures/NPEB_cell.png Graphic file (type png)
 <use figures/NPEB_cell.png>
-Package pdftex.def Info: figures/NPEB_cell.png  used on input line 1923.
+Package pdftex.def Info: figures/NPEB_cell.png  used on input line 1933.
 (pdftex.def)             Requested size: 459.24007pt x 125.532pt.
 
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 72 undefined on input line 
-1924.
-
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 72 undefined on input line 
-1924.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1932--1933
+Underfull \hbox (badness 10000) in paragraph at lines 1942--1943
 
  []
 
 
-LaTeX Warning: Citation `broadcast-strategies' on page 72 undefined on input li
-ne 1934.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1936
+Underfull \hbox (badness 10000) in paragraph at lines 1944--1946
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1938--1939
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1940--1942
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1944--1945
-
- []
-
-[72 <./figures/NPEB_cell.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1948--1949
 
  []
 
-[73]
 
-LaTeX Warning: Citation `ietf-6tisch-msf-10' on page 74 undefined on input line
- 1958.
+Underfull \hbox (badness 10000) in paragraph at lines 1950--1952
+
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1954--1955
+
+ []
+
+[73 <./figures/NPEB_cell.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1958--1959
 
  []
 
-
-LaTeX Warning: Citation `rfc8480' on page 74 undefined on input line 1969.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1969--1970
-
- []
-
-
-LaTeX Warning: Citation `ietf-6tisch-enrollment-enhanced-beacon-14' on page 74 
-undefined on input line 1976.
-
-
-LaTeX Warning: Citation `ATP' on page 74 undefined on input line 1976.
-
 [74]
-
-LaTeX Warning: Hyper reference `size_prop' on page 75 undefined on input line 1
-982.
-
-
-LaTeX Warning: Reference `size_prop' on page 75 undefined on input line 1982.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1982--1983
+Underfull \hbox (badness 10000) in paragraph at lines 1968--1969
 
  []
 
 
-LaTeX Warning: Hyper reference `choice_sim' on page 75 undefined on input line 
-1989.
-
-
-LaTeX Warning: Reference `choice_sim' on page 75 undefined on input line 1989.
-
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 75 undefined on input line 
-1989.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1989--1990
+Underfull \hbox (badness 10000) in paragraph at lines 1979--1980
 
  []
 
 [75]
-Chapitre 5.
-[76
-
-]
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 77 undefined on input line 
-2001.
-
-
-LaTeX Warning: Citation `simulating-6TiSCH' on page 77 undefined on input line 
-2001.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2005--2006
+Underfull \hbox (badness 10000) in paragraph at lines 1992--1993
 
  []
 
 
-LaTeX Warning: Citation `openbenchmark' on page 77 undefined on input line 2007
-.
+Underfull \hbox (badness 10000) in paragraph at lines 1999--2000
 
+ []
 
-LaTeX Warning: Citation `simulating-6TiSCH' on page 77 undefined on input line 
-2007.
+[76]
+Chapitre 5.
+[77
 
-[77] (./memoire.bbl [78
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2015--2016
 
-] [79
+ []
 
-] [80])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2031.
- [81]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2031.
+[78] [79] (./memoire.bbl [80
+
+] [81
+
+] [82])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2043.
+ [83]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2043.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2031.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2031.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2043.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2043.
 
+Package rerunfilecheck Info: File `memoire.out' has not changed.
+(rerunfilecheck)             Checksum: A3D06CFCE4703235CACBD134E8029461;4096.
 
-
-Package rerunfilecheck Warning: File `memoire.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `memoire.out':
-(rerunfilecheck)             Before: F19F553EDD5F3C00B658819C13BE3FC2;2869
-(rerunfilecheck)             After:  A3D06CFCE4703235CACBD134E8029461;4096.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2031.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2043.
  ) 
 Here is how much of TeX's memory you used:
- 11391 strings out of 482412
- 174743 string characters out of 5948338
- 468677 words of memory out of 5000000
- 26526 multiletter control sequences out of 15000+600000
+ 11392 strings out of 482412
+ 174727 string characters out of 5948338
+ 471134 words of memory out of 5000000
+ 26527 multiletter control sequences out of 15000+600000
  544797 words of font info for 67 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 50i,11n,48p,1653b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,11n,48p,1653b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.wiki\\penalty\040\\@M\040\040:6LoWPAN} has bee
+n referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
@@ -2330,25 +1603,26 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmtt8.pfb>
-Output written on memoire.pdf (82 pages, 4492068 bytes).
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt8.pfb>
+Output written on memoire.pdf (84 pages, 4514794 bytes).
 PDF statistics:
- 1245 PDF objects out of 1440 (max. 8388607)
- 1036 compressed objects within 11 object streams
- 332 named destinations out of 1000 (max. 500000)
- 470 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1554 PDF objects out of 1728 (max. 8388607)
+ 1331 compressed objects within 14 object streams
+ 335 named destinations out of 1000 (max. 500000)
+ 582 words of extra memory for PDF output out of 10000 (max. 10000000)
 
