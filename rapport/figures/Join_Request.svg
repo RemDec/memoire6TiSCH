@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="Join_Request.svg">
   <defs
      id="defs2">
@@ -152,18 +152,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="392.33958"
-     inkscape:cy="517.91527"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="446.85536"
+     inkscape:cy="534.18944"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-global="false"
-     inkscape:window-width="1916"
-     inkscape:window-height="1041"
-     inkscape:window-x="1920"
-     inkscape:window-y="18"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -172,7 +172,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -181,7 +181,9 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g2439">
+       id="g2439"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
       <path
          inkscape:export-ydpi="200"
          inkscape:export-xdpi="200"
@@ -547,7 +549,7 @@
    id="flowSpan14144"
    style="font-style:italic">pledgeID</flowSpan></flowPara><flowPara
                id="flowPara14150"
-               style="font-size:8px">   - Uri-Path + <flowSpan
+               style="font-size:8px">   - Uri-Host + <flowSpan
    id="flowSpan14148"
    style="fill:#17731e;fill-opacity:1">Uri-Path</flowSpan></flowPara><flowPara
                id="flowPara14160"
