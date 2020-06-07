@@ -1995,6 +1995,7 @@ La maintenance de la NPtable doit se faire de façon intelligente en considéran
 
 
 \section{Implémentation de la méthode NPEB}
+\label{implem_NPEB}
 
 Comme détaillé dans le Chapitre suivant à la \wordlink{Section}{choice_sim}, la méthode NPEB est implémentée comme une extension du simulateur 6TiSCH écrit par le WG 6TiSCH \cite{simulating-6TiSCH}. Le code existant est modifié afin de pouvoir supporter la méthode NPEB, et des structures telles que la NPtable sont ajoutées aux informations qu'un noeud maintient. Le simulateur modifié est accessible sur GitHub\footnote{\url{https://github.com/RemDec/6tisch-simulator-NPEB}}. Comme l'intégration est faite dans le code même, les changements sont limités à la partie de l'implémentation représentant la couche 2 d'un noeud (802.15.4 en mode TSCH), qui est intégralement reprise dans le fichier \texttt{SimEngine/Mote/tsch.py}. D'autres changements mineurs sont effectués pour journaliser les nouveaux évènements et définir le nouveau type d'EB.\\
 
@@ -2008,21 +2009,59 @@ L'implémentation faite implémente les procédures décrites dans la \wordlink{
 \section{Choix du simulateur}
 \label{choice_sim}
 
-Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH est établie dans \cite{simulating-6TiSCH}. Le simulateur 6TiSCH, présenté dans ce même article, a été sélectionner pour mener la phase expérimentative de ce travail. Il a été écrit par les membres du WG 6TiSCH et cible spécifiquement la pile étudiée, ce qui simplifie d'une part son utilisation et d'autre part son extensibilité. Il s'agit d'un simulateur dit \textit{discrete event-driven}, c'est-à-dire qu'il n'émule pas la pile 6TiSCH au niveau binaire, mais plutôt du point de vue comportemental. Cependant, il parvient à simuler de façon fidèle le déploiment de la pile en situation réelle \cite{simulating-6TiSCH}. En addition au simulateur 6TiSCH, un framework de traitement de ses sorties développé au Service Réseaux et Télécommunications est utilisé. Il permet de manipuler les lancements du simulateur et les données journalisées, par le biais d'une surcouche écrite en Python.
+Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH est établie dans \cite{simulating-6TiSCH}. Le simulateur 6TiSCH, présenté dans ce même article, a été sélectionné pour mener la phase expérimentale de ce travail. Il a été écrit par les membres du WG 6TiSCH et cible spécifiquement la pile étudiée, ce qui simplifie d'une part son utilisation et d'autre part son extensibilité. Il s'agit d'un simulateur dit \textit{discrete event-driven}, c'est-à-dire qu'il n'émule pas la pile 6TiSCH au niveau binaire, mais plutôt du point de vue comportemental. Cependant, il parvient à simuler de façon fidèle le déploiment de la pile en situation réelle \cite{simulating-6TiSCH}. En addition au simulateur 6TiSCH, un framework de traitement de ses sorties développé au Service Réseaux et Télécommunications est utilisé. Il permet de manipuler les lancements du simulateur et les données journalisées, par le biais d'une surcouche écrite en Python.
 
 \section{Méthodologie}
 
-Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non la joining phase. La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}. D'autres métriques pertinentes pour observer les effets de la méthode sur la formation du réseau sont sélectionnées. Similairement, l'impact de la joining phase sécurisée est évalué quand la méthode NPEB est considérée. Chaque résultat obtenu est discuté et justifié.\\
+Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non l'usage de la sécurité dans la joining phase (demandant le Join Exchange CoJP). La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}, la comparant à un déploiement standard. D'autres métriques pertinentes sont sélectionnées pour observer les effets de la méthode NPEB sur la formation du réseau. Chaque résultat obtenu est discuté et justifié.\\
 
-Les variations étudiées ici se concentrent sur l'emplois ou non de la joining phase, croisé avec l'utilisation de la méthode NPEB ou non. Aussi, afin d'avoir une base commune d'interprétation pour toutes les expériences, on ne considère pas un réseau dont les caractéristiques varient. Les runs consécutives du simulateurs se font sur des seeds différents, mais il est possible d'imposer des contraintes sur la configuration du réseau. Ainsi, on considère des réseaux de 30 noeuds, similairement à ce qui est fait dans le cadre de tests réels sur des testbeds déployés \cite{openbenchmark}. La disposition de la topologie est aléatoire mais suit les contraintes suivantes : chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. À noter que le simulateur tente de respecter ces contraintes au mieux, mais ne le garantit pas systématiquement \cite{simulating-6TiSCH}. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. \todoIL{nbr runs}
+Les variations étudiées ici se concentrent sur des modifications du déroulement de la joining phase, et non des caractéristiques du réseau en lui-même (nombre de noeuds, etc.). Le simulateur 6TiSCH permet de configurer ces caractéristiques, imposant des contraintes sur le réseau simulé. Pour toutes les expériences, une disposition des noeuds aléatoire est utilisée, mais elle est soumise à des contraintes que le simulateur respecte au mieux \cite{simulating-6TiSCH}. Ainsi, on impose que chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. Afin de rester dans des temps de calcul d'ordre raisonnable pour la reproductibilité de celles-ci, le nombre de runs (simulation sur une nouvelle instance de réseau) est limité à 10.\\
+
+La \wordlink{Section}{impact_secjoin} illustre l'impact de l'usage de la sécurité sur la formation du réseau. Un réseau de 10 noeuds est considéré pour l'évaluer. Comme ces expériences se concentrent uniquement sur la joining phase, aucune application n'est simulée sur chacun des noeuds, le trafic est donc relatif aux couches plus basses exclusivement. Les expériences sont orchestrées en utilisant le framework développé au Service Réseaux et Télécommunications, qui fonctionne par dessus une version du simulateur 6TiSCH modifiée mais permettant un comportement conforme au standard.\\
+
+La \wordlink{Section}{eval_NPEB} étudie les performances de la méthode NPEB en comparaison avec un déploiement standard. Afin d'établir la viabilité de la méthode, le réseau considéré contient 30 noeuds, tel que cela peut être le cas dans des déploiements réels \cite{openbenchmark}. Une application qui envoie des paquets périodiquement toutes les 60 secondes est instanciée sur chaque noeud, ce trafic interférer avec la méthode NPEB. Le simulateur 6TiSCH de base est modifié tel que décrit dans la \wordlink{Section}{implem_NPEB}, et de nouvelles méthodes d'écriture et de traitement des logs sont ajoutées pour illustrer les métriques pertinentes. Le framework n'est donc pas utilisé ici. Afin de supporter les mêmes métriques et les nouvelles procédures de traitement des sorties, le simulateur 6TiSCH de base est augmenté \footnote{\url{https://github.com/RemDec/6tisch-simulator-joinmetrics.git}}.
+
 
 \newpage
 
 \section{Impact de la sécurité sur la formation du réseau}
+\label{impact_secjoin}
 
 \subsection{Sélection des métriques}
 
+\subsubsection{Temps de convergence}
+
+Le \textit{temps de convergence} désigne la durée nécessaire au réseau pour que chaque noeud déployé le rejoigne. Dans le cas où la sécurité est désactivée, il s'agit donc de sélectionner un voisin dont un EB est reçu et s'y synchroniser. Si elle est activée, après cette étape il doit encore compléter le Join Exchange CoJP pour récupérer le matériel de sécurité du réseau. Il est donc attendu que dans le cas où la sécurité est activée, on observe un temps de convergence plus long.
+
+\subsubsection{Temps de join individuel}
+
+Le temps de join pour chaque noeud a la même sémantique que pour le temps de convergence (en fonction de la présence de sécurité). Il est mesuré individuellement pour chaque noeud du réseau. Cela permet d'illustrer le fait que la sécurité ralentit le join pour chaque noeud, et pas uniquement au niveau global.
+
 \subsection{Discussion des résultats}
+
+\subsubsection{Temps de convergence}
+
+ \vspace{1cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesTimeConvergence10.png}
+	\caption{Temps de convergence d'un réseau de 10 noeuds, mesuré sur 10 runs}
+	\label{fig:convergence}
+	\end{figure}
+
+
+\subsubsection{Temps de join individuel}
+
+
+ \vspace{1cm}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesJoiningTimePerNode10.png}
+	\caption{Temps de join pour 10 noeuds composant le réseau, mesuré sur 10 runs}
+	\label{fig:join_times}
+	\end{figure}
+
+
 
 \section{Amélioration des performances par la méthode NPEB}
 \label{eval_NPEB}
@@ -2030,8 +2069,28 @@ Les variations étudiées ici se concentrent sur l'emplois ou non de la joining 
 
 \subsection{Sélection des métriques}
 
+\subsubsection{Temps cumulé lors des étapes du join}
+
+\subsubsection{Charge consommée cumulée lors des étapes du join}
+
+\subsubsection{Première position dans la topologie}
+
+\subsubsection{Latence sur le trafic}
+
+\subsubsection{Temps de vie du réseau}
+
+
 \subsection{Discussion des résultats}
 
+\subsubsection{Temps cumulé lors des étapes du join}
+
+\subsubsection{Charge consommée cumulée lors des étapes du join}
+
+\subsubsection{Première position dans la topologie}
+
+\subsubsection{Latence sur le trafic}
+
+\subsubsection{Temps de vie du réseau}
 
 \chapter*{Conclusion et recommandations}
 
