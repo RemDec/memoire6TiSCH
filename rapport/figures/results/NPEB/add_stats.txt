@@ -1,10 +1,10 @@
 ==== Time elapsed at steps of join process - Number of nodes : 30   Number of runs : 10 (10 converged)
-         value                                                                     
-         count        mean          std   min      25%      50%        75%      max
-phase                                                                              
-RPLjoin  290.0  132.693207    86.603129  3.06   79.000  123.585   173.2150   631.29
-SecJoin  290.0  712.997483   941.119310  2.05  101.930  181.135  1151.3275  3270.16
-Synchro  290.0  759.148759  1019.544774  1.02   70.235  155.580  1219.4775  3290.71
+         value                                                              
+         count        mean        std   min    25%      50%      75%     max
+phase                                                                       
+RPLjoin  290.0  132.693207  86.603129  3.06  79.00  123.585  173.215  631.29
+SecJoin  290.0  128.945828  87.127895  2.05  76.09  118.020  172.145  629.27
+Synchro  290.0   86.936069  79.177841  1.02  19.70   73.745  128.070  444.49
 
 --- With convergence times stats
 count      10.000000
