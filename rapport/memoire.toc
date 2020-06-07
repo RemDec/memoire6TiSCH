@@ -96,8 +96,8 @@
 \contentsline {subsubsection}{\numberline {5.4.1.5}Longévité du réseau}{82}{subsubsection.5.4.1.5}%
 \contentsline {subsection}{\numberline {5.4.2}Présentation et discussion des résultats}{82}{subsection.5.4.2}%
 \contentsline {subsubsection}{\numberline {5.4.2.1}Temps cumulé lors des étapes du join}{82}{subsubsection.5.4.2.1}%
-\contentsline {subsubsection}{\numberline {5.4.2.2}Charge consommée cumulée lors des étapes du join}{82}{subsubsection.5.4.2.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.3}Première position dans la topologie}{82}{subsubsection.5.4.2.3}%
-\contentsline {subsubsection}{\numberline {5.4.2.4}Latence sur le trafic}{82}{subsubsection.5.4.2.4}%
-\contentsline {subsubsection}{\numberline {5.4.2.5}Longévité du réseau}{82}{subsubsection.5.4.2.5}%
-\contentsline {subsection}{\numberline {5.4.3}Discussion globale des résultats}{82}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}Charge consommée cumulée lors des étapes du join}{83}{subsubsection.5.4.2.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.3}Première position dans la topologie}{84}{subsubsection.5.4.2.3}%
+\contentsline {subsubsection}{\numberline {5.4.2.4}Latence sur le trafic}{84}{subsubsection.5.4.2.4}%
+\contentsline {subsubsection}{\numberline {5.4.2.5}Longévité du réseau}{84}{subsubsection.5.4.2.5}%
+\contentsline {subsection}{\numberline {5.4.3}Discussion globale des résultats}{84}{subsection.5.4.3}%

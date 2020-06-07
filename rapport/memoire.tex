@@ -2095,6 +2095,7 @@ Afin de détailler les variations induites par la méthode NPEB, la joining phas
 À chaque run, pour chaque noeud, l'instant à laquelle ce dernier passe une étape est journalisé. Ces mesures sont prises en temps absolu depuis l'initialisation du réseau (ASN 0) et sont converties en secondes.
 
 \subsubsection{Charge consommée cumulée lors des étapes du join}
+\label{metric_charges}
 
 Comme discuté dans la \wordlink{Section}{intuition_NPEB}, la méthode NPEB permet intuitivement à un pledge de sauvegarder de l'énergie. Cependant, cela ne devrait pas se faire au prix d'une consommation d'énergie accrue par les noeuds du réseau qui annoncent les NPEBs. Pour illustrer cela, la charge consommée par chaque noeud est récupérée à chaque étape du join process, telles que décrites précédemment dans la \wordlink{Section}{metric_times}. De plus, une étape supplémentaire est considérée une fois le join process terminé. On considère une attente de \texttt{DELAY\_LOG\_AFTER\_EB} secondes après que le désormais joined node soit autorisé à émettre des (NP)EBs (dans l'implémentation, après avoir envoyé un DAO de sorte que le Root aprenne la route vers le noeud). Après ce délai, une mesure de la charge est prise : elle a pour objectif de donner une indication de la consommation énergétique que l'annonce de (NP)EBs entraîne. À noter que l'application génère du trafic pendant cette durée, mais elle le fait de la même façon dans le cas des EBs et NPEBs. les étapes auxquelles sont prises les mesures de charge sont donc les suivantes :
 
@@ -2131,7 +2132,6 @@ Cette estimation permet de vérifier que la méthode NPEB n'impacte pas négativ
 
 Les \wordlink{Figures}{fig:EBtimes} et \ref{fig:NPEBtimes} illustrent respectivement les temps cumulés pour le déploiement standard et la méthode NPEB. Il s'agit, pour chaque étape, des temps récupérés sur toutes les runs pour tous les noeuds du réseau (aucune distinction n'est faite entre eux). Le trait pointillé représente la moyenne de chaque distribution. La ligne verticale bleue représente le temps moyen de convergence du réseau sur toutes les runs. La \wordlink{Table}{table_times} détaille les distributions des temps pour chaque étape numériquement, pour le cas standard et avec la méthode NPEB.
 
-\vspace{0.2cm}
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\textwidth}
@@ -2147,6 +2147,10 @@ Les \wordlink{Figures}{fig:EBtimes} et \ref{fig:NPEBtimes} illustrent respective
 		\label{fig:NPEBtimes}
 	\end{minipage}	
 \end{figure}
+
+À première vue, la méthode NPEB a un impact non négligables sur la rapidité avec laquelle les noeuds complètent leur processus de join. Les noeuds ont pour la très grande majorité terminé leur join après 8 minutes avec la méthode NPEB, tandis ce qu'à peine environ la moitié l'ont réalisé dans un déploiement standard. Cependant, on observe qu'en moyenne le temps de convergence n'est que légèrement amélioré avec la méthode NPEB (ligne bleue). Cependant, seulement 10 runs sont considérées ici. Le fait que les temps de convergence soient si éloignés est justifiable : l'intégralité des noeuds doivent avoir rejoint. Si un seul noeud très mal disposé est mis en difficulté pour rejoindre le réseau, il impacte directement le temps de convergence. Quand il n'y a pas de tel noeud, la convergence est beaucoup plus rapide : dans ces 10 runs, le minimum pour le déploiement standard est de 26 minutes (1565 secondes) et de 16 minutes (949 secondes) pour la méthode NPEB.
+
+\newpage
 
 \begin{table}[h]
 \centering
@@ -2171,13 +2175,19 @@ Les \wordlink{Figures}{fig:EBtimes} et \ref{fig:NPEBtimes} illustrent respective
     Join topologie RPL & 132.6 & 86.6 & 3.0 & 79.0 & 123.5 & 173.2 & 631.2 \\
     \hline
 \end{tabular}
-\caption{Statistiques des temps mesurés pour les différentes étapes du join avec et sans la méthode NPEB (\textit{s})}
+\caption{Statistiques des temps mesurés aux différentes étapes du join avec et sans la méthode NPEB (\textit{s})}
 \label{table_times}
 \end{table}
+
+La \wordlink{Table}{table_times} décrit plus précisément les performances de la méthode NPEB par rapport au déploiement standard. On observe que 75\% des noeuds ont déjà achevé leur join complet (en 173 secondes) quand, pour le déploiement standard, aucun noeud n'a encore lancé sa synchronisation avec un voisin (on observe le délai \texttt{MAX\_EB\_DELAY} de 180 secondes présenté dans la \wordlink{Section}{prob_joining_phase}).
 
 
 
 \subsubsection{Charge consommée cumulée lors des étapes du join}
+
+Les \wordlink{Figures}{fig:EBcharges} et \ref{fig:NPEBcharges} représentent la charge totale consommée par tous les noeuds aux différentes étapes considérées, toutes runs confondues. Le délai laissé passé après l'autorisation d'émettre des (NP)EBs (décrit à la \wordlink{Section}{metric_charges}) est de 200 secondes, ce qui correspond à à peu près 200 cycles de slotframe. Les \wordlink{Figures}{fig:EBchargesjoined} et \ref{fig:NPEBchargesjoined} détaillent les distributions de la charge consommée jusqu'à l'accomplissement du join sécurisé, respectivement pour le déploiement standard et la méthode NPEB. La \wordlink{Table}{table_charges} donne les valeurs numériques pour chaque étape considérée.
+
+\vspace{0.2cm}
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\textwidth}
@@ -2194,6 +2204,12 @@ Les \wordlink{Figures}{fig:EBtimes} et \ref{fig:NPEBtimes} illustrent respective
 	\end{minipage}	
 \end{figure}
 
+\vspace{0.2cm}
+
+
+Les \wordlink{Figures}{fig:EBcharges} et \ref{fig:NPEBcharges} mettent en avant un gain de performances pour la méthode NPEB. Pour compléter leur join, 75 \% des noeuds ont consommé une charge inférieur à $100 mC$ en utilisant la méthode NPEB, ce qui n'est le cas que de moins de 25\% des noeuds en déploiement standard. La consommation induite par l'émission de NPEB est relativement minime (détaillée plus loin). La \wordlink{Figure}{fig:NPEBchargesjoined} donne la distribution détaillée jusqu'à l'étape de fin du join sécurisé, qui est bien plus avantageuse que ce qui est obtenu avec le déploiement standard (\wordlink{Figure}{fig:EBchargesjoined}).
+
+\newpage
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\textwidth}
@@ -2209,6 +2225,8 @@ Les \wordlink{Figures}{fig:EBtimes} et \ref{fig:NPEBtimes} illustrent respective
 		\label{fig:NPEBchargesjoined}
 	\end{minipage}	
 \end{figure}
+
+La \wordlink{Table}{table_charges} permet d'avancer qu'en moyenne, un pledge consomme de l'ordre de 5 fois moins d'énergie pour compléter son join en utilisant la méthode NPEB. En moyenne, on observe également que l'énergie consommée 200 secondes après le début d'émission de (NP)EBs est du même ordre entre le déploiement standard et la méthode NPEB. L'impact énergétique induit par l'écoute active est clairement visible en se focalisant sur les valeurs du premier quartile. La méthode NPEB, qui permet de se passer en grande partie de ces phases d'écoute, permet à 25\% des noeuds le rejoindre le réseau en consommant moins de $13 mC$, ce qui représente un facteur supérieur à 10 par rapport au déploiement standard.
 
 \begin{table}[h]
 \centering
