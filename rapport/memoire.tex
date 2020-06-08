@@ -2017,7 +2017,7 @@ Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH
 
 Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non l'usage de la sécurité dans la joining phase (demandant le Join Exchange CoJP). La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}, la comparant à un déploiement standard. D'autres métriques pertinentes sont sélectionnées pour observer les effets de la méthode NPEB sur la formation du réseau. Chaque résultat obtenu est discuté et justifié.\\
 
-Les variations étudiées ici se concentrent sur des modifications du déroulement de la joining phase, et non des caractéristiques du réseau en lui-même (nombre de noeuds, etc.). Le simulateur 6TiSCH permet de configurer ces caractéristiques, imposant des contraintes sur le réseau simulé. Pour toutes les expériences, une disposition des noeuds aléatoire est utilisée, mais elle est soumise à des contraintes que le simulateur respecte au mieux \cite{simulating-6TiSCH}. Ainsi, on impose que chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. Afin de rester dans des temps de calcul d'ordre raisonnable pour la reproductibilité de celles-ci, le nombre de runs (simulation sur une nouvelle instance de réseau) est limité à 10.\\
+Les variations étudiées ici se concentrent sur des modifications du déroulement de la joining phase, et non des caractéristiques du réseau en lui-même (nombre de noeuds, etc.). Le simulateur 6TiSCH permet de configurer ces caractéristiques, imposant des contraintes sur le réseau simulé. Pour toutes les expériences, une disposition des noeuds aléatoire est utilisée, mais elle est soumise à des contraintes que le simulateur respecte au mieux \cite{simulating-6TiSCH}. Ainsi, on impose que chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 50\%. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. L'OF0 (\textit{Objective Function Zero}, \cite{rfc6552}) est utilisée comme Objective Function par RPL. Afin de rester dans des temps de calcul d'ordre raisonnable pour la reproductibilité de celles-ci, le nombre de runs (simulation sur une nouvelle instance de réseau) est limité à 10. Les expériences menées en parallèle partagent le même seed de base, de sorte que les résultats soient comparables.\\
 
 La \wordlink{Section}{impact_secjoin} illustre l'impact de l'usage de la sécurité sur la formation du réseau. Un réseau de 10 noeuds est considéré pour l'évaluer. Comme ces expériences se concentrent uniquement sur la joining phase, aucune application n'est simulée sur chacun des noeuds, le trafic est donc relatif aux couches plus basses exclusivement. Les expériences sont orchestrées en utilisant le framework développé au Service Réseaux et Télécommunications, qui fonctionne par dessus une version du simulateur 6TiSCH modifiée mais permettant un comportement conforme au standard.\\
 
@@ -2028,9 +2028,36 @@ La \wordlink{Section}{eval_NPEB} étudie les performances de la méthode NPEB en
 \subsection{Paramètrage des procédures de join}
 \label{exp_custom}
 
+Sont détaillés ici le comportement et les paramètres des procédures de join considérées pour les simulations. Le déploiement standard décrit par la \wordlink{Section}{exp_custom_EB} est d'application pour les expérimentations concernant l'impact de la sécurité sur la joining phase (\wordlink{Section}{impact_secjoin}) et l'évaluation de la méthode NPEB (\wordlink{Section}{eval_NPEB}).
+
 \subsubsection{Déploiement standard (EBs)}
+\label{exp_custom_EB}
+
+Le simulateur 6TiSCH de base est entièrement conforme aux standards au sens comportemental, le Join Exchange CoJP y est simulé bien qu'aucune opération cryptographique ne soit faite. Le JRC est le noeud Root présent à l'initialisation de chaque simulation (il ne doit donc pas rejoindre le réseau) et n'importe quel noeud membre du réseau peut servir de Join Proxy. Désactiver le join sécurisé dans le simulateur revient à considérer qu'un noeud a rejoint le réseau une fois qu'il a sélectionné un voisin pour s'y synchroniser (pas de Join Exchange CoJP).\\
+
+La stratégie pour l'émission d'EB est le broadcast bayesien décrit dans \cite{broadcast-strategies}, avec une probabilité de base d'émettre un EB laissée à la valeur par défaut de $\frac{1}{3}$. Cette probabilité est diminuée en fonction du nombre de voisins connus. Toutes les émissions d'EB se font uniquement dans la minimal cell. 
 
 \subsubsection{Déploiement avec la méthode NPEB}
+
+L'usage de la méthode NPEB impacte le comportement de la joining phase avant la synchronisation. Une fois un voisin sélectionné, la suite de la joining phase reste identique et le pledge devra procéder au Join Exchange CoJP. La méthode NPEB et les processus décisionnels décrits dans la \wordlink{Section}{decisional} sont configurables au travers de nombreux paramètres. Pour les expérimentations, ces paramètres seront mis aux valeurs suivantes :
+
+\begin{itemize}[label=$\bullet$]
+\item \texttt{NPEB\_MAX\_NEIGHBORS\_TO\_LISTEN} = 3, un pledge lance la suite de son join avec son meilleur voisin après trois propositions entendues
+\vspace{0.1cm}
+\item \texttt{NPEB\_MAX\_NEIGHBORS\_ANNOUNCED} = 3, un noeud n'annonce pas plus de 3 propositions de voisins dans un NPEB
+\vspace{0.1cm}
+\item \texttt{NPEB\_MIN\_PDR\_UNDERGO\_SYNCHRO} = 0.6, un PDR supérieur à 60\% est requis pour interrompre le processus itératif d'écoute et lancer la suite du join avec le voisin condidat
+\vspace{0.1cm}
+\item \texttt{NPEB\_MAX\_JM\_UNDERGO\_SYNCHRO} = 7, une Join Metric inférieur à sept est requise pour interrompre le processus itératif d'écoute et lancer la suite du join avec le voisin condidat 
+\vspace{0.1cm}
+\item \texttt{NPEB\_MIN\_NBR\_CYCLES} = 2, un noeud autre que Root espace au minimum ses annonces de NPEB de 2 cycles (pour Root, la valeur est mise à 1)
+\vspace{0.1cm}
+\item \texttt{NPEB\_MAX\_NBR\_CYCLES} = 10, un noeud qui émet des NPEBs ne les espace pas de plus de 10 cycles
+\end{itemize}
+
+\vspace{0.3cm}
+
+La minimal cell est utilisée de la même façon que pour le déploiement standard, à la différence qu'à la place d'y émettre des EBs, un noeud y émet des NPEBs. En plus de la minimal cell, les cells d'annonces arbitraires décrites dans la \wordlink{Section}{intuition_NPEB} sont considérées. Ces cells sont installées périodiquement en suivant le mécanisme de cycles et ses optimisations proposées dans la \wordlink{Section}{optis_NPEB}.
 
 \newpage
 

@@ -165,6 +165,12 @@ Manoj Stanley, Yi~Huang, Tian~Hong Loh, Qian Xu, Hanyang Wang, and Hai Zhou.
   applications.
 \newblock 03 2017.
 
+\bibitem{rfc6552}
+Pascal Thubert.
+\newblock {Objective Function Zero for the Routing Protocol for Low-Power and
+  Lossy Networks (RPL)}.
+\newblock RFC 6552, March 2012.
+
 \bibitem{ietf-6tisch-architecture-28}
 Pascal Thubert.
 \newblock {An Architecture for IPv6 over the TSCH mode of IEEE 802.15.4}.

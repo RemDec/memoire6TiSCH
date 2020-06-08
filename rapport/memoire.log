@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  8 JUN 2020 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  8 JUN 2020 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1568,167 +1568,167 @@ Underfull \hbox (badness 10000) in paragraph at lines 2022--2023
 
  []
 
-[78] [79]
-<figures/results/secjoin/boxesTimeConvergence10.png, id=1422, 462.528pt x 346.8
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 2036--2037
+
+ []
+
+[79]
+<figures/results/secjoin/boxesTimeConvergence10.png, id=1437, 462.528pt x 346.8
 96pt>
 File: figures/results/secjoin/boxesTimeConvergence10.png Graphic file (type png
 )
 <use figures/results/secjoin/boxesTimeConvergence10.png>
 Package pdftex.def Info: figures/results/secjoin/boxesTimeConvergence10.png  us
-ed on input line 2058.
+ed on input line 2085.
 (pdftex.def)             Requested size: 338.38702pt x 253.80363pt.
  [80 <./figures/results/secjoin/boxesTimeConvergence10.png>]
-<figures/results/secjoin/boxesJoiningTimePerNode10.png, id=1434, 462.528pt x 34
+<figures/results/secjoin/boxesJoiningTimePerNode10.png, id=1450, 462.528pt x 34
 6.896pt>
 File: figures/results/secjoin/boxesJoiningTimePerNode10.png Graphic file (type 
 png)
 <use figures/results/secjoin/boxesJoiningTimePerNode10.png>
 Package pdftex.def Info: figures/results/secjoin/boxesJoiningTimePerNode10.png 
- used on input line 2076.
+ used on input line 2103.
 (pdftex.def)             Requested size: 338.38702pt x 253.80363pt.
-
-
-LaTeX Warning: Citation `OSCOREtimes' on page 81 undefined on input line 2085.
-
-[81 <./figures/results/secjoin/boxesJoiningTimePerNode10.png>] [82]
-<figures/results/EB/phase_times.png, id=1471, 408.3255pt x 325.215pt>
+ [81 <./figures/results/secjoin/boxesJoiningTimePerNode10.png>] [82]
+<figures/results/EB/phase_times.png, id=1488, 408.3255pt x 325.215pt>
 File: figures/results/EB/phase_times.png Graphic file (type png)
 <use figures/results/EB/phase_times.png>
 Package pdftex.def Info: figures/results/EB/phase_times.png  used on input line
- 2152.
+ 2179.
 (pdftex.def)             Requested size: 236.8746pt x 188.66452pt.
-<figures/results/NPEB/phase_times.png, id=1472, 417.7206pt x 325.215pt>
+<figures/results/NPEB/phase_times.png, id=1489, 417.7206pt x 325.215pt>
 File: figures/results/NPEB/phase_times.png Graphic file (type png)
 <use figures/results/NPEB/phase_times.png>
 Package pdftex.def Info: figures/results/NPEB/phase_times.png  used on input li
-ne 2158.
+ne 2185.
 (pdftex.def)             Requested size: 241.70607pt x 188.1782pt.
  [83 <./figures/results/EB/phase_times.png> <./figures/results/NPEB/phase_times
 .png>]
-<figures/results/EB/phase_charges.png, id=1497, 435.7881pt x 325.215pt>
+<figures/results/EB/phase_charges.png, id=1514, 435.7881pt x 325.215pt>
 File: figures/results/EB/phase_charges.png Graphic file (type png)
 <use figures/results/EB/phase_charges.png>
 Package pdftex.def Info: figures/results/EB/phase_charges.png  used on input li
-ne 2209.
+ne 2236.
 (pdftex.def)             Requested size: 236.8746pt x 176.76971pt.
-<figures/results/NPEB/phase_charges.png, id=1498, 438.6789pt x 325.215pt>
+<figures/results/NPEB/phase_charges.png, id=1515, 438.6789pt x 325.215pt>
 File: figures/results/NPEB/phase_charges.png Graphic file (type png)
 <use figures/results/NPEB/phase_charges.png>
 Package pdftex.def Info: figures/results/NPEB/phase_charges.png  used on input 
-line 2215.
+line 2242.
 (pdftex.def)             Requested size: 241.70607pt x 179.19135pt.
-
-[84 <./figures/results/EB/phase_charges.png> <./figures/results/NPEB/phase_char
-ges.png>]
-<figures/results/EB/chargejoined.hist.png, id=1517, 390.258pt x 325.215pt>
+ [84 <./figures/results/EB/phase_charges.png> <./figures/results/NPEB/phase_cha
+rges.png>]
+<figures/results/EB/chargejoined.hist.png, id=1534, 390.258pt x 325.215pt>
 File: figures/results/EB/chargejoined.hist.png Graphic file (type png)
 <use figures/results/EB/chargejoined.hist.png>
 Package pdftex.def Info: figures/results/EB/chargejoined.hist.png  used on inpu
-t line 2231.
+t line 2258.
 (pdftex.def)             Requested size: 236.8746pt x 197.3983pt.
 
-Underfull \hbox (badness 5050) in paragraph at lines 2232--2232
+Underfull \hbox (badness 5050) in paragraph at lines 2259--2259
 []\OT1/cmr/m/sc/10 Figure \OT1/cmr/m/n/10 5.7 { |EBs - dis-tri-bu-tion des char
 ges
  []
 
-<figures/results/NPEB/chargejoined.hist.png, id=1518, 390.258pt x 325.215pt>
+<figures/results/NPEB/chargejoined.hist.png, id=1535, 390.258pt x 325.215pt>
 File: figures/results/NPEB/chargejoined.hist.png Graphic file (type png)
 <use figures/results/NPEB/chargejoined.hist.png>
 Package pdftex.def Info: figures/results/NPEB/chargejoined.hist.png  used on in
-put line 2237.
+put line 2264.
 (pdftex.def)             Requested size: 241.70607pt x 201.42279pt.
 
-Underfull \hbox (badness 2401) in paragraph at lines 2238--2238
+Underfull \hbox (badness 2401) in paragraph at lines 2265--2265
 []\OT1/cmr/m/sc/10 Figure \OT1/cmr/m/n/10 5.8 { |NPEBs - dis-tri-bu-tion des ch
 arges
  []
 
 [85 <./figures/results/EB/chargejoined.hist.png> <./figures/results/NPEB/charge
 joined.hist.png>]
-<figures/results/EB/firsthop.hist.png, id=1532, 423.5022pt x 325.215pt>
+<figures/results/EB/firsthop.hist.png, id=1549, 423.5022pt x 325.215pt>
 File: figures/results/EB/firsthop.hist.png Graphic file (type png)
 <use figures/results/EB/firsthop.hist.png>
 Package pdftex.def Info: figures/results/EB/firsthop.hist.png  used on input li
-ne 2286.
+ne 2313.
 (pdftex.def)             Requested size: 236.8746pt x 181.89584pt.
-<figures/results/NPEB/firsthop.hist.png, id=1533, 423.5022pt x 325.215pt>
+<figures/results/NPEB/firsthop.hist.png, id=1550, 423.5022pt x 325.215pt>
 File: figures/results/NPEB/firsthop.hist.png Graphic file (type png)
 <use figures/results/NPEB/firsthop.hist.png>
 Package pdftex.def Info: figures/results/NPEB/firsthop.hist.png  used on input 
-line 2292.
+line 2319.
 (pdftex.def)             Requested size: 241.70607pt x 185.6077pt.
 
-Overfull \hbox (2.95532pt too wide) in paragraph at lines 2300--2301
+Overfull \hbox (2.95532pt too wide) in paragraph at lines 2327--2328
 []\OT1/cmr/m/n/10 Les deux dis-tri-bu-tions sont re-la-ti-ve-ment si-mi-laires.
  La m^^Sethode NPEB ne semble par ap-port^^Se les am^^Seliorations
  []
 
 
 LaTeX Warning: Hyper reference `result_times' on page 86 undefined on input lin
-e 2305.
+e 2332.
 
 
-LaTeX Warning: Reference `result_times' on page 86 undefined on input line 2305
+LaTeX Warning: Reference `result_times' on page 86 undefined on input line 2332
 .
 
-<figures/results/EB/latency_avg_s.png, id=1537, 397.485pt x 311.4837pt>
+<figures/results/EB/latency_avg_s.png, id=1554, 397.485pt x 311.4837pt>
 File: figures/results/EB/latency_avg_s.png Graphic file (type png)
 <use figures/results/EB/latency_avg_s.png>
 Package pdftex.def Info: figures/results/EB/latency_avg_s.png  used on input li
-ne 2310.
+ne 2337.
 (pdftex.def)             Requested size: 236.8746pt x 185.6274pt.
-<figures/results/NPEB/latency_avg_s.png, id=1538, 397.485pt x 311.4837pt>
+<figures/results/NPEB/latency_avg_s.png, id=1555, 397.485pt x 311.4837pt>
 File: figures/results/NPEB/latency_avg_s.png Graphic file (type png)
 <use figures/results/NPEB/latency_avg_s.png>
 Package pdftex.def Info: figures/results/NPEB/latency_avg_s.png  used on input 
-line 2316.
+line 2343.
 (pdftex.def)             Requested size: 241.70607pt x 189.41542pt.
 [86 <./figures/results/EB/firsthop.hist.png> <./figures/results/NPEB/firsthop.h
 ist.png> <./figures/results/EB/latency_avg_s.png> <./figures/results/NPEB/laten
 cy_avg_s.png>]
-<figures/results/EB/lifetime_AA_years.cdf.png, id=1554, 414.1071pt x 325.215pt>
+<figures/results/EB/lifetime_AA_years.cdf.png, id=1572, 414.1071pt x 325.215pt>
 
 File: figures/results/EB/lifetime_AA_years.cdf.png Graphic file (type png)
 <use figures/results/EB/lifetime_AA_years.cdf.png>
 Package pdftex.def Info: figures/results/EB/lifetime_AA_years.cdf.png  used on 
-input line 2336.
+input line 2363.
 (pdftex.def)             Requested size: 236.8746pt x 186.02951pt.
-<figures/results/NPEB/lifetime_AA_years.cdf.png, id=1555, 414.1071pt x 325.215p
+<figures/results/NPEB/lifetime_AA_years.cdf.png, id=1573, 414.1071pt x 325.215p
 t>
 File: figures/results/NPEB/lifetime_AA_years.cdf.png Graphic file (type png)
 <use figures/results/NPEB/lifetime_AA_years.cdf.png>
 Package pdftex.def Info: figures/results/NPEB/lifetime_AA_years.cdf.png  used o
-n input line 2342.
+n input line 2369.
 (pdftex.def)             Requested size: 241.70607pt x 189.82571pt.
  [87 <./figures/results/EB/lifetime_AA_years.cdf.png> <./figures/results/NPEB/l
 ifetime_AA_years.cdf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2364--2365
+Underfull \hbox (badness 10000) in paragraph at lines 2391--2392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2366--2367
+Underfull \hbox (badness 10000) in paragraph at lines 2393--2394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2368--2369
+Underfull \hbox (badness 10000) in paragraph at lines 2395--2396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2370--2371
+Underfull \hbox (badness 10000) in paragraph at lines 2397--2398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2372--2373
+Underfull \hbox (badness 10000) in paragraph at lines 2399--2400
 
  []
 
 [88]
-Underfull \hbox (badness 10000) in paragraph at lines 2380--2381
+Underfull \hbox (badness 10000) in paragraph at lines 2407--2408
 
  []
 
@@ -1737,12 +1737,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 2380--2381
 ] [90
 
 ] [91])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2389.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2416.
  [92]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2389.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2416.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2389.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2389.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2416.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2416.
 
 Package rerunfilecheck Info: File `memoire.out' has not changed.
 (rerunfilecheck)             Checksum: 287E5F7730A2A1089CD660D5F1AC493C;4498.
@@ -1750,16 +1750,13 @@ Package rerunfilecheck Info: File `memoire.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2389.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2416.
  ) 
 Here is how much of TeX's memory you used:
- 11587 strings out of 482412
- 179998 string characters out of 5948338
- 473649 words of memory out of 5000000
- 26655 multiletter control sequences out of 15000+600000
+ 11590 strings out of 482412
+ 180034 string characters out of 5948338
+ 473782 words of memory out of 5000000
+ 26657 multiletter control sequences out of 15000+600000
  544797 words of font info for 67 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  50i,11n,48p,1653b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1799,10 +1796,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmtt8.pfb>
-Output written on memoire.pdf (93 pages, 4832919 bytes).
+Output written on memoire.pdf (93 pages, 4836548 bytes).
 PDF statistics:
- 1768 PDF objects out of 2073 (max. 8388607)
- 1506 compressed objects within 16 object streams
- 383 named destinations out of 1000 (max. 500000)
+ 1784 PDF objects out of 2073 (max. 8388607)
+ 1522 compressed objects within 16 object streams
+ 384 named destinations out of 1000 (max. 500000)
  684 words of extra memory for PDF output out of 10000 (max. 10000000)
 

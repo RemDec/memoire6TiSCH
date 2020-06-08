@@ -12,45 +12,45 @@ Warning--empty booktitle in OSCOREtimes
 Warning--empty booktitle in telosb
 Warning--empty journal in OSCOREvsNDN
 Warning--empty booktitle in multipath
-You've used 46 entries,
+You've used 47 entries,
             2118 wiz_defined-function locations,
-            754 strings with 12522 characters,
-and the built_in function-call counts, 15414 in all, are:
-= -- 1412
-> -- 990
+            758 strings with 12630 characters,
+and the built_in function-call counts, 15624 in all, are:
+= -- 1432
+> -- 997
 < -- 17
-+ -- 393
-- -- 344
-* -- 1117
-:= -- 2678
-add.period$ -- 148
-call.type$ -- 46
-change.case$ -- 310
++ -- 396
+- -- 346
+* -- 1125
+:= -- 2713
+add.period$ -- 151
+call.type$ -- 47
+change.case$ -- 314
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 494
-empty$ -- 1040
-format.name$ -- 344
-if$ -- 3137
+cite$ -- 52
+duplicate$ -- 501
+empty$ -- 1062
+format.name$ -- 346
+if$ -- 3183
 int.to.chr$ -- 0
-int.to.str$ -- 46
+int.to.str$ -- 47
 missing$ -- 22
-newline$ -- 243
-num.names$ -- 92
-pop$ -- 356
+newline$ -- 248
+num.names$ -- 94
+pop$ -- 364
 preamble$ -- 1
-purify$ -- 264
+purify$ -- 267
 quote$ -- 0
-skip$ -- 382
+skip$ -- 389
 stack$ -- 0
-substring$ -- 515
-swap$ -- 101
+substring$ -- 520
+swap$ -- 102
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 184
+type$ -- 188
 warning$ -- 5
-while$ -- 113
-width$ -- 48
-write$ -- 504
+while$ -- 115
+width$ -- 49
+write$ -- 514
 (There was 1 error message)
