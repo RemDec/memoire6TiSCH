@@ -2114,7 +2114,7 @@ Les temps de convergence récupérés pour les 20 runs et avec/sans sécurité d
 
 \newpage
 
-On observe le phénomène attendu, mais en faible proportion : l'usage de la sécurité dans le join rallonge le temps de convergence du réseau. En moyenne sur les 20 runs (donnée par la ligne pointillée), sans la sécurité le réseau converge en 40 minutes, tandis ce qu'avec elle, il converge en 45 minutes. Cependant, l'écart-type est deux fois plus élevé avec la sécurité : 414 secondes contre 202 secondes sans. Cela est explicable par le fait que le Join Exchange CoJP doit traverser l'entièreté du réseau et opérer plusieurs sauts où des retransmissions peuvent être nécessaires.
+On observe le phénomène attendu, mais en faible proportion : l'usage de la sécurité dans le join augmente le temps de convergence du réseau. En moyenne sur les 20 runs (donnée par la ligne pointillée), le temps de convergence est d'environ 28 minutes (1 minute supplémentaire est induite quand la sécurité est activée). La moyenne ne permet pas de distinguer de façon significative les deux cas. Les deux distributions sont presque identiques dans leur globalité, comme l'indiquent les données numériques de la \wordlink{Table}{table_convergence}.
 
 
 \subsubsection{Temps de join individuel}
@@ -2129,11 +2129,11 @@ La \wordlink{Figure}{fig:join_times} illustre l'impact de l'usage de la sécurit
 	\label{fig:join_times}
 	\end{figure}
 
-Le même phénomène qu'au niveau global est observable : l'usage de la sécurité ralentit le join, et ce pour chaque nœud du réseau.
+Le même phénomène qu'au niveau global est observable : aucune tendance forte ne se dégage des résultats obtenus. Les distributions sont similaires et ne permettent pas d'illustrer le délai additionnel attendu quand la sécurité est activée.
 
 \subsection{Discussion globale des résultats} 
 
-De par les résultats obtenus, la sécurisation du réseau a un impact non négligeable sur le temps nécessaire à sa formation. Pour rappel, le simulateur ne prend pas en compte les opérations cryptographiques en tant que telles : seul le Join Exchange est simulé. Dans un déploiement réel, l'usage de la sécurité implique des coûts additionnels. D'une part, le chiffrement utilisé dans 802.15.4 pour sécuriser les frames a un coût non négligeable qui peut aller jusqu'à nécessiter une augmentation de la durée des timeslots. Cela dépend du chiffrement utilisé, de l'utilisation d'hardware dédié, etc. : un travail qui cible cette problématique a été réalisé par Sciancalepore \textit{et al.} \cite{link-layer-sec-impact}. D'autre part, la sécurité au niveau applicatif (OSCORE) n'est pas prise en compte et impacte potentiellement la joining phase. Très peu de données peuvent être trouvées à ce propos : Durand \textit{et al.} \cite{OSCOREtimes} mesurent le temps nécessaire pour le chiffrement/déchiffrement d'un paquet de 6 bytes à $\approx 1.3$ secondes sur un microcontrôleur SAML11 ARM Cortex-M23. Gündoğan \textit{et al.} \cite{OSCOREvsNDN} établissent une comparaison entre OSCORE et d'autres solutions de chiffrement applicatif mais ne rentrent pas en détail dans les performances d'OSCORE.
+ Pour rappel, le simulateur ne prend pas en compte les opérations cryptographiques en tant que telles : seul le Join Exchange est simulé. Dans un déploiement réel, l'usage de la sécurité implique des coûts additionnels. D'une part, le chiffrement utilisé dans 802.15.4 pour sécuriser les frames a un coût non négligeable qui peut aller jusqu'à nécessiter une augmentation de la durée des timeslots. Cela dépend du chiffrement utilisé, de l'utilisation d'hardware dédié, etc. : un travail qui cible cette problématique a été réalisé par Sciancalepore \textit{et al.} \cite{link-layer-sec-impact}. D'autre part, la sécurité au niveau applicatif (OSCORE) n'est pas prise en compte et impacte potentiellement la joining phase. Très peu de données peuvent être trouvées à ce propos : Durand \textit{et al.} \cite{OSCOREtimes} mesurent le temps nécessaire pour le chiffrement/déchiffrement d'un paquet de 6 bytes à $\approx 1.3$ secondes sur un microcontrôleur SAML11 ARM Cortex-M23. Gündoğan \textit{et al.} \cite{OSCOREvsNDN} établissent une comparaison entre OSCORE et d'autres solutions de chiffrement applicatif mais ne rentrent pas en détail dans les performances d'OSCORE.
 
 \newpage
 
