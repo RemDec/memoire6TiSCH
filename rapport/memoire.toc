@@ -57,19 +57,20 @@
 \contentsline {subsection}{\numberline {4.1.2}Écoute active du pledge}{62}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}Présentation de la méthode de \textit {Neighbors Propositions EB}}{63}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Intuition de la méthode NPEB}{63}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Méthodes de remplissage de la NPtable}{67}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}NPEB-based}{67}{subsubsection.4.2.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Data-based}{68}{subsubsection.4.2.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.3}ACK-based}{68}{subsubsection.4.2.2.3}%
-\contentsline {subsection}{\numberline {4.2.3}Procédures décisionnelles et paramétrage}{68}{subsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}Sélection des voisins à annoncer}{68}{subsubsection.4.2.3.1}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}Sélection d'un candidat voisin parmi ceux proposés au pledge}{69}{subsubsection.4.2.3.2}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}Processus itératif d'écoute de NPEBs}{70}{subsubsection.4.2.3.3}%
-\contentsline {subsection}{\numberline {4.2.4}Discussion des optimisations possibles}{72}{subsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}Placement des cells d'annonce}{72}{subsubsection.4.2.4.1}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}Nombre de cycles}{73}{subsubsection.4.2.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}Cycles décalés entre voisins}{73}{subsubsection.4.2.4.3}%
-\contentsline {subsubsection}{\numberline {4.2.4.4}Cell \textit {RxS} après une annonce NPEB}{73}{subsubsection.4.2.4.4}%
+\contentsline {subsection}{\numberline {4.2.2}Exemple introductif}{65}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Méthodes de remplissage de la NPtable}{67}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}NPEB-based}{67}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}Data-based}{68}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}ACK-based}{68}{subsubsection.4.2.3.3}%
+\contentsline {subsection}{\numberline {4.2.4}Procédures décisionnelles et paramétrage}{68}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Sélection des voisins à annoncer}{68}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Sélection d'un candidat voisin parmi ceux proposés au pledge}{69}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Processus itératif d'écoute de NPEBs}{70}{subsubsection.4.2.4.3}%
+\contentsline {subsection}{\numberline {4.2.5}Discussion des optimisations possibles}{72}{subsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.5.1}Placement des cells d'annonce}{72}{subsubsection.4.2.5.1}%
+\contentsline {subsubsection}{\numberline {4.2.5.2}Nombre de cycles}{73}{subsubsection.4.2.5.2}%
+\contentsline {subsubsection}{\numberline {4.2.5.3}Cycles décalés entre voisins}{73}{subsubsection.4.2.5.3}%
+\contentsline {subsubsection}{\numberline {4.2.5.4}Cell \textit {RxS} après une annonce NPEB}{73}{subsubsection.4.2.5.4}%
 \contentsline {section}{\numberline {4.3}Inconvénients de la méthode NPEB}{75}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Non conformité avec le standard MSF}{75}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Overhead des messages et NPtable}{75}{subsection.4.3.2}%
