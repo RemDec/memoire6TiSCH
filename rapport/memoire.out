@@ -39,11 +39,13 @@
 \BOOKMARK [0][-]{chapter.5}{\311valuation de la joining phase s\351curis\351e et de la m\351thode NPEB en simulateur}{}% 39
 \BOOKMARK [1][-]{section.5.1}{Choix du simulateur}{chapter.5}% 40
 \BOOKMARK [1][-]{section.5.2}{M\351thodologie}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.3}{Impact de la s\351curit\351 sur la formation du r\351seau}{chapter.5}% 42
-\BOOKMARK [2][-]{subsection.5.3.1}{S\351lection des m\351triques}{section.5.3}% 43
-\BOOKMARK [2][-]{subsection.5.3.2}{Pr\351sentation et discussion des r\351sultats}{section.5.3}% 44
-\BOOKMARK [2][-]{subsection.5.3.3}{Discussion globale des r\351sultats}{section.5.3}% 45
-\BOOKMARK [1][-]{section.5.4}{Am\351lioration des performances par la m\351thode NPEB}{chapter.5}% 46
-\BOOKMARK [2][-]{subsection.5.4.1}{S\351lection des m\351triques}{section.5.4}% 47
-\BOOKMARK [2][-]{subsection.5.4.2}{Pr\351sentation et discussion des r\351sultats}{section.5.4}% 48
-\BOOKMARK [2][-]{subsection.5.4.3}{Discussion globale des r\351sultats}{section.5.4}% 49
+\BOOKMARK [2][-]{subsection.5.2.1}{D\351roulement des exp\351rimentations}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.2}{Param\350trage des proc\351dures de join}{section.5.2}% 43
+\BOOKMARK [1][-]{section.5.3}{Impact de la s\351curit\351 sur la formation du r\351seau}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.3.1}{S\351lection des m\351triques}{section.5.3}% 45
+\BOOKMARK [2][-]{subsection.5.3.2}{Pr\351sentation et discussion des r\351sultats}{section.5.3}% 46
+\BOOKMARK [2][-]{subsection.5.3.3}{Discussion globale des r\351sultats}{section.5.3}% 47
+\BOOKMARK [1][-]{section.5.4}{Am\351lioration des performances par la m\351thode NPEB}{chapter.5}% 48
+\BOOKMARK [2][-]{subsection.5.4.1}{S\351lection des m\351triques}{section.5.4}% 49
+\BOOKMARK [2][-]{subsection.5.4.2}{Pr\351sentation et discussion des r\351sultats}{section.5.4}% 50
+\BOOKMARK [2][-]{subsection.5.4.3}{Discussion globale des r\351sultats}{section.5.4}% 51

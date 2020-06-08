@@ -2013,14 +2013,24 @@ Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH
 
 \section{Méthodologie}
 
+\subsection{Déroulement des expérimentations}
+
 Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non l'usage de la sécurité dans la joining phase (demandant le Join Exchange CoJP). La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}, la comparant à un déploiement standard. D'autres métriques pertinentes sont sélectionnées pour observer les effets de la méthode NPEB sur la formation du réseau. Chaque résultat obtenu est discuté et justifié.\\
 
 Les variations étudiées ici se concentrent sur des modifications du déroulement de la joining phase, et non des caractéristiques du réseau en lui-même (nombre de noeuds, etc.). Le simulateur 6TiSCH permet de configurer ces caractéristiques, imposant des contraintes sur le réseau simulé. Pour toutes les expériences, une disposition des noeuds aléatoire est utilisée, mais elle est soumise à des contraintes que le simulateur respecte au mieux \cite{simulating-6TiSCH}. Ainsi, on impose que chaque noeud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 0.5. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. Afin de rester dans des temps de calcul d'ordre raisonnable pour la reproductibilité de celles-ci, le nombre de runs (simulation sur une nouvelle instance de réseau) est limité à 10.\\
 
 La \wordlink{Section}{impact_secjoin} illustre l'impact de l'usage de la sécurité sur la formation du réseau. Un réseau de 10 noeuds est considéré pour l'évaluer. Comme ces expériences se concentrent uniquement sur la joining phase, aucune application n'est simulée sur chacun des noeuds, le trafic est donc relatif aux couches plus basses exclusivement. Les expériences sont orchestrées en utilisant le framework développé au Service Réseaux et Télécommunications, qui fonctionne par dessus une version du simulateur 6TiSCH modifiée mais permettant un comportement conforme au standard.\\
 
-La \wordlink{Section}{eval_NPEB} étudie les performances de la méthode NPEB en comparaison avec un déploiement standard. Afin d'établir la viabilité de la méthode, le réseau considéré contient 30 noeuds, tel que cela peut être le cas dans des déploiements réels \cite{openbenchmark}. Une application qui envoie des paquets périodiquement toutes les 60 secondes est instanciée sur chaque noeud, ce trafic interférer avec la méthode NPEB. Le simulateur 6TiSCH de base est modifié tel que décrit dans la \wordlink{Section}{implem_NPEB}, et de nouvelles méthodes d'écriture et de traitement des logs sont ajoutées pour illustrer les métriques pertinentes. Le framework n'est donc pas utilisé ici. Afin de supporter les mêmes métriques et les nouvelles procédures de traitement des sorties, le simulateur 6TiSCH de base est augmenté \footnote{\url{https://github.com/RemDec/6tisch-simulator-joinmetrics.git}}.
+La \wordlink{Section}{eval_NPEB} étudie les performances de la méthode NPEB en comparaison avec un déploiement standard. Afin d'établir la viabilité de la méthode, le réseau considéré contient 30 noeuds, tel que cela peut être le cas dans des déploiements réels \cite{openbenchmark}. Une application qui envoie des paquets périodiquement toutes les 60 secondes est instanciée sur chaque noeud, ce trafic interférant avec la méthode NPEB. Le simulateur 6TiSCH de base est modifié tel que décrit dans la \wordlink{Section}{implem_NPEB}, et de nouvelles méthodes d'écriture et de traitement des logs sont ajoutées pour illustrer les métriques pertinentes. Le framework n'est donc pas utilisé ici. Afin de supporter les mêmes métriques et les nouvelles procédures de traitement des sorties, le simulateur 6TiSCH de base est augmenté \footnote{\url{https://github.com/RemDec/6tisch-simulator-joinmetrics.git}}.
 
+\newpage
+
+\subsection{Paramètrage des procédures de join}
+\label{exp_custom}
+
+\subsubsection{Déploiement standard (EBs)}
+
+\subsubsection{Déploiement avec la méthode NPEB}
 
 \newpage
 
@@ -2109,14 +2119,16 @@ Comme discuté dans la \wordlink{Section}{intuition_NPEB}, la méthode NPEB perm
 À chaque run, pour chaque noeud, la charge consommée jusqu'à ce que ce dernier passe une étape est journalisée. Ces mesures sont prises en coulombs, de manière absolue depuis l'initialisation du réseau (ASN 0).
 
 \subsubsection{Première position dans la topologie}
+\label{metric_hops}
 
-La \wordlink{Section}{intuition_NPEB} mettait en avant un autre bénéfice intuitivement attribuable à la méthode NPEB : la position avantageuse dans la topologie du voisin sélectionné. Afin de l'illustrer, le nombre de sauts effectués par le premier paquet applicatif de chaque noeud (destiné au Root) est journalisé. Les simulations sont configurées de sorte que chaque noeud ait le temps d'émettre un tel paquet après avoir rejoint le réseau.
+La \wordlink{Section}{intuition_NPEB} mettait en avant un autre bénéfice intuitivement attribuable à la méthode NPEB : la position avantageuse dans la topologie du voisin sélectionné. Afin de l'illustrer, le nombre de sauts effectués par le premier paquet applicatif de chaque noeud (destiné au Root) est journalisé. Les simulations sont configurées de sorte que chaque noeud ait le temps d'émettre un tel paquet après avoir rejoint le réseau. À noter que le voisin avec lequel un pledge décide de lancer son processus de join n'est pas systématiquement celui qui sera son preferred parent au moment de transmettre son premier paquet applicatif. Cette métrique est donc légèrement biaisée.
 
 \subsubsection{Latence sur le trafic}
 
 La latence correspond à l'interval de temps nécessaire à un paquet pour arriver à sa destination. Intuitivement, si le nombre de sauts est globalement réduit avec la méthode NPEB, la latence devrait être impactée positivement. Cette métrique permet également de vérifier que la méthode NPEB n'impacte pas négativement les échanges applicatifs. Il s'agit d'une métrique disponible de base dans le simulateur 6TiSCH.
 
 \subsubsection{Longévité du réseau}
+\label{metric_lifetime}
 
 L'estimation de la longévité d'un noeud est une autre métrique proposée par le simulateur 6TiSCH. La consommation moyenne de courant du noeud \textit{avg\_current\_uA} est d'abord estimée en se basant sur la charge totale consommée à la fin de la simulation et du temps écoulé depuis la synchronisation du noeud. En faisant l'hypothèse que le noeud est alimenté par une pile AA (2821.5 \textit{mAh}), la métrique estime le nombre d'années d'activité du noeud de la sorte :
 \[
@@ -2129,6 +2141,7 @@ Cette estimation permet de vérifier que la méthode NPEB n'impacte pas négativ
 \subsection{Présentation et discussion des résultats}
 
 \subsubsection{Temps cumulé lors des étapes du join}
+\label{results_times}
 
 Les \wordlink{Figures}{fig:EBtimes} et \ref{fig:NPEBtimes} illustrent respectivement les temps cumulés pour le déploiement standard et la méthode NPEB. Il s'agit, pour chaque étape, des temps récupérés sur toutes les runs pour tous les noeuds du réseau (aucune distinction n'est faite entre eux). Le trait pointillé représente la moyenne de chaque distribution. La ligne verticale bleue représente le temps moyen de convergence du réseau sur toutes les runs. La \wordlink{Table}{table_times} détaille les distributions des temps pour chaque étape numériquement, pour le cas standard et avec la méthode NPEB.
 
@@ -2184,6 +2197,7 @@ La \wordlink{Table}{table_times} décrit plus précisément les performances de 
 
 
 \subsubsection{Charge consommée cumulée lors des étapes du join}
+\label{results_charges}
 
 Les \wordlink{Figures}{fig:EBcharges} et \ref{fig:NPEBcharges} représentent la charge totale consommée par tous les noeuds aux différentes étapes considérées, toutes runs confondues. Le délai laissé passé après l'autorisation d'émettre des (NP)EBs (décrit à la \wordlink{Section}{metric_charges}) est de 200 secondes, ce qui correspond à à peu près 200 cycles de slotframe. Les \wordlink{Figures}{fig:EBchargesjoined} et \ref{fig:NPEBchargesjoined} détaillent les distributions de la charge consommée jusqu'à l'accomplissement du join sécurisé, respectivement pour le déploiement standard et la méthode NPEB. La \wordlink{Table}{table_charges} donne les valeurs numériques pour chaque étape considérée.
 
@@ -2260,6 +2274,11 @@ La \wordlink{Table}{table_charges} permet d'avancer qu'en moyenne, un pledge con
 \end{table}
 
 \subsubsection{Première position dans la topologie}
+\label{results_hops}
+
+Les \wordlink{Figures}{fig:EBfirsthop} et \ref{fig:NPEBfirsthop} donnent, respectivement pour le déploiement standard et la méthode NPEB, les distributions du nombre de sauts effectués par le premier envoyé par chaque noeud, toutes runs confondues. Il s'agit donc de la première position effective dans la topologie au niveau applicatif pour chaque noeud, qui peut être amené à sélectionner un autre preferred parent par la suite (non repris ici).
+
+\newpage
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\textwidth}
@@ -2276,7 +2295,14 @@ La \wordlink{Table}{table_charges} permet d'avancer qu'en moyenne, un pledge con
 	\end{minipage}	
 \end{figure}
 
+\vspace{0.2cm}
+
+Les deux distributions sont relativement similaires. La méthode NPEB ne semble par apporté les améliorations attendues, qui se seraient manifesté par une distribution plus lourde pour les petits nombres de sauts. 
+
 \subsubsection{Latence sur le trafic}
+\label{results_latence}
+
+Les \wordlink{Figures}{fig:EBlatence} et \ref{fig:NPEBlatence} décrivent les latences moyennes calculées pour chaque noeud, toutes runs confondues. Il s'agit de la latence sur les paquets applicatifs, donc dans ce cas uniquement de trafic upstream dirigé vers le Root (de par la configuration de l'application). Un noeud commence à générer des paquets applicatifs une fois la topologie rejointe et son premier DAO envoyé, le trafic est donc suffisamment conséquent pour être représentatif : les runs tournent pendant 55 minutes et la majorité (75\%) des noeuds ont rejoint après 10 minutes (voir \wordlink{Section}{result_times}).
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\textwidth}
@@ -2293,7 +2319,16 @@ La \wordlink{Table}{table_charges} permet d'avancer qu'en moyenne, un pledge con
 	\end{minipage}	
 \end{figure}
 
+Les données obtenues sont similaires pour le déploiement standard et la méthode NPEB. On en déduit que la méthode NPEB n'impacte pas significativement la latence liée aux paquets applicatifs.
+
+\newpage
+
 \subsubsection{Longévité du réseau}
+\label{results_lifetime}
+
+Les \wordlink{Figures}{fig:EBlatence} et \ref{fig:NPEBlatence} donnent,  respectivement pour le déploiement standard et la méthode NPEB, les CDFs relatives aux durées de vie estimées pour chaque noeud, toutes runs confondues. La durée de vie est exprimée en années et est estimée selon la procédure décrite dans la \wordlink{Section}{metric_lifetime}.
+
+\vspace{0.2cm}
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\textwidth}
@@ -2310,10 +2345,33 @@ La \wordlink{Table}{table_charges} permet d'avancer qu'en moyenne, un pledge con
 	\end{minipage}	
 \end{figure}
 
+\vspace{0.2cm}
+
+Selon cette méthode d'estimation, un noeud alimenté par une pile AA dans un déploiement standard aura une durée de vie de 5 ans maximum (\wordlink{Figure}{fig:EBlifetime}). Considérant l'usage de la méthode NPEB, cette durée de vie est atteinte par plus de 60\% des noeuds (\wordlink{Figure}{fig:NPEBlifetime}). Ces estimations sont cohérentes avec les résultats des mesures sur les charges consommées présentés par la \wordlink{Section}{results_charges}. On peut en conclure que l'usage de la méthode NPEB permet de rallonger la durée de vie du réseau, sous réserve qu'il s'agit d'estimations sur une période de 55 minutes d'activité. Dans un déploiement réel, une fois le réseau ayant convergé, il est attendu qu'il vive plusieurs années durant lesquelles il n'y a pas de nouveau noeud introduit. Les (NP)EBs ont donc une utilité plus relative à la re-synchronisation. Dans cette optique, les fréquences d'émission de NPEB devraient diminuer une fois la réseau ayant convergé, ceux-ci étant  moins pertinents pour un réseau qui a déjà convergé.
+
+\newpage
+
 \subsection{Discussion globale des résultats} 
 
+La méthode NPEB a été élaborée avec un objectif double qui était le suivant :
+\begin{itemize}[label=$\bullet$]
+\item accélerer et optimiser en terme d'énergie (du point de vue du pledge) le processus de join
+\item permettre au pledge de sélectionner le meilleur voisin possible avec lequel initier le processus de join
+\end{itemize}
 
+\vspace{0.3cm}
 
+Selon les résultats présentés dans les \wordlink{Sections}{results_times} et \ref{results_charges}, le premier sous-objectif est atteint. En revanche, la \wordlink{Section}{results_hops} indique que le second objectif n'est pas atteint. Cependant, comme mentionné par la \wordlink{Section}{metric_hops} qui présente la métrique, son interprétation est légèrement biaisée si on la prend pour quantifier le fait que le meilleur voisin soit choisi pour le processus de join spécifiquement. Dans les faits, la finalité reste qu'il est souhaitable que les paquets effectuent le moins de sauts possibles, se baser sur ce trafic pour quantifier l'effet de la méthode NPEB fait donc sens. La \wordlink{Section}{results_latence} établit que la méthode NPEB ne génère pas de latence supplémentaire significative dans le réseau. Finalement, la \wordlink{Section}{results_lifetime} donne une estimation de la viabilité de la méthode NPEB sur des plus longues périodes que celles considérées pour les simulations. Les résultats sont positifs en considérant qu'une estimation sur des durées de 55 minutes est représentative.\\
+
+Dans l'ensemble, selon les métriques considérées, la méthode NPEB a montré des gains de performances ou au pire ne provoque aucune perte. Cependant, ces résultats restent intrinsèquement liés à deux choses : la configuration du réseau et les paramètres de la méthode NPEB fixés pour toutes les expérimentations.\\
+
+La configuration du réseau comprend notamment la disposition de la topologie et la densité du réseau en terme de noeuds. Pour les expérimentations décrites dans ce chapitre, la disposition des noeuds était aléatoire, sous des contraintes sur les voisins de chaque noeud imposées au simulateur. En considérant une topologie dite linéaire (les noeuds forment une chaîne depuis le Root), la méthode NPEB a intuitivement moins d'utilité : chaque noeud a peu de voisins et ceux-ci sont vraisembablement trop éloignés pour un pledge (de par la disposition particulière ``en ligne"). La densité du réseau, qui est de fait liée à la disposition de la topologie, a également un impact sur le comportement de la méthode NPEB. Un réseau plus dense augmente le nombre de voisins de chaque noeud. Un noeud émettant des NPEBs pourra alors faire une discrimination pertinente et proposer les meilleurs voisins parmi tous ceux connus. Un pledge sera à même de sélectionner efficacement un bon voisin parmi l'ensemble fourni à sa disposition, ce qu'avec un déploiement standard il ne ferait pas (arrêt de l'écoute active après \texttt{NUM\_NEIGHBORS\_TO\_WAIT}=2 voisins entendus).\\
+
+La méthode NPEB possède de nombreux paramètres et processus décisionnels qui impactent directement son comportement, fixés pour les expérimentations tel que décrit dans la \wordlink{Section}{exp_custom}. Il n'a pas été établi quelles seraient les valeurs optimales de ces paramètres, celles-ci variant vraisembablement en fonction de la configuration du réseau. Les processus décisionnels décrits dans la \wordlink{Section}{decisional} se veulent aussi basiques que possibles afin de servir de base comparative. Les résultats de la méthode NPEB sont donc grandement dépendants de ces éléments configurables.\\
+
+D'autres métriques pourraient être considérer pour quantifier le gain de performances de la méthode NPEB. Par exemple, le duty cycle d'un pledge avant qu'il ne synchronise avec un voisin sélectionné pourrait être comparé avec un déploiement standard. À noter que la \wordlink{Section}{results_charges} permet d'observer directement le résultat qu'aurait un duty cycle peu élevé, entraînant une diminution de la charge consommée.\\
+
+En conclusion, la méthode NPEB apporte de bons résultats par rapport au déploiement standard, en utilisant une configuration basique de la méthode dans un réseau où chaque noeud possède au moins 3 voisins dont les liens sont caractérisés par un PDR supérieur à 50\%. Les expérimentations compilent les résultats obtenus sur 10 runs indépendantes, validant que les gains de performances observés ne sont pas les fruits du hasard.
 
 \chapter*{Conclusion et recommandations}
 
