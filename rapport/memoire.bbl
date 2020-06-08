@@ -52,6 +52,12 @@ Diego Dujovne and Michael Richardson.
   Internet Engineering Task Force, February 2020.
 \newblock Work in Progress.
 
+\bibitem{OSCOREtimes}
+Arnaud Durand, Pascal Gremaud, Jacques Pasquier, and Urs Gerber.
+\newblock Trusted lightweight communication for iot systems using hardware
+  security.
+\newblock pages 1--4, 10 2019.
+
 \bibitem{telosb}
 Dionysios Efstathiou, Stelios Ioannou, Sotiris Nikoletseas, and Dimitra
   Patroumpa.
