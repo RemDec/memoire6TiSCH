@@ -2025,11 +2025,11 @@ Une comparaison des simulateurs et émulateurs supportant la pile réseau 6TiSCH
 
 Les expérimentations sont divisées en deux parties. La première s'intéresse à la joining phase telle que décrite dans les spécifications 6TiSCH, que le simulateur implémente conformément. Cependant, comme le simulateur se restreint au niveau comportemental, l'échange CoJP est bien simulé mais les traitements cryptographiques liés à OSCORE (dérivation de contextes, chiffrement/déchiffrement) ne sont pas pris en compte. Ces expérimentations visent à évaluer quel est l'impact de l'échange CoJP sur la joining phase. Des métriques pertinentes sont choisies pour illustrer au mieux les différences en considérant ou non l'usage de la sécurité dans la joining phase (demandant le Join Exchange CoJP). La seconde partie évalue la méthode NPEB présentée dans le \wordlink{Chapitre}{chap_NPEB}, la comparant à un déploiement standard. D'autres métriques pertinentes sont sélectionnées pour observer les effets de la méthode NPEB sur la formation du réseau. Chaque résultat obtenu est discuté et justifié.\\
 
-Les variations étudiées ici se concentrent sur des modifications du déroulement de la joining phase, et non des caractéristiques du réseau en lui-même (nombre de nœuds, etc.). Le simulateur 6TiSCH permet de configurer ces caractéristiques, imposant des contraintes sur le réseau simulé. Pour toutes les expériences, une disposition des nœuds aléatoire est utilisée, mais elle est soumise à des contraintes que le simulateur respecte au mieux \cite{simulating-6TiSCH}. Ainsi, on impose que chaque nœud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 50\%. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. L'OF0 (\textit{Objective Function Zero}, \cite{rfc6552}) est utilisée comme Objective Function par RPL. Afin de rester dans des temps de calcul d'ordre raisonnable pour la reproductibilité de celles-ci, le nombre de runs (simulation sur une nouvelle instance de réseau) est limité à 10. Les expériences menées en parallèle partagent le même seed de base, de sorte que les résultats soient comparables.\\
+Les variations étudiées ici se concentrent sur des modifications du déroulement de la joining phase, et non des caractéristiques du réseau en lui-même (nombre de nœuds, etc.). Le simulateur 6TiSCH permet de configurer ces caractéristiques, imposant des contraintes sur le réseau simulé. Pour toutes les expériences, une disposition des nœuds aléatoire est utilisée, mais elle est soumise à des contraintes que le simulateur respecte au mieux \cite{simulating-6TiSCH}. Ainsi, on impose que chaque nœud doit avoir au minimum 3 voisins avec lesquels il a un lien caractérisable par un PDR minimum de 50\%. Pour se placer dans la situation d'un déploiement basique conforme au standard, la Scheduling Function considérée est MSF pour toutes les expérimentations. L'OF0 (\textit{Objective Function Zero}, \cite{rfc6552}) est utilisée comme Objective Function par RPL. Afin de rester dans des temps de calcul d'ordre raisonnable pour la reproductibilité de celles-ci, le nombre de runs (simulation sur une nouvelle instance de réseau) est limité à 20 et 10. Les expériences menées en parallèle partagent le même seed de base, de sorte que les résultats soient comparables.\\
 
-La \wordlink{Section}{impact_secjoin} illustre l'impact de l'usage de la sécurité sur la formation du réseau. Un réseau de 10 nœuds est considéré pour l'évaluer. Comme ces expériences se concentrent uniquement sur la joining phase, aucune application n'est simulée sur chacun des nœuds, le trafic est donc relatif aux couches plus basses exclusivement. Les expériences sont orchestrées en utilisant le framework développé au Service Réseaux et Télécommunications, qui fonctionne par dessus une version du simulateur 6TiSCH modifiée mais permettant un comportement conforme au standard.\\
+La \wordlink{Section}{impact_secjoin} illustre l'impact de l'usage de la sécurité sur la formation du réseau. Un réseau de 10 nœuds est considéré pour l'évaluer. Comme ces expériences se concentrent uniquement sur la joining phase, aucune application n'est simulée sur chacun des nœuds, le trafic est donc relatif aux couches plus basses exclusivement. Les expériences sont orchestrées en utilisant le framework développé au Service Réseaux et Télécommunications, qui fonctionne par dessus une version du simulateur 6TiSCH modifiée mais permettant un comportement conforme au standard. Les résultats sont obtenus sur 20 runs.\\
 
-La \wordlink{Section}{eval_NPEB} étudie les performances de la méthode NPEB en comparaison avec un déploiement standard. Afin d'établir la viabilité de la méthode, le réseau considéré contient 30 nœuds, tel que cela peut être le cas dans des déploiements réels \cite{openbenchmark}. Une application qui envoie des paquets périodiquement toutes les 60 secondes est instanciée sur chaque nœud, ce trafic interférant avec la méthode NPEB. Le simulateur 6TiSCH de base est modifié tel que décrit dans la \wordlink{Section}{implem_NPEB}, et de nouvelles méthodes d'écriture et de traitement des logs sont ajoutées pour illustrer les métriques pertinentes. Le framework n'est donc pas utilisé ici. Afin de supporter les mêmes métriques et les nouvelles procédures de traitement des sorties, le simulateur 6TiSCH de base est augmenté \footnote{\url{https://github.com/RemDec/6tisch-simulator-joinmetrics.git}}.
+La \wordlink{Section}{eval_NPEB} étudie les performances de la méthode NPEB en comparaison avec un déploiement standard. Afin d'établir la viabilité de la méthode, le réseau considéré contient 30 nœuds, tel que cela peut être le cas dans des déploiements réels \cite{openbenchmark}. Une application qui envoie des paquets périodiquement toutes les 60 secondes est instanciée sur chaque nœud, ce trafic interférant avec la méthode NPEB. Le simulateur 6TiSCH de base est modifié tel que décrit dans la \wordlink{Section}{implem_NPEB}, et de nouvelles méthodes d'écriture et de traitement des logs sont ajoutées pour illustrer les métriques pertinentes. Le framework n'est donc pas utilisé ici. Afin de supporter les mêmes métriques et les nouvelles procédures de traitement des sorties, le simulateur 6TiSCH de base est augmenté \footnote{\url{https://github.com/RemDec/6tisch-simulator-joinmetrics.git}}. Les résultats sont obtenus sur 10 runs.
 
 \newpage
 
@@ -2086,19 +2086,35 @@ Le temps de join pour chaque nœud a la même sémantique que pour le temps de c
 
 \subsubsection{Temps de convergence}
 
-Les temps de convergence récupérés pour les 10 runs et avec/sans sécurité du join sont représentés par la \wordlink{Figure}{fig:convergence}. La simulation a été paramétrée de sorte qu'elle ne se termine pas avant la convergence, et ce pour toutes les runs.
+Les temps de convergence récupérés pour les 20 runs et avec/sans sécurité du join sont représentés par la \wordlink{Figure}{fig:convergence}. La \wordlink{Table}{table_convergence} reprend les statistiques calculées sur ces temps. La simulation a été paramétrée de sorte qu'elle ne se termine pas avant la convergence, et ce pour toutes les runs.
 
 	\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesTimeConvergence10.png}
+	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesTimeConvergence20.png}
 	\caption{Temps de convergence d'un réseau de 10 nœuds, mesuré sur 10 runs}
 	\label{fig:convergence}
 	\end{figure}
 
 \vspace{0.1cm}
-On observe le phénomène attendu : l'usage de la sécurité dans le join rallonge le temps de convergence du réseau. En moyenne sur les 10 runs (donnée par la ligne pointillée), sans la sécurité le réseau converge en 40 minutes, tandis ce qu'avec elle, il converge en 45 minutes. Cependant, l'écart-type est deux fois plus élevé avec la sécurité : 414 secondes contre 202 secondes sans. Cela est explicable par le fait que le Join Exchange CoJP doit traverser l'entièreté du réseau et opérer plusieurs sauts où des retransmissions peuvent être nécessaires.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+	\hline
+    \textbf{\textbf{Statut de la sécurité}} & moyenne & écart-type & minimum & Q1 & Q2 & Q3 & maximum\\
+    \hline
+    Désactivée & 1618.3 & 902.5 & 564.5 & 837.2 & 1490.8 & 2077.3 & 3541.2 \\
+    \hline
+    Activée & 1671.9 & 916.5 & 561.6 & 893.9 & 1630.6 & 1902.8 & 3543.0 \\
+    \hline
+\end{tabular}
+\caption{Statistiques des temps de convergences sur 20 runs, avec et sans sécurité (\textit{s})}
+\label{table_convergence}
+\end{table}
 
 \newpage
+
+On observe le phénomène attendu, mais en faible proportion : l'usage de la sécurité dans le join rallonge le temps de convergence du réseau. En moyenne sur les 20 runs (donnée par la ligne pointillée), sans la sécurité le réseau converge en 40 minutes, tandis ce qu'avec elle, il converge en 45 minutes. Cependant, l'écart-type est deux fois plus élevé avec la sécurité : 414 secondes contre 202 secondes sans. Cela est explicable par le fait que le Join Exchange CoJP doit traverser l'entièreté du réseau et opérer plusieurs sauts où des retransmissions peuvent être nécessaires.
 
 
 \subsubsection{Temps de join individuel}
@@ -2108,7 +2124,7 @@ La \wordlink{Figure}{fig:join_times} illustre l'impact de l'usage de la sécurit
  \vspace{0.2cm}
 	\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesJoiningTimePerNode10.png}
+	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesJoiningTimePerNode20.png}
 	\caption{Temps de join pour 10 nœuds composant le réseau, mesuré sur 10 runs}
 	\label{fig:join_times}
 	\end{figure}
