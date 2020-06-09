@@ -2140,7 +2140,7 @@
                     "min": 0.015573429944616255
                 }
             ], 
-            "convergence_time": 2819.9500000000003, 
+            "convergence_time": 303.79, 
             "app-packets-sent": [
                 {
                     "total": 1474, 
@@ -4373,7 +4373,7 @@
                     "min": 0.8081582660623385
                 }
             ], 
-            "convergence_time": 2851.29, 
+            "convergence_time": 387.88, 
             "app-packets-sent": [
                 {
                     "total": 1491, 
@@ -6597,7 +6597,7 @@
                     "min": 1.4846612490307527
                 }
             ], 
-            "convergence_time": 1985.56, 
+            "convergence_time": 543.17, 
             "app-packets-sent": [
                 {
                     "total": 1484, 
@@ -8681,7 +8681,7 @@
                     "min": 0.03407198880878841
                 }
             ], 
-            "convergence_time": 2353.07, 
+            "convergence_time": 317.43, 
             "app-packets-sent": [
                 {
                     "total": 1409, 
@@ -10916,7 +10916,7 @@
                     "min": 0.5528927222106106
                 }
             ], 
-            "convergence_time": 2756.07, 
+            "convergence_time": 470.51, 
             "app-packets-sent": [
                 {
                     "total": 1495, 
@@ -13079,7 +13079,7 @@
                     "min": 0.32813123941803257
                 }
             ], 
-            "convergence_time": 3087.88, 
+            "convergence_time": 224.05, 
             "app-packets-sent": [
                 {
                     "total": 1435, 
@@ -15280,7 +15280,7 @@
                     "min": 0.23898254597321086
                 }
             ], 
-            "convergence_time": 3082.58, 
+            "convergence_time": 629.27, 
             "app-packets-sent": [
                 {
                     "total": 1462, 
@@ -17441,7 +17441,7 @@
                     "min": 0.055649265200353265
                 }
             ], 
-            "convergence_time": 949.19, 
+            "convergence_time": 285.68, 
             "app-packets-sent": [
                 {
                     "total": 1446, 
@@ -19588,7 +19588,7 @@
                     "min": 0.7010370277745389
                 }
             ], 
-            "convergence_time": 1408.02, 
+            "convergence_time": 352.38, 
             "app-packets-sent": [
                 {
                     "total": 1441, 
@@ -21717,7 +21717,7 @@
                     "min": 0.04594438929285686
                 }
             ], 
-            "convergence_time": 2584.64, 
+            "convergence_time": 235.37, 
             "app-packets-sent": [
                 {
                     "total": 1403, 

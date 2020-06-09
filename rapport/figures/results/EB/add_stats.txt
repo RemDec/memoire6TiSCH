@@ -8,13 +8,13 @@ Synchro  290.0  453.542172  227.731164  181.01  244.0800  428.35  580.9150  1489
 
 --- With convergence times stats
 count      10.000000
-mean     2584.330000
-std       529.529551
-min      1565.330000
-25%      2234.562500
-50%      2623.070000
-75%      2937.740000
-max      3261.090000
+mean     1787.344000
+std       720.973896
+min       833.120000
+25%      1146.670000
+50%      1764.890000
+75%      2366.127500
+max      2981.430000
 
 
 ==== Charge consumed at steps of join process - Number of nodes : 30   Number of runs : 10 (10 converged)

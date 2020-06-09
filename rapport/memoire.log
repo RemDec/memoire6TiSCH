@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  8 JUN 2020 23:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.5.28)  9 JUN 2020 07:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1593,12 +1593,12 @@ File: figures/results/EB/phase_times.png Graphic file (type png)
 Package pdftex.def Info: figures/results/EB/phase_times.png  used on input line
  2203.
 (pdftex.def)             Requested size: 236.8746pt x 188.66452pt.
-<figures/results/NPEB/phase_times.png, id=1505, 417.7206pt x 325.215pt>
+<figures/results/NPEB/phase_times.png, id=1505, 408.3255pt x 325.215pt>
 File: figures/results/NPEB/phase_times.png Graphic file (type png)
 <use figures/results/NPEB/phase_times.png>
 Package pdftex.def Info: figures/results/NPEB/phase_times.png  used on input li
 ne 2209.
-(pdftex.def)             Requested size: 241.70607pt x 188.1782pt.
+(pdftex.def)             Requested size: 241.70607pt x 192.51036pt.
  [83 <./figures/results/EB/phase_times.png> <./figures/results/NPEB/phase_times
 .png>]
 <figures/results/EB/phase_charges.png, id=1530, 435.7881pt x 325.215pt>
@@ -1791,7 +1791,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmtt8.pfb>
-Output written on memoire.pdf (93 pages, 4841714 bytes).
+Output written on memoire.pdf (93 pages, 4843491 bytes).
 PDF statistics:
  1801 PDF objects out of 2073 (max. 8388607)
  1539 compressed objects within 16 object streams

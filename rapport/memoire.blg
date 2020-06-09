@@ -14,43 +14,43 @@ Warning--empty journal in OSCOREvsNDN
 Warning--empty booktitle in multipath
 You've used 47 entries,
             2118 wiz_defined-function locations,
-            758 strings with 12630 characters,
-and the built_in function-call counts, 15624 in all, are:
-= -- 1432
+            760 strings with 12639 characters,
+and the built_in function-call counts, 15743 in all, are:
+= -- 1444
 > -- 997
-< -- 17
+< -- 18
 + -- 396
 - -- 346
-* -- 1125
-:= -- 2713
+* -- 1137
+:= -- 2725
 add.period$ -- 151
 call.type$ -- 47
 change.case$ -- 314
 chr.to.int$ -- 0
 cite$ -- 52
-duplicate$ -- 501
-empty$ -- 1062
+duplicate$ -- 506
+empty$ -- 1075
 format.name$ -- 346
-if$ -- 3183
+if$ -- 3215
 int.to.chr$ -- 0
 int.to.str$ -- 47
 missing$ -- 22
 newline$ -- 248
 num.names$ -- 94
-pop$ -- 364
+pop$ -- 365
 preamble$ -- 1
 purify$ -- 267
 quote$ -- 0
-skip$ -- 389
+skip$ -- 390
 stack$ -- 0
-substring$ -- 520
-swap$ -- 102
-text.length$ -- 17
+substring$ -- 543
+swap$ -- 105
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 188
 warning$ -- 5
-while$ -- 115
+while$ -- 117
 width$ -- 49
-write$ -- 514
+write$ -- 515
 (There was 1 error message)

@@ -28,13 +28,13 @@ Tengfei Chang, Mališa Vučinić, Xavier Vilajosana, Simon Duquennoy, and Diego
 \bibitem{LLSF}
 Tengfei Chang, Thomas Watteyne, Qin Wang, and Xavier Vilajosana.
 \newblock Llsf: Low latency scheduling function for 6tisch networks.
-\newblock 05 2016.
+\newblock page~4, 05 2016.
 
 \bibitem{ReSF}
 Glenn Daneels, Bart Spinnewyn, Steven Latré, and Jeroen Famaey.
 \newblock Resf: Recurrent low-latency scheduling in ieee 802.15.4e tsch
   networks.
-\newblock {\em Ad Hoc Networks}, 69, 11 2017.
+\newblock {\em Ad Hoc Networks}, 69:100--114, 02 2018.
 
 \bibitem{ietf-6tisch-6top-sf0-05}
 Diego Dujovne, Luigi~Alfredo Grieco, Maria~Rita Palattella, and Nicola
