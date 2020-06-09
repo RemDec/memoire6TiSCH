@@ -175,9 +175,9 @@ Enfin, je sais gré aux rapporteurs et au jury pour l'attention portée à l'év
 \vspace{2cm}
 
 \large
-Les réseaux de capteurs sans-fils sont au cœur des applications industrielles de l'Internet des Objets (\textit{Industrial IoT}). Ces réseaux présentent la particularité d'être composés de noeuds restreints en ressources et d'être déployés dans des environnements où les communications radios sont rendues difficiles. Dans de telles conditions, l'utilisation d'une pile réseau classique telle que \textit{TCP/IP} n'est pas envisageable. Depuis 2013, le groupe de travail 6TiSCH à l'IETF travaille à la standardisation d'une pile adaptée à de tels réseaux. Cette pile 6TiSCH, bien que différente de la pile TCP/IP, permet des communications IP et donc une interconnectivité du réseau de capteur avec Internet.\\
+Les réseaux de capteurs sans-fils sont au cœur des applications industrielles de l'Internet des Objets (\textit{Industrial IoT}). Ces réseaux présentent la particularité d'être composés de nœuds restreints en ressources et d'être déployés dans des environnements où les communications radios sont rendues difficiles. Dans de telles conditions, l'utilisation d'une pile réseau classique telle que \textit{TCP/IP} n'est pas envisageable. Depuis 2013, le groupe de travail 6TiSCH à l'IETF travaille à la standardisation d'une pile adaptée à de tels réseaux. Cette pile 6TiSCH, bien que différente de la pile TCP/IP, permet des communications IP et donc une interconnectivité du réseau de capteur avec Internet.\\
 
-Ce travail établit la structure typique d'un réseau dans lequel peut être déployée la pile. Une analyse de la pile 6TiSCH dans sa globalité est menée, dépeignant chaque couche qui la compose et les concepts qui y sont définis, ainsi que l'interaction entre ces couches. Ayant introduit ces différentes couches essentielles à sa compréhension, une attention particulière est portée au mécanisme qui permet à un nouveau noeud de rejoindre un réseau 6TiSCH actif. Cette \textit{joining phase} est analysée en détails du point de vue de la sécurité. Effectivement, la joining phase est un procédé critique en terme de performances et sécurité.  Après avoir introduit les solutions proposées par les standards, un nouveau schéma désigné par ``méthode NPEB" est proposé pour améliorer les performances de la joining phase. Une série d'expérimentations en simulateur sont alors menées pour d'une part évaluer la joining phase standard avec et sans mécanisme de sécurité et d'autre part mesurer les gains de performances la méthode NPEB proposée.\\
+Ce travail établit la structure typique d'un réseau dans lequel peut être déployée la pile. Une analyse de la pile 6TiSCH dans sa globalité est menée, dépeignant chaque couche qui la compose et les concepts qui y sont définis, ainsi que l'interaction entre ces couches. Ayant introduit ces différentes couches essentielles à sa compréhension, une attention particulière est portée au mécanisme qui permet à un nouveau nœud de rejoindre un réseau 6TiSCH actif. Cette \textit{joining phase} est analysée en détails du point de vue de la sécurité. Effectivement, la joining phase est un procédé critique en terme de performances et sécurité.  Après avoir introduit les solutions proposées par les standards, un nouveau schéma désigné par ``méthode NPEB" est proposé pour améliorer les performances de la joining phase. Une série d'expérimentations en simulateur sont alors menées pour d'une part évaluer la joining phase standard avec et sans mécanisme de sécurité et d'autre part mesurer les gains de performances la méthode NPEB proposée.\\
 
 \vspace{2cm}
 
@@ -203,7 +203,7 @@ Ce travail établit la structure typique d'un réseau dans lequel peut être dé
 
 Les réseaux de capteurs sont devenus monnaie courante dans l'industrie, on estime en 2020 que plusieurs dizaines de milliers de réseaux ont été déployés, comptabilisant plus de 18 milliards d'heures de fonctionnement. Originellement, ces réseaux fonctionnaient sur des standards propriétaires tels que WirelessHART et ISA100.1a \cite{stack-IoT}. Bien que capables de performances acceptables en pratique grâce à l'emploi du principe TSCH (\textit{Time Slotted Channel Hopping}) \cite{decentralized}, ces piles réseaux n'offrent pas une connectivité IP et ne s'inscrivent donc pas dans la tendance générale de l'IoT, dont l'interconnectivité avec Internet est une ligne directrice \cite{stack-IoT}. Le groupe de travail 6TiSCH est créé à l'IETF en 2013 avec pour double objectif de standardiser l'adoption de TSCH dans les réseaux de capteurs 802.15.4 et d'élaborer un pile réseau supportant les communications IP pour ces réseaux restreints. L'ensemble de spécifications produites constitue ce que l'on appelle la pile 6TiSCH.\\
 
-Ce travail caractérise ces réseaux sans-fil restreints, leur architecture typique et les contraintes qui justifient l'élaboration d'une pile réseau adaptée. L'intégralité des différentes couches qui composent la pile 6TiSCH sont passées en revue, ainsi que la façon dont elles interagissent entre elles pour constituer une pile déployable et efficace dans un réseau sans-fil restreint. Une attention particulière est portée à la \textit{joining phase 6TiSCH}, qui dénote la façon dont un nouveau noeud rejoint un réseau 6TiSCH déjà actif. Plus particulièrement, la sécurisation de cette procédure, qui est une phase critique, est analysée en détail. Des expérimentations sont menées en simulateur pour illustrer l'impact de la sécurité sur la joining phase, et une méthode est proposée pour améliorer les performances de la joining phase.\\
+Ce travail caractérise ces réseaux sans-fil restreints, leur architecture typique et les contraintes qui justifient l'élaboration d'une pile réseau adaptée. L'intégralité des différentes couches qui composent la pile 6TiSCH sont passées en revue, ainsi que la façon dont elles interagissent entre elles pour constituer une pile déployable et efficace dans un réseau sans-fil restreint. Une attention particulière est portée à la \textit{joining phase 6TiSCH}, qui dénote la façon dont un nouveau nœud rejoint un réseau 6TiSCH déjà actif. Plus particulièrement, la sécurisation de cette procédure, qui est une phase critique, est analysée en détail. Des expérimentations sont menées en simulateur pour illustrer l'impact de la sécurité sur la joining phase, et une méthode est proposée pour améliorer les performances de la joining phase.\\
 
 Ce document est divisé en deux parties principales. La première partie constitue un état de l'art de la pile 6TiSCH dans sa globalité et des caractéristiques des réseaux dans lesquels elle est destinée à être déployée. Le \wordlink{Chapitre}{chap_intro} introduit les réseaux sans-fil restreints, l'évolution des standards et groupes de travail y contribuant et la technologie TSCH qui est le fondement de la pile 6TiSCH. Le \wordlink{Chapitre}{chap_6TiSCH} précise l'architecture typique des réseaux considérés et établit une analyse couche par couche de la pile 6TiSCH et des principes qui lui sont propres. Finalement, le \wordlink{Chapitre}{joining_analysis} se concentre sur la joining phase qui fait intervenir les différentes couches présentées précédemment, en mettant l'accent sur les mécanismes de sécurité qui la protègent. La seconde partie fait l'état d'un travail expérimental sur la joining phase. Le \wordlink{Chapitre}{chap_NPEB} présente la méthode NPEB, qui est une proposition de nouveau schéma pour l'amélioration des performances de la joining phase. Le \wordlink{Chapitre}{chap_exp} concentre les expérimentations effectuées sur la joining phase en simulateur : des métriques pertinentes sont sélectionnées pour d'une part illustrer l'impact de la sécurité sur celle-ci et d'autre part démontrer les gains de performance apportés par la méthode NPEB.
 
@@ -2082,20 +2082,25 @@ Le \textit{temps de convergence} désigne la durée nécessaire pour que chaque 
 
 Le temps de join pour chaque nœud a la même sémantique que pour le temps de convergence (en fonction de la présence ou non de sécurité). Il est mesuré individuellement pour chaque nœud du réseau. Cela permet d'illustrer le fait que la sécurité ralentit le join pour chaque nœud considéré, et pas uniquement au niveau global.
 
+\subsubsection{Nombre de tentatives pour le CoJP Exchange}
+
+Afin d'expliquer en partie les résultats des mesures de temps prises avec les autres métriques, des mesures sont prises sur le Join Exchange CoJP de façon isolée. Le Join Exchange CoJP est divisé en deux parties (voir \wordlink{Section}{CoJP}) : la Join Request émise par le pledge et relayée par le Join Proxy jusqu'au JRC (nœud Root ici), et la Join Response qui est renvoyée par le Root. Cet échange constitue donc un aller-retour complet à travers tout le réseau, et est donc susceptible d'échouer et de nécessiter des retransmissions. Pour un pledge donné, on mesure d'une part le nombre de Join Requests qu'il a dû envoyer, et d'autre part le nombre de Join Responses que le nœud Root a dû renvoyer vers ce pledge pour qu'il puisse enfin rejoindre le réseau.
+
 \subsection{Présentation et discussion des résultats}
 
 \subsubsection{Temps de convergence}
+\label{results_convergence}
 
 Les temps de convergence récupérés pour les 20 runs et avec/sans sécurité du join sont représentés par la \wordlink{Figure}{fig:convergence}. La \wordlink{Table}{table_convergence} reprend les statistiques calculées sur ces temps. La simulation a été paramétrée de sorte qu'elle ne se termine pas avant la convergence, et ce pour toutes les runs.
 
 	\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesTimeConvergence20.png}
-	\caption{Temps de convergence d'un réseau de 10 nœuds, mesuré sur 10 runs}
+	\includegraphics[width=0.6\linewidth]{results/secjoin/boxesTimeConvergence20.png}
+	\caption{Temps de convergence d'un réseau de 10 nœuds, mesuré sur 20 runs}
 	\label{fig:convergence}
 	\end{figure}
 
-\vspace{0.1cm}
+\newpage
 
 \begin{table}[h]
 \centering
@@ -2112,12 +2117,11 @@ Les temps de convergence récupérés pour les 20 runs et avec/sans sécurité d
 \label{table_convergence}
 \end{table}
 
-\newpage
-
 On observe le phénomène attendu, mais en faible proportion : l'usage de la sécurité dans le join augmente le temps de convergence du réseau. En moyenne sur les 20 runs (donnée par la ligne pointillée), le temps de convergence est d'environ 28 minutes (1 minute supplémentaire est induite quand la sécurité est activée). La moyenne ne permet pas de distinguer de façon significative les deux cas. Les deux distributions sont presque identiques dans leur globalité, comme l'indiquent les données numériques de la \wordlink{Table}{table_convergence}.
 
 
 \subsubsection{Temps de join individuel}
+\label{results_join}
 
 La \wordlink{Figure}{fig:join_times} illustre l'impact de l'usage de la sécurité au niveau individuel, pour chaque nœud du réseau excepté le nœud Root qui a déjà rejoint à l'initialisation de la simulation. Ces mesures sont prises sur les mêmes runs que pour le temps de convergence. 
 
@@ -2131,7 +2135,25 @@ La \wordlink{Figure}{fig:join_times} illustre l'impact de l'usage de la sécurit
 
 Le même phénomène qu'au niveau global est observable : aucune tendance forte ne se dégage des résultats obtenus. Les distributions sont similaires et ne permettent pas d'illustrer le délai additionnel attendu quand la sécurité est activée.
 
+\subsubsection{Nombre de tentatives pour le CoJP Exchange}
+\label{results_CoJP}
+
+La \wordlink{Figure}{fig:join_attempts} donne, pour chaque nœud, le nombre de tentatives pour le Join Exchange CoJP en considérant individuellement la Join Request et la Join Response (toutes runs confondues).
+
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{results/secjoin/boxesJoinExchange20.png}
+	\caption{Nombre de tentatives effectuées pour la Join Request et la Join Response impliquées dans le join de chaque nœud}
+	\label{fig:join_attempts}
+	\end{figure}
+
+\newpage
+
+On constate que le nombre de tentatives est généralement équivalent pour les deux étapes. Ceci est logique, puisque la perte d'une Join Response renvoyée par le Root demandera au pledge d'envoyer une nouvelle Join Request vers le Root. De fait, la charge de retransmission liée au Join Exchange CoJP est répartie de façon équivalente entre le pledge et le Root. Cette charge se présente comme élevée pour certains nœuds qui sont certainement plus mal placés ou ont choisi un Join Proxy qui n'était pas le meilleur possible dans leur voisinage. Les points extrêmes donnent des valeurs allant jusqu'à 10 tentatives requises, mais généralement on observe que 2 tentatives sont suffisantes.
+
 \subsection{Discussion globale des résultats} 
+
+Les métriques de temps de convergence (\wordlink{Section}{results_convergence}) et temps de join par nœud (\wordlink{Section}{results_join}) n'ont pas permis de relever une différence significative entre le cas où la sécurité est activée et désactivée (ne nécessitant alors pas de Join Exchange CoJP). Cependant, les résultats de l'expérimentation présentés par la \wordlink{Section}{results_CoJP} ont montré que le Join Exchange CoJP est un échange coûteux en terme de retransmissions, induisant forcément des délais et une consommation énergétique augmentés.\\
 
  Pour rappel, le simulateur ne prend pas en compte les opérations cryptographiques en tant que telles : seul le Join Exchange est simulé. Dans un déploiement réel, l'usage de la sécurité implique des coûts additionnels. D'une part, le chiffrement utilisé dans 802.15.4 pour sécuriser les frames a un coût non négligeable qui peut aller jusqu'à nécessiter une augmentation de la durée des timeslots. Cela dépend du chiffrement utilisé, de l'utilisation d'hardware dédié, etc. : un travail qui cible cette problématique a été réalisé par Sciancalepore \textit{et al.} \cite{link-layer-sec-impact}. D'autre part, la sécurité au niveau applicatif (OSCORE) n'est pas prise en compte et impacte potentiellement la joining phase. Très peu de données peuvent être trouvées à ce propos : Durand \textit{et al.} \cite{OSCOREtimes} mesurent le temps nécessaire pour le chiffrement/déchiffrement d'un paquet de 6 bytes à $\approx 1.3$ secondes sur un microcontrôleur SAML11 ARM Cortex-M23. Gündoğan \textit{et al.} \cite{OSCOREvsNDN} établissent une comparaison entre OSCORE et d'autres solutions de chiffrement applicatif mais ne rentrent pas en détail dans les performances d'OSCORE.
 
