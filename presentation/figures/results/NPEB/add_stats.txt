@@ -1,0 +1,29 @@
+==== Time elapsed at steps of join process - Number of nodes : 30   Number of runs : 10 (10 converged)
+         value                                                              
+         count        mean        std   min    25%      50%      75%     max
+phase                                                                       
+RPLjoin  290.0  132.693207  86.603129  3.06  79.00  123.585  173.215  631.29
+SecJoin  290.0  128.945828  87.127895  2.05  76.09  118.020  172.145  629.27
+Synchro  290.0   86.936069  79.177841  1.02  19.70   73.745  128.070  444.49
+
+--- With convergence times stats
+count     10.000000
+mean     374.953000
+std      133.906995
+min      224.050000
+25%      290.207500
+50%      334.905000
+75%      449.852500
+max      629.270000
+
+
+==== Charge consumed at steps of join process - Number of nodes : 30   Number of runs : 10 (10 converged)
+               value                                                                        
+               count       mean        std     min        25%       50%        75%       max
+phase                                                                                       
+200s after EB  290.0  71.719880  50.582847  9.6500  31.565100  63.97075  97.849625  289.0501
+RPLjoin        290.0  60.638126  49.649056  0.8624  21.250125  53.69550  87.031975  282.4686
+SecJoin        290.0  60.230096  49.803209  0.7689  20.900650  53.26870  86.938475  282.3751
+Synchro        290.0  54.580159  49.945549  0.6690  12.643700  45.85400  80.153300  282.1532
+
+
