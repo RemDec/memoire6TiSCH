@@ -237,8 +237,25 @@
     
     \frame{
         \frametitle{La joining phase}
-       
+        Réseau 6TiSCH de noeuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4. et \textbf{clés} distribuées par l'autorité du réseau (\textit{JRC}).\\
+        \vspace{0.3cm}
+        Un noeud qui veut rejoindre (\textit{pledge)} n'a pas ces clés.\\
+        \vspace{0.1cm}
+        Un noeud déjà raccordé fait office de \textit{Join Proxy} intermédiaire entre le pledge et l'autorité du réseau.\\
+\vspace{0.1cm}        
+        $\rightarrow$ émission de frame spéciales (EBs) par les noeuds déjà raccordés\\
+        $\rightarrow$ joining phase pour se synchroniser + obtenir les clés\\
+        \vspace{0.3cm}
+        Le pledge possède un contexte de sécurité pré-établi (PSK) partagé avec le JRC.\\
+        $\rightarrow$ échanges pledge $\leftrightarrow$ JRC (\textit{Join Exchange CoJP}) protégés au niveau applicatif par un contexte partagé (\textit{OSCORE})
+        
+    }
     
+    \frame{
+    \begin{figure}
+    \includegraphics[width=0.75\linewidth]{Joining_phase_network}
+    \caption{Join Exchange CoJP opéré lors de la joining phase d'un pledge}
+    \end{figure}
     }
     
     \section{Méthode NPEB et expérimentations}
@@ -256,6 +273,29 @@
     
     }
     
+	\frame{
+	\begin{overprint}
+	\onslide<1>    \begin{figure}
+    \includegraphics[width=\linewidth]{NPEB_step1}
+    \caption{[Cycle t] État initial du réseau où les NPtables des nœuds sont déjà alimentées}
+    \end{figure}
+	
+	\onslide<2>    \begin{figure}
+    \includegraphics[width=1\linewidth]{NPEB_step2}
+    \caption{[Cycle t+1] Une itération de slotframe écoulée, deux NPEBs programmés pour ce nouveau cycle}
+    \end{figure}
+    
+    	\onslide<3>    \begin{figure}
+    \includegraphics[width=\linewidth]{NPEB_step3}
+    \caption{[Cycle t+2] sommeil du pledge jusqu'à la cell d'annonce indiquée par N1}
+    \end{figure}
+    
+    	\onslide<4>    \begin{figure}
+    \includegraphics[width=\linewidth]{NPEB_step4}
+    \caption{[Cycle t+4] sommeil du pledge jusqu'à la cell d'annonce indiquée par root et lancement de la suite du processus de join avec celui-ci}
+    \end{figure}
+    \end{overprint}
+	}    
     
     \subsection{Évaluation de l'impact de sécurité sur la joining phase}	
 	
