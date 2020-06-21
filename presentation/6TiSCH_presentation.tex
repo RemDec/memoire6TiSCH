@@ -271,6 +271,18 @@
     \frame{
         \frametitle{Principes de la méthode NPEB}
     
+        NPEB : \textit{Neighbors propositions EB}, augmentation des EBs standards\\
+        
+        \vspace{0.2cm}
+        Principe : un noeud annonce certains de ses voisins, proposés aux pledges qui évitent une écoute active naïve (\textbf{processus itératif d'écoute} de proposition en proposition).\\
+        \vspace{0.4cm}
+        Détermination du ``meilleur voisin" basée sur $\neq$ critères\\
+        \vspace{0.2cm}
+        Maintien d'une \textit{NPtable} par pledge et noeuds émettant EBs
+        \begin{figure}
+        \includegraphics[width=\linewidth]{NPtable}
+        \caption{Exemple de NPtable et statuts d'écoute possibles (\texttt{None}/\texttt{0}/\textit{RSSI})}
+        \end{figure}
     }
     
 	\frame{
@@ -301,7 +313,24 @@
 	
     \frame{
         \frametitle{Impact de sécurité sur la joining phase}
+                \begin{figure}
+        \includegraphics[width=0.65\linewidth]{{results/secjoin/boxesTimeConvergence20}}
+        \caption{Temps de convergence avec/sans sécurité (Join Exchange CoJP)}
+        \end{figure}
+    }
     
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.75\linewidth]{{results/secjoin/boxesJoiningTimePerNode20}}
+        \caption{Temps de join pour chaque noeud individuellement}
+        \end{figure}
+    }
+    
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.75\linewidth]{{results/secjoin/boxesJoinExchange20}}
+        \caption{Tentatives nécessaires pour chaque partie du Join Exchange CoJP}
+        \end{figure}
     }
     
     \subsection{Évaluation des performances de la méthode NPEB}	
