@@ -8,5 +8,5 @@
 \beamer@sectionintoc {3}{M\IeC {\'e}thode NPEB et exp\IeC {\'e}rimentations}{14}{0}{3}
 \beamer@subsectionintoc {3}{1}{Principes de la m\IeC {\'e}thode NPEB}{15}{0}{3}
 \beamer@subsectionintoc {3}{2}{\IeC {\'E}valuation de l'impact de s\IeC {\'e}curit\IeC {\'e} sur la joining phase}{20}{0}{3}
-\beamer@subsectionintoc {3}{3}{\IeC {\'E}valuation des performances de la m\IeC {\'e}thode NPEB}{23}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{28}{0}{4}
+\beamer@subsectionintoc {3}{3}{\IeC {\'E}valuation des performances de la m\IeC {\'e}thode NPEB}{24}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{29}{0}{4}
