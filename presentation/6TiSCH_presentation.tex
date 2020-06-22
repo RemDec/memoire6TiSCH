@@ -337,7 +337,47 @@
 
     \frame{
         \frametitle{Performances de la méthode NPEB}
+        Intuitivement, la méthode NPEB a pour objectif de 
+        \begin{enumerate}
+       
+        \item accélerer et optimiser en terme d'énergie (du point de vue du pledge) le processus de join
+        \item permettre au pledge de sélectionner le meilleur voisin possible avec lequel initier le processus de join
+        \end{enumerate}
+        
+        \vspace{0.3cm}
+        \begin{enumerate}
+        \item $\rightarrow$ division de l'analyse en fonction des étapes du processus de join, comparaison avec/sans NPEB
+        \item $\rightarrow$ aucune amélioration significative, non présenté ici
+        \end{enumerate}
+        \vspace{0.5cm}        
+        Expérimentations : réseau de 30 noeuds, 10 runs et résultats agrégés
+    }
     
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.7\linewidth]{{results/EB/phase_times}}
+        \caption{[EBs] Temps requis pour $\neq$ étapes tous noeuds et runs confondus}
+        \end{figure}
+    }
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.7\linewidth]{{results/NPEB/phase_times}}
+        \caption{\footnotesize [NPEBs] Temps requis pour $\neq$ étapes tous noeuds et runs confondus}
+        \end{figure}
+    }
+    
+    
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.75\linewidth]{{results/EB/phase_charges}}
+        \caption{\footnotesize [EBs] Charges consommées aux $\neq$ étapes tous noeuds et runs confondus}
+        \end{figure}
+    }
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.75\linewidth]{{results/NPEB/phase_charges}}
+        \caption{\footnotesize [NPEBs] Charges consommées aux $\neq$ étapes tous noeuds et runs confondus}
+        \end{figure}
     }
 	
     \section{Conclusion}	
