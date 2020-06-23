@@ -113,7 +113,7 @@
 	\frame{
 	\frametitle{Contexte}
 	\vspace{0.4cm}
-	Équipements de l'\textit{Industrial IoT} :
+	Équipements de l'\textit{Industrial IoT} (nœud) :
 	\begin{itemize}
 	\item Limités en ressources : mémoire, CPU, stockage, radio
 	\item Limités en capacité énergétique (batteries)
@@ -122,9 +122,9 @@
 	Caractéristiques des \textit{Wireless Sensors Networks} :
 	\begin{itemize}
 	\item \textit{Multipath fading} et interférences
-	\item Forte densité de noeuds déployés de façon imprécise
-	\item Transmissions multi-hops
-	\item Changements dans la topologie
+	\item Forte densité de nœuds déployés de façon imprécise
+	\item Transmissions \textit{multi-hops}
+	\item Changements dans la topologie (mobilité)
 	\item Phénomène de \textit{clock drifting} entre horloges
 	\end{itemize}
 	}
@@ -132,7 +132,7 @@
 	\frame{
     \begin{figure}
     \includegraphics[width=0.7\linewidth]{arch_IIoT}
-    \caption{Architecture type d'un WSN où 6TiSCH est déployable}
+    \caption{Acteurs d'une architecture type d'un WSN où 6TiSCH est déployable}
     \end{figure}
     }	
 	
@@ -183,13 +183,15 @@
     \frame{
         \frametitle{Principes fondamentaux de TSCH}
         
+        TSCH (\textit{Time Slotted Channel Hopping})
+        
         Combinaison de :
         \begin{enumerate}
         \item TDMA $\rightarrow$ multiplexage en temps       (\textit{timeslot})
         \item FDMA $\rightarrow$ multiplexage en fréquences  (\textit{channelOffset})
         \end{enumerate}
         \vspace{0.5cm}
-        Une communication entre noeuds voisins est caractérisée par un couple (\textit{timeslot}, \textit{channelOffset}) où
+        Une communication entre nœuds voisins est caractérisée par un couple (\textit{timeslot}, \textit{channelOffset}) où
         \begin{enumerate}
         \item \textit{timeslot} donne le moment de la communication
         \item \textit{channelOffset} donne la fréquence à laquelle elle a lieu
@@ -197,7 +199,7 @@
         
         \vspace{0.3cm}
         
-        Les noeuds communiquant possèdent et partagent cette information\\
+        Les nœuds communiquant possèdent et partagent cette information\\
         $\rightarrow$ communications déterministes sur base d'un \textit{schedule}
         
     }
@@ -207,16 +209,16 @@
     \begin{center}
             \begin{columns}[onlytextwidth,T]
 
-        \column{4cm}	
+        \column{5cm}	
         \centering   
     \begin{figure}
-    \includegraphics[width=4cm]{TSCH_basics_matrix}
+    \includegraphics[width=5cm]{TSCH_basics_matrix}
     \caption{Matrice des communications}
     \end{figure}    	        
-        \column{\dimexpr\linewidth-4cm}
+        \column{\dimexpr\linewidth-5cm}
     \begin{figure}
     \includegraphics[width=5cm]{TSCH_basics_graph}
-    \caption{Noeuds communiquant}
+    \caption{Nœuds communiquant}
     \end{figure}    
 	    \end{columns}
 	\end{center}
@@ -237,15 +239,15 @@
     
     \frame{
         \frametitle{La joining phase}
-        Réseau 6TiSCH de noeuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4. et \textbf{clés} distribuées par l'autorité du réseau (\textit{JRC}).\\
+        Réseau 6TiSCH de nœuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4 et \textbf{clés} distribuées par l'autorité du réseau (\textit{JRC}).\\
         \vspace{0.3cm}
-        Un noeud qui veut rejoindre (\textit{pledge)} n'a pas ces clés.\\
+        Un nœud qui veut rejoindre (\textit{pledge)} n'a pas ces clés.\\
         \vspace{0.1cm}
-        Un noeud déjà raccordé fait office de \textit{Join Proxy} intermédiaire entre le pledge et l'autorité du réseau.\\
+        Un nœud déjà raccordé fait office de \textit{Join Proxy} intermédiaire entre le pledge et l'autorité du réseau.\\
 \vspace{0.1cm}        
-        $\rightarrow$ émission de frame spéciales (EBs) par les noeuds déjà raccordés\\
-        $\rightarrow$ joining phase pour se synchroniser + obtenir les clés\\
-        \vspace{0.3cm}
+        $\rightarrow$ émission de frame spéciales (EBs) par les nœuds déjà raccordés\\
+        $\rightarrow$ le pledge initie la joining phase pour se synchroniser + obtenir les clés\\
+        \vspace{0.4cm}
         Le pledge possède un contexte de sécurité pré-établi (PSK) partagé avec le JRC.\\
         $\rightarrow$ échanges pledge $\leftrightarrow$ JRC (\textit{Join Exchange CoJP}) protégés au niveau applicatif par un contexte partagé (\textit{OSCORE})
         
@@ -274,11 +276,12 @@
         NPEB : \textit{Neighbors propositions EB}, augmentation des EBs standards\\
         
         \vspace{0.2cm}
-        Principe : un noeud annonce certains de ses voisins, proposés aux pledges qui évitent une écoute active naïve (\textbf{processus itératif d'écoute} de proposition en proposition).\\
+        Principe : un nœud annonce certains de ses voisins, proposés aux pledges qui évitent une écoute active naïve (\textbf{processus itératif d'écoute} de proposition en proposition, passe en sommeil entre).\\
         \vspace{0.4cm}
         Détermination du ``meilleur voisin" basée sur $\neq$ critères\\
+        \vspace{0.5cm}
+        Maintien d'une \textit{NPtable} par pledge et nœuds émettant NPEBs
         \vspace{0.2cm}
-        Maintien d'une \textit{NPtable} par pledge et noeuds émettant EBs
         \begin{figure}
         \includegraphics[width=\linewidth]{NPtable}
         \caption{Exemple de NPtable et statuts d'écoute possibles (\texttt{None}/\texttt{0}/\textit{RSSI})}
@@ -316,15 +319,15 @@
         \normalsize
         Expérimentations dans le simulateur 6TiSCH :
         \begin{itemize}
-        \item disposition des noeuds aléatoires
-        \item $\forall$ noeud, min. 3 voisins avec PDR $>$ 50\%
+        \item disposition des nœuds aléatoires
+        \item $\forall$ nœud, min. 3 voisins avec PDR $>$ 50\%
         \item configuration de la pile 6TiSCH conforme aux standards
         \item même seed pour runs parallèles
         \end{itemize}
         
         \vspace{2cm}        
         
-        Expérimentations : avec/sans joining phase sécurisée (i.e. Join Exchange CoJP), réseau de 10 noeuds, 20 runs
+        Expérimentations : avec/sans joining phase sécurisée (i.e. Join Exchange CoJP), réseau de 10 nœuds, 20 runs
     }
 
     \frame{
@@ -337,7 +340,7 @@
     \frame{
         \begin{figure}
         \includegraphics[width=0.75\linewidth]{{results/secjoin/boxesJoiningTimePerNode20}}
-        \caption{Temps de join pour chaque noeud individuellement}
+        \caption{Temps de join pour chaque nœud individuellement}
         \end{figure}
     }
     
@@ -365,19 +368,19 @@
         \item $\rightarrow$ aucune amélioration significative, non présenté ici
         \end{enumerate}
         \vspace{0.5cm}        
-        Expérimentations : avec/sans méthode NPEB implémentée, réseau de 30 noeuds, 10 runs et résultats agrégés
+        Expérimentations : avec/sans méthode NPEB implémentée dans le simulateur, réseau de 30 nœuds, 10 runs et résultats agrégés
     }
     
     \frame{
         \begin{figure}
         \includegraphics[width=0.7\linewidth]{{results/EB/phase_times}}
-        \caption{[EBs] Temps requis pour $\neq$ étapes tous noeuds et runs confondus}
+        \caption{[EBs] Temps requis pour $\neq$ étapes tous nœuds et runs confondus}
         \end{figure}
     }
     \frame{
         \begin{figure}
         \includegraphics[width=0.7\linewidth]{{results/NPEB/phase_times}}
-        \caption{\footnotesize [NPEBs] Temps requis pour $\neq$ étapes tous noeuds et runs confondus}
+        \caption{\footnotesize [NPEBs] Temps requis pour $\neq$ étapes tous nœuds et runs confondus}
         \end{figure}
     }
     
@@ -385,13 +388,13 @@
     \frame{
         \begin{figure}
         \includegraphics[width=0.75\linewidth]{{results/EB/phase_charges}}
-        \caption{\footnotesize [EBs] Charge consommée aux $\neq$ étapes tous noeuds et runs confondus}
+        \caption{\footnotesize [EBs] Charge consommée aux $\neq$ étapes tous nœuds et runs confondus}
         \end{figure}
     }
     \frame{
         \begin{figure}
         \includegraphics[width=0.75\linewidth]{{results/NPEB/phase_charges}}
-        \caption{\footnotesize [NPEBs] Charge consommée aux $\neq$ étapes tous noeuds et runs confondus}
+        \caption{\footnotesize [NPEBs] Charge consommée aux $\neq$ étapes tous nœuds et runs confondus}
         \end{figure}
     }
 	
@@ -404,12 +407,12 @@
         \begin{itemize}
         \item Revue de la pile dans son entièreté, conforme aux standards dans leur état actuel (standardisation toujours en cours)
         \vspace{0.1cm}
-        \item Détail de la sécurité de la joining phase fait dans aucun papier publié excepté les standards qui la décrivent eux-mêmes
+        \item Détail de la sécurité de la joining phase fait dans aucun papier publié à ce jour excepté les standards qui la décrivent eux-mêmes
         \end{itemize}
         \vspace{0.3cm}
         \item Expérimentations sur la joining phase
         \begin{itemize}
-        \item Première quantification de l'impact de la sécurité dans la Joining Phase
+        \item Première quantification de l'impact de la sécurité sur la Joining Phase
         \vspace{0.1cm}        
         \item Élaboration de la méthode NPEB pour gagner en performances, un objectif non atteint significativement (sélection meilleur voisin)\\ $\rightarrow$ améliorations possibles par paramètres et processus décisionnels
         \end{itemize}
