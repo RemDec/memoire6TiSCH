@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  23 JUN 2020 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  23 JUN 2020 17:20
 entering extended mode
 **./6TiSCH_presentation.tex
 (6TiSCH_presentation.tex
@@ -1508,12 +1508,12 @@ e 179.
  <./figures/6TiSCH_stack_focus.png>] [9
 
 ]
-<figures/TSCH_basics_matrix.png, id=419, 186.4566pt x 186.81795pt>
+<figures/TSCH_basics_matrix.png, id=419, 186.09525pt x 187.1793pt>
 File: figures/TSCH_basics_matrix.png Graphic file (type png)
 <use figures/TSCH_basics_matrix.png>
 Package pdftex.def Info: figures/TSCH_basics_matrix.png  used on input line 226
 . on input line 226.
-Package pdftex.def Info: Requested size: 142.26378pt x 142.53897pt on input lin
+Package pdftex.def Info: Requested size: 142.26378pt x 143.09174pt on input lin
 e 226.
 <figures/TSCH_basics_graph.png, id=420, 169.47314pt x 110.21175pt>
 File: figures/TSCH_basics_graph.png Graphic file (type png)
@@ -1853,7 +1853,7 @@ lmsso10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/lm/lmtt10.pfb>
-Output written on 6TiSCH_presentation.pdf (30 pages, 2182432 bytes).
+Output written on 6TiSCH_presentation.pdf (30 pages, 2182639 bytes).
 PDF statistics:
  1234 PDF objects out of 1440 (max. 8388607)
  72 named destinations out of 1000 (max. 500000)
