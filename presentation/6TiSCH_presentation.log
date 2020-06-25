@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  23 JUN 2020 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  25 JUN 2020 19:42
 entering extended mode
 **./6TiSCH_presentation.tex
 (6TiSCH_presentation.tex
@@ -1401,73 +1401,73 @@ ONS-Logo.jpg> <./figures/FS-Logo.jpg>] (6TiSCH_presentation.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 128.
  [3
 
 ]
 <figures/arch_IIoT.png, id=200, 452.04884pt x 354.123pt>
 File: figures/arch_IIoT.png Graphic file (type png)
 <use figures/arch_IIoT.png>
-Package pdftex.def Info: figures/arch_IIoT.png  used on input line 137. on inpu
-t line 137.
+Package pdftex.def Info: figures/arch_IIoT.png  used on input line 135. on inpu
+t line 135.
 Package pdftex.def Info: Requested size: 239.70367pt x 187.77614pt on input lin
-e 137.
+e 135.
 
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 137.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 135.
 
 
-Overfull \vbox (2.1483pt too high) detected at line 137
+Overfull \vbox (2.1483pt too high) detected at line 135
  []
 
 [4
 
  <./figures/arch_IIoT.png>]
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 157
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 155
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmss.fd"
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 157.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 155.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 157
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 155
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 157
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 155
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 157.
+(Font)              <10.95> on input line 155.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 157.
+(Font)              <8> on input line 155.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 157.
-LaTeX Font Info:    Try loading font information for U+msa on input line 157.
+(Font)              <6> on input line 155.
+LaTeX Font Info:    Try loading font information for U+msa on input line 155.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 157.
+LaTeX Font Info:    Try loading font information for U+msb on input line 155.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 157.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 155.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 157.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 155.
  [5
 
 ]
@@ -1477,32 +1477,32 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
 <figures/6TiSCH_stack.png, id=314, 372.9132pt x 313.6518pt>
 File: figures/6TiSCH_stack.png Graphic file (type png)
 <use figures/6TiSCH_stack.png>
-Package pdftex.def Info: figures/6TiSCH_stack.png  used on input line 179. on i
-nput line 179.
+Package pdftex.def Info: figures/6TiSCH_stack.png  used on input line 177. on i
+nput line 177.
 Package pdftex.def Info: Requested size: 205.46327pt x 172.81052pt on input lin
-e 179.
+e 177.
 <figures/6TiSCH_stack_focus.png, id=315, 376.16534pt x 314.3745pt>
 File: figures/6TiSCH_stack_focus.png Graphic file (type png)
 <use figures/6TiSCH_stack_focus.png>
-Package pdftex.def Info: figures/6TiSCH_stack_focus.png  used on input line 179
-. on input line 179.
+Package pdftex.def Info: figures/6TiSCH_stack_focus.png  used on input line 177
+. on input line 177.
 Package pdftex.def Info: Requested size: 205.46327pt x 171.71205pt on input lin
-e 179.
+e 177.
  [7
 
  <./figures/6TiSCH_stack.png>]
 File: figures/6TiSCH_stack.png Graphic file (type png)
 <use figures/6TiSCH_stack.png>
-Package pdftex.def Info: figures/6TiSCH_stack.png  used on input line 179. on i
-nput line 179.
+Package pdftex.def Info: figures/6TiSCH_stack.png  used on input line 177. on i
+nput line 177.
 Package pdftex.def Info: Requested size: 205.46327pt x 172.81052pt on input lin
-e 179.
+e 177.
 File: figures/6TiSCH_stack_focus.png Graphic file (type png)
 <use figures/6TiSCH_stack_focus.png>
-Package pdftex.def Info: figures/6TiSCH_stack_focus.png  used on input line 179
-. on input line 179.
+Package pdftex.def Info: figures/6TiSCH_stack_focus.png  used on input line 177
+. on input line 177.
 Package pdftex.def Info: Requested size: 205.46327pt x 171.71205pt on input lin
-e 179.
+e 177.
  [8
 
  <./figures/6TiSCH_stack_focus.png>] [9
@@ -1511,308 +1511,314 @@ e 179.
 <figures/TSCH_basics_matrix.png, id=419, 186.09525pt x 187.1793pt>
 File: figures/TSCH_basics_matrix.png Graphic file (type png)
 <use figures/TSCH_basics_matrix.png>
-Package pdftex.def Info: figures/TSCH_basics_matrix.png  used on input line 226
-. on input line 226.
+Package pdftex.def Info: figures/TSCH_basics_matrix.png  used on input line 224
+. on input line 224.
 Package pdftex.def Info: Requested size: 142.26378pt x 143.09174pt on input lin
-e 226.
+e 224.
 <figures/TSCH_basics_graph.png, id=420, 169.47314pt x 110.21175pt>
 File: figures/TSCH_basics_graph.png Graphic file (type png)
 <use figures/TSCH_basics_graph.png>
-Package pdftex.def Info: figures/TSCH_basics_graph.png  used on input line 226.
- on input line 226.
+Package pdftex.def Info: figures/TSCH_basics_graph.png  used on input line 224.
+ on input line 224.
 Package pdftex.def Info: Requested size: 142.26378pt x 92.51837pt on input line
- 226.
+ 224.
  [10
 
  <./figures/TSCH_basics_matrix.png> <./figures/TSCH_basics_graph.png>]
-<figures/TSCH_basics_schedule_croped.png, id=456, 379.77885pt x 222.95296pt>
-File: figures/TSCH_basics_schedule_croped.png Graphic file (type png)
-<use figures/TSCH_basics_schedule_croped.png>
-Package pdftex.def Info: figures/TSCH_basics_schedule_croped.png  used on input
- line 236. on input line 236.
-Package pdftex.def Info: Requested size: 273.9493pt x 160.83557pt on input line
- 236.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 241.
+
  [11
 
- <./figures/TSCH_basics_schedule_croped.png>] [12
-
 ]
-<figures/Joining_phase_network.png, id=527, 452.04884pt x 354.123pt>
+<figures/Joining_phase_network.png, id=491, 452.04884pt x 354.123pt>
 File: figures/Joining_phase_network.png Graphic file (type png)
 <use figures/Joining_phase_network.png>
 Package pdftex.def Info: figures/Joining_phase_network.png  used on input line 
-261. on input line 261.
+248. on input line 248.
 Package pdftex.def Info: Requested size: 256.82648pt x 201.19296pt on input lin
-e 261.
+e 248.
 
-Overfull \vbox (15.56512pt too high) detected at line 261
+Overfull \vbox (15.56512pt too high) detected at line 248
  []
 
-[13
+[12
 
- <./figures/Joining_phase_network.png>] (6TiSCH_presentation.toc) [14
+ <./figures/Joining_phase_network.png>] (6TiSCH_presentation.toc) [13
 
 ]
-<figures/NPtable.png, id=607, 951.555pt x 98.61844pt>
+<figures/NPtable.png, id=571, 951.555pt x 98.61844pt>
 File: figures/NPtable.png Graphic file (type png)
 <use figures/NPtable.png>
-Package pdftex.def Info: figures/NPtable.png  used on input line 289. on input 
-line 289.
+Package pdftex.def Info: figures/NPtable.png  used on input line 276. on input 
+line 276.
 Package pdftex.def Info: Requested size: 342.43532pt x 35.48906pt on input line
- 289.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 289.
+ 276.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 276.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 289.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 276.
 
-Overfull \vbox (0.98799pt too high) detected at line 289
+Overfull \vbox (0.98799pt too high) detected at line 276
  []
 
-[15
+[14
 
  <./figures/NPtable.png>]
-<figures/NPEB_step1.png, id=643, 405.79605pt x 203.0787pt>
+<figures/NPEB_step1.png, id=608, 405.79605pt x 203.0787pt>
 File: figures/NPEB_step1.png Graphic file (type png)
 <use figures/NPEB_step1.png>
-Package pdftex.def Info: figures/NPEB_step1.png  used on input line 313. on inp
-ut line 313.
-Package pdftex.def Info: Requested size: 342.43532pt x 171.3751pt on input line
- 313.
-<figures/NPEB_step2.png, id=644, 491.436pt x 210.66705pt>
+Package pdftex.def Info: figures/NPEB_step1.png  used on input line 300. on inp
+ut line 300.
+Package pdftex.def Info: Requested size: 291.0721pt x 145.66808pt on input line
+ 300.
+<figures/NPEB_step2.png, id=609, 491.436pt x 210.66705pt>
 File: figures/NPEB_step2.png Graphic file (type png)
 <use figures/NPEB_step2.png>
-Package pdftex.def Info: figures/NPEB_step2.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step2.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 146.8005pt on input line
- 313.
-<figures/NPEB_step3.png, id=645, 491.436pt x 203.0787pt>
+ 300.
+<figures/NPEB_step3.png, id=610, 491.436pt x 203.0787pt>
 File: figures/NPEB_step3.png Graphic file (type png)
 <use figures/NPEB_step3.png>
-Package pdftex.def Info: figures/NPEB_step3.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step3.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.51268pt on input lin
-e 313.
-<figures/NPEB_step4.png, id=646, 492.8814pt x 203.0787pt>
+e 300.
+<figures/NPEB_step4.png, id=611, 492.8814pt x 203.0787pt>
 File: figures/NPEB_step4.png Graphic file (type png)
 <use figures/NPEB_step4.png>
-Package pdftex.def Info: figures/NPEB_step4.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step4.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.09125pt on input lin
-e 313.
- [16
+e 300.
+ [15
 
  <./figures/NPEB_step1.png>]
 File: figures/NPEB_step1.png Graphic file (type png)
 <use figures/NPEB_step1.png>
-Package pdftex.def Info: figures/NPEB_step1.png  used on input line 313. on inp
-ut line 313.
-Package pdftex.def Info: Requested size: 342.43532pt x 171.3751pt on input line
- 313.
+Package pdftex.def Info: figures/NPEB_step1.png  used on input line 300. on inp
+ut line 300.
+Package pdftex.def Info: Requested size: 291.0721pt x 145.66808pt on input line
+ 300.
 File: figures/NPEB_step2.png Graphic file (type png)
 <use figures/NPEB_step2.png>
-Package pdftex.def Info: figures/NPEB_step2.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step2.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 146.8005pt on input line
- 313.
+ 300.
 File: figures/NPEB_step3.png Graphic file (type png)
 <use figures/NPEB_step3.png>
-Package pdftex.def Info: figures/NPEB_step3.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step3.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.51268pt on input lin
-e 313.
+e 300.
 File: figures/NPEB_step4.png Graphic file (type png)
 <use figures/NPEB_step4.png>
-Package pdftex.def Info: figures/NPEB_step4.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step4.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.09125pt on input lin
-e 313.
- [17
+e 300.
+ [16
 
  <./figures/NPEB_step2.png>]
 File: figures/NPEB_step1.png Graphic file (type png)
 <use figures/NPEB_step1.png>
-Package pdftex.def Info: figures/NPEB_step1.png  used on input line 313. on inp
-ut line 313.
-Package pdftex.def Info: Requested size: 342.43532pt x 171.3751pt on input line
- 313.
+Package pdftex.def Info: figures/NPEB_step1.png  used on input line 300. on inp
+ut line 300.
+Package pdftex.def Info: Requested size: 291.0721pt x 145.66808pt on input line
+ 300.
 File: figures/NPEB_step2.png Graphic file (type png)
 <use figures/NPEB_step2.png>
-Package pdftex.def Info: figures/NPEB_step2.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step2.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 146.8005pt on input line
- 313.
+ 300.
 File: figures/NPEB_step3.png Graphic file (type png)
 <use figures/NPEB_step3.png>
-Package pdftex.def Info: figures/NPEB_step3.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step3.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.51268pt on input lin
-e 313.
+e 300.
 File: figures/NPEB_step4.png Graphic file (type png)
 <use figures/NPEB_step4.png>
-Package pdftex.def Info: figures/NPEB_step4.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step4.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.09125pt on input lin
-e 313.
- [18
+e 300.
+ [17
 
  <./figures/NPEB_step3.png>]
 File: figures/NPEB_step1.png Graphic file (type png)
 <use figures/NPEB_step1.png>
-Package pdftex.def Info: figures/NPEB_step1.png  used on input line 313. on inp
-ut line 313.
-Package pdftex.def Info: Requested size: 342.43532pt x 171.3751pt on input line
- 313.
+Package pdftex.def Info: figures/NPEB_step1.png  used on input line 300. on inp
+ut line 300.
+Package pdftex.def Info: Requested size: 291.0721pt x 145.66808pt on input line
+ 300.
 File: figures/NPEB_step2.png Graphic file (type png)
 <use figures/NPEB_step2.png>
-Package pdftex.def Info: figures/NPEB_step2.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step2.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 146.8005pt on input line
- 313.
+ 300.
 File: figures/NPEB_step3.png Graphic file (type png)
 <use figures/NPEB_step3.png>
-Package pdftex.def Info: figures/NPEB_step3.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step3.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.51268pt on input lin
-e 313.
+e 300.
 File: figures/NPEB_step4.png Graphic file (type png)
 <use figures/NPEB_step4.png>
-Package pdftex.def Info: figures/NPEB_step4.png  used on input line 313. on inp
-ut line 313.
+Package pdftex.def Info: figures/NPEB_step4.png  used on input line 300. on inp
+ut line 300.
 Package pdftex.def Info: Requested size: 342.43532pt x 141.09125pt on input lin
-e 313.
- [19
+e 300.
+ [18
 
  <./figures/NPEB_step4.png>]
-[20
+[19
 
 ]
-<figures/results/secjoin/boxesTimeConvergence20.png, id=821, 462.528pt x 346.89
+<figures/results/secjoin/boxesTimeConvergence20.png, id=786, 462.528pt x 346.89
 6pt>
 File: figures/results/secjoin/boxesTimeConvergence20.png Graphic file (type png
 )
 <use figures/results/secjoin/boxesTimeConvergence20.png>
 Package pdftex.def Info: figures/results/secjoin/boxesTimeConvergence20.png  us
-ed on input line 338. on input line 338.
+ed on input line 325. on input line 325.
 Package pdftex.def Info: Requested size: 256.82648pt x 192.63011pt on input lin
-e 338.
+e 325.
 
-Overfull \vbox (7.00227pt too high) detected at line 338
+Overfull \vbox (7.00227pt too high) detected at line 325
  []
 
-[21
+[20
 
  <./figures/results/secjoin/boxesTimeConvergence20.png>]
-<figures/results/secjoin/boxesJoiningTimePerNode20.png, id=856, 462.528pt x 346
+<figures/results/secjoin/boxesJoiningTimePerNode20.png, id=821, 462.528pt x 346
 .896pt>
 File: figures/results/secjoin/boxesJoiningTimePerNode20.png Graphic file (type 
 png)
 <use figures/results/secjoin/boxesJoiningTimePerNode20.png>
 Package pdftex.def Info: figures/results/secjoin/boxesJoiningTimePerNode20.png 
- used on input line 345. on input line 345.
+ used on input line 332. on input line 332.
 Package pdftex.def Info: Requested size: 256.82648pt x 192.63011pt on input lin
-e 345.
+e 332.
 
-Overfull \vbox (7.00227pt too high) detected at line 345
+Overfull \vbox (7.00227pt too high) detected at line 332
  []
 
-[22
+[21
 
  <./figures/results/secjoin/boxesJoiningTimePerNode20.png>]
-<figures/results/secjoin/boxesJoinExchange20.png, id=891, 462.528pt x 346.896pt
+<figures/results/secjoin/boxesJoinExchange20.png, id=856, 462.528pt x 346.896pt
 >
 File: figures/results/secjoin/boxesJoinExchange20.png Graphic file (type png)
 <use figures/results/secjoin/boxesJoinExchange20.png>
 Package pdftex.def Info: figures/results/secjoin/boxesJoinExchange20.png  used 
-on input line 352. on input line 352.
+on input line 339. on input line 339.
 Package pdftex.def Info: Requested size: 256.82648pt x 192.63011pt on input lin
-e 352.
+e 339.
 
-Overfull \vbox (7.00227pt too high) detected at line 352
+Overfull \vbox (7.00227pt too high) detected at line 339
  []
 
-[23
+[22
 
- <./figures/results/secjoin/boxesJoinExchange20.png>] [24
+ <./figures/results/secjoin/boxesJoinExchange20.png>] [23
 
 ]
-<figures/results/EB/phase_times.png, id=959, 408.3255pt x 325.215pt>
+<figures/results/EB/phase_times.png, id=924, 408.3255pt x 325.215pt>
 File: figures/results/EB/phase_times.png Graphic file (type png)
 <use figures/results/EB/phase_times.png>
 Package pdftex.def Info: figures/results/EB/phase_times.png  used on input line
- 379. on input line 379.
+ 366. on input line 366.
 Package pdftex.def Info: Requested size: 239.70367pt x 190.91745pt on input lin
-e 379.
+e 366.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 379.
+(Font)              <10> on input line 366.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 379.
+(Font)              <7> on input line 366.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 379.
+(Font)              <5> on input line 366.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 379.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 366.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 379.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 366.
 
-Overfull \vbox (5.28961pt too high) detected at line 379
+Overfull \vbox (5.28961pt too high) detected at line 366
+ []
+
+[24
+
+ <./figures/results/EB/phase_times.png>]
+<figures/results/NPEB/phase_times.png, id=959, 408.3255pt x 325.215pt>
+File: figures/results/NPEB/phase_times.png Graphic file (type png)
+<use figures/results/NPEB/phase_times.png>
+Package pdftex.def Info: figures/results/NPEB/phase_times.png  used on input li
+ne 372. on input line 372.
+Package pdftex.def Info: Requested size: 239.70367pt x 190.91745pt on input lin
+e 372.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 372.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 372.
+
+Overfull \vbox (4.98961pt too high) detected at line 372
  []
 
 [25
 
- <./figures/results/EB/phase_times.png>]
-<figures/results/NPEB/phase_times.png, id=995, 408.3255pt x 325.215pt>
-File: figures/results/NPEB/phase_times.png Graphic file (type png)
-<use figures/results/NPEB/phase_times.png>
-Package pdftex.def Info: figures/results/NPEB/phase_times.png  used on input li
-ne 385. on input line 385.
-Package pdftex.def Info: Requested size: 239.70367pt x 190.91745pt on input lin
-e 385.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 385.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 385.
+ <./figures/results/NPEB/phase_times.png>]
+<figures/results/EB/phase_charges.png, id=998, 435.7881pt x 325.215pt>
+File: figures/results/EB/phase_charges.png Graphic file (type png)
+<use figures/results/EB/phase_charges.png>
+Package pdftex.def Info: figures/results/EB/phase_charges.png  used on input li
+ne 380. on input line 380.
+Package pdftex.def Info: Requested size: 256.82648pt x 191.6618pt on input line
+ 380.
 
-Overfull \vbox (4.98961pt too high) detected at line 385
+Overfull \vbox (5.73396pt too high) detected at line 380
  []
 
 [26
 
- <./figures/results/NPEB/phase_times.png>]
-<figures/results/EB/phase_charges.png, id=1033, 435.7881pt x 325.215pt>
-File: figures/results/EB/phase_charges.png Graphic file (type png)
-<use figures/results/EB/phase_charges.png>
-Package pdftex.def Info: figures/results/EB/phase_charges.png  used on input li
-ne 393. on input line 393.
-Package pdftex.def Info: Requested size: 256.82648pt x 191.6618pt on input line
- 393.
+ <./figures/results/EB/phase_charges.png>]
+<figures/results/NPEB/phase_charges.png, id=1033, 438.6789pt x 325.215pt>
+File: figures/results/NPEB/phase_charges.png Graphic file (type png)
+<use figures/results/NPEB/phase_charges.png>
+Package pdftex.def Info: figures/results/NPEB/phase_charges.png  used on input 
+line 386. on input line 386.
+Package pdftex.def Info: Requested size: 256.82648pt x 190.40631pt on input lin
+e 386.
 
-Overfull \vbox (5.73396pt too high) detected at line 393
+Overfull \vbox (4.47847pt too high) detected at line 386
  []
 
 [27
 
- <./figures/results/EB/phase_charges.png>]
-<figures/results/NPEB/phase_charges.png, id=1068, 438.6789pt x 325.215pt>
-File: figures/results/NPEB/phase_charges.png Graphic file (type png)
-<use figures/results/NPEB/phase_charges.png>
-Package pdftex.def Info: figures/results/NPEB/phase_charges.png  used on input 
-line 399. on input line 399.
-Package pdftex.def Info: Requested size: 256.82648pt x 190.40631pt on input lin
-e 399.
+ <./figures/results/NPEB/phase_charges.png>] [28
 
-Overfull \vbox (4.47847pt too high) detected at line 399
- []
-
-[28
-
- <./figures/results/NPEB/phase_charges.png>] [29
+] [29
 
 ] [30
 
 ]
+<figures/TSCH_basics_schedule_croped.png, id=1168, 379.77885pt x 222.95296pt>
+File: figures/TSCH_basics_schedule_croped.png Graphic file (type png)
+<use figures/TSCH_basics_schedule_croped.png>
+Package pdftex.def Info: figures/TSCH_basics_schedule_croped.png  used on input
+ line 431. on input line 431.
+Package pdftex.def Info: Requested size: 273.9493pt x 160.83557pt on input line
+ 431.
+ [31
+
+ <./figures/TSCH_basics_schedule_croped.png>]
 \tf@nav=\write6
 \openout6 = `6TiSCH_presentation.nav'.
 
@@ -1822,21 +1828,20 @@ Overfull \vbox (4.47847pt too high) detected at line 399
 \tf@snm=\write8
 \openout8 = `6TiSCH_presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
-
-(6TiSCH_presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 433.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 433.
+ (6TiSCH_presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 433.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 433.
 Package rerunfilecheck Info: File `6TiSCH_presentation.out' has not changed.
-(rerunfilecheck)             Checksum: F9B3443CFFDE5928D3DBD6889FC7A593;821.
+(rerunfilecheck)             Checksum: 905AA3F2D05D58C0D200D04466ED0CFC;821.
  ) 
 Here is how much of TeX's memory you used:
- 20580 strings out of 493312
- 382732 string characters out of 3138902
+ 20585 strings out of 493312
+ 382800 string characters out of 3138902
  468659 words of memory out of 3000000
- 23529 multiletter control sequences out of 15000+200000
- 87849 words of font info for 74 fonts, out of 3000000 for 9000
+ 23531 multiletter control sequences out of 15000+200000
+ 90651 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,20n,60p,828b,780s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
@@ -1848,14 +1853,15 @@ vips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit
 ic/lm/lmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss17.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/lm/lmss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
-lmsso10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/lm/lmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmtt10.pfb>
-Output written on 6TiSCH_presentation.pdf (30 pages, 2182639 bytes).
+ype1/public/lm/lmssbo10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
+lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt
+10.pfb>
+Output written on 6TiSCH_presentation.pdf (31 pages, 2166502 bytes).
 PDF statistics:
- 1234 PDF objects out of 1440 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
+ 1275 PDF objects out of 1440 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
  236 words of extra memory for PDF output out of 10000 (max. 10000000)
 

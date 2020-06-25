@@ -92,12 +92,12 @@
 
 \begin{document}
 
-% Title page & Outline
+% Title page & Sommaire
 % --------------------
 	\frame[plain]{\titlepage}
 	
 	\frame{
-		\frametitle{Outline}	% Sommaire
+		\frametitle{Sommaire}	% Sommaire
 		\tableofcontents
 		% options = pausesections; currentsection; hideallsubsections 
 	}
@@ -121,11 +121,9 @@
 	\vspace{0.4cm}
 	Caractéristiques des \textit{Wireless Sensors Networks} :
 	\begin{itemize}
-	\item \textit{Multipath fading} et interférences
-	\item Forte densité de nœuds déployés de façon imprécise
-	\item Transmissions \textit{multi-hops}
-	\item Changements dans la topologie (mobilité)
-	\item Phénomène de \textit{clock drifting} entre horloges
+	\item Topologie en arborescence, noeud racine "sink"	
+	\item Transmissions radios multi-sauts
+	\item ...
 	\end{itemize}
 	}
 	
@@ -159,7 +157,7 @@
     \section{État de l'art de la pile 6TiSCH}	
     
     \frame{
-		\frametitle{Outline}	% Sommaire
+		\frametitle{Sommaire}	% Sommaire
 		\tableofcontents[currentsection]
 		% options = pausesections; currentsection; hideallsubsections 
 	}
@@ -225,31 +223,20 @@
 
     }
 
-    \frame{
-    \centering
-    $f_{eff} = HoppSeq[f \:\: \text{mod} \:\: n_{ch}]\quad$ où $f = ASN + channelOffset$
-    \vspace{0.1cm}
-       \begin{figure}
-    \includegraphics[width=0.8\linewidth]{TSCH_basics_schedule_croped}
-    \caption{Effet de sauts de fréquence d'un cycle à l'autre de slotframe}
-    \end{figure}
-    }
-
     \subsection{La joining phase}
     
     \frame{
         \frametitle{La joining phase}
-        Réseau 6TiSCH de nœuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4 et \textbf{clés} distribuées par l'autorité du réseau (\textit{JRC}).\\
+        Réseau 6TiSCH de nœuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4 et \textbf{clés} distribuées par l'autorité du réseau (\textit{\textbf{JRC}}).\\
         \vspace{0.3cm}
-        Un nœud qui veut rejoindre (\textit{pledge)} n'a pas ces clés.\\
+        Un nœud qui veut rejoindre (\textit{\textbf{pledge}}) n'a pas ces clés.\\
+        \vspace{0.3cm}
+        Un nœud déjà raccordé fait office de \textit{\textbf{Join Proxy}} intermédiaire entre le pledge et l'autorité du réseau.\\
+\vspace{0.3cm}        
+        $\rightarrow$ émission de frame spéciales (\textbf{EB}s) par les nœuds déjà raccordés\\
         \vspace{0.1cm}
-        Un nœud déjà raccordé fait office de \textit{Join Proxy} intermédiaire entre le pledge et l'autorité du réseau.\\
-\vspace{0.1cm}        
-        $\rightarrow$ émission de frame spéciales (EBs) par les nœuds déjà raccordés\\
         $\rightarrow$ le pledge initie la joining phase pour se synchroniser + obtenir les clés\\
-        \vspace{0.4cm}
-        Le pledge possède un contexte de sécurité pré-établi (PSK) partagé avec le JRC.\\
-        $\rightarrow$ échanges pledge $\leftrightarrow$ JRC (\textit{Join Exchange CoJP}) protégés au niveau applicatif par un contexte partagé (\textit{OSCORE})
+        
         
     }
     
@@ -263,7 +250,7 @@
     \section{Méthode NPEB et expérimentations}
     
     \frame{
-		\frametitle{Outline}	% Sommaire
+		\frametitle{Sommaire}	% Sommaire
 		\tableofcontents[currentsection]
 		% options = pausesections; currentsection; hideallsubsections 
 	}    
@@ -291,7 +278,7 @@
 	\frame{
 	\begin{overprint}
 	\onslide<1>    \begin{figure}
-    \includegraphics[width=\linewidth]{NPEB_step1}
+    \includegraphics[width=0.85\linewidth]{NPEB_step1}
     \caption{[Cycle t] État initial du réseau où les NPtables des nœuds sont déjà alimentées}
     \end{figure}
 	
@@ -428,5 +415,19 @@
 	   \rule{11cm}{0.6pt}\\
 	\end{center}
 	}
+	
+    \frame{
+        \frametitle{Appendix}
+    }	
+	
+    \frame{
+    \centering
+    $f_{eff} = HoppSeq[f \:\: \text{mod} \:\: n_{ch}]\quad$ où $f = ASN + channelOffset$
+    \vspace{0.1cm}
+       \begin{figure}
+    \includegraphics[width=0.8\linewidth]{TSCH_basics_schedule_croped}
+    \caption{Effet de sauts de fréquence d'un cycle à l'autre de slotframe}
+    \end{figure}
+    }
 	
 \end{document}
