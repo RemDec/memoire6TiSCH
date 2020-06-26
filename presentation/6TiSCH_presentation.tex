@@ -121,7 +121,7 @@
 	\vspace{0.4cm}
 	Caractéristiques des \textit{Wireless Sensors Networks} :
 	\begin{itemize}
-	\item Topologie en arborescence, noeud racine "sink"	
+	\item Topologie en arborescence, nœud racine "sink"	
 	\item Transmissions radios multi-sauts
 	\item ...
 	\end{itemize}
@@ -185,8 +185,8 @@
         
         Combinaison de :
         \begin{enumerate}
-        \item TDMA $\rightarrow$ multiplexage en temps       (\textit{timeslot})
-        \item FDMA $\rightarrow$ multiplexage en fréquences  (\textit{channelOffset})
+        \item TDMA $\rightarrow$ multiplexage en temps       (\textit{\textbf{timeslot}})
+        \item FDMA $\rightarrow$ multiplexage en fréquences  (\textit{\textbf{channelOffset}})
         \end{enumerate}
         \vspace{0.5cm}
         Une communication entre nœuds voisins est caractérisée par un couple (\textit{timeslot}, \textit{channelOffset}) où
@@ -394,7 +394,7 @@
         \item État de l'art
         \begin{itemize}
         \item Revue de la pile dans son entièreté, conforme aux standards dans leur état actuel (standardisation toujours en cours)
-        \vspace{0.2cm}
+        \vspace{0.2	cm}
         \item Détail de la sécurité de la joining phase fait dans aucun papier publié à ce jour excepté les standards qui la décrivent eux-mêmes
         \end{itemize}
         \vspace{0.4cm}
@@ -430,5 +430,33 @@
     \caption{Effet de sauts de fréquence d'un cycle à l'autre de slotframe}
     \end{figure}
     }
-	
+    
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.7\linewidth]{{results/EB/firsthop_hist}}
+        \caption{\footnotesize [EBs] Nombre de hops pour le 1$^{er}$ paquet app. de chaque noeud}
+        \end{figure}
+    }
+
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.7\linewidth]{{results/NPEB/firsthop_hist}}
+        \caption{\footnotesize [NPEBs] Nombre de hops pour le 1$^{er}$ paquet app. de chaque noeud}
+        \end{figure}
+    }
+    
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.7\linewidth]{{results/EB/latencies_cdf}}
+        \caption{\footnotesize [EBs] CDF des latences mesurées}
+        \end{figure}
+    }
+
+    \frame{
+        \begin{figure}
+        \includegraphics[width=0.7\linewidth]{{results/NPEB/latencies_cdf}}
+        \caption{\footnotesize [NPEBs] CDF des latences mesurées}
+        \end{figure}
+    }
+    
 \end{document}
