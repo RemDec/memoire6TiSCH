@@ -1,12 +1,12 @@
-\select@language {french}
+\babel@toc {french}{}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Les r\IeC {\'e}seaux IIoT (WSNs)}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Les réseaux IIoT (WSNs)}{3}{0}{1}
 \beamer@subsectionintoc {1}{2}{6TiSCH}{5}{0}{1}
-\beamer@sectionintoc {2}{\IeC {\'E}tat de l'art de la pile 6TiSCH}{6}{0}{2}
+\beamer@sectionintoc {2}{État de l'art de la pile 6TiSCH}{6}{0}{2}
 \beamer@subsectionintoc {2}{1}{Principes fondamentaux de TSCH}{9}{0}{2}
 \beamer@subsectionintoc {2}{2}{La joining phase}{11}{0}{2}
-\beamer@sectionintoc {3}{M\IeC {\'e}thode NPEB et exp\IeC {\'e}rimentations}{13}{0}{3}
-\beamer@subsectionintoc {3}{1}{Principes de la m\IeC {\'e}thode NPEB}{14}{0}{3}
-\beamer@subsectionintoc {3}{2}{\IeC {\'E}valuation de l'impact de s\IeC {\'e}curit\IeC {\'e} sur la joining phase}{19}{0}{3}
-\beamer@subsectionintoc {3}{3}{\IeC {\'E}valuation des performances de la m\IeC {\'e}thode NPEB}{23}{0}{3}
+\beamer@sectionintoc {3}{Méthode NPEB et expérimentations}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Principes de la méthode NPEB}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Évaluation de l'impact de sécurité sur la joining phase}{19}{0}{3}
+\beamer@subsectionintoc {3}{3}{Évaluation des performances de la méthode NPEB}{23}{0}{3}
 \beamer@sectionintoc {4}{Conclusion}{28}{0}{4}

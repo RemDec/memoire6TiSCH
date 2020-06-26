@@ -211,7 +211,7 @@
         \centering   
     \begin{figure}
     \includegraphics[width=5cm]{TSCH_basics_matrix}
-    \caption{Matrice des communications}
+    \caption{Matrice des commu- nications (\textit{cells} de transmission)}
     \end{figure}    	        
         \column{\dimexpr\linewidth-5cm}
     \begin{figure}
@@ -220,14 +220,15 @@
     \end{figure}    
 	    \end{columns}
 	\end{center}
-
+	
+	À cette matrice correspond une slotframe se répétant en cycles successifs
     }
 
     \subsection{La joining phase}
     
     \frame{
         \frametitle{La joining phase}
-        Réseau 6TiSCH de nœuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4 et \textbf{clés} distribuées par l'autorité du réseau (\textit{\textbf{JRC}}).\\
+        Réseau 6TiSCH de nœuds déjà raccordés protégé au niveau L2 par les mécanismes de protection IEEE802.15.4 et \textbf{clés} distribuées par l'autorité du réseau (\textit{\textbf{Join Registrar/Coordinator - JRC}}).\\
         \vspace{0.3cm}
         Un nœud qui veut rejoindre (\textit{\textbf{pledge}}) n'a pas ces clés.\\
         \vspace{0.3cm}
@@ -393,14 +394,14 @@
         \item État de l'art
         \begin{itemize}
         \item Revue de la pile dans son entièreté, conforme aux standards dans leur état actuel (standardisation toujours en cours)
-        \vspace{0.1cm}
+        \vspace{0.2cm}
         \item Détail de la sécurité de la joining phase fait dans aucun papier publié à ce jour excepté les standards qui la décrivent eux-mêmes
         \end{itemize}
-        \vspace{0.3cm}
+        \vspace{0.4cm}
         \item Expérimentations sur la joining phase
         \begin{itemize}
         \item Première quantification de l'impact de la sécurité sur la Joining Phase
-        \vspace{0.1cm}        
+        \vspace{0.2cm}        
         \item Élaboration de la méthode NPEB pour gagner en performances, un objectif non atteint significativement (sélection meilleur voisin)\\ $\rightarrow$ améliorations possibles par paramètres et processus décisionnels
         \end{itemize}
         \end{itemize}
